@@ -1,7 +1,12 @@
 
 #最终效果如下
 ![aaa](radio_diy_template/1.png)
-![aaa](radio自定义模板/1.png)
+
+
+- 效果要求
+	- 每个radio后面都跟踪一个input
+- 开发思路
+	- 对raio的模板进行个性自定义
 
 ###开发代码
 http://i.vding.dev/admin/activity/create<br />
