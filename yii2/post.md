@@ -150,7 +150,8 @@ public function actionUpdate($id)
 ```
 
 
-## 接收post再验证_例B (注:)
+## 接收post再验证_例B
+>(注:$model->save(false))
 
 ```php
 use common\models\Blog; 
