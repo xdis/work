@@ -1,5 +1,10 @@
 
 ##路由设置-伪静态
+
+>例1
+>访问地址： http://url/coshop/60   
+>等同于访问 http://url/coshop/default/index/60/type/4
+
 ```php
 return [
     'class'=>'yii\web\UrlManager',
