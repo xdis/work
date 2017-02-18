@@ -85,8 +85,8 @@ public function actionUpdate($id)
 
 ```
 
-#接收post再验证_例A
----
+##接收post再验证_例A
+
 路径：company/modules/admin/controllers/RechargeController.php  
 
 ```php
@@ -150,8 +150,7 @@ public function actionUpdate($id)
 ```
 
 
-#接收post再验证_例B
-----
+##接收post再验证_例B
 >(注:$model->save(false))
 
 ```php
