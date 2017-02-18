@@ -1,13 +1,13 @@
 
 #店铺
----
+
 >本店铺采用接口方式获取后端数据
 >
 
->1.使用vue-sui 开发 https://github.com/eteplus/vue-sui-demo
->2.[安装与运行](#安装与运行)
->3.[开发环境地址](#开发环境地址)
->4.[后端跨域解决方案](#后端跨域解决方案)
+>1.使用vue-sui 开发 https://github.com/eteplus/vue-sui-demo  
+>2.[安装与运行](#安装与运行)  
+>3.[开发环境地址](#开发环境地址)  
+>4.[后端跨域解决方案](#后端跨域解决方案)  
 
 ##安装与运行
 1. git clone git@github.com:eteplus/vue-sui-demo.git
