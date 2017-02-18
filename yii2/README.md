@@ -11,3 +11,11 @@
 		    - [接收post再验证_标准例子](接收post再验证_标准例子.md)（包括事务）
 		    - [接收post再验证_例A](接收post再验证_例A.md) ($model->save())
 		    - [接收post再验证_例B](接收post再验证_例B.md) ($model->save(false))
+	- 配置
+		- [路由设置-伪静态](content.md#路由设置-伪静态) 
+
+
+
+
+
+
