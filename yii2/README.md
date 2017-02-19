@@ -5,6 +5,7 @@
 	- view
 		- [时间-input输入框选择](时间-input输入框选择.md)
 		- [radio自定义模板](radio自定义模板.md)
+		- [时间字段年月日显示](view.md#时间字段年月日显示)
 
     - controller
 	    - 接收数据与验证 (注:post提交)
