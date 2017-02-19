@@ -8,17 +8,18 @@
 >2.[安装与运行](#安装与运行)  
 >3.[开发环境地址](#开发环境地址)  
 
-##技术
->1.[后端跨域解决方案](#后端跨域解决方案) 
->2.怎样在请求头加上Companyid 和Ownerid两个参数 
->
-
 ##安装与运行
 1. git clone git@github.com:eteplus/vue-sui-demo.git
 2. npm install //在根目录里执行cmk 安装
 3. npm run dev  //运行
-4. npm run build //代码修改过后运行
+4. npm run build //代码修改过后运行  
 
+
+##核心技术
+>1.[后端跨域解决方案](#后端跨域解决方案)  
+>2.怎样在请求头加上Companyid 和Ownerid两个参数   
+>3.在请求时候，后端怎样解决Header里的两个参数
+>
 
 ##开发环境地址
 >localhost:8080
