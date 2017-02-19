@@ -2,10 +2,10 @@
 ##时间字段年月日显示
 ````php
 [  
-  'attribute' => 'to_at',  
+  'attribute' => '字段名',  
    //'label' => '充值日期',  
   'value' => function ($model) {  
-   return date('Y-m-d H:i:s', $model->to_at);  
+   return date('Y-m-d H:i:s', $model->字段名);  
    },  
 ],  
 ``
