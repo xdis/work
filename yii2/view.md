@@ -1,4 +1,5 @@
 ##输入框选择日期
+![](view/input_select_date.png)
 
 ```php
         <?php echo $form->field($model, 'to_at', ['options' => ['class' => 'col-lg-2'],])->widget(
