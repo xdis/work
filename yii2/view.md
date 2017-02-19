@@ -1,5 +1,18 @@
+##输入框选择日期
+
+```php
+        <?php echo $form->field($model, 'to_at', ['options' => ['class' => 'col-lg-2'],])->widget(
+            DateTimeWidget::className(), [
+                'phpMomentMapping' => ["yyyy-MM-dd HH:mm" => 'YYYY-MM-DD HH:mm',],
+                'phpDatetimeFormat' => 'yyyy-MM-dd HH:mm',
+                'locale' => 'zh-CN',
+
+            ]
+        ) ?>
+```
 
 ##时间字段年月日显示
+![](view/date_format.png)
 ```php
 [  
   'attribute' => '字段名',  
@@ -12,12 +25,13 @@
 ```
 
 #时间区间范围的选择
+![](view/1.DateRangePicker_date_select.png)
 >[官方](http://demos.krajee.com/date-range)   
 >[composer安装](#安装)    
 
 <br />
 
->使用
+>使用  
 >[model设置](#model设置)  
 >[view设置](#view设置)  
 
@@ -28,7 +42,7 @@
 "kartik-v/yii2-date-range": "*"
  php composer update
 ```
-##model层
+##model设置
 ```php
   class UserSearchextendsUser{
 	// This attribute will hold the values to filter our database datapublic $created_at_range; 
@@ -72,7 +86,7 @@
 	// ... more code here'columns' => [
 		// ... other columns 
 		[
-                // the attribute
+                //1.要搜索的字段
                 'attribute' => 'created_at',
                 // format the value
                 'value' => function ($model) {
@@ -82,7 +96,7 @@
                 'headerOptions' => [
                     'class' => 'col-md-2'
                 ],
-                // here we render the widget
+                //2.保存区间的自定义的字段名
                 'filter' => DateRangePicker::widget([
                     'model' => $searchModel,
 //                                'language'=>$config['language'],
