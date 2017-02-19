@@ -47,7 +47,7 @@ http://i.vding.dev/admin/activity/create<br />
         )->label('') ?>
 ```
 ##上面的代码，改进如下
-[company/modules/admin/views/activity/_form.php](_form.php) 
+[company/modules/admin/views/activity/_form.php](radio_diy_template/_form.php) 
 ```php
  <div class="activity-form">
 
