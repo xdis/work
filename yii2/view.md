@@ -12,12 +12,12 @@
 ```
 
 #时间区间范围的选择
->[官方](http://demos.krajee.com/date-range) 
->[composer安装](#安装)
+>[官方](http://demos.krajee.com/date-range)   
+>[composer安装](#安装)  
 
 >使用
->[model设置](#model设置)
->[view设置](#view设置)
+>[model设置](#model设置)  
+>[view设置](#view设置)  
 ##安装
 ```
 加入composer.json
@@ -63,7 +63,7 @@
 ```
 
 ##view设置
-```
+```php
 /* @var $searchModel common\models\UserSearch */// ... lots of code here <?= GridView::widget([
 	// ... more code here'columns' => [
 		// ... other columns 
