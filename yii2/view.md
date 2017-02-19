@@ -46,9 +46,10 @@
 ##model设置
 ```php
   class UserSearchextendsUser{
-	// This attribute will hold the values to filter our database datapublic $created_at_range; 
+	// 1.定义一个变量先
+    datapublic $created_at_range; 
 		
-	  //1.将定义区间名字列入safe
+	  //2.将定义区间名字列入safe
 		return ArrayHelper::merge(
 			[
 				[['created_at_range'], 'safe'] // add a rule to collect the values
@@ -69,7 +70,7 @@
 				
 
 		
-		//2.获取值
+		//3.获取值
 		if(!empty($this->created_at_range) && strpos($this->created_at_range, '-') !== false) {
 		    //3.对获取的值，进行切分，赋值要查询两个字段
 			list($start_date, $end_date) = explode(' - ', $this->created_at_range);
@@ -123,3 +124,5 @@
 	]
 ]); ?>
 ```
+
+##lookup设置
