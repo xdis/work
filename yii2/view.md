@@ -13,11 +13,15 @@
 
 #时间区间范围的选择
 >[官方](http://demos.krajee.com/date-range)   
->[composer安装](#安装)  
+>[composer安装](#安装)    
+
+<br />
 
 >使用
 >[model设置](#model设置)  
 >[view设置](#view设置)  
+
+
 ##安装
 ```
 加入composer.json
