@@ -34,7 +34,7 @@
 
 >使用  
 >[model设置](#model设置)  
->[view设置](#view设置)  
+>[view设置](#列表页设置)  
 
 
 ##安装
@@ -47,7 +47,7 @@
 ```php
   class UserSearchextendsUser{
 	// 1.定义一个变量先
-    datapublic $created_at_range; 
+     public $created_at_range; 
 		
 	  //2.将定义区间名字列入safe
 		return ArrayHelper::merge(
@@ -82,8 +82,13 @@
 
 ```
 
-##view设置
+##列表页设置 
+index.php
+
 ```php
+//1定义类
+use kartik\daterange\DateRangePicker;
+
 /* @var $searchModel common\models\UserSearch */// ... lots of code here <?= GridView::widget([
 	// ... more code here'columns' => [
 		// ... other columns 

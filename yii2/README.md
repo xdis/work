@@ -24,6 +24,9 @@
 
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
+			- search关联用户表取username
+				- 1.model
+			- search关联用户表取mobile以别名形式
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 
