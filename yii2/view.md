@@ -130,8 +130,6 @@ use kartik\daterange\DateRangePicker;
 ]); ?>
 ```
 
-##lookup设置
-
 
 
 ##自定义列表页_按纽模板
@@ -151,4 +149,74 @@ use kartik\daterange\DateRangePicker;
 
 ],
 
-````
+```
+##自定义列表页_按纽模板_增加判断
+![](view/index_button_isif.png)
+>注：删除的按纽要加一些参数，因为它是post提交
+
+```php
+['class' => 'yii\grid\ActionColumn', 'template' => '{update}{view}{delete}', 'header' => '操作',
+                'buttons' => [
+                    //活动之前  "编辑"
+                    'update' => function ($url, $model, $key) {
+                        if ($model->from_at < time()) {
+                            return Html::a('编辑', $url, [
+                                'title' => '',
+                                'class' => 'btn btn-default btn-update',
+                            ]);
+                        } else {
+                            return '';
+                        }
+                    },
+                    // "详情"
+                    'view' => function ($url, $model, $key) {
+                        return Html::a('详情', $url, [
+                            'title' => '',
+                            'class' => 'btn btn-default btn-update',
+                        ]);
+
+                    },
+                    //活动之前  "删除"，之后 "查看奖券"
+                    'delete' => function ($url, $model, $key) {
+                        if ($model->from_at < time()) {
+                            return Html::a('删除', $url, [
+                                'title' => '',
+                                'aria-label' => '',
+                                ' data-confirm' => '您确定要删除此项吗？',
+                                ' data-method' => 'post',
+                                'class' => 'btn btn-default btn-update',
+                            ]);
+                        } else {
+                            $url = 'user-activity/index';
+                            return Html::a('查看奖券', $url, [
+                                'title' => '',
+                                'class' => 'btn btn-default btn-update',
+                            ]);
+                        }
+                    },
+                ],
+            ],
+
+```
+
+#URL地址生成
+##url::to
+```php
+<a href="<?php echo yii\helpers\url::to(['public/logout']) ?>"></a> 
+
+```
+>带参数
+```php
+<a href="<?php echo yii\helpers\Url::to(['category/mod', 'cateid' => $cate['cateid']]); ?>">编辑</a> #带参数 
+```
+
+##Html::a
+```php
+<?php echo Html::a('确认发货', ['order/confirm','id'=>$_GET['id']], ['class' => 'button_submit', 'data-confirm' => '确认已发货？']) ?>
+```
+
+
+
+
+
+
