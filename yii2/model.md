@@ -154,7 +154,7 @@ class UserActivity extends \common\models\***Model{
 ```php
 class UserActivitySearch extends UserActivity{
 
-   //1.在规则里将 username列入safe
+   //1.在规则里将 username列入safe   
     public function rules()
     {
         return [
