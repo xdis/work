@@ -120,11 +120,11 @@ index.php
 ![](model/activity_list.png)
 
 - 配置model
-	- [1.配置UserActivity模型](model.md#1.配置useractivity模型)
-	- [2.配置UserActivitySearch模型](model.md#2.配置useractivity_search模型)
-	- [3.列表页显示](model.md#3.列表页显示)
+	- [1.配置UserActivity模型](model.md#1配置useractivity模型)
+	- [2.配置UserActivitySearch模型](model.md#2配置useractivity_search模型)
+	- [3.列表页显示](model.md#3列表页显示)
 
-##1.配置useractivity模型
+##1配置useractivity模型
 ```php
 class UserActivity extends \common\models\***Model{
   //1.定义变量
@@ -150,7 +150,7 @@ class UserActivity extends \common\models\***Model{
 
 ```
 
-##2.配置useractivity_search模型
+##2配置useractivity_search模型
 ```php
 class UserActivitySearch extends UserActivity{
 
@@ -224,7 +224,7 @@ class UserActivitySearch extends UserActivity{
 
 ```
 
-##3.列表页显示
+##3列表页显示
 index.php
 ```php
 		[//关联表user.name
@@ -245,11 +245,11 @@ index.php
 ![](model/activity_list_mobile.png)
 
 - 配置model
-	- [a.配置UserActivity模型](model.md#a.配置useractivity模型)
-	- [b.配置UserActivitySearch模型](model.md#b.配置useractivity_search模型)
-	- [c.列表页显示](model.md#c.列表页显示)
+	- [a.配置UserActivity模型](model.md#a配置useractivity模型)
+	- [b.配置UserActivitySearch模型](model.md#b配置useractivity_search模型)
+	- [c.列表页显示](model.md#c列表页显示)
 
-##a.配置useractivity模型
+##a配置useractivity模型
 ```php
 
 class UserActivity extends \common\models\***Model{
@@ -275,7 +275,7 @@ class UserActivity extends \common\models\***Model{
 }
 ```
 
-##b.配置useractivity_search模型
+##b配置useractivity_search模型
 
 ```php
  class UserActivitySearch extends UserActivity{
@@ -339,7 +339,7 @@ class UserActivity extends \common\models\***Model{
 
 ```
 
-##c.列表页显示
+##c列表页显示
 
 ```php
 index.php
