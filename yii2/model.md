@@ -120,9 +120,9 @@ index.php
 ![](model/activity_list.png)
 
 - 配置model
-	- [1.配置UserActivity模型](#1.配置UserActivity模型)
-	- [2.配置UserActivitySearch模型](#2.配置UserActivitySearch模型)
-	- [3.列表页显示](#3.列表页显示)
+	- [1.配置UserActivity模型](model.md#1.配置UserActivity模型)
+	- [2.配置UserActivitySearch模型](model.md#2.配置UserActivitySearch模型)
+	- [3.列表页显示](model.md#3.列表页显示)
 
 ##1.配置UserActivity模型
 ```php
