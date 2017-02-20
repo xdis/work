@@ -20,7 +20,7 @@
 		    - [接收post再验证_例b](post.md#接收post再验证_例b)  ($model->save(false))
 		- yii2自带函数连接
 			- [leftJoin](post.md#leftjoin)
-			- [leftJoin+分页_韦庆韦](post.md#leftjoin+分页_韦庆韦)
+			- [leftJoin+分页_韦庆韦](post.md#leftjoin_分页_韦庆韦)
 
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
