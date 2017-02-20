@@ -209,7 +209,7 @@ public function actionCreate()
 
 #yii2自带函数连接
 
-##leftJoin
+##leftjoin
 ```php
 
 ```
@@ -245,7 +245,7 @@ public function actionView($id) {
     }
 
 
-##leftJoin+分页_韦庆韦
+##leftjoin+分页_韦庆韦
 company/modules/shop/controllers/ProductController.php  
 ```php
 public function pro_list($page, $type)
