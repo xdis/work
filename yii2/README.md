@@ -7,7 +7,7 @@
 		- [radio自定义模板](radio自定义模板.md)
 		- [时间字段年月日显示](view.md#时间字段年月日显示)
 		- [时间区间范围的选择](view.md#时间区间范围的选择)
-		- lookup
+		- [lookup](lookup.md)
 			- 配置
 			- 使用
 				- 1.数据入库
