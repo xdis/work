@@ -15,8 +15,8 @@
 		- [自定义列表页_按纽模板](view.md#自定义列表页_按纽模板) (如某个删除与编辑按纽不要，可加别的)
 			- [自定义列表页_按纽模板_增加判断](view.md#自定义列表页_按纽模板_增加判断)
 		- URL地址生成
-			- url::to
-			- Html::a
+			- [url::to](view.md#url::to)
+			- [Html::a](view.md#Html::a)
     - controller
 	    - 接收数据与验证 (注:post提交)
 		    - [接收post再验证_标准例子](post.md#接收post再验证_标准例子)（包括事务）
