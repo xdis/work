@@ -206,3 +206,112 @@ public function actionCreate()
 
 
 ```
+
+#yii2自带函数连接
+
+##leftJoin
+```php
+
+```
+public function actionView($id) {
+
+        //操作记录
+        //$query = OperationLog::find();
+        //$query->
+
+        /*  注：下面的 select($fields),查出来的数据只有一条，晕死，，坑。。。。即现在的解决方案就是select('operation_log.*')
+        $fields = [
+            'operation_log.*',
+            'operation_log.user_id',
+            'operation_log.name',
+            'operation_log.memo',
+            'operation_log.created_at',
+            'operation_log.relation_type',
+            'operation_log.relation_id',
+            'user.*',
+            'user.username',
+
+        ];
+        */
+
+        $op_logs = OperationLog::find()->select('operation_log.*,user.username')->where('relation_id=:_id and relation_type = 9', [':_id' => $id]);
+        $_op_logs = $op_logs->leftJoin('user', 'user.id = operation_log.user_id')->asArray()->all();
+
+        //dp($_op_logs);
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+            'op_logs' => $_op_logs,
+        ]);
+    }
+
+
+##leftJoin+分页_韦庆韦
+company/modules/shop/controllers/ProductController.php  
+```php
+public function pro_list($page, $type)
+    {
+    	$page = intval($page);
+        $proSearch = ProductSearch::find()->select('t.*')->from('product t')->where([
+							't.company_id' => $this->store_company_id,
+							't.sys_category_id' => $type,
+        					't.status' => 1,
+        					't.is_published_store' => 1,
+        					't.is_on_sale' => 1,
+        					't.is_deleted' => 0,
+        					't.status' => 1,
+			                't.is_passed_card'=>0
+    				    ]);
+        //价目表日期过期的产品不能显示
+        $proSearch->leftJoin('pricelist','pricelist.product_id = t.id');
+        $_time = time();
+        $proSearch->andWhere("pricelist.end_at+3600*24>{$_time}");
+
+        if ($type == Product::SYS_CATE_SCENIC){
+        	$proSearch->leftJoin('product p','p.id = t.original_product_id');
+        	$order = 'IF (`p`.is_passed_card IS NULL, `t`.is_passed_card, `p`.`is_passed_card`)DESC, ';
+        }else{
+        	$order = '';
+        }
+        $pages = new Pagination([
+        		'totalCount' =>$proSearch->count(), 
+        		'pageSize' => $this->page_size,
+        		'page' => $page <= 0 ? 0 : $page - 1,
+		]);
+        $models = $proSearch->offset($pages->offset)
+        			->limit($pages->limit)
+        			->orderBy($order.' t.updated_at DESC')
+        			->all();
+        
+        $datas = array();
+        if ($models){
+        	foreach ($models as $model){
+        		$data = array();
+        		$data['id']		= $model->id;
+        		$data['name']	= $model->name;
+        		
+        		if ($model->images && is_array($model->images)){
+        			$data['img']= $model->images[0]->base_url.'/'.$model->images[0]->path;
+        		}else {
+        			$data['img'] = '';
+        		}
+        		
+        		if ($type == Product::SYS_CATE_SCENIC){
+        			$data['level']	= $model->supplierApp ? $model->supplierApp->level : 0;
+        			$data['is_passed_card'] = $model->originalProduct->is_passed_card;
+        		}
+        		$data['retail_price']	= $model->defaultPricelist ? $model->defaultPricelist->retail_price : 0;
+        		
+        		//$data['is_free']= $model->is_free;
+        		
+        		$datas[] = $data;
+        	}
+        }
+        
+        $res['page']		= $pages->page + 1;
+        $res['page_count']	= $pages->pageCount;
+        $res['items']		= $datas;
+
+        return $this->ajaxSuccess('成功', '', $res);
+    }
+
+```

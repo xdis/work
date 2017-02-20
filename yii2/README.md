@@ -18,6 +18,10 @@
 		    - [接收post再验证_标准例子](post.md#接收post再验证_标准例子)（包括事务）
 		    - [接收post再验证_例a](post.md#接收post再验证_例a) ($model->save())
 		    - [接收post再验证_例b](post.md#接收post再验证_例b)  ($model->save(false))
+		- yii2自带函数连接
+			- [leftJoin](post.md#leftJoin)
+			- [leftJoin+分页_韦庆韦](post.md#leftJoin+分页_韦庆韦)
+			- 
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 	- 配置
