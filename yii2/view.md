@@ -131,3 +131,24 @@ use kartik\daterange\DateRangePicker;
 ```
 
 ##lookup设置
+
+
+
+##自定义列表页_按纽模板
+```php
+['class' => 'yii\grid\ActionColumn', 'template' => '{view}', 'header' => '操作',
+    'buttons' => [
+
+        'view' => function ($url, $model, $key) {
+           $url = $url . '&shop_id='.Yii::$app->request->get('shop_id').'&pricelist_id=' . $model->pricelist_id;
+            return Html::a('详情', $url, [
+                'title' => '',
+                'class' => 'btn btn-default btn-update',
+                'target'=>'_blank'
+            ]);
+        },
+    ],
+
+],
+
+````

@@ -12,6 +12,7 @@
 			- 使用
 				- 1.数据入库
 				- 2.view使用
+		- [自定义列表页_按纽模板](view.md#自定义列表页_按纽模板) (如某个删除与编辑按纽不要，可加别的)
 
     - controller
 	    - 接收数据与验证 (注:post提交)
@@ -24,6 +25,8 @@
 
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
+		    - [使用子查询使用](model.md#使用子查询使用)
+			- [列表页使用](model.md#列表页使用)
 			- search关联用户表取username
 				- [1.配置UserActivity模型](model.md#1配置useractivity模型)
 				- [2.配置UserActivitySearch模型](model.md#2配置useractivity_search模型)

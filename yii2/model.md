@@ -96,19 +96,36 @@ company/modules/coshop/models/search/ProductSearch.php
 
 ```
 
-## 列表页使用
+##使用子查询使用
+>如上例子中，使用子查询来获取指定的值 如 _total_stock
+>index.php  使用 $model->_total_stock
+>关于这个关联表的配置，可以看下面例子如配置模型里1.变量 2.命名显示 3.rule加入safe等
+#在列表页index.php的使用如下
+```php
+
+    [
+        'attribute' => '_total_stock',
+        'value' => function ($model) {
+            return  (!$model->max_count ||  $model->max_count ==0) && ($model->original_product_id == 0) ? '不限制' :  ($model->_total_stock == 0 && $model->_sell_stock ==0 ?  '未设价目' : $model->_total_stock );
+        },
+        'filter' => '',
+    ],
+
+```
+
+##列表页使用
 index.php 
 >使用关联表的字段
 
 ```php
 [// 线路 - 出发地
-                'attribute' => 'start_address',
-                'value' => function ($model) {
-                    return isset($model->dpLine->start_address) ? $model->dpLine->start_address : null;
-                },
-                'filter' => Html::activeTextInput($searchModel, 'start_address', ['class' => 'form-control']),
-                'visible' => intval(Yii::$app->request->get('type'))  == 2
-            ],
+    'attribute' => 'start_address',
+    'value' => function ($model) {
+        return isset($model->dpLine->start_address) ? $model->dpLine->start_address : null;
+    },
+    'filter' => Html::activeTextInput($searchModel, 'start_address', ['class' => 'form-control']),
+    'visible' => intval(Yii::$app->request->get('type'))  == 2
+],
 ```
 
 
@@ -313,7 +330,7 @@ class UserActivity extends \common\models\***Model{
             'attributes' =>
                 ArrayHelper::merge(
                     [
-                        'username'
+                        'user_mobile'
                     ], array_keys(parent::attributeLabels())
                 )
         ]);
