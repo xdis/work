@@ -25,8 +25,13 @@
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 			- search关联用户表取username
-				- 1.model
+				- [1_配置UserActivity模型](model.md#1_配置UserActivity模型)
+				- [2_配置UserActivitySearch模型](model.md#2_配置UserActivitySearch模型)
+				- [3_列表页显示](model.md#3_列表页显示)
 			- search关联用户表取mobile以别名形式
+				- [a_配置UserActivity模型](model.md#a_配置UserActivity模型)
+				- [b_配置UserActivitySearch模型](model.md#b_配置UserActivitySearch模型)
+				- [c_列表页显示](model.md#c_列表页显示)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 
