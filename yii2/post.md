@@ -244,6 +244,20 @@ public function actionView($id) {
         ]);
     }
 
+##leftjoin_详细页
+```php
+    public function actionView($id)
+    {
+        $query = UserActivity::find()->select('user_activity.*,user.username,user.mobile,user_profile.real_name,activity.valid_type,activity.valid_period,activity.valid_end_at')->where('user_activity.id=:_id',[':_id'=>$id]);
+        $query->leftJoin('activity','activity.id = user_activity.activity_id');
+        $query->leftJoin('user_profile','user_profile.user_id = user_activity.user_id');
+        $model = $query->leftJoin('user','user.id=user_activity.user_id')->one();
+
+        return $this->render('view', [
+            'model' =>$model,
+        ]);
+    }
+```
 
 ##leftjoin_分页_韦庆韦
 company/modules/shop/controllers/ProductController.php  
@@ -315,3 +329,4 @@ public function pro_list($page, $type)
     }
 
 ```
+

@@ -14,9 +14,11 @@
 				- 2.view使用
 		- [自定义列表页_按纽模板](view.md#自定义列表页_按纽模板) (如某个删除与编辑按纽不要，可加别的)
 			- [自定义列表页_按纽模板_增加判断](view.md#自定义列表页_按纽模板_增加判断)
+			- [自定义列表页_按纽模板_增加判断_小明](view.md#自定义列表页_按纽模板_增加判断_小明)
 		- URL地址生成
 			- [url::to](view.md#url_to)
 			- [Html::a](view.md#html_a)
+		- [列表页_自定义编号_删除](view.md#列表页_自定义编号_删除)
     - controller
 	    - 接收数据与验证 (注:post提交)
 		    - [接收post再验证_标准例子](post.md#接收post再验证_标准例子)（包括事务）
@@ -24,6 +26,7 @@
 		    - [接收post再验证_例b](post.md#接收post再验证_例b)  ($model->save(false))
 		- yii2自带函数连接
 			- [leftJoin](post.md#leftjoin)
+			- [leftjoin_详细页](post.md#leftjoin_详细页)
 			- [leftJoin+分页_韦庆韦](post.md#leftjoin_分页_韦庆韦)
 
     - model

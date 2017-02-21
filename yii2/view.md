@@ -199,6 +199,36 @@ use kartik\daterange\DateRangePicker;
 
 ```
 
+##自定义列表页_按纽模板_增加判断_小明
+
+```php
+
+[
+    'class' => 'yii\grid\ActionColumn',
+    "header" => "<a href='#'>操作</a>",
+    'template' => '{button}',
+    "buttons" =>[
+        'button'=>function ($url, $model, $key){
+            $v = Html::a('详情', Url::toRoute(['notice/view', 'id' => $model->id]));
+            $d = Html::a('删除', ['notice/delete', 'id' => $model->id], ['class' => '', 'data-confirm' => '是否确认删除该公告?','data-method'=>'post','data-pjax'=>0]);
+            $e = Html::a('编辑', Url::toRoute(['notice/update', 'id' => $model->id]));
+            $r = Html::a('撤销', ['notice/revoke', 'id' => $model->id], ['class' => '', 'data-confirm' => '是否确认撤销该公告?','data-method'=>'post','data-pjax'=>0]);
+            switch ($model->status) {
+                case '0':
+                   return $e.' '.$v.' '.$d;
+                break;
+                case '1':
+                   return $v.' '.$r;
+                break;
+                case '2':
+                   return $v;
+                break;
+            } 
+        }
+    ]
+]
+```
+
 #URL地址生成
 ##url_to
 ```php
@@ -215,6 +245,28 @@ use kartik\daterange\DateRangePicker;
 <?php echo Html::a('确认发货', ['order/confirm','id'=>$_GET['id']], ['class' => 'button_submit', 'data-confirm' => '确认已发货？']) ?>
 ```
 
+##列表页_自定义编号_删除
+![](view/view_number.png)
+```php
+  <?php echo GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            [
+			   //header自定义显示名称，如果将条记录删除，则系列号则没有了
+				'class' => 'yii\grid\SerialColumn','header'=>'编号'  
+			],
+           
+			....
+            'name',
+            'amount',
+           ...
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+```
 
 
 
