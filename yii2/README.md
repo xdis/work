@@ -54,7 +54,7 @@
 	- 
 
 - 案例 
-	- [店铺](shop/shop.md)
+	- [店铺](shop/README.md)
 
 
 
