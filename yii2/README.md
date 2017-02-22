@@ -45,8 +45,7 @@
 			- 条件过滤_where
 				- [where_普通使用](model.md#where_普通使用) (andwhere)
 				- [where_大于小于](model.md#where_大于小于) (andFilterWhere)
-				- [where_like](model.md#where_like) (andFilterWhere)
-				- 
+				- [where_like查询](model.md#where_like) (andFilterWhere)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 
