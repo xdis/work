@@ -370,4 +370,22 @@ index.php
         ],
 
 ```
+
+#条件过滤_where
+##where_普通使用
+```php
+$query->andwhere('product.sys_category_id = ' . $type);
+```
+
+##where_大于小于
+```php
+ $query->andFilterWhere(['>', 'pricelist.start_at', $_start_at]);
+ $query->andFilterWhere(['<', 'pricelist.end_at', $_end_at]);
+ 
+```
+
+##where_like
+```php
+  $query->andFilterWhere(['like', 'product.name', $_product_name]);
+  $query->andFilterWhere(['like', 'pricelist.name', $_pricelist_name]);
 ```

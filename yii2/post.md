@@ -330,3 +330,163 @@ public function pro_list($page, $type)
 
 ```
 
+##leftJoin_分页_接口_视图_搜索
+>get方式搜索
+>关联视图
+>分页
+>接口JSON发送
+
+
+```php
+/**
+     *接口- 企业店铺-获取折叠的产品列表
+     * @param $company_id //店铺公司ID
+     * @param $page //分页
+     * @param $type //类型 2 酒店,4 门票，5餐厅，6 购物店,100 线路,
+     * @author cmk
+     * http://url/coshop/default/i-product-list?company_id=60&page=1&type=4
+     * http://url/coshop/default/i-product-list?company_id=60&page=1&type=4&product_name=假&pricelist_name=普通
+     * http://url/coshop/default/i-product-list?company_id=60&page=1&type=4&start_at=2017/02/16&end_at=2017/02/17
+     * http://url/coshop/default/i-product-list?company_id=60&page=1&type=4&start_at=2017/02/16&city_name=深
+     */
+    public function actionIProductList($company_id, $page, $type) {
+
+        try {
+
+
+            $product_compayId = $company_id;//对应的产品表公司ID
+            $login_companyId = Yii::$app->user->getCompanyID(); //登陆的企业ID
+            $_login_company_id = Yii::$app->user->getCompanyId();
+            $page = intval($page);
+
+            //产品名
+            $_product_name = Yii::$app->getRequest()->get('product_name');
+
+            //价目名
+            $_pricelist_name = Yii::$app->getRequest()->get('pricelist_name');
+
+            //开始日期
+            //$_start_at =  strtotime(intval(Yii::$app->getRequest()->get('start_at')))-3600*24;
+            $_start_at = Yii::$app->getRequest()->get('start_at') ? strtotime(Yii::$app->getRequest()->get('start_at')) - 3600 * 24 : '';
+
+            //结束日期
+            //$_end_at =  strtotime(intval(Yii::$app->getRequest()->get('end_at')))+3600*24;;
+            $_end_at = Yii::$app->getRequest()->get('end_at') ? strtotime(Yii::$app->getRequest()->get('end_at')) + 3600 * 24 : '';
+
+            //省
+            $_province_name = Yii::$app->getRequest()->get('province_name');
+
+            //市
+            $_city_name = Yii::$app->getRequest()->get('city_name');
+
+            /**
+             * 账期/价格/存库 计算
+             */
+            //已经登陆了
+            if (!Yii::$app->user->isGuest) {
+                if (!$login_companyId) {
+                    throw new ErrorException('没有公司ID，请重新登陆');
+                }
+                $account_at = "f_get_payment_term({$login_companyId},{$product_compayId},product.id) as _account"; //获取客户的账期
+                $stock = "f_get_product_stock(product.id,pricelist.id) as _stock";
+                $price = "f_getProductPrice(pricelist.id,{$product_compayId},{$_login_company_id}) as _price";
+            } else {
+                $account_at = "('登陆后可见') as _account"; //获取客户的账期
+                $stock = "('登陆后可见') as _stock";
+                $price = "('登陆后可见') as _price";
+            }
+
+            $_select = [
+                'product.id as _product_id',
+                'product.supplier_id',
+                'product.company_id',
+                'product.name as _product_name',
+                'pricelist.id AS _pricelist_id',
+                'pricelist.name as _pricelist_name',
+                "FROM_UNIXTIME(pricelist.start_at,'%Y/%m/%d') as start_at",
+                "FROM_UNIXTIME(pricelist.end_at,'%Y/%m/%d') as end_at",
+                'v_region._province_name',
+                'v_region._city_name',
+                $account_at,
+                $stock,
+                $price,
+
+            ];
+
+            $query = Product::find()->select($_select)->where(
+                [
+                    'product.company_id' => $company_id,
+                    'product.is_on_sale' => 1,
+                    'product.is_deleted' => 0,
+                ]
+            );
+
+            $query->leftJoin('pricelist', 'pricelist.product_id = product.id AND pricelist.is_default = 1');
+            $query->leftJoin('supplier', 'supplier.id = product.supplier_id');
+            $query->leftJoin('company', 'company.id = product.company_id');
+            $query->leftJoin('v_region', 'v_region._product_id = product.id');
+            //  $_rows = $query->asArray()->all();
+
+            $query->andwhere('product.sys_category_id = ' . $type);
+            //条件过滤
+            $query->andFilterWhere(['like', 'product.name', $_product_name]);
+            $query->andFilterWhere(['like', 'pricelist.name', $_pricelist_name]);
+            $query->andFilterWhere(['like', '_province_name', $_province_name]);
+            $query->andFilterWhere(['like', '_city_name', $_city_name]);
+            if ($_start_at) {
+                //&start_at=2017/02/17
+                $query->andFilterWhere(['>', 'pricelist.start_at', $_start_at]);
+            }
+
+            if ($_end_at) {
+                //&end_at=2017/02/17
+                $query->andFilterWhere(['<', 'pricelist.end_at', $_end_at]);
+            }
+
+            $pages = new Pagination([
+                'totalCount' => $query->count(),
+                'pageSize' => 10,
+                'page' => $page <= 0 ? 0 : $page - 1,
+            ]);
+
+            $models = $query->offset($pages->offset)->limit($pages->limit)->asArray()->all();
+            //dp($models);
+
+            //获取分组
+            $Product = new Product();
+            $groups = $Product->getProductGroup($company_id);
+            //dp($groups);
+            $arr = [];
+
+            //分组汇总
+            foreach ($models as $model) {
+
+                foreach ($groups as $group) {
+                    if ($group['_source'] == 'company') {
+                        if ($group['company_id'] == $model['company_id'] && !$model['supplier_id']) {
+                            $arr[$group['company_id']]['group_name'] = $group['_brand_name'];
+                            $arr[$group['company_id']]['list'][] = $model;
+                            //账期
+                        }
+                    } else {
+                        //供应商入库
+                        if ($model['supplier_id'] > 0 && $group['supplier_id'] == $model['supplier_id']) {
+                            $arr[$group['supplier_id']]['group_name'] = $group['_brand_name'];
+                            $arr[$group['supplier_id']]['list'][] = $model;
+                        }
+                    }
+                }
+            }
+            $res['page'] = $pages->page + 1;
+            $res['page_count'] = $pages->pageCount;
+            $res['data'] = $arr;
+            return $this->ajaxSuccess('成功', '', $res);
+        } catch (\Exception $e) {
+            $res['data'] = $e->getMessage();
+            return $this->ajaxSuccess('失败', '', $res);
+        }
+
+    }
+
+```
+
