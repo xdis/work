@@ -56,10 +56,10 @@
 - 案例 
 	- [店铺](shop/README.md)
 		- 核心技术
-			- [1后端跨域解决方案](#1后端跨域解决方案)  
-			- [2怎样在请求头加上Companyid和Ownerid两个参数](shop/README.md#2怎样在请求头加上Companyid和Ownerid两个参数)   
-			- [3在请求时候_后端怎样获取Header里的两个参数](shop/README.md#3在请求时候_后端怎样获取Header里的两个参数)
-			- [3_1php获取header的函数解析](shop/README.md#3_1php获取header的函数解析)
+			- [1后端跨域解决方案](shop.md#1后端跨域解决方案)  
+			- [2怎样在请求头加上Companyid和Ownerid两个参数](shop.md#2怎样在请求头加上Companyid和Ownerid两个参数)   
+			- [3在请求时候_后端怎样获取Header里的两个参数](shop.md#3在请求时候_后端怎样获取Header里的两个参数)
+			- [3_1php获取header的函数解析](shop.md#3_1php获取header的函数解析)
 	- 短信模块分析
 	- 权限分析_yii2_admin
 
