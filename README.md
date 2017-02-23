@@ -5,4 +5,9 @@
 	- [markdownw使用](soft/markdown.md)
 - [Yii2](yii2/)
 
+- setup
+	- mysql
+		- [主从配置_jiapeng](mysql_master_slave_jiapeng.md)
+			- [主库配置](mysql_master_slave_jiapeng.md#主库配置)
+			- [从库配置](mysql_master_slave_jiapeng.md#从库配置)
 
