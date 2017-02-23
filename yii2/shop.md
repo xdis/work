@@ -26,11 +26,11 @@
 
 
 ##店铺列表页
-![](1.1.shop_list.png)
+![](shop/1.1.shop_list.png)
 
 ##头部 Request Headers绑定两个参数 Companyid 和Ownerid
 
-![](1.2.request_header_field.png)
+![](shop/1.2.request_header_field.png)
 
 ##1后端跨域解决方案
 company/modules/shop/controllers/DpBaseController.php  
