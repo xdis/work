@@ -4,3 +4,8 @@
 git commit --amend
 ```
 
+##获取最新的分支列表
+```
+git fetch origin
+```
+
