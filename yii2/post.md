@@ -490,3 +490,65 @@ public function pro_list($page, $type)
 
 ```
 
+##利用模型get表关联查询_wqw 
+>本例子 产品表获取分类名称
+>关联 product.catetory_id = product_category.id,获取product_category.name
+
+##Controller
+```php
+
+	public function actionView() {
+	
+	    //获取 “类别”
+	    $model = $this->findModel($product_id);
+		/**
+		* 第一个单词小写，后面的大写跟上
+		*category对应product.php模型下的getCategory()
+		* 如果该命名是getDpLine()
+		* 则下面的使用是$model->dpLine()
+		*/
+	    $catetory_name =$model->category ? $model->category->name : '无';
+         
+         return $this->render('view', [
+				...
+                'catetory_name' => $catetory_name,
+            ]);
+        }	
+	}
+
+
+	protected function findModel($id) {
+	    if (($model = Product::findOne($id)) !== null) {
+	        return $model;
+	    } else {
+	        throw new NotFoundHttpException('The requested page does not exist.');
+	    }
+	}
+或者
+    protected function findModel($id)
+    {
+    	return Product::find()->where([
+    			'id' => $id,
+    			'status' => 1,
+    			'is_published_store' => 1,
+    			'is_on_sale' => 1,
+    			'is_deleted' => 0,
+    			'status' => 1,
+    			])->one();
+    }
+```
+
+##Model
+product.php
+```php
+//表间的关联
+    public function getCategory() {
+        return $this->hasOne(ProductCategory::className(), ['id' => 'category_id']);
+    }
+
+```
+
+
+
+
+

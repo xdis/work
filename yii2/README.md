@@ -31,7 +31,8 @@
 			- [leftjoin_详细页](post.md#leftjoin_详细页)
 			- [leftJoin+分页_wqw](post.md#leftjoin_分页_wqw)
 			- [leftJoin+分页_接口_视图_搜索](post.md#leftJoin_分页_接口_视图_搜索)
-
+		- 查询连环招
+			- [利用模型get表关联查询_wqw](post.md#利用模型get表关联查询_wqw)
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)
