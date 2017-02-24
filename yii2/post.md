@@ -259,7 +259,7 @@ public function actionView($id) {
     }
 ```
 
-##leftjoin_分页_韦庆韦
+##leftjoin_分页_wqw
 company/modules/shop/controllers/ProductController.php  
 ```php
 public function pro_list($page, $type)

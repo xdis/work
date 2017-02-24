@@ -2,6 +2,7 @@
 - Yii2
 	- 事件
 		- [事件-邮件发送](事件-邮件发送.md)
+		- 
 	- view
 		- [时间-input输入框选择](view.md#输入框选择日期)
 		- [radio自定义模板](radio自定义模板.md)
@@ -27,7 +28,7 @@
 		- yii2自带函数连接
 			- [leftJoin](post.md#leftjoin)
 			- [leftjoin_详细页](post.md#leftjoin_详细页)
-			- [leftJoin+分页_韦庆韦](post.md#leftjoin_分页_韦庆韦)
+			- [leftJoin+分页_wqw](post.md#leftjoin_分页_wqw)
 			- [leftJoin+分页_接口_视图_搜索](post.md#leftJoin_分页_接口_视图_搜索)
 
     - model
@@ -61,7 +62,9 @@
 			- [3在请求时候_后端怎样获取Header里的两个参数](shop.md#3在请求时候_后端怎样获取Header里的两个参数)
 			- [3_1php获取header的函数解析](shop.md#3_1php获取header的函数解析)
 	- 短信模块分析
+		- 
 	- 权限分析_yii2_admin
+	- App接口全局配置
 
 
 
