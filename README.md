@@ -7,4 +7,5 @@
 
 - setup
 	- [mysql](setup/)
+	- [git](git/)
 
