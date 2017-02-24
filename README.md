@@ -6,5 +6,5 @@
 - [Yii2](yii2/)
 
 - setup
-	- [mysql](setup/mysql)
+	- [mysql](setup/)
 
