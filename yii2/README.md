@@ -8,8 +8,8 @@
 			- [1创建一个TestWidget](widget.md#1创建一个TestWidget)
 			- [2view页调用](widget.md#2view页调用)
 		- widget仿WeUI上传插件 (自定义图片上传插件)
-			- [Widgt主文件](widget.md#Widgt主文件)
-			- [Asset配置](widget.md#Asset配置)
+			- [Widgt主文件](widget.md#widgt主文件)
+			- [Asset配置](widget.md#asset配置)
 			- [视图调用](widget.md#视图调用)
 	- AssetBundle
 		- [AssetBundle简单使用](AssetBundle.md#AssetBundle简单使用)
