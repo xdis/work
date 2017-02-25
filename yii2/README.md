@@ -11,6 +11,7 @@
 		- AssetBundle简单使用
 			- [自定义css和js](AssetBundle.md#自定义css和js)
 			- [js解决依赖关系](AssetBundle.md#js解决依赖关系)
+			- [view层使用](AssetBundle.md#view层使用)
 		- 
 	- view
 		- [时间-input输入框选择](view.md#输入框选择日期)

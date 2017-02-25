@@ -1,15 +1,16 @@
 #AssetBundle简单使用
 > 来源:[yii2项目实战-资源包管理](http://www.manks.top/document/yii2-asset-bundle.html)
 
-	- [自定义css和js](#自定义css和js)
-	- [js解决依赖关系](#js解决依赖关系)
+	- [自定义css和js](AssetBundle.md#自定义css和js)
+	- [js解决依赖关系](AssetBundle.md#js解决依赖关系)
+	- [view层使用](AssetBundle.md#view层使用)
 
 ##访问地址
 http://ysk.dev/admin/demo-assets/index
 
-![](Asset\assets_load_css.png)
+![](Asset/assets_load_css.png)
 
-![](Asset\assets_load_js.png)
+![](Asset/assets_load_js.png)
 
 ##自定义css和js
 ###1.新建TestAsset.php
@@ -67,5 +68,14 @@ class Test2Asset extends AssetBundle {
         '//cdn.bootcss.com/jquery/3.1.1/jquery.js'
     ];
 }
+
+```
+
+##view层使用
+```php
+//加载自定义css或JS
+\backend\assets\TestAsset::register($this);
+
+<div class="testContent">测试内容</div>
 
 ```
