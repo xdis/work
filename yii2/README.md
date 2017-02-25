@@ -8,7 +8,7 @@
 			- [1创建一个TestWidget](widget.md#1创建一个TestWidget)
 			- [2view页调用](widget.md#2view页调用)
 	- AssetBundle
-		- AssetBundle简单使用
+		- [AssetBundle简单使用](AssetBundle.md#AssetBundle简单使用)
 			- [自定义css和js](AssetBundle.md#自定义css和js)
 			- [js解决依赖关系](AssetBundle.md#js解决依赖关系)
 			- [view层使用](AssetBundle.md#view层使用)

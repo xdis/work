@@ -1,9 +1,9 @@
 #AssetBundle简单使用
 > 来源:[yii2项目实战-资源包管理](http://www.manks.top/document/yii2-asset-bundle.html)
 
-	- [自定义css和js](AssetBundle.md#自定义css和js)
-	- [js解决依赖关系](AssetBundle.md#js解决依赖关系)
-	- [view层使用](AssetBundle.md#view层使用)
+- [自定义css和js](AssetBundle.md#自定义css和js)
+- [js解决依赖关系](AssetBundle.md#js解决依赖关系)
+- [view层使用](AssetBundle.md#view层使用)
 
 ##访问地址
 http://ysk.dev/admin/demo-assets/index
