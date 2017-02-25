@@ -52,7 +52,7 @@ class TestAsset extends AssetBundle {
 
 
 ##js解决依赖关系
->>如加载的test.js需要加载jquery.js则在新建一个Assets的文件来存放，然后来加载
+>如加载的test.js需要加载jquery.js则在新建一个Assets的文件来存放，然后来加载
 
 ###存放jquery.js文件于Test2Asset.php  
 路径：backend/assets/Test2Asset.php  
