@@ -389,3 +389,73 @@ $query->andwhere('product.sys_category_id = ' . $type);
   $query->andFilterWhere(['like', 'product.name', $_product_name]);
   $query->andFilterWhere(['like', 'pricelist.name', $_pricelist_name]);
 ```
+
+---
+#自定义场景
+- [model定义](model.md#model定义)
+- [controller使用](model.md#controller使用)
+
+##model定义
+```php
+class SignupForm extends Model{
+ const SCENARIO_GET_SMS = 'sms';
+
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+		...
+		//场景要过滤的字段
+        $scenarios[self::SCENARIO_GET_SMS] = ['username', 'mobile', 'password', 'user_type'];
+    }
+}
+```
+
+##controller使用
+```php
+class SignInController extends BaseController{
+    public function registerSmsBeforeCallback($action)
+    {
+        $model = new SignupForm();
+        //1.定义场景
+        $model->setScenario(SignupForm::SCENARIO_GET_SMS);
+        $model->load(Yii::$app->getRequest()->post());
+        if ($model->validate()) {
+            return true;
+        }
+        $action->error = current($model->getErrors())[0];
+        return false;
+    }
+}
+```
+---
+#指定字段的自定义函数过滤
+common/models/Activity.php
+##场景
+当这个字段valid_type为0时，必须要输入天数，为1时，必须要输入时间
+```php
+    public function rules() {
+        return [
+            [['from_at', 'to_at', 'name','amount','sent_condition'], 'required'],
+            [['valid_type'], 'check_valid_type'],
+        ];
+    }
+
+    /**
+     * 奖券有效期选择后判断
+     * @author cmk
+     */
+    function check_valid_type() {
+        if (!$this->hasErrors()) {
+            if ($this->valid_type == 0) {
+                if (!$this->valid_period) {
+                    $this->addError('valid_period', '奖券有效期 - 天数还没有填');
+                }
+            }
+            if ($this->valid_type == 1) {
+                if (!$this->valid_end_at) {
+                    $this->addError('valid_end_at', '奖券有效期 - 截止日期还没有填');
+                }
+            }
+        }
+    }
+```

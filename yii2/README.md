@@ -16,7 +16,6 @@
 			- [自定义css和js](AssetBundle.md#自定义css和js)
 			- [js解决依赖关系](AssetBundle.md#js解决依赖关系)
 			- [view层使用](AssetBundle.md#view层使用)
-		- 
 	- view
 		- [时间-input输入框选择](view.md#输入框选择日期)
 		- [radio自定义模板](radio自定义模板.md)
@@ -47,7 +46,7 @@
 		- 查询连环招
 			- [利用模型get表关联查询_wqw](post.md#利用模型get表关联查询_wqw)
 		- actions
-			- [指定控制器嵌入全局性方法action](post.md#指定控制器嵌入全局性方法action) 即全局性方法可以前后台使用,如短信	
+			- [指定控制器嵌入全局性方法action](post.md#指定控制器嵌入全局性方法action) (即全局性方法可以前后台使用,如短信)
 				- [指定控制器设置action配置](post.md#指定控制器设置action配置)
 				- [全局方法定义开发](post.md#全局方法定义开发)
     - model
@@ -66,6 +65,10 @@
 				- [where_普通使用](model.md#where_普通使用) (andwhere)
 				- [where_大于小于](model.md#where_大于小于) (andFilterWhere)
 				- [where_like查询](model.md#where_like) (andFilterWhere)
+		- [自定义场景](model.md#自定义场景)
+			 - [model定义](model.md#model定义)
+			 - [controller使用](model.md#controller使用)
+		-  [指定字段的自定义函数过滤](model.md#指定字段的自定义函数过滤)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 
