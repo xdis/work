@@ -564,8 +564,8 @@ http://ysk.dev/site/test?get=abc
 
 ![](controller/action_global_diy.png)
 
-- 指定控制器设置action配置
-- 全局方法定义开发
+- [指定控制器设置action配置](post.md#指定控制器设置action配置)
+- [全局方法定义开发](post.md#全局方法定义开发)
 
 
 ##指定控制器设置action配置
