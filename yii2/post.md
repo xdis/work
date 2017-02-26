@@ -489,7 +489,8 @@ public function pro_list($page, $type)
     }
 
 ```
-
+---
+#查询连环招
 ##利用模型get表关联查询_wqw 
 >本例子 产品表获取分类名称
 >关联 product.catetory_id = product_category.id,获取product_category.name
@@ -547,6 +548,148 @@ product.php
     }
 
 ```
+---
+#actions
+##指定控制器嵌入全局性方法action
+>即全局性方法可以前后台使用, 如短信
+>所谓一处定义,全局通用
+>来源 [zhoubo短信企业后台调用短信](controller/SignInController.php) 
+>company/controllers/SignInController.php
+
+###使用场景
+如短信，在前后台都会使用
+
+###访问地址
+http://ysk.dev/site/test?get=abc
+
+![](controller/action_global_diy.png)
+
+- 指定控制器设置action配置
+- 全局方法定义开发
+
+
+##指定控制器设置action配置
+> 本例子参数zhoubo的短信发送的例子 代码如下
+
+frontend/controllers/SiteController.php
+
+```php
+namespace backend\controllers;
+use Yii;
+use backend\models\Test;
+use backend\models\TestSearch;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+use yii\helpers\Url;
+/**
+ * TestController implements the CRUD actions for Test model.
+ */
+class TestController extends Controller
+{
+ public function actions()
+    {
+        return [
+			...
+            'test'=>[
+                'class'=>'common\actions\TestAction',
+                'param1'=>'参数1',
+                'param2'=>'参数2',
+                'beforeCallback' => [$this, 'registerSmsBeforeCallback'],
+                'initCallback' => [$this, 'registerSmsInitCallback'],
+            ]
+        ];
+    }
+
+
+    /**
+     * @author cmk
+     *  第1步  自定义函数  initCallback
+     *  获取表单输入框内容
+     */
+   public function registerSmsInitCallback($action){
+        $action->mobile = '134185112232';
+   }
+
+    /**
+     * @author cmk
+     *  第2步  自定义函数  initCallback
+     *  后端验证规则 是否输入正确
+     * @param $action
+     * @return bool
+     */
+    public function registerSmsBeforeCallback($action){
+
+   }
+}
+```
+
+##全局方法定义开发
+common/actions/TestAction.php
+```php
+namespace common\actions;
+use yii\base\Action;
+
+/**
+ * Class TestAction
+ * @package common\actions
+ *
+ * Example
+ * @url  http://ysk.dev/site/test?get=abc
+ *  public function actions(){
+ *     return [
+*           'test'=>[
+ *          'class'=>'common\actions\TestAction',
+ *          'param1'=>'参数1',
+ *           'param2'=>'参数2',
+ *              'initCallback'=> 'initCallback' => [$this, 'registerSmsInitCallback'],
+ *              'beforeCallback' => [$this, 'registerSmsBeforeCallback'],
+ *          ]
+ *    ]
+ * }
+ */
+class TestAction extends Action
+{
+    public $param1 = null;
+    public $param2 = null;
+
+    /**
+     * @var string 手机号码
+     */
+    public $mobile;
+    /**
+     * @var \Closure
+     * 自定义函数  初始化函数  第1步
+     */
+    public $initCallback;
+
+
+    /**
+     * @var \Closure
+     * 自定义函数    初始化函数  第2步
+     */
+    public $beforeCallback;
+
+
+
+    public function run($get = null)
+    {
+        //自定义函数 使用
+        if($this->initCallback && ($this->initCallback instanceof \Closure || is_callable($this->initCallback))){
+            call_user_func_array($this->initCallback,[$this]);
+        }
+
+        return $this->controller->render('test', [
+            'get' => $get,
+            'param1' => $this->param1,
+            'param2' => $this->param2,
+            'mobile'=>$this->mobile
+        ]);
+    }
+
+}
+```
+---
 
 
 
