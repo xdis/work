@@ -73,12 +73,13 @@ use yii\widgets\InputWidget;
  *
  * @example
  * 同步单图上传的使用
- * ```php
+ * 
  *   echo $form->field($model, 'image_url')->widget('common\widgets\upload\FileInput');
- * ```
+ * 
  *
  * @see http://www.manks.top
  */
+
 class FileInput extends InputWidget {
     public $clientOptions = [];
 
@@ -141,3 +142,92 @@ class FileInputAsset extends AssetBundle {
 ```php
 <?= $form->field($model, 'pid')->widget('common\widgets\upload\FileInput') ?>
 ```
+
+---
+#widget和behavior一起使用
+>来源：志宽城市widget效果 
+>company/widgets/SelectCity.php
+>调用 <?= SelectCity::widget(['attribute' => 'xxoo']) ?>
+
+
+- [widget代码](widget.md#widget代码)
+- [behavior代码](widget.md#behavior代码)
+- [视图使用](widget.md#视图使用)
+
+##载图
+![](widget/widget_behavior.png)
+
+##访问地址
+http://ysk.dev/admin/demo-widget
+
+
+##widget代码
+common/widgets/TestWidget.php  
+
+```php
+namespace common\widgets;
+
+use yii\base\Widget;
+use common\behaviors\CitySelectorBehavior;
+
+class TestWidget extends Widget {
+
+    public static $runTime = 0;
+    public function behaviors()
+    {
+        return [
+            //加载指定的class
+            ['class' => CitySelectorBehavior::className(), 'targetRuntime' => self::$runTime],
+        ];
+    }
+
+    public function run(){
+        echo "this is my test widget2";
+    }
+}
+
+```
+##behavior代码
+common/behaviors/CitySelectorBehavior.php  
+```php
+namespace common\behaviors;
+
+use yii\base\Widget;
+use yii\base\Behavior;
+
+class CitySelectorBehavior extends Behavior
+{
+    public $targetRuntime;
+
+
+    public function events()
+    {
+        return [
+            //设置在winget运行之前运行
+            Widget::EVENT_BEFORE_RUN => 'beforeRun',
+            //`设置在winget运行之后运行
+            Widget::EVENT_AFTER_RUN => 'afterRun',
+        ];
+    }
+
+    public function beforeRun($event){
+        echo 'Behavior调用代码之前代码运行'."<br />";
+    }
+    public function afterRun($event)
+    {
+
+        echo "<br />".'Behavior调用代码之后代码运行'."<br />";
+    }
+
+    public static function generateId()
+    {
+        return md5(time() . mt_rand(1000, 9999));
+    }
+}
+```
+
+##视图使用
+```php
+echo \common\widgets\TestWidget::widget();
+```
+---

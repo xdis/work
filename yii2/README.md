@@ -11,6 +11,10 @@
 			- [Widgt主文件](widget.md#widgt主文件)
 			- [Asset配置](widget.md#asset配置)
 			- [视图调用](widget.md#视图调用)
+		- [widget和behavior一起使用](widget.md#widget和behavior一起使用)
+			- [widget代码](widget.md#widget代码)
+			- [behavior代码](widget.md#behavior代码)
+			- [视图使用](widget.md#视图使用)
 	- AssetBundle
 		- [AssetBundle简单使用](AssetBundle.md#AssetBundle简单使用)
 			- [自定义css和js](AssetBundle.md#自定义css和js)
@@ -74,8 +78,6 @@
 
 - 疑问
 	- [为什么日志不入数据库](question.md#为什么日志不入数据库)
-	- 
-
 - 案例 
 	- [店铺](shop/README.md)
 		- 核心技术
