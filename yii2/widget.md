@@ -35,9 +35,33 @@ https://github.com/408824338/test-yii2/tree/master/common/widgets/upload
 
 ![](widget/widget_WeUI_demo1.png)
 
-![](widget/widget_WeUI_demo2.png)
+##上传前html源代码
+```html
+<div class="form-group field-procductcategory-pid">
+<label class="control-label" for="procductcategory-pid">分类</label>
+<div class="file-div">
+<ul class="uploaderFiles"></ul>
+<div class="input-box"><input type="file" id="procductcategory-pid" name="ProcductCategory[pid]"></div></div>
 
-##Widgt主文件
+<div class="help-block"></div>
+</div>
+```
+
+![](widget/widget_WeUI_demo2.png)
+##上传后html源代码
+```html
+<div class="form-group field-procductcategory-pid">
+<label class="control-label" for="procductcategory-pid">分类</label>
+<div class="file-div"><ul class="uploaderFiles">
+	<li class="uploader__file" style="background-image:url(blob:http://ysk.dev/ee2372a3-8392-4c36-9ae3-4294637d197e)"></li>
+</ul>
+<div class="input-box"><input type="file" id="procductcategory-pid" name="ProcductCategory[pid]"></div></div>
+
+<div class="help-block"></div>
+</div>
+```
+
+##widgt主文件
 common/widgets/upload/FileInput.php
 ```php
 namespace common\widgets\upload;
@@ -88,7 +112,7 @@ class FileInput extends InputWidget {
 
 }
 ```
-##Asset配置
+##asset配置
 common/widgets/upload/FileInputAsset.php
 ```php
 namespace common\widgets\upload;
