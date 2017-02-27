@@ -1,7 +1,7 @@
 
 - Yii2
 	- 事件
-		- [事件-邮件发送](事件-邮件发送.md)
+		- [事件-邮件发送](事件-邮件发送.md) trigger on
 		- [事件-简单例子](事件-简单例子.md)
 	- widget
 		- [widget简单例子](widget.md#widget简单例子)
