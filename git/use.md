@@ -6,10 +6,10 @@
 	- c
 
 
-git add .
-git ci -m '备注'
-git pull --rebase origin master
-git push origin master
+git add .  
+git ci -m '备注'  
+git pull --rebase origin master  
+git push origin master  
 
 ## 开发环境与测试环境的切换
 git co dev
