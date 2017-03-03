@@ -396,6 +396,7 @@ public function pro_list($page, $type)
                 $price = "('登陆后可见') as _price";
             }
 
+		//注：这边好奇怪竟然不用 product.* 跟上面的例子。有些冲突！先记下
             $_select = [
                 'product.id as _product_id',
                 'product.supplier_id',
