@@ -1,13 +1,15 @@
 
 - Yii2
+	-  干货
+		-  
 	- session
 		- 保存与获取
 			- 方法1
-			-  Yii::$app->getSession()->set('mobile', $user->mobile);
-			-  Yii::$app->getSession()->get('mobile');
+				-  Yii::$app->getSession()->set('mobile', $user->mobile);
+				-  Yii::$app->getSession()->get('mobile');
 			-  方法2
-			-  Yii::$app->session->set('rtn_url', $_rtn_url);
-			-  Yii::$app->session->get('rtn_url');
+				-  Yii::$app->session->set('rtn_url', $_rtn_url);
+				-  Yii::$app->session->get('rtn_url');
 	- 日志
 		- 存储 
 			- Yii::getLogger()->log($message, $level, $category = 'application')
@@ -104,6 +106,8 @@
 		- 
 	- 权限分析_yii2_admin
 	- App接口全局配置
+	- 用户登陆
+		- yii start kit
 
 	- 农行
 		- [socket请求文档](nongye/socket.php) tcp/ip请求
