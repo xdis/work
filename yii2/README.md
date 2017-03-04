@@ -1,6 +1,7 @@
 
 - Yii2
 	-  干货
+		- [符合PSR-1/PSR-2的PHP编程规范实例](../php/standard.php)
 		- [干货集](college/awesome-yii2.md) 
 	- session
 		- 保存与获取
