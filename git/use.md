@@ -1,11 +1,6 @@
 ##配置
 
 ## 一般使用流程
-- a
-	- b
-	- c
-
-
 git add .  
 git ci -m '备注'  
 git pull --rebase origin master  
