@@ -27,26 +27,26 @@ git push -u origin master
 
 ##向多个仓库推送
 
-###一次性推送
-将远程仓库地址放入origin即可
-1. 添加远程仓库
-git remote set-url --add origin git@code.csdn.net:lhorse003/work.git
+###一次性推送  
+将远程仓库地址放入origin即可  
+1. 添加远程仓库  
+git remote set-url --add origin git@code.csdn.net:lhorse003/work.git  
 
 2.推送	
-git push -f origin master (注：可以不加-f,如果出现有问题的时候，则加上)
+git push -f origin master (注：可以不加-f,如果出现有问题的时候，则加上)  
 
-###选择性推送
-将远程仓库加入到指定的命名，如csdn的仓库的，命名为csdn
-1.添加远程仓库
-git remote add csdn git@code.csdn.net:lhorse003/work.git
+###选择性推送  
+将远程仓库加入到指定的命名，如csdn的仓库的，命名为csdn  
+1.添加远程仓库  
+git remote add csdn git@code.csdn.net:lhorse003/work.git  
 
-2.推送
+2.推送  
 git push csdn master (注： 将master分支推送到远程仓库csdn的master分支  
-git push [alias] [branch]，就会将你的 [branch] 分支推送成为 [alias] 远端上的 [branch] 分支。)
+git push [alias] [branch]，就会将你的 [branch] 分支推送成为 [alias] 远端上的 [branch] 分支。)  
 
 ---
 ##本地仓库里加入多个远程仓库_fetch_commit到本地仓库
->场景：仓库A，仓库B，想要利用仓库A的数据
+>场景：仓库A，仓库B，想要利用仓库A的数据  
 
 
 ### 进入仓库B,添加远程仓库A，仓库名为test7
