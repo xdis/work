@@ -24,5 +24,12 @@ git commit --amend
 ```
 git fetch origin
 ```
+##创建分支
+//在开发分支(dev),创建一个子分类 feature
+```
+#git checkout dev
+#git checkout -b feature  //创建分支
+```
+
 
 

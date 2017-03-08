@@ -3,8 +3,12 @@
 		- [配置](use.md#配置)
 		- 对上次的提交的commit的描述进行修改  git commit --amend
 		- 获取最新的分支列表  git fetch origin
-		- 获取远程所有分支 get branch -a
-		- 获取远程仓库列表 get remote
+		- 获取远程所有分支 get branch -a 
+		- 获取远程仓库列表 get remote 或 git remote -v
+		- [创建分支](use.md#创建分支) git branch -b 分支名
 	- 案例
-		- 
+		- 向多个仓库推送
+			- 一次性推送 git push -f origin master
+			- 选择性推送 gti push cdsn master 
+		- 本地仓库里加入多个远程仓库,仅fetch commit到本地仓库
 
