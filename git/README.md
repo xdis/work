@@ -27,8 +27,8 @@
 			- [跟上游分支同步](use.md#跟上游分支同步) 
 			- [高级使用](use.md#高级使用) 
 		- 冲突
-			- rebase模式
-			- merge模式
+			- [rebase模式](use.md#rebase模式) 
+			- [merge模式](use.md#merge模式) 
 	    - 追踪修改 git blame 文件
 	    - 查看该文件是否被提交版本库 git ls-files | grep 文件名
 	    - 本地创建一个远程仓库 git init --bare
@@ -38,7 +38,7 @@
 		- [转移别人的bit仓库到我自己](example.md#转移别人的bit仓库到我自己)
 		- [将当前的目录上传至github](example.md#将当前的目录上传至github)
 		- [向多个仓库推送](example.md#向多个仓库推送)
-			- 一次性推送 git push -f origin master
-			- 选择性推送 gti push cdsn master 
+			- [一次性推送](example.md#一次性推送) git push -f origin master
+			- [选择性推送](example.md#选择性推送) gti push cdsn master 
 		- [本地仓库里加入多个远程仓库_fetch_commit到本地仓库](example.md#本地仓库里加入多个远程仓库_fetch_commit到本地仓库)
 
