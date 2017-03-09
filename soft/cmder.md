@@ -22,8 +22,9 @@ cmd /k "%ConEmuDir%\..\init.bat"  -new_console:d:E:\cmk\qian100\web\vding\vding_
 #### 参数1  为空  
 
 #### 参数2
-```
+
 完整的例子如下
+
 ```
 "%ConEmuDrive%\Program Files\Git\git-cmd.exe" --no-cd --command=usr/bin/bash.exe -l -i  -new_console:d:E:\cmk\qian100\web\vding\vding_dev -cur_console:t:vding
 ```
