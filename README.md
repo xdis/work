@@ -1,8 +1,6 @@
 # 工作总结
 
-- 软件
-	- [markdown注册码](soft/markdown注册码.md)
-	- [markdownw使用](soft/markdown.md)
+- [软件](soft/)
 -  [php](php/)
 - [Yii2](yii2/)
 
