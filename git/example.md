@@ -1,5 +1,45 @@
 #案例
 
+##安阳与微叮操作流程
+>安阳与微叮开发和测试都在8服务器，正式都是4服务器
+>8服务器，安阳只有anyang(正式)和anyang_test(测试)  [注：master废弃]
+>8服务器，微叮有 dev(开发) test(测试)  bata(二测)  master(正式)
+>开发人员仅在微叮上开发
+>注：微叮和安阳其实是一套系统，只不过后面分离出去了
+
+###微叮测试commit推送到安阳的测试环境及发布线上
+```
+//微叮开发测试仓库
+git co dev
+git pull --rebase origin dev
+git log //获取要提送commit
+
+git co test
+git pull origin test
+git cp commit  //cherry-pick
+git push origin test
+
+//到安阳测试仓库
+git fetch vding  //远程仓库
+git log vding/test  //获取微叮那边要提交的commit
+
+git co anyang-test  //切换安阳测试分支
+git pull --rebase origin anyang-test
+git cp commit
+git push origin anyang-test  //终于提交到安阳的测试分支
+
+git co anyang		//切换anyang
+git pull origin anyang
+git cp commit
+git push origin anyang //推送到分支
+git push prod anyang  //推送到正式
+
+【注：如果量大的话，可以使用merge】
+
+```
+
+
+
 ##转移别人的bit仓库到我自己
 ```
 git clone --bare git://github.com/username/project.git

@@ -18,6 +18,7 @@
 			- Yii::error($message, $category = 'application');
 			- Yii::warning($message, $category = 'application');
 			- Yii::info($message, $category = 'application');
+				- 如 Yii::info($log,__METHOD__);
 	- 事件
 		- [事件-邮件发送](事件-邮件发送.md) trigger on
 		- [事件-简单例子](事件-简单例子.md)
