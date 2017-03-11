@@ -17,14 +17,13 @@ vendor/horse003/yii2-event-demo/src/Cat.php
 ```php
     public function shout() {
         echo 'miao maio miao<br />';
-        $this->trigger('miao';
+        $this->trigger('miao');
     }
 ```
 ###老鼠
 vendor/horse003/yii2-event-demo/src/Mourse.php  
 ```php
  class Mourse { 
-     //3.$e 接收事件
      public function run(){
          echo 'mourse is runing<br />';
      }
