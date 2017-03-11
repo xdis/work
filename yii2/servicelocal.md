@@ -3,8 +3,6 @@
 
 ##控制器配置调用
 
-
-##参数配置在文件并调用
 backend/controllers/ServiceLocalController.php  
 ```php
 
@@ -66,8 +64,8 @@ class Car {
 ##访问与输出 
 http://ysk.dev/admin/service-local/index  
 ###输出  
-i am an old man
-i am an woman driver
+i am an old man  
+i am an woman driver  
 
 
 ##参数配置在文件并调用
@@ -126,5 +124,5 @@ class Car {
 http://ysk.dev/admin/di/index  
 ###输出 
 注:这里的输出竟然是同样的结果,有点奇怪!   
-i am an old man
-i am an old man
+i am an old man  
+i am an old man  
