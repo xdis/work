@@ -23,8 +23,12 @@
 		- [事件-邮件发送](事件-邮件发送.md) trigger on  白狼栈提供
 		- [事件-简单例子](事件-简单例子.md)
 		- [猫叫老鼠跑的事件](event/cat_mouse_dog_event.md#猫叫老鼠跑的事件) 慕课提供
+			- 猫添加触发器
+			- 控制器绑定
 	- 行为
 		- 猫叫老鼠添加行为
+			- [给狗添加行为方法和行为变量](behavior.md#给狗添加行为方法和行为变量)
+			- [给狗添加事件与触发](behavior.md#给狗添加事件与触发)
 	- widget
 		- [widget简单例子](widget.md#widget简单例子)
 			- [1创建一个TestWidget](widget.md#1创建一个TestWidget)
