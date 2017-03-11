@@ -116,10 +116,13 @@ class DiController extends Controller {
 
     public function actionIndex() {
         $container = new Container();
+
+		//男司机  
         $container->set('backend\controllers\Driver','backend\controllers\ManDriver');
         $man_car = $container->get('backend\controllers\Car');
         $man_car->run();
 
+		//女司机  
         $container->set('backend\controllers\Driver','backend\controllers\WomanDriver');
         $woman_car = $container->get('backend\controllers\Car');
         $woman_car->run();
@@ -159,8 +162,11 @@ class Car {
 ##访问与输出 
 http://ysk.dev/admin/di/index  
 ###输出 
-i am an old man
-i am an woman driver
+i am an old man  
+i am an woman driver  
+
+---
+
 
 
 
