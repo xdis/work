@@ -20,9 +20,11 @@
 			- Yii::info($message, $category = 'application');
 				- 如 Yii::info($log,__METHOD__);
 	- 事件
-		- [事件-邮件发送](事件-邮件发送.md) trigger on
+		- [事件-邮件发送](事件-邮件发送.md) trigger on  白狼栈提供
 		- [事件-简单例子](事件-简单例子.md)
-		- [猫叫老鼠跑的事件](https://github.com/408824338/yii2-event-demo)
+		- [猫叫老鼠跑的事件](event/cat_mouse_dog_event.md#猫叫老鼠跑的事件) 慕课提供
+	- 行为
+		- 猫叫老鼠添加行为
 	- widget
 		- [widget简单例子](widget.md#widget简单例子)
 			- [1创建一个TestWidget](widget.md#1创建一个TestWidget)
