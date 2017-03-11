@@ -26,13 +26,17 @@
 			- 猫添加触发器
 			- 控制器绑定
 	- 行为
-		- 猫叫老鼠添加行为
+		- 猫叫老鼠添加行为  慕课提供
 			- 类的混合 在类里绑定行为
 				- [给狗添加行为方法和行为变量](behavior.md#给狗添加行为方法和行为变量)
 				- [给狗添加事件与触发](behavior.md#给狗添加事件与触发)
 			- 对象的混合  在控制器里 绑架attachBehavior 解绑detachBehaviors 
 				- [定义行为类](behavior.md#定义行为类)
 				- [控制器绑定或解绑行为](behavior.md#控制器绑定或解绑行为) 
+	- 依赖注入
+		- 慕课
+			- [容器](DiController.md)
+			- 服务器定位
 	- widget
 		- [widget简单例子](widget.md#widget简单例子)
 			- [1创建一个TestWidget](widget.md#1创建一个TestWidget)
