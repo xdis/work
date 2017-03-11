@@ -22,6 +22,7 @@
 	- 事件
 		- [事件-邮件发送](事件-邮件发送.md) trigger on
 		- [事件-简单例子](事件-简单例子.md)
+		- [猫叫老鼠跑的事件](https://github.com/408824338/yii2-event-demo)
 	- widget
 		- [widget简单例子](widget.md#widget简单例子)
 			- [1创建一个TestWidget](widget.md#1创建一个TestWidget)
@@ -95,7 +96,7 @@
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
-		- [自定义扩展](extensions.md自定义扩展)   猫与老鼠事件
+		- [自定义扩展](extensions.md#自定义扩展)   猫与老鼠事件
 
 - 疑问
 	- [为什么日志不入数据库](question.md#为什么日志不入数据库)
