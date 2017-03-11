@@ -1,10 +1,13 @@
 #依赖注入
 
 >司机开车
+
 ##案例1 普通的访问
 >本例子中,太偶合了,如现在添加多一名女司机怎样?
->即下面的里,添加一个接口的方案,解决这个问题
-backend/controllers/DiController.php
+>即下面的里,添加一个接口的方案,解决这个问题  
+
+backend/controllers/DiController.php   
+
 ```php
 
 <?php
