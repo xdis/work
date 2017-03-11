@@ -67,7 +67,7 @@ class DiController extends Controller {
 
     public function actionIndex() {
         $container = new Container();
-        //4.第3步里,因为是以接口为定义类的接口,则这里要set一下,否则会以类的class来查找,导致出错
+        //4.第3步里,因为是以接口为定义类的接口,则这里要set一下,否则会以类的class来实例化,导致出错
         $container->set('backend\controllers\Driver','backend\controllers\ManDriver');
         $car = $container->get('backend\controllers\Car');
         $car->run();

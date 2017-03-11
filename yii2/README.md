@@ -34,9 +34,11 @@
 				- [定义行为类](behavior.md#定义行为类)
 				- [控制器绑定或解绑行为](behavior.md#控制器绑定或解绑行为) 
 	- 依赖注入
-		- 慕课
-			- [容器](DiController.md)
-			- 服务器定位
+		- 慕课    
+			- [容器](DiController.md) 定义并解决依赖关系  new Container()   set  get 
+			- [服务器定位](servicelocal.md) 配置服务的参数信息
+				- [控制器配置调用](servicelocal.md#控制器配置调用)
+				- [参数配置在文件并调用](servicelocal.md#参数配置在文件并调用)
 	- widget
 		- [widget简单例子](widget.md#widget简单例子)
 			- [1创建一个TestWidget](widget.md#1创建一个TestWidget)
