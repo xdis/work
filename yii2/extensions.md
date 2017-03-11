@@ -4,9 +4,13 @@
 >猫与老鼠事件
 
 ###1.实现gii生成extension
-
-
+![](extensions/gii_extension_input.png)
+##自定义路径
+![](extensions/gii_extension_result1.png)
+##生成结果
+![](extensions/gii_extension_result2.png)
 #### 生成之后
+```php
 The extension has been generated successfully.
 To enable it in your application, you need to create a git repository and require it via composer.
 
@@ -34,10 +38,11 @@ And use it in your application.
 
 \horse003\event\AutoloadExample::widget();
 When you have finished development register your extension at packagist.org.
+```
 
-
-会向几处写入信息
+##注：会向几处写入信息
 - vendor\composer\autoload_psr4.php
 - vendor/yiisoft/extensions.php
 
-###
+##访问的路径
+http://ysk.dev/admin/demo-event/animal  
