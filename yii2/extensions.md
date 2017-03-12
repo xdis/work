@@ -46,3 +46,58 @@ When you have finished development register your extension at packagist.org.
 
 ##访问的路径
 http://ysk.dev/admin/demo-event/animal  
+---
+
+##将别人扩展放入自己的仓库_然后从自己的仓库调用
+
+```php
+//1.先定义仓库
+"repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/xxxx/yii2-aceeditor.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/xxxx/yii2-alipay.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/xxxx/yii2-rsa.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/xxxx/yii2-noty.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/xxxx/yii2-bootstrap-sweetalert.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/xxxx/probe.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/xxxx/yii2-file-log-reader.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/xxxx/yii2-sms-module.git"
+    }
+  ],
+
+//2.在加载上面的名字的时间,会查一下上面的仓库是否有对应在的名字
+"require": {
+    "php": ">=5.5.0",
+    "ext-intl": "*",
+
+    "trntv/yii2-aceeditor": "^2.0",
+    "trntv/probe": "^0.2",
+    "funson86/yii2-alipay": "^1.0",
+    "ihacklog/yii2-rsa": "*@dev",****
+    "ihacklog/yii2-sms-module": "*",
+    "makroxyz/yii2-bootstrap-sweetalert": "*",
+    "zabachok/yii2-file-log-reader": "*@dev",
+  },
+```
