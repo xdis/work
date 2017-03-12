@@ -70,6 +70,17 @@ i am an woman driver
 
 ##参数配置在文件并调用
 
+###backend/config/web.php的配置 
+```php 
+ 'components'=>[
+   ...
+	'car'=>[
+          'class'=>'backend\controllers\Car',
+      ],
+  ...
+]
+```
+###代码区
 ```php
 namespace backend\controllers;
 
