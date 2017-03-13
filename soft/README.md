@@ -1,8 +1,9 @@
 #软件
 
 - markdown
-	- [markdown注册码](markdown注册码.md)
 	- [markdownw使用](markdown.md)
+	- [markdownpad](markdownpad.md)
+
 - Cmder-Win下必备神器(替换cmd.exe)
 	- 配置
 		- [配置目录](cmder.md#配置目录)
