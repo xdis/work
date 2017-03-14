@@ -7,7 +7,7 @@
 	- git常用
 		- 对上次的提交的commit的描述进行修改  git commit --amend
 		- 分支
-			- [创建分支](use.md#创建分支) git branch -b 分支名
+			- [创建分支](use.md#创建分支) git checkout -b 分支名
 			- 获取最新的分支列表  git fetch origin
 			- 获取远程所有分支 get branch -a 
 			- 查看远程仓库的分支情况 git remote show 仓库名
