@@ -48,7 +48,100 @@ http://api.v2.v.w/v1/user/token-test?access-token=28E4D51B3625E8C96506C4D845F823
  **备注** 
 
 - 更多返回错误代码请看首页的错误代码描述
+---
+##api认证_zhou
+>>参考 
+###控制器基类
+ common/controllers/BaseRestController.php  
+```php 
+namespace common\controllers;
+use yii\rest\ActiveController;
+use yii\base\InvalidConfigException;
+use yii\base\Model;
+use yii\web\ForbiddenHttpException;
+use rest\filters\auth\SecureTokenAuth;
 
+class BaseRestController extends ActiveController
+{
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
 
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        $behaviors['authenticator'] = [
+            'class' => SecureTokenAuth::className(),
+            //注意，这个只能限制到action,不能指定controller
+            'except' => ['login', 'login-test', 'register', 'get-sms', 'get-register-sms', 'end-user-license','forget-pass'],
+        ];
+        return $behaviors;
+    }
+}
 
+``` 
+### 认证类
+rest/filters/auth/SecureTokenAuth.php  
+```php 
+namespace rest\filters\auth;
 
+use yii\filters\auth\AuthMethod;
+use Yii;
+
+/**
+ * SecureTokenAuth is an action filter that supports the authentication based on the access token passed through a query parameter.
+ * access-token 是rsa加密后的十六进制ASCII字符串
+ * 这是原版auth认证的一个改进版，增加了rsa加密
+ * @TODO 增加timestamp 和 singature
+ * @author HuangYeWuDeng
+ */
+class SecureTokenAuth extends AuthMethod
+{
+    /**
+     * @var string the parameter name for passing the access token
+     */
+    public $tokenParam = 'access-token';
+
+    /**
+     * @inheritdoc
+     */
+    public function authenticate($user, $request, $response)
+    {
+        $accessToken = $request->get($this->tokenParam);
+        $accessTokenBin = hex2bin(strtolower($accessToken));
+        $accessTokenPlain = Yii::$app->rsa->privateDecrypt($accessTokenBin);
+        if (is_string($accessTokenPlain)) {
+            $identity = $user->loginByAccessToken($accessTokenPlain, get_class($this));
+            if ($identity !== null) {
+                return $identity;
+            }
+        }
+        if ($accessTokenPlain !== null) {
+            $this->handleFailure($response);
+        }
+
+        return null;
+    }
+}
+
+``` 
+
+##将密码转换为 access_toekn
+frontend/controllers/TestController.php  
+访问:http://vding.dev/test/enc?pwd=123456
+```php 
+    public function actionEnc()
+    {
+        $password = Yii::$app->request->getQueryParam('pwd');
+        return bin2hex(Yii::$app->rsa->publicEncrypt($password));
+    }
+// 输出 
+3eeb6ade484c07e28e72fe676d237ac72196f7de5b3aab7dcbdd70c4691f118d5b11c306262f2c8932ad342a8b5ec7b499714bea3a41583725ff65e943b187242c70a62c9978987efe778bea8e77f209231301907007528825d16b1704ca296793844e060762d3ab19e2c812857e12deaa8f68de14a9d5e728ad3006adbc6ec2
+
+``` 
+## API的地址访问
+```php 
+http://api.v2.v.w/v1/user/token-test?access-token=3eeb6ade484c07e28e72fe676d237ac72196f7de5b3aab7dcbdd70c4691f118d5b11c306262f2c8932ad342a8b5ec7b499714bea3a41583725ff65e943b187242c70a62c9978987efe778bea8e77f209231301907007528825d16b1704ca296793844e060762d3ab19e2c812857e12deaa8f68de14a9d5e728ad3006adbc6ec2 
+
+```

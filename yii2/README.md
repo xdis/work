@@ -12,6 +12,14 @@
 			-  方法2
 				-  Yii::$app->session->set('rtn_url', $_rtn_url);
 				-  Yii::$app->session->get('rtn_url');
+	- 异常类
+		- 常用
+			- yii\web\BadRequestHttpException
+			- yii\web\ForbiddenHttpException
+			- yii\web\NotFoundHttpException
+			- yii\web\ServerErrorHttpException
+			- yii\web\UnauthorizedHttpException
+			- yii\web\TooManyRequestsHttpException
 	- 日志
 		- 存储 
 			- Yii::getLogger()->log($message, $level, $category = 'application')
@@ -120,7 +128,12 @@
 	- [为什么日志不入数据库](question.md#为什么日志不入数据库)
 - 案例 
 	- vding_api
-		- [api获取TOKENE和访问](vding_api.md)
+		- [api获取TOKENE和访问](vding_api.md#api获取TOKENE和访问)
+		- [api认证_zhou](vding_api.md#api认证_zhou)
+			- 控制器基类定义
+			- 认证类
+			- access-token模拟生成
+			- 完整访问地址
 	- [店铺](shop/README.md)
 		- 核心技术
 			- [1后端跨域解决方案](shop.md#1后端跨域解决方案)  
