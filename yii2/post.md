@@ -692,7 +692,67 @@ class TestAction extends Action
 ```
 ---
 
+## 批量插入
+### 原始的方法foreach
 
+```php
+                foreach ($posts['arr'] as $row) {
+                    $pricelist = new Pricelist();
+                    $pricelist->name = $row['name'];
+                    $pricelist->cost_price = $row['cost_price'];
+                    $pricelist->wholesale_price = $row['wholesale_price'];
+                    $pricelist->list_price = $row['list_price'];
+                    $pricelist->retail_price = $row['retail_price'];
+                    $pricelist->max_count = $posts['sock_num'];
+                    $pricelist->company_id = $posts['company_id'];
+                    $pricelist->product_id = $posts['product_id'];
+                    $pricelist->created_by = $user_id;
+                    $res = $pricelist->save(false);
+                    if (!$res) {
+                        throw new \Exception('价目表入库失败');
+                    }
+                }
+```
+### batchInsert
 
+```php
 
-
+             //2.批量插入价目
+                //a.要插入的表的名称
+                $tableName = Pricelist::tableName();
+                //a1.插入的时间
+                $now = time();
+                //b.要插入的字段
+                $field = [
+                    'name',
+                    'cost_price',
+                    'wholesale_price',
+                    'list_price',
+                    'retail_price',
+                    'max_count',
+                    'company_id',
+                    'product_id',
+                    'created_by',
+                    'created_at',
+                ];
+                //c.插入的数据
+                foreach ($posts['arr'] as $row) {
+                    $insertData[] = [
+                        $row['name'],
+                        $row['cost_price'],
+                        $row['wholesale_price'],
+                        $row['list_price'],
+                        $row['retail_price'],
+                        $posts['sock_num'],
+                        $posts['company_id'],
+                        $posts['product_id'],
+                        $user_id,
+                        $now,
+                    ];
+                }
+                //d.执行插入--返回值为插入成功的数目
+                $okCnt = Yii::$app->db->createCommand()->batchInsert($tableName, $field, $insertData)->execute();
+                if (!$okCnt) {
+                    throw new \Exception('价目表入库失败');
+                }
+```

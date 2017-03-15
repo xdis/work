@@ -90,14 +90,17 @@
 		- yii2自带函数连接
 			- [leftJoin](post.md#leftjoin)
 			- [leftjoin_详细页](post.md#leftjoin_详细页)
-			- [leftjoin+分页_wqw](post.md#leftjoin_分页_wqw)
-			- [leftjoin+分页_接口_视图_搜索](post.md#leftJoin_分页_接口_视图_搜索)
+			- [leftjoin_分页_wqw](post.md#leftjoin_分页_wqw)
+			- [leftjoin_分页_接口_视图_搜索](post.md#leftJoin_分页_接口_视图_搜索)
 		- 查询连环招
 			- [利用模型get表关联查询_wqw](post.md#利用模型get表关联查询_wqw)
 		- actions
 			- [指定控制器嵌入全局性方法action](post.md#指定控制器嵌入全局性方法action) (即全局性方法可以前后台使用,如短信)
 				- [指定控制器设置action配置](post.md#指定控制器设置action配置)
 				- [全局方法定义开发](post.md#全局方法定义开发)
+		- 批量插入
+			- [原始的方法foreach](post.md#原始的方法foreach)
+			- [batchInsert](post.md#batchInsert)
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)
