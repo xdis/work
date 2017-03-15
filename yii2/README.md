@@ -101,6 +101,8 @@
 		- 批量插入
 			- [原始的方法foreach](post.md#原始的方法foreach)
 			- [batchInsert](post.md#batchInsert)
+		- 更新
+			- [updateAll](post.md#updateAll)
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)

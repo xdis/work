@@ -756,3 +756,17 @@ class TestAction extends Action
                     throw new \Exception('价目表入库失败');
                 }
 ```
+
+##更新
+###updateAll
+
+```php
+// 方法1
+Test::updateAll(['status'=>1],['status'=>0,'flag'=>1]);
+
+```
+
+```php
+// 方法2
+Test::updateAll(['status'=>1],['and',['status'=>0],['<>','flag',1]]);  
+```
