@@ -85,7 +85,7 @@ public function actionUpdate($id)
 
 ```
 
-##接收post再验证_例a
+## 接收post再验证_例a
 
 路径：company/modules/admin/controllers/RechargeController.php  
 
@@ -149,7 +149,7 @@ public function actionUpdate($id)
 
 ```
 
-##接收post再验证_例b
+## 接收post再验证_例b
 >(注:$model->save(false))
 
 ```php
@@ -209,7 +209,7 @@ public function actionCreate()
 
 #yii2自带函数连接
 
-##leftjoin
+## leftjoin
 ```php
 
 ```
@@ -244,7 +244,7 @@ public function actionView($id) {
         ]);
     }
 
-##leftjoin_详细页
+## leftjoin_详细页
 ```php
     public function actionView($id)
     {
@@ -259,7 +259,7 @@ public function actionView($id) {
     }
 ```
 
-##leftjoin_分页_wqw
+## leftjoin_分页_wqw  
 company/modules/shop/controllers/ProductController.php  
 ```php
 public function pro_list($page, $type)

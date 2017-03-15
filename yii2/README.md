@@ -90,8 +90,8 @@
 		- yii2自带函数连接
 			- [leftJoin](post.md#leftjoin)
 			- [leftjoin_详细页](post.md#leftjoin_详细页)
-			- [leftJoin+分页_wqw](post.md#leftjoin_分页_wqw)
-			- [leftJoin+分页_接口_视图_搜索](post.md#leftJoin_分页_接口_视图_搜索)
+			- [leftjoin+分页_wqw](post.md#leftjoin_分页_wqw)
+			- [leftjoin+分页_接口_视图_搜索](post.md#leftJoin_分页_接口_视图_搜索)
 		- 查询连环招
 			- [利用模型get表关联查询_wqw](post.md#利用模型get表关联查询_wqw)
 		- actions
