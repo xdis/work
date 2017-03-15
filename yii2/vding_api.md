@@ -49,8 +49,11 @@ http://api.v2.v.w/v1/user/token-test?access-token=28E4D51B3625E8C96506C4D845F823
 
 - 更多返回错误代码请看首页的错误代码描述
 ---
-##api认证_zhou
->>参考 
+## api认证_zhou
+>参考 [yii2项目实战-restful api之授权验证
+](http://blog.csdn.net/lhorse003/article/details/62215672)  
+
+
 ###控制器基类
  common/controllers/BaseRestController.php  
 ```php 
