@@ -100,9 +100,12 @@
 				- [全局方法定义开发](post.md#全局方法定义开发)
 		- 批量插入
 			- [原始的方法foreach](post.md#原始的方法foreach)
-			- [batchInsert](post.md#batchInsert)
-		- 更新
-			- [updateAll](post.md#updateAll)
+			- [batchInsert](post.md#batchInsert) batchInsert
+		- 更新 updateAll
+			- [updateAll](post.md#updateAll)  
+		- 删除 deleteAll
+			- [字符串格式删除](post.md#字符串格式删除)  
+			-  [数组加入范围](post.md#数组加入范围)  
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)

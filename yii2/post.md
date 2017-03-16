@@ -757,8 +757,8 @@ class TestAction extends Action
                 }
 ```
 
-##更新
-###updateAll
+## 更新
+### updateAll
 
 ```php
 // 方法1
@@ -769,4 +769,33 @@ Test::updateAll(['status'=>1],['status'=>0,'flag'=>1]);
 ```php
 // 方法2
 Test::updateAll(['status'=>1],['and',['status'=>0],['<>','flag',1]]);  
+```
+
+## 删除
+### 字符串格式删除
+```php
+// 方法1
+User::deleteAll('status = :status AND age > :age', [':age' => 20, ':status' => 'active']);
+
+```
+### 数组加入范围
+```php
+//一般的使用
+ Pricelist::deleteAll(['company_id' => $company_id, 'product_id' => $product_id, 'type' => 2,['between','start_at',$insert_start_day,$insert_end_day]]);
+
+//加入范围条件必须这样
+Pricelist::deleteAll(
+    [
+        'and',
+        'company_id = :company_id',
+        'product_id = :product_id',
+        'type = 2',
+        ['between', 'start_at', $insert_start_day, $insert_end_day],
+    ],
+    [
+        ':company_id' => $company_id,
+        ':product_id' => $product_id,
+    ]
+);
+
 ```
