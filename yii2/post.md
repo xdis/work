@@ -491,8 +491,8 @@ public function pro_list($page, $type)
 
 ```
 ---
-#查询连环招
-##利用模型get表关联查询_wqw 
+# 查询连环招
+## 利用模型get表关联查询_wqw 
 >本例子 产品表获取分类名称
 >关联 product.catetory_id = product_category.id,获取product_category.name
 
