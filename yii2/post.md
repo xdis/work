@@ -330,12 +330,12 @@ public function pro_list($page, $type)
 
 ```
 
-##leftJoin_分页_接口_视图_搜索
->get方式搜索
->关联视图
->分页
->接口JSON发送
-
+## leftJoin_分页_接口_视图_搜索
+>get方式搜索  
+>关联视图  
+>分页  
+>接口JSON发送  
+ 
 
 ```php
 /**
@@ -496,7 +496,7 @@ public function pro_list($page, $type)
 >本例子 产品表获取分类名称
 >关联 product.catetory_id = product_category.id,获取product_category.name
 
-##Controller
+## Controller
 ```php
 
 	public function actionView() {

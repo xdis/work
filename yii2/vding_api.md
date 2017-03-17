@@ -1,5 +1,64 @@
 #vding_api
-##api获取TOKENE和访问
+
+## 重置密码
+http://vding.dev/test/hash?pwd=123456   
+frontend/controllers/TestController.php  
+```php
+public function actionHash()
+{
+    $password = Yii::$app->request->getQueryParam('pwd');
+    return Yii::$app->getSecurity()->generatePasswordHash($password);
+}
+``` 
+
+## 获取token  
+
+### postman地址:http://api.vding.dev/v1/user/login-test  
+```php
+POST请求  
+postman地址参数  
+username:15014600030
+password:59f0437ca25c6515d2c631b28c5de6627348c4eadb1c659f9b9b0a63b96fcb366bb91228a7eccd66ae6431ee6a00901b00b4071e3a659eaae13b658735334b6a4a09599d00e6a22392b61a137d45f1c949e92cda43629fd0c70fbb241d8920e4124fcf7b728f5c3e35d510d6d5f0fbabb1318403c6fe9bb3fe31a6886084b2d2
+login_type:password_login
+``` 
+//返回
+```php
+{
+  "status": 200,
+  "message": "",
+  "data": {
+    "token": "9557BFD8214DDD335F9EDBD252D75CB046849922CFE332F53E45DFC3C7A7486A1EAE21AB92D9B0B85D0EC020BDB731FEC7BFFD965FFACAE7A7E36565BAB34D45832E78D576B08B272A125DB2B6394402C54263EBE19EA2DAB4B31313BD7EED07EE713208C34B911A219EAD9BA833D79B4F495AABE0D7B9528A833BCE4803C5A5",
+    "token_client": "9851A3EC4AC74F50AE3502B2F356FBEEAFCF5C1BC2140AC33EA40AD9A7A11D807CD7814C96E4B31F91CC12EE0DE33FEBC55846F5CC4225A98CECF6054EEDC1483C60EC68FEB75CD04607FE73D08120DF89DB318F7C8261F59F14E5CBE83A7D4B6E2EBD2851563292246BC07985905CFA85B1DE150CCAD0F92BAA5F378E75A757",
+    "token_plain": "Al36UNH3HPyZiPw2cT-onp7TRBlwRxGglUAnJCpY",
+    "id": 200
+  }
+}
+```
+
+### 代码
+```php
+rest/versions/v1/controllers/UserController.php
+    /**
+     * 登录接口
+     * 接收参数：mobile or username password loginType (password or sms)
+     * @return string AuthKey or model with errors
+     * @throws BadRequestHttpException
+     */
+    public function actionLoginTest()
+    {
+        $model = new LoginForm();
+        $this->chooseScenario($model);
+        if ($model->load(\Yii::$app->getRequest()->post(), '') && $model->login()) {
+            return $this->getTheAccessToken(true);
+        } else {
+            throw new BadRequestHttpException(current($model->getErrors())[0]);
+        }
+    }
+```
+
+---
+
+## api获取TOKENE和访问
 
     
 **简要描述：** 
@@ -16,12 +75,12 @@ http://api.d.v.w/v1/user/login-test
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
-|username |是  |string |用户名 |  如 zkyucn  |
-|password |是  |string | 密码  | 访问 http://d.v.w/test/enc?pwd=123456 获取 |
-|login_type     |否  |string | 类型  | password_login  |
+|username |是  |string |用户名 &#124;  如 zkyucn 最好用手机号码 |
+|password |是  |string | 密码  &#124; 访问 http://d.v.w/test/enc?pwd=123456 获取 |
+|login_type     |否  |string | 类型  &#124; 如 password_login  |
 
  **返回示例**
-
+-  注:取 "token_client" 作为token
 ``` 
 {
   "status": 200,
@@ -42,6 +101,7 @@ http://api.d.v.w/v1/user/login-test
 |token |string   | 访问的TOKEN  |
 
  **使用访问** 
+-  注:取 "token_client" 作为token
  ``` 
 http://api.v2.v.w/v1/user/token-test?access-token=28E4D51B3625E8C96506C4D845F823DE79C8B212B1705CD36B5BF2AF3CD19E690E3A276C0DCB47409C7C801A20E672025D0FFD24CDB193D766F49B35B898CC6CF84FE7E9EEC296761122021F78566FA3BA61754369E9AAF45391D469C8379200A9B2BFA82AD841C806A3B5190603D19042E04AC10560C0A48F70049C15F56859 
 ```  
@@ -130,7 +190,7 @@ class SecureTokenAuth extends AuthMethod
 
 ``` 
 
-##将密码转换为 access_toekn
+##将密码转换为 access_toekn  
 frontend/controllers/TestController.php  
 访问:http://vding.dev/test/enc?pwd=123456
 ```php 

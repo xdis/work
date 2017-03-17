@@ -136,6 +136,8 @@
 	- [为什么日志不入数据库](question.md#为什么日志不入数据库)
 - 案例 
 	- vding_api
+		- [重置密码](vding_api.md#重置密码) 
+		- [获取token](vding_api.md#获取token) 
 		- [api获取TOKENE和访问](vding_api.md#api获取TOKENE和访问)
 		- [api认证_zhou](vding_api.md#api认证_zhou)
 			- 控制器基类定义
