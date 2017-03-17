@@ -14,6 +14,8 @@ public function actionHash()
 ## 获取token  
 
 ### postman地址:http://api.vding.dev/v1/user/login-test  
+
+![](vding_api/postman.png)
 ```php
 POST请求  
 postman地址参数  
