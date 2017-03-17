@@ -144,6 +144,9 @@
 			- 认证类
 			- access-token模拟生成
 			- 完整访问地址
+		- API创建过程
+			- [创建控制器继续基类](vding_api.md#创建控制器继续基类)
+			- [rule设置](vding_api.md#rule设置)
 	- [店铺](shop/README.md)
 		- 核心技术
 			- [1后端跨域解决方案](shop.md#1后端跨域解决方案)  

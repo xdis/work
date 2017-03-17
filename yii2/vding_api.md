@@ -210,3 +210,41 @@ frontend/controllers/TestController.php
 http://api.v2.v.w/v1/user/token-test?access-token=3eeb6ade484c07e28e72fe676d237ac72196f7de5b3aab7dcbdd70c4691f118d5b11c306262f2c8932ad342a8b5ec7b499714bea3a41583725ff65e943b187242c70a62c9978987efe778bea8e77f209231301907007528825d16b1704ca296793844e060762d3ab19e2c812857e12deaa8f68de14a9d5e728ad3006adbc6ec2 
 
 ```
+--- 
+## API创建过程
+### 创建控制器继续基类
+rest/versions/v1/service/controllers/SupplierController.php  
+```php 
+namespace rest\versions\v1\service\controllers;
+
+use common\service\SupllierService;
+use rest\versions\v1\car\models\Car;
+use Yii;
+
+class SupplierController extends BaseController
+{
+	//1. 这个必须要,否则会报错
+    public $modelClass = 'rest\versions\v1\car\models\Car'; 
+
+    public $model = '';
+
+    public function init(){
+        parent::init();
+        $this->model = new Car();
+    }
+
+
+    public function actionTest(){
+        echo 'xxx';exit;
+    }
+}
+``` 
+###rule设置
+>设置访问类型是get或post 
+ 
+rest/config/_rules.php    
+```php 
+
+    'GET,POST /v1/service/supplier/test' => '/v1/service/supplier/test',
+```
+
