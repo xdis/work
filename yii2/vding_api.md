@@ -239,7 +239,7 @@ class SupplierController extends BaseController
     }
 }
 ``` 
-###rule设置
+### rule设置
 >设置访问类型是get或post 
  
 rest/config/_rules.php    
