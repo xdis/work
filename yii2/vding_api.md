@@ -75,11 +75,11 @@ http://api.d.v.w/v1/user/login-test
 
 **参数：** 
 
-|参数名|必选|类型|说明|
-|:----    |:---|:----- |-----   |
-|username |是  |string |用户名 &#124;  如 zkyucn 最好用手机号码 |
-|password |是  |string | 密码  &#124; 访问 http://d.v.w/test/enc?pwd=123456 获取 |
-|login_type     |否  |string | 类型  &#124; 如 password_login  |
+|参数名|必选|类型|说明|数据|
+|:----    |:---|:----- |-----   |-----  |
+|username |是  |string |用户名|  如 zkyucn 最好用手机号码 |
+|password |是  |string | 密码  | 访问 http://d.v.w/test/enc?pwd=123456 获取 |
+|login_type     |否  |string | 类型 | 如 password_login  |
 
  **返回示例**
 -  注:取 "token_client" 作为token
