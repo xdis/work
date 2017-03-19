@@ -40,3 +40,17 @@
 
     }
 ```
+```php
+
+  //例C
+
+    public function scenarios()
+    {
+        return ArrayHelper::merge(
+            parent::scenarios(),
+            [
+                'updateStatus' => ['reception_status','revoke_reason','trip_status','customer_pay_amount'],
+            ]
+        );
+    }
+```
