@@ -42,4 +42,5 @@
 			- [一次性推送](example.md#一次性推送) git push -f origin master
 			- [选择性推送](example.md#选择性推送) gti push cdsn master 
 		- [本地仓库里加入多个远程仓库_fetch_commit到本地仓库](example.md#本地仓库里加入多个远程仓库_fetch_commit到本地仓库)
-
+		- 
+		

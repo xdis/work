@@ -1,5 +1,5 @@
 
-#店铺
+# 店铺
 
 >本店铺采用接口方式获取后端数据
 >
@@ -8,31 +8,31 @@
 >2.[安装与运行](#安装与运行)  
 >3.[开发环境地址](#开发环境地址)  
 
-##安装与运行
+## 安装与运行
 1. git clone git@github.com:eteplus/vue-sui-demo.git
 2. npm install //在根目录里执行cmk 安装
 3. npm run dev  //运行
 4. npm run build //代码修改过后运行  
 
 
-##核心技术
+## 核心技术
 - [1后端跨域解决方案](shop.md#1后端跨域解决方案)  
 - [2怎样在请求头加上Companyid和Ownerid两个参数](shop.md#2怎样在请求头加上Companyid和Ownerid两个参数)   
 - [3在请求时候_后端怎样获取Header里的两个参数](shop.md#3在请求时候_后端怎样获取Header里的两个参数)
 - [3_1php获取header的函数解析](shop.md#3_1php获取header的函数解析)
 
-##开发环境地址
+## 开发环境地址
 >localhost:8080
 
 
-##店铺列表页
+## 店铺列表页
 ![](shop/1.1.shop_list.png)
 
-##头部 Request Headers绑定两个参数 Companyid 和Ownerid
+## 头部 Request Headers绑定两个参数 Companyid 和Ownerid
 
 ![](shop/1.2.request_header_field.png)
 
-##1后端跨域解决方案
+## 1后端跨域解决方案
 company/modules/shop/controllers/DpBaseController.php  
 ```php
 public function behaviors()
@@ -63,7 +63,7 @@ public function behaviors()
 ```
 
 
-##2怎样在请求头加上Companyid和Ownerid两个参数
+## 2怎样在请求头加上Companyid和Ownerid两个参数
 >因为店铺是通过前后端分离，则通过前端vue来构建
 src/util/util.js  
 ```js
@@ -99,13 +99,13 @@ export const ajax = (self,method,apiUrl,params,callback) => {
     }
 }
 ```
-###想了一下，如果使用PHP后端怎样构建？
+### 想了一下，如果使用PHP后端怎样构建？
 >通过curl的就可以了 
 
 
-##3在请求时候_后端怎样获取Header里的两个参数
+## 3在请求时候_后端怎样获取Header里的两个参数
 
-###beforeAction设置
+### beforeAction设置
 ```php
  public function beforeAction($action)
     {
@@ -152,7 +152,7 @@ export const ajax = (self,method,apiUrl,params,callback) => {
 
 ```
 
-##3_1php获取header的函数解析  
+## 3_1php获取header的函数解析  
 ```php
 if (!function_exists('getallheaders')) {
     function getallheaders()

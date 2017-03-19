@@ -105,7 +105,7 @@
 			- [batchInsert](post.md#batchInsert) batchInsert
 		- 更新 updateAll
 			- [updateAll](post.md#updateAll)  
-		- 删除 deleteAll
+		- 删除 deleteAll  between
 			- [字符串格式删除](post.md#字符串格式删除)  
 			-  [数组加入范围](post.md#数组加入范围)  
     - model
