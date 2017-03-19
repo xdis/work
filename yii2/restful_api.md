@@ -50,8 +50,6 @@ rest/versions/v1/callcar/controllers/OrderController.php
 |access_token |是  |string |token   |
 |type |是  |int |1待接单2已接单3已失效   |
 
-
-
 ```php
   public function actions()
     {
@@ -110,4 +108,48 @@ rest/versions/v1/callcar/controllers/OrderController.php
             ]
         );
     }
+```
+
+
+# controller
+## 方法使用_事务_trycatch_BadRequestHttpException_ServerErrorHttpException
+rest/versions/v1/callcar/controllers/OrderController.php  
+```php
+public function actionCkdriver(){
+        $id = Yii::$app->request->post('order_id');
+        $sj_driver_id = Yii::$app->request->post('sj_driver_id');
+        if(is_numeric($id) && is_numeric($sj_driver_id)){
+            $user_id = Yii::$app->user->getId();
+
+            //订单表
+            $order = Order::find()->where(['id'=>$id,'from_user_id'=>$user_id])->one();
+            if (!$order) {
+                throw new BadRequestHttpException('找不到此订单!');
+            }
+
+//            if($order->choice_expiry_at < time()){
+//                throw new BadRequestHttpException('选择时间已过期');
+//            }
+
+            try {
+                $trans = Yii::$app->db->beginTransaction();
+                $_order = new Order();
+                if(!$_order->bidOrder($user_id,$order->id,$sj_driver_id)){
+                    throw new BadRequestHttpException('选择司机失败');
+                }
+                $trans->commit();
+
+                $res = Order::findOne($order->id);
+                //发送消息
+                $driver_user_id_arr = explode(',', $res->driver_list);
+                $_order->bidJpMessage($res->from_user_id,$driver_user_id_arr,$res->number,$res->id,11,$res->driver_user_id);
+
+                return ['message' => '成功'];
+            } catch (\Exception $e) {
+                $trans->rollback();
+                throw new ServerErrorHttpException($e->getMessage());
+            }
+        }
+        throw new BadRequestHttpException('参数错误');
+    }	
 ```
