@@ -1,14 +1,14 @@
 # Restful Api
 ## 使用自带与个性化_DEMO版本
->默认有create, delete, update, index, view等的一下方法
-所创建的 API 包括：
-GET /users: 逐页列出所有用户
-POST /users: 创建一个新用户
-GET /users/123: 返回用户 123 的详细信息
-PATCH /users/123 and PUT /users/123: 更新用户123
-DELETE /users/123: 删除用户123
-但是如果你要是不想用他的某些方法,我们可以通过下面的方法来自己覆盖对应的方法
-例如:
+>默认有create, delete, update, index, view等的一下方法   
+所创建的 API 包括：   
+GET /users: 逐页列出所有用户   
+POST /users: 创建一个新用户   
+GET /users/123: 返回用户 123 的详细信息   
+PATCH /users/123 and PUT /users/123: 更新用户123   
+DELETE /users/123: 删除用户123   
+但是如果你要是不想用他的某些方法,我们可以通过下面的方法来自己覆盖对应的方法   
+例如:   
 
 ```php
 public function actions()  
