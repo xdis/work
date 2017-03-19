@@ -135,6 +135,9 @@
 	- 扩展
 		- [自定义扩展](extensions.md#自定义扩展)   猫与老鼠事件
 		- [将别人扩展放入自己的仓库_然后从自己的仓库调用](extensions.md#将别人扩展放入自己的仓库_然后从自己的仓库调用)
+	- Restful Api
+		- [使用自带与个性化_DEMO版本](restful_api.md#使用自带与个性化_DEMO版本) 
+		- [使用自带与个性化_syg](restful_api.md#使用自带与个性化_syg) 	
 
 - 疑问
 	- [为什么日志不入数据库](question.md#为什么日志不入数据库)
