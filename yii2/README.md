@@ -128,6 +128,8 @@
 			 - [model定义](model.md#model定义)
 			 - [controller使用](model.md#controller使用)
 		-  [指定字段的自定义函数过滤](model.md#指定字段的自定义函数过滤)
+		-  rules
+			-  [自定义过滤函数filter](model.md#自定义过滤函数filter)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
