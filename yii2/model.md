@@ -1,8 +1,8 @@
-#model关联多表的使用
+# model关联多表的使用
 1. model的配置
 2. 列表页设置
 
-##managesearch方法_个性化+自定义配置
+## managesearch方法_个性化+自定义配置
 company/modules/coshop/models/search/ProductSearch.php  
 ```php
  public function managesearch($params)
@@ -96,7 +96,7 @@ company/modules/coshop/models/search/ProductSearch.php
 
 ```
 
-##使用子查询使用
+## 使用子查询使用
 >如上例子中，使用子查询来获取指定的值 如 _total_stock
 >index.php  使用 $model->_total_stock
 >关于这个关联表的配置，可以看下面例子如配置模型里1.变量 2.命名显示 3.rule加入safe等
@@ -113,9 +113,9 @@ company/modules/coshop/models/search/ProductSearch.php
 
 ```
 
-##列表页使用
-index.php 
->使用关联表的字段
+## 列表页使用
+index.php  
+>使用关联表的字段  
 
 ```php
 [// 线路 - 出发地
@@ -129,7 +129,7 @@ index.php
 ```
 
 
-#search关联用户表取username
+# search关联用户表取username
 
 >举例场景 
 >在用户奖券表(user_activity表)里显示的列表里，显示有user表的username
@@ -141,7 +141,7 @@ index.php
 	- [2.配置UserActivitySearch模型](model.md#2配置useractivity_search模型)
 	- [3.列表页显示](model.md#3列表页显示)
 
-##1配置useractivity模型
+## 1配置useractivity模型
 ```php
 class UserActivity extends \common\models\***Model{
   //1.定义变量
@@ -167,7 +167,7 @@ class UserActivity extends \common\models\***Model{
 
 ```
 
-##2配置useractivity_search模型
+## 2配置useractivity_search模型
 ```php
 class UserActivitySearch extends UserActivity{
 
@@ -241,7 +241,7 @@ class UserActivitySearch extends UserActivity{
 
 ```
 
-##3列表页显示
+## 3列表页显示
 index.php
 ```php
 		[//关联表user.name
@@ -254,7 +254,7 @@ index.php
 
 ```
 
-#search关联用户表取mobile以别名形式
+# search关联用户表取mobile以别名形式
 
 >举例场景 
 >在用户奖券表(user_activity表)里显示的列表里，显示有user表的mobile,与上面例子不一样的是，我们以别名的方式（关联多表时，相同的字段是有的，即会采用别名）
@@ -266,7 +266,7 @@ index.php
 	- [b.配置UserActivitySearch模型](model.md#b配置useractivity_search模型)
 	- [c.列表页显示](model.md#c列表页显示)
 
-##a配置useractivity模型
+## a配置useractivity模型
 ```php
 
 class UserActivity extends \common\models\***Model{
@@ -292,7 +292,7 @@ class UserActivity extends \common\models\***Model{
 }
 ```
 
-##b配置useractivity_search模型
+## b配置useractivity_search模型
 
 ```php
  class UserActivitySearch extends UserActivity{
@@ -356,7 +356,7 @@ class UserActivity extends \common\models\***Model{
 
 ```
 
-##c列表页显示
+## c列表页显示
 
 ```php
 index.php
@@ -384,18 +384,18 @@ $query->andwhere('product.sys_category_id = ' . $type);
  
 ```
 
-##where_like
+## where_like
 ```php
   $query->andFilterWhere(['like', 'product.name', $_product_name]);
   $query->andFilterWhere(['like', 'pricelist.name', $_pricelist_name]);
 ```
 
 ---
-#自定义场景
+# 自定义场景
 - [model定义](model.md#model定义)
 - [controller使用](model.md#controller使用)
 
-##model定义
+## model定义
 ```php
 class SignupForm extends Model{
  const SCENARIO_GET_SMS = 'sms';
@@ -410,7 +410,7 @@ class SignupForm extends Model{
 }
 ```
 
-##controller使用
+## controller使用
 ```php
 class SignInController extends BaseController{
     public function registerSmsBeforeCallback($action)
@@ -428,9 +428,9 @@ class SignInController extends BaseController{
 }
 ```
 ---
-#指定字段的自定义函数过滤
+# 指定字段的自定义函数过滤
 common/models/Activity.php
-##场景
+## 场景
 当这个字段valid_type为0时，必须要输入天数，为1时，必须要输入时间
 ```php
     public function rules() {
