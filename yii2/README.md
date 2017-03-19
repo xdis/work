@@ -140,7 +140,7 @@
 			- [使用自带与个性化_DEMO版本](restful_api.md#使用自带与个性化_DEMO版本) 
 			- [使用自带与个性化_syg](restful_api.md#使用自带与个性化_syg) 
 		- controller
-			- 方法使用_事务_trycatch_BadRequestHttpException_ServerErrorHttpException
+			- [方法使用_事务_trycatch_badrequesthttpexception_servererrorhttpexception](restful_api.md#方法使用_事务_trycatch_badrequesthttpexception_servererrorhttpexception) 
 
 - 疑问
 	- [为什么日志不入数据库](question.md#为什么日志不入数据库)

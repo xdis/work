@@ -112,7 +112,7 @@ rest/versions/v1/callcar/controllers/OrderController.php
 
 
 # controller
-## 方法使用_事务_trycatch_BadRequestHttpException_ServerErrorHttpException
+## 方法使用_事务_trycatch_badrequesthttpexception_servererrorhttpexception
 rest/versions/v1/callcar/controllers/OrderController.php  
 ```php
 public function actionCkdriver(){
