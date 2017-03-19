@@ -56,7 +56,7 @@ rest/versions/v1/callcar/controllers/OrderController.php
   public function actions()
     {
         $actions = parent::actions();
-        unset($actions['update']);
+        unset($actions['update']);  //注释掉,不使用该方法
         return ArrayHelper::merge(
             $actions,
             [
