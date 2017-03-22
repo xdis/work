@@ -6,6 +6,7 @@
 		- [全局ignore配置](config.md#全局ignore配置)
 	- git常用
 		- 对上次的提交的commit的描述进行修改  git commit --amend
+		- 修改仓库 git remote set-url origin git@git.v.w:v.git
 		- 分支
 			- [创建分支](use.md#创建分支) git checkout -b 分支名
 				- git co -b dev_bak(将当前的分支备份一个)

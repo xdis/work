@@ -1,6 +1,10 @@
 
 - Yii2
 	- [计划](plan.md)
+	- 常用
+		- 获取用户Id   Yii::$app->user->getId()
+		- 获取当前登录的公司id  Yii::$app->user->getCompanyId()
+		-  [手动增加csrf](op.md#手动增加csrf) 
 	- function
 		-  [ArrayHelper](function.md#ArrayHelper) 
 	-  干货
