@@ -8,6 +8,7 @@
 		- 对上次的提交的commit的描述进行修改  git commit --amend
 		- 分支
 			- [创建分支](use.md#创建分支) git checkout -b 分支名
+				- git co -b dev_bak(将当前的分支备份一个)
 			- 获取最新的分支列表  git fetch origin
 			- 获取远程所有分支 get branch -a 
 			- 查看远程仓库的分支情况 git remote show 仓库名
@@ -21,6 +22,7 @@
 			- [文件回滚到指定版本](use.md#文件回滚到指定版本)
 			- 撤销未提交的修改的文件  git checkout file
 			- [时光机穿越](use.md#时光机穿越) git reflog
+			- 强制还原到线上开发分支 git reset --hard origin/dev
 		- log
 			- 查询某个人log  git log --author='cmk02'
 		- git_rebase
@@ -32,6 +34,15 @@
 	    - 追踪修改 git blame 文件
 	    - 查看该文件是否被提交版本库 git ls-files | grep 文件名
 	    - 本地创建一个远程仓库 git init --bare
+	    - 全并分支_流程
+		    - git pull origin dev  (merge模式下)
+		    - git merget --no-ff f-sub 
+		    - 出现冲突,解决之
+		    - git commit
+		    - git pull origin dev  (再次拉取)
+		    - 没有出现问题
+		    - git push origin dev
+
 	- 案例
 		- [一般使用流程](use.md#一般使用流程)
 		- [开发环境与测试环境的切换](use.md#开发环境与测试环境的切换)
