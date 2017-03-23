@@ -13,17 +13,36 @@ public function actionHash()
 
 ## 获取token  
 
-### postman地址:http://api.vding.dev/v1/user/login-test  
+**请求URL：** 
+http://api.d.v.w/v1/user/login-test
+  
+**请求方式：**
+- POST 
 
-![](vding_api/postman.png)
+**参数：** 
+### 注: password是使用公钥将密码加密!
+|参数名|必选|类型|说明|数据|
+|:----    |:---|:----- |-----   |-----  |
+|username |是  |string |用户名|  如 zkyucn 最好用手机号码 |
+|password |是  |string | 密码  | 访问 http://vding.dev/test/enc?pwd=123456 获取 |
+|login_type     |否  |string | 类型 | 如 password_login  |
+
+**postman地址：**
+http://api.vding.dev/v1/user/login-test  
+
+**postman地址参数  **  
+
+
 ```php
-POST请求  
-postman地址参数  
 username:15014600030
 password:59f0437ca25c6515d2c631b28c5de6627348c4eadb1c659f9b9b0a63b96fcb366bb91228a7eccd66ae6431ee6a00901b00b4071e3a659eaae13b658735334b6a4a09599d00e6a22392b61a137d45f1c949e92cda43629fd0c70fbb241d8920e4124fcf7b728f5c3e35d510d6d5f0fbabb1318403c6fe9bb3fe31a6886084b2d2
 login_type:password_login
 ``` 
-//返回
+**postman 截图  **  
+
+![](vding_api/postman.png)
+
+**返回 [注:使用token_client 作为 token]**  
 ```php
 {
   "status": 200,
@@ -37,9 +56,14 @@ login_type:password_login
 }
 ```
 
+ **访问接口** 
+-  注:取 "token_client" 作为token
+ ``` 
+http://api.vding.dev/v1/user/token-test?access-token=28E4D51B3625E8C96506C4D845F823DE79C8B212B1705CD36B5BF2AF3CD19E690E3A276C0DCB47409C7C801A20E672025D0FFD24CDB193D766F49B35B898CC6CF84FE7E9EEC296761122021F78566FA3BA61754369E9AAF45391D469C8379200A9B2BFA82AD841C806A3B5190603D19042E04AC10560C0A48F70049C15F56859 
+
 ### 代码
+rest/versions/v1/controllers/UserController.php  
 ```php
-rest/versions/v1/controllers/UserController.php
     /**
      * 登录接口
      * 接收参数：mobile or username password loginType (password or sms)
@@ -58,59 +82,6 @@ rest/versions/v1/controllers/UserController.php
     }
 ```
 
----
-
-## api获取TOKENE和访问
-
-    
-**简要描述：** 
-
-- 获取接口token
-
-**请求URL：** 
-http://api.d.v.w/v1/user/login-test
-  
-**请求方式：**
-- POST 
-
-**参数：** 
-
-|参数名|必选|类型|说明|数据|
-|:----    |:---|:----- |-----   |-----  |
-|username |是  |string |用户名|  如 zkyucn 最好用手机号码 |
-|password |是  |string | 密码  | 访问 http://d.v.w/test/enc?pwd=123456 获取 |
-|login_type     |否  |string | 类型 | 如 password_login  |
-
- **返回示例**
--  注:取 "token_client" 作为token
-``` 
-{
-  "status": 200,
-  "message": "",
-  "data": {
-    "token": "6BE2B5A7FB8761379D0CCEA8B30BDD70A67D3575AAD1EAADE2091C43C333CC4928521380B3E84773CD669A673CF77A7E093FA6B0D0887DB6344D67D7746F501311405E7052F5A4F80D57D19E138178E787ABAA16D981D9BA2F62D1BD177CB6175C003AC408A2C521AC6B1112EA59ADBFBFE582F4A64D4F4C1C5D15C6386A254C",
-    "token_client": "74F49FFCA6B83310DCEC6D478D3120073D7CB82E83B932B05341239D1BE1083E6D20B847B8DC0FD694B5785105F6780A7EE7517CC26BE5AF33C442158F22AE3A6FBD5189D4CF87B4B6AA744CD20D6FC43E316A1CA51E25789B4AF74B791D3535E5E572919C3AF1ADA10F77A6572F3AC23C50CDAF32B402F67E311CE880F2C774",
-    "token_plain": "ZEbEHS485UBcjU8g8adomsG8RjBeD39in2w0IX-x",
-    "id": 4
-  }
-}
-```
-
- **返回参数说明** 
-
-|参数名|类型|说明|
-|:-----  |:-----|-----                           |
-|token |string   | 访问的TOKEN  |
-
- **使用访问** 
--  注:取 "token_client" 作为token
- ``` 
-http://api.v2.v.w/v1/user/token-test?access-token=28E4D51B3625E8C96506C4D845F823DE79C8B212B1705CD36B5BF2AF3CD19E690E3A276C0DCB47409C7C801A20E672025D0FFD24CDB193D766F49B35B898CC6CF84FE7E9EEC296761122021F78566FA3BA61754369E9AAF45391D469C8379200A9B2BFA82AD841C806A3B5190603D19042E04AC10560C0A48F70049C15F56859 
-```  
- **备注** 
-
-- 更多返回错误代码请看首页的错误代码描述
----
 ## api认证_zhou
 >参考 [yii2项目实战-restful api之授权验证
 ](http://blog.csdn.net/lhorse003/article/details/62215672)  
@@ -193,8 +164,8 @@ class SecureTokenAuth extends AuthMethod
 ``` 
 
 ##将密码转换为 access_toekn  
-frontend/controllers/TestController.php  
-访问:http://vding.dev/test/enc?pwd=123456
+frontend/controllers/TestController.php    
+访问: http://vding.dev/test/enc?pwd=123456  
 ```php 
     public function actionEnc()
     {
@@ -210,6 +181,122 @@ frontend/controllers/TestController.php
 http://api.v2.v.w/v1/user/token-test?access-token=3eeb6ade484c07e28e72fe676d237ac72196f7de5b3aab7dcbdd70c4691f118d5b11c306262f2c8932ad342a8b5ec7b499714bea3a41583725ff65e943b187242c70a62c9978987efe778bea8e77f209231301907007528825d16b1704ca296793844e060762d3ab19e2c812857e12deaa8f68de14a9d5e728ad3006adbc6ec2 
 
 ```
+---
+## 第三方
+### 模拟登陆
+```php
+<?php
+//账号 15014600030 密码：123456、
+error_reporting(0);
+
+//使用公钥加密
+function public_encode($pwd) {
+   // $publicstr = file_get_contents('./rest_api_public_key.pem');
+
+	$publicstr = file_get_contents('./p2p20140616.cer');
+    $publickey = openssl_pkey_get_public($publicstr); // 读取公钥
+	
+    $r = openssl_public_encrypt($pwd, $encrypted, $publickey);
+    if ($r) {
+        return $encrypted;
+    }
+    return false;
+}
+//使用公钥解密
+function public_decode($data) {
+    $publicstr = file_get_contents('./p2p20140616.cer');
+    openssl_public_decrypt($data,$decrypted,$publicstr);//私钥加密
+    if ($decrypted) {
+        return $decrypted;
+    }
+    return false;
+}
+
+//使用私钥解密
+function rsa_decode($data) {
+	$private_key = file_get_contents('./p2p20140616.pem');
+    openssl_private_decrypt($data,$decrypted,$private_key);//私钥加密
+    var_dump($decrypted);exit;
+    if ($decrypted) {
+        return $decrypted;
+    }
+    return false;
+}
+
+
+function curl_post_contents($url, $postField, $timeout = 30)
+{
+	$ch = curl_init ();
+	curl_setopt ( $ch, CURLOPT_URL, $url );
+	curl_setopt ( $ch, CURLOPT_POST, 1 );
+	curl_setopt($ch, CURLOPT_SAFE_UPLOAD, true);
+	curl_setopt ( $ch, CURLOPT_POSTFIELDS, $postField );
+	curl_setopt ( $ch, CURLOPT_TIMEOUT, $timeout );
+	if (isset ( $_SERVER ['HTTP_USER_AGENT'] ))
+		curl_setopt ( $ch, CURLOPT_USERAGENT, $_SERVER ['HTTP_USER_AGENT'] );
+	curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
+	$r = curl_exec ( $ch );
+	curl_close ( $ch );
+	return $r;
+}
+	//bin2hex
+
+//
+/**
+ *
+ * 使用公钥加密密码
+ *
+ */
+$pwd = bin2hex(public_encode('123456'));
+
+//$url = "http://api.d.vding.wang/v1/service/user/login";
+$url = "http://api.vding.dev/v1/service/user/login";
+$postField=array(
+    "username" =>"15014600030",
+    "password" =>$pwd,
+    "login_type" =>'password_login'
+);
+$output=curl_post_contents($url, $postField);
+
+$_output = json_decode($output,true);
+
+//服务器使用私钥加密的token
+$private_encode_token = $_output['data']['token'];
+
+
+//1.使用公钥解密token
+$_private_encode_token =   hex2bin(strtolower($private_encode_token));
+$_private_encode_token_res = public_decode($_private_encode_token);
+
+
+//2.使用公销加密 token
+//客户端加密方式： 转换为大写(转换为十六进制ASCII字符(rsa 公钥加密('plain text')))
+$public_token = strtoupper(bin2hex(public_encode($_private_encode_token_res)));
+
+echo $public_token;exit;
+
+
+
+
+//私销解密
+/*
+$_pwd = hex2bin(strtolower($pwd));
+ $result=  rsa_decode($_pwd);
+
+var_dump($result) ;
+
+exit;
+
+*/
+
+print_r($output);
+?>
+
+```
+
+
+
+
 --- 
 ## API创建过程
 ### 创建控制器继续基类

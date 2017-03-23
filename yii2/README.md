@@ -151,14 +151,16 @@
 	- [为什么日志不入数据库](question.md#为什么日志不入数据库)
 - 案例 
 	- vding_api
-		- [重置密码](vding_api.md#重置密码) 
-		- [获取token](vding_api.md#获取token) 
-		- [api获取TOKENE和访问](vding_api.md#api获取TOKENE和访问)
+		- 操作
+			- [重置密码](vding_api.md#重置密码) 
+			- [获取token](vding_api.md#获取token) 
 		- [api认证_zhou](vding_api.md#api认证_zhou)
 			- 控制器基类定义
 			- 认证类
 			- access-token模拟生成
 			- 完整访问地址
+		- 第三方
+			- 模拟登陆
 		- API创建过程
 			- [创建控制器继续基类](vding_api.md#创建控制器继续基类)
 			- [rule设置](vding_api.md#rule设置)
