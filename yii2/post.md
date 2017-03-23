@@ -207,6 +207,46 @@ public function actionCreate()
 
 ```
 
+## 没有记录插入_否则就更新 
+>jason isGet isPost  
+
+```php
+    public function actionAdd()
+    {
+        if (Yii::$app->session['isLogin'] != 1) {
+            return $this->redirect(['member/auth']);
+        }
+        $userid = User::find()->where('username = :name', [':name' => Yii::$app->session['loginname']])->one()->userid;
+        if (Yii::$app->request->isPost) {
+            $post = Yii::$app->request->post();
+            $num = Yii::$app->request->post()['productnum'];
+            $data['Cart'] = $post;
+            $data['Cart']['userid'] = $userid;
+        }
+        if (Yii::$app->request->isGet) {
+            $productid = Yii::$app->request->get("productid");
+            $model = Product::find()->where('productid = :pid', [':pid' => $productid])->one();
+            $price = $model->issale ? $model->saleprice : $model->price;
+            $num = 1;
+            $data['Cart'] = ['productid' => $productid, 'productnum' => $num, 'price' => $price, 'userid' => $userid];
+        }
+        //1.判断是否有记录
+        if (!$model = Cart::find()->where('productid = :pid and userid = :uid', [':pid' => $data['Cart']['productid'], ':uid' => $data['Cart']['userid']])->one()) {
+			//没有记录则,new呈个实例出来
+            $model = new Cart;
+        } else {
+           //否则就保存数据
+            $data['Cart']['productnum'] = $model->productnum + $num;
+        }
+        $data['Cart']['createtime'] = time();
+        $model->load($data);
+        $model->save();
+        return $this->redirect(['cart/index']);
+    }
+```
+
+
+
 #yii2自带函数连接
 
 ## leftjoin
