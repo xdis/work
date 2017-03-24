@@ -154,6 +154,7 @@
 		- 操作
 			- [重置密码](vding_api.md#重置密码) 
 			- [获取token](vding_api.md#获取token) 
+			- [服务模块仅企业帐号可登陆](vding_api.md#服务模块仅企业帐号可登陆) 
 		- [api认证_zhou](vding_api.md#api认证_zhou)
 			- 控制器基类定义
 			- 认证类
