@@ -810,6 +810,26 @@ Test::updateAll(['status'=>1],['status'=>0,'flag'=>1]);
 // 方法2
 Test::updateAll(['status'=>1],['and',['status'=>0],['<>','flag',1]]);  
 ```
+### updateAllCounters 针对于数字的更新 如 mount = mount+5
+```php
+// 方法1
+Topic::updateAllCounters(['view_count' => 1], ['id' => $id]);
+// 实现的效果就是 view_count + 1，1根据你的需求可以是正数也可以是负数。
+
+// 方法2
+Topic::updateAllCounters(['view_count' => 1], ['and', ['xxx' => 0, 'yyy' => 2], ['>', 'zzz', $time]);
+
+// 方法3
+ Topic::updateAll(
+    ['view_count' => new Expression('`view_count` + 1'), 'updated_at' => time()],
+    ['id' => $id]
+);
+
+// 其它使用
+$model = Post::findOne($id);
+$model->updateCounters(['view_count' => 1]);
+
+```
 
 ## 删除
 ### 字符串格式删除

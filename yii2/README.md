@@ -109,7 +109,8 @@
 			- [原始的方法foreach](post.md#原始的方法foreach)
 			- [batchInsert](post.md#batchInsert) batchInsert
 		- 更新 updateAll
-			- [updateAll](post.md#updateAll)  
+			- [updateAll](post.md#updateAll) 
+			- [updateAllCounters](post.md#updateAllCounters)  计数器专用
 		- 删除 deleteAll  between
 			- [字符串格式删除](post.md#字符串格式删除)  
 			-  [数组加入范围](post.md#数组加入范围)  
