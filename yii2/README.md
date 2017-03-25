@@ -176,8 +176,10 @@
 		- 
 	- 权限分析_yii2_admin
 	- App接口全局配置
-	- 用户登陆
-		- yii start kit
+	- 用户登陆 yii start kit
+		- user组件定义
+			- company模块里包含"企业用户"与小模块里的"H5店铺"两个用户
+			- ResultApi用户
 
 	- 农行
 		- [socket请求文档](nongye/socket.php) tcp/ip请求
