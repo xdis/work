@@ -16,13 +16,22 @@
 		- 分支
 			- [创建分支](use.md#创建分支) git checkout -b 分支名
 				- git co -b dev_bak(将当前的分支备份一个)
-			- 获取最新的分支列表  git fetch origin
-			- 获取远程所有分支 get branch -a 
+				-  [分支创建策略](use.md#分支创建策略)
+			- 获取
+				- 最新的分支列表  git fetch origin
+				- 远程所有分支 get branch -a 
 			- 查看远程仓库的分支情况 git remote show 仓库名
-			- [分支创建策略](use.md#分支创建策略)
 			- 合并 git merge feature 或 git merge --no-ff feature
 				- [合并例子](use.md#合并例子)
-		- 打标签 git tag xx
+			- 删除分支
+				- 远程 git push origin --delete 分支名
+				- 本地 git branch -d 分支名（在主分支中）
+		- 标签
+			- 查看 git tag
+				- 查看指定标签 git show 标签名
+			- 创建 git tag xx
+			- 删除 git tag -d xx
+			- 
 		-[回滚](use.md#回滚) reset
 			- 回滚到指定版本	git reset --hard e377f60e28c8b84158
 			- [文件回滚到指定版本](use.md#文件回滚到指定版本)
