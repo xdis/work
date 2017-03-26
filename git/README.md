@@ -31,8 +31,7 @@
 				- 查看指定标签 git show 标签名
 			- 创建 git tag xx
 			- 删除 git tag -d xx
-			- 
-		-[回滚](use.md#回滚) reset
+		- [回滚](use.md#回滚) reset
 			- 回滚到指定版本	git reset --hard e377f60e28c8b84158
 			- [文件回滚到指定版本](use.md#文件回滚到指定版本)
 			- 撤销未提交的修改的文件  git checkout file
