@@ -41,6 +41,7 @@ company/config/web.php
 
 ### ResultApi用户
 rest/config/base.php  
+
 ```php
  'components' => [
 ...
