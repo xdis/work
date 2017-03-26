@@ -11,6 +11,8 @@
 			- 添加仓库
 				- git remote add origin git@xx.git 添加本地远程仓库
 				- git remote add prod git@xx.git  添加第三方远程仓库
+			- 获取远程仓库列表 get remote 或 git remote -v
+			- 本地创建一个远程仓库 git init --bare
 		- 分支
 			- [创建分支](use.md#创建分支) git checkout -b 分支名
 				- git co -b dev_bak(将当前的分支备份一个)
@@ -20,7 +22,6 @@
 			- [分支创建策略](use.md#分支创建策略)
 			- 合并 git merge feature 或 git merge --no-ff feature
 				- [合并例子](use.md#合并例子)
-		- 获取远程仓库列表 get remote 或 git remote -v
 		- 打标签 git tag xx
 		-[回滚](use.md#回滚) reset
 			- 回滚到指定版本	git reset --hard e377f60e28c8b84158
@@ -38,8 +39,7 @@
 			- [merge模式](use.md#merge模式) 
 	    - 追踪修改 git blame 文件
 	    - 查看该文件是否被提交版本库 git ls-files | grep 文件名
-	    - 本地创建一个远程仓库 git init --bare
-	    - 全并分支_流程
+	    - 合并分支_流程
 		    - git pull origin dev  (merge模式下)
 		    - git merget --no-ff f-sub 
 		    - 出现冲突,解决之
