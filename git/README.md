@@ -28,10 +28,20 @@
 				- 本地 git branch -d 分支名（在主分支中）
 		- 标签
 			- 查看 git tag
-				- 查看指定标签 git show 标签名
-			- 创建 git tag xx
-			- 删除 git tag -d xx
+				- git show tame  查看指定标签 
+				- git tag -l 'v1.4.2.*'  过滤显示
+			- 创建 
+				- git tag xx
+				- git tag -a v2.1 -m 'first version'  创建并描述
+				- git tag -a v3.1 f1bb97a 为之前的提交添加标签
+			- 删除
+				- 本地 git tag -d v0.1  
+				- 远程 git push origin :refs/tags/v1.1  
+			- 推送 git push origin v1.5 
 		- [回滚](use.md#回滚) reset
+			- 回退
+				- 回退上个版本 git reset --hard HEAD^
+				- 回退n个版本 git reset --hard HEAD~100 
 			- 回滚到指定版本	git reset --hard e377f60e28c8b84158
 			- [文件回滚到指定版本](use.md#文件回滚到指定版本)
 			- 撤销未提交的修改的文件  git checkout file
@@ -39,6 +49,7 @@
 			- 强制还原到线上开发分支 git reset --hard origin/dev
 		- log
 			- 查询某个人log  git log --author='cmk02'
+			- git log --oneline 仅显示7位的十六进度显示
 		- git_rebase
 			- [跟上游分支同步](use.md#跟上游分支同步) 
 			- [高级使用](use.md#高级使用) 
