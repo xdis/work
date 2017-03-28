@@ -859,3 +859,8 @@ Pricelist::deleteAll(
 );
 
 ```
+## 存储过程
+```php
+	$sql = "CALL p_sj_qian({$order_id},{$user_id},{$company_id})";
+	$result = \Yii::$app->db->createCommand($sql)->queryOne();
+```

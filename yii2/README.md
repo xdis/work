@@ -114,6 +114,7 @@
 		- 删除 deleteAll  between
 			- [字符串格式删除](post.md#字符串格式删除)  
 			-  [数组加入范围](post.md#数组加入范围)  
+		- [存储过程](post.md#存储过程) 
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)
