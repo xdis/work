@@ -5,6 +5,7 @@
 		- 获取用户Id   Yii::$app->user->getId()
 		- 获取当前登录的公司id  Yii::$app->user->getCompanyId()
 		-  [手动增加csrf](op.md#手动增加csrf) 
+		-  Yii::$app->user->getIdentity()->companyInfo->id  api获取公司id获取
 	- function
 		-  [ArrayHelper](function.md#ArrayHelper) 
 	-  干货

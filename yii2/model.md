@@ -371,18 +371,27 @@ index.php
 
 ```
 
-#条件过滤_where
+# 条件过滤_where
 ##where_普通使用
 ```php
 $query->andwhere('product.sys_category_id = ' . $type);
 ```
 
-##where_大于小于
+## where_大于小于
 ```php
  $query->andFilterWhere(['>', 'pricelist.start_at', $_start_at]);
  $query->andFilterWhere(['<', 'pricelist.end_at', $_end_at]);
- 
+
+//使用过程 
+$query = Pricelist::find();
+$query->select($select)->where(['product_id' => $product_id, 'status' => 1, 'type' => 1]);
+$res = $query->andFilterWhere(['<', 'pricelist.start_at', strtotime($date)])->asArray()->all();
+if (!$res) {
+    throw new \Exception('该日期没有价目');
+} 
 ```
+
+
 
 ## where_like
 ```php
