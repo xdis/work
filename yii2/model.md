@@ -382,7 +382,7 @@ $query->andwhere('product.sys_category_id = ' . $type);
  $query->andFilterWhere(['>', 'pricelist.start_at', $_start_at]);
  $query->andFilterWhere(['<', 'pricelist.end_at', $_end_at]);
 
-//使用过程 
+//控制器-使用过程 
 $query = Pricelist::find();
 $query->select($select)->where(['product_id' => $product_id, 'status' => 1, 'type' => 1]);
 $res = $query->andFilterWhere(['<', 'pricelist.start_at', strtotime($date)])->asArray()->all();
@@ -391,7 +391,10 @@ if (!$res) {
 } 
 ```
 
-
+## where_in
+```php
+['id' => [1, 2, 3], 'status' => 2]
+```
 
 ## where_like
 ```php

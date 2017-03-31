@@ -153,3 +153,45 @@ public function actionCkdriver(){
         throw new BadRequestHttpException('参数错误');
     }	
 ```
+
+## api分页效果
+
+```php
+
+   public function actionBalanceListPriceList($page) {
+        $page = intval($page);
+        $company_id = Yii::$app->user->getIdentity()->companyInfo->id;
+        if ($company_id) {
+
+            $_select = [
+                'sell_company_id sup_company_id', //-- 供应商公司id
+                'sell_company_name sup_company_name', // 供应商公司名称
+                'total_amount order_total_amount',// 订单总额/成本总额
+                'actual_pay_amount' // 订单实际支付总额/改后的实际支付总额
+            ];
+            $where = [
+                   //'buy_company_id' => $company_id,
+                'transaction_status' => 0,
+            ];
+            $proSearch = Dporder::find()->select($_select)->where($where);
+            //dp($proSearch->count());
+            $pages = new Pagination([
+                'totalCount' => $proSearch->count(),
+                'pageSize' => 10,
+                'page' => $page <= 0 ? 0 : $page - 1,
+            ]);
+            $models = $proSearch->offset($pages->offset)
+                ->limit($pages->limit)
+                ->orderBy(' id DESC')
+                ->asArray()
+                ->all();
+
+            if (!$models) {
+                return [];
+            }
+            return $models;
+        } else {
+            throw new BadRequestHttpException('参数错误');
+        }
+    }
+```

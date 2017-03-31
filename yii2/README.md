@@ -6,6 +6,10 @@
 		- 获取当前登录的公司id  Yii::$app->user->getCompanyId()
 		-  [手动增加csrf](op.md#手动增加csrf) 
 		-  Yii::$app->user->getIdentity()->companyInfo->id  api获取公司id获取
+		- 关闭csrf
+			- public $enableCsrfValidation = false;	控制器全局
+			- $this->enableCsrfValidation = false;  指定方法里设置
+	
 	- function
 		-  [ArrayHelper](function.md#ArrayHelper) 
 	-  干货
@@ -131,6 +135,7 @@
 			- 条件过滤_where
 				- [where_普通使用](model.md#where_普通使用) (andwhere)
 				- [where_大于小于](model.md#where_大于小于) (andFilterWhere)
+				- [where_in](model.md#where_in) 
 				- [where_like查询](model.md#where_like) (andFilterWhere)
 		- [自定义场景](model.md#自定义场景)
 			 - [model定义](model.md#model定义)
@@ -149,6 +154,7 @@
 			- [使用自带与个性化_syg](restful_api.md#使用自带与个性化_syg) 
 		- controller
 			- [方法使用_事务_trycatch_badrequesthttpexception_servererrorhttpexception](restful_api.md#方法使用_事务_trycatch_badrequesthttpexception_servererrorhttpexception) 
+			- [api分页效果](restful_api.md#api分页效果) 
 
 - 疑问
 	- [为什么日志不入数据库](question.md#为什么日志不入数据库)
