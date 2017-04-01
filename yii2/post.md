@@ -859,6 +859,17 @@ Pricelist::deleteAll(
 );
 
 ```
+## 插入
+### 统计店铺访问量
+```php
+
+		$dpstore_model = DpStore::find()->where(['company_id' => $this->store_company_id, 'ower_id' => $this->store_owner_id])->one();
+		if ($dpstore_model) {
+		    $dpstore_model->pv = $dpstore_model->pv + 1;
+		    $dpstore_model->save();
+		}
+```
+
 ## 存储过程
 ```php
 $sql = "CALL p_sj_qian({$order_id},{$user_id},{$company_id})";

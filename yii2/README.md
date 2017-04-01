@@ -2,9 +2,11 @@
 - Yii2
 	- [计划](plan.md)
 	- 常用
-		- 获取用户Id   Yii::$app->user->getId()
-		- 获取当前登录的公司id  Yii::$app->user->getCompanyId()
-		-  Yii::$app->user->getIdentity()->companyInfo->id  api获取公司id获取
+		- user
+			- Yii::$app->user->getId()  //获取用户Id
+			- Yii::$app->user->getCompanyId()  //获取当前登录的公司id
+			- Yii::$app->user->getIdentity()->companyInfo->id  //api获取公司id获取
+			- Yii::$app->shopUser->id //获取H5店铺用户id
 		- 关闭csrf
 			- public $enableCsrfValidation = false;	控制器全局
 			- $this->enableCsrfValidation = false;  指定方法里设置
@@ -12,7 +14,8 @@
 		-  执行sql
 			- $res = Yii::$app->db->createCommand($sql)->execute(); 更新/删除
 			- $res = Yii::$app->db->createCommand($sql)->queryOne(); 存储过程/函数
-			- $res = Yii::$app->db->createCommand($sql)->queryAll();   
+			- $res = Yii::$app->db->createCommand($sql)->queryAll();  
+		-  YII_ENV_PROD 判断是否生成环境
 	
 	- function
 		-  [ArrayHelper](function.md#ArrayHelper) 
@@ -123,6 +126,8 @@
 		- 删除 deleteAll  between
 			- [字符串格式删除](post.md#字符串格式删除)  
 			-  [数组加入范围](post.md#数组加入范围)  
+		- 插入
+			- 统计店铺访问量
 		- [存储过程](post.md#存储过程) 
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
