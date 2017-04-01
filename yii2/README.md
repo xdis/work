@@ -4,11 +4,15 @@
 	- 常用
 		- 获取用户Id   Yii::$app->user->getId()
 		- 获取当前登录的公司id  Yii::$app->user->getCompanyId()
-		-  [手动增加csrf](op.md#手动增加csrf) 
 		-  Yii::$app->user->getIdentity()->companyInfo->id  api获取公司id获取
 		- 关闭csrf
 			- public $enableCsrfValidation = false;	控制器全局
 			- $this->enableCsrfValidation = false;  指定方法里设置
+		-  [手动增加csrf](op.md#手动增加csrf) 
+		-  执行sql
+			- $res = Yii::$app->db->createCommand($sql)->execute(); 更新/删除
+			- $res = Yii::$app->db->createCommand($sql)->queryOne(); 存储过程/函数
+			- $res = Yii::$app->db->createCommand($sql)->queryAll();   
 	
 	- function
 		-  [ArrayHelper](function.md#ArrayHelper) 
