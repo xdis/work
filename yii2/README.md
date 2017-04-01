@@ -190,7 +190,7 @@
 			- [3在请求时候_后端怎样获取Header里的两个参数](shop.md#3在请求时候_后端怎样获取Header里的两个参数)
 			- [3_1php获取header的函数解析](shop.md#3_1php获取header的函数解析)
 	- 待分析 
-		- [loginForm_注册_afterSignup](daiFenXi/loginForm.md)    
+		- [loginForm_注册_afterSignup](daiFenXi/loginForm.md)  wqw   
 			-  $this->refresh();
 			-  $this->link('account', $account);	
 	- 短信模块分析
