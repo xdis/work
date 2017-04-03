@@ -9,7 +9,7 @@
 		- [分账](socket/c1.php)
 - RestfulApi
 	- 会飞的鱼Xia
-		- 例子说明_会飞的鱼Xia
+		- [例子说明_会飞的鱼Xia](RestfulApi.md#例子说明_会飞的鱼Xia)
 		- [RestfulApi初始化](https://github.com/408824338/RestfulApi_i/blob/master/restful/index.php)
 		- [使用postman授权设置与使用](RestfulApi.md#使用postman授权设置与使用)
 		- [代码中使用用户与密码来登陆](RestfulApi.md#代码中使用用户与密码来登陆)
