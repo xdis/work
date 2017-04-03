@@ -9,7 +9,10 @@
 		- [分账](socket/c1.php)
 - RestfulApi
 	- 会飞的鱼Xia
+		- 例子说明_会飞的鱼Xia
 		- [RestfulApi初始化](https://github.com/408824338/RestfulApi_i/blob/master/restful/index.php)
 		- [使用postman授权设置与使用](RestfulApi.md#使用postman授权设置与使用)
 		- [代码中使用用户与密码来登陆](RestfulApi.md#代码中使用用户与密码来登陆)
+		- 本例子中使用php://input来获取参数,我使用postman来模拟,获不取不到数据
+		- 什么时候使用file_get_contents('php://input') 
 	- [使用postman模拟参数php解析获取](shop.md#使用postman模拟参数php解析获取)
