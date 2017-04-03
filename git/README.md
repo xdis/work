@@ -79,4 +79,5 @@
 		- [本地仓库里加入多个远程仓库_fetch_commit到本地仓库](example.md#本地仓库里加入多个远程仓库_fetch_commit到本地仓库)
 	- 问题
 		- [测试推向正式服错](question.md#测试推向正式服错)  git push prod anyang
+		- [composer_sms_报错误](question.md#composer_sms_报错误)
 			

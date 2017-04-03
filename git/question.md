@@ -28,3 +28,31 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 ## 回答 
 > 经过分析,根本没有使用测试/开发环境的anyang分支,直接将anyang-test的分支cp到线上分支的 anyang-test,推送,再合并到线上的anyang分支!
+> 
+
+---
+
+## composer_sms_报错误
+
+```
+λ composer require --prefer-dist horse003/yii2-sms "*"
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - The requested package horse003/yii2-sms could not be found in any version, there may be a typo in the package name.
+
+Potential causes:
+ - A typo in the package name
+ - The package is not available in a stable-enough version according to your minimum-stability setting
+   see <https://getcomposer.org/doc/04-schema.md#minimum-stability> for more details.
+
+Read <https://getcomposer.org/doc/articles/troubleshooting.md> for further common problems.
+
+Installation failed, reverting ./composer.json to its original content.
+
+```
+
+## 回答 

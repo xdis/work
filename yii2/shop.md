@@ -167,4 +167,29 @@ if (!function_exists('getallheaders')) {
 }
 ```
 
+## 使用postman模拟参数php解析获取
 
+![](shop/postman_moni_header.png)
+
+```php
+/**
+ 使用postman头部模拟两个参数 companyId 和 OwnID,然后php这边解析获取
+*/
+//1.获取头部自定义的函数
+
+if (!function_exists('getallheaders')) {
+    function getallheaders()
+    {
+        foreach ($_SERVER as $name => $value) {
+            if (substr($name, 0, 5) == 'HTTP_') {
+                $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
+            }
+        }
+        return $headers;
+    }
+}
+
+$arr = getallheaders();
+echo $arr['OwnId'].'_' .$arr['CompanyId'];
+
+```

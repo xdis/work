@@ -189,6 +189,7 @@
 			- [2怎样在请求头加上Companyid和Ownerid两个参数](shop.md#2怎样在请求头加上Companyid和Ownerid两个参数)   
 			- [3在请求时候_后端怎样获取Header里的两个参数](shop.md#3在请求时候_后端怎样获取Header里的两个参数)
 			- [3_1php获取header的函数解析](shop.md#3_1php获取header的函数解析)
+			- 使用postman模拟参数php解析获取
 	- 待分析 
 		- [loginForm_注册_afterSignup](daiFenXi/loginForm.md)  wqw   
 			-  $this->refresh();
