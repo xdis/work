@@ -16,3 +16,15 @@
 		- 本例子中使用php://input来获取参数,我使用postman来模拟,获不取不到数据
 		- 什么时候使用file_get_contents('php://input') 
 	- [使用postman模拟参数php解析获取](shop.md#使用postman模拟参数php解析获取)   // PHP_AUTH_USER 和  PHP_AUTH_PW
+- composer
+	- 常用 
+		- C:\Users\cmk\AppData\Local\Composer window路径 
+		- composer clear-cache 清空缓存
+		- composer update fihacklog/yii2-sms-module  单个更新
+		- composer update ihacklog/yii2-sms-module  --prefer-source 更换仓库
+	- 问题
+		- 1.某个包修改了某个加载仓库路径,一直不是指定的仓库加载路径
+		- 回答:
+			- 1可以进入该目录里,然后执行git pull origin master,但如果将该目录删除,执行composer install还是行
+			- 2.彻底的解决办法:将composer.lock删除,再执行composer install
+		

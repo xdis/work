@@ -16,6 +16,8 @@
 			- $res = Yii::$app->db->createCommand($sql)->queryOne(); 存储过程/函数
 			- $res = Yii::$app->db->createCommand($sql)->queryAll();  
 		-  YII_ENV_PROD 判断是否生成环境
+	- composer
+		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
 	- function
 		-  [ArrayHelper](function.md#ArrayHelper) 
