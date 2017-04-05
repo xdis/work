@@ -23,8 +23,9 @@
 		- composer update fihacklog/yii2-sms-module  单个更新
 		- composer update ihacklog/yii2-sms-module  --prefer-source 更换仓库
 	- 问题
-		- 1.某个包修改了某个加载仓库路径,一直不是指定的仓库加载路径
+		- 1.某个包加载使用指定的仓库,修改该仓库地址,一直无法更新
 		- 回答:
-			- 1可以进入该目录里,然后执行git pull origin master,但如果将该目录删除,执行composer install还是行
+			- 1.临时方案,进入该目录,执行git pull origin master
 			- 2.彻底的解决办法:将composer.lock删除,再执行composer install
+			- 3.如果是开发环境,则将ventor删除,如果是线上,则复制文件上去
 		

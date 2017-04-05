@@ -6,6 +6,7 @@
 			- Yii::$app->user->getId()  //获取用户Id
 			- Yii::$app->user->getCompanyId()  //获取当前登录的公司id
 			- Yii::$app->user->getIdentity()->companyInfo->id  //api获取公司id获取
+			- Yii::$app->user->identity->username //获取用户表 user.realname
 			- Yii::$app->shopUser->id //获取H5店铺用户id
 		- 关闭csrf
 			- public $enableCsrfValidation = false;	控制器全局
