@@ -154,7 +154,9 @@
 			 - [model定义](model.md#model定义)
 			 - [controller使用](model.md#controller使用)
 		-  [指定字段的自定义函数过滤](model.md#指定字段的自定义函数过滤)
-		-  rules
+			- 场景
+			- 登陆获取公司ID_复杂的例子_zhou  
+		- rules定义
 			-  [自定义过滤函数filter](model.md#自定义过滤函数filter)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
@@ -206,6 +208,12 @@
 		- user组件定义
 			- [company模块里包含"企业用户"与小模块里的"H5店铺"两个用户](user.md#company模块里包含"企业用户"与小模块里的"H5店铺"两个用户)  
 			- [ResultApi用户](user.md#ResultApi用户)  
+		- 企业登陆_z
+			- [配置文件](配置文件.md#配置文件)
+			- [SignInController_控制器](company_login_z.md#SignInController_控制器) 
+			- [LoginForm](company_login_z.md#LoginForm) //Form类
+			- [CompanyUser](company_login_z.md#CompanyUser)  //Yii::$app->user 所指的类
+			- [User](company_login_z.md#User) //user认证类
 
 	- 农行
 		- [socket请求文档](nongye/socket.php) tcp/ip请求

@@ -479,6 +479,38 @@ common/models/Activity.php
     }
 ```
 
+### 登陆获取公司ID_复杂的例子_zhou
+```php
+public function validateCompanyId($attr)
+    {
+        $usernameOrMobile = Yii::$app->user->getPreLoginMobile();
+        $this->username = $usernameOrMobile;
+        //do not validate ucenter login
+        if ($this->company_id == 0) {
+            $user = $this->getPersonUser();
+            $this->user = $user;
+            return true;
+        }
+        $user = $this->getCompanyUser();
+        if (!$user) {
+            $this->addError($attr, '公司登录错误!');
+        }
+        $company = Company::findOne($this->$attr);
+        if (!$company) {
+            $this->addError($attr, '请选择公司!');
+        }
+        $dimissioned = UserCompany::find()->where(['user_id' => $user->id, 'company_id' => $company->id, 'staff_status' => 0])->count() > 0;
+        if ($dimissioned) {
+            $this->addError($attr, '已经离职，不能登录!');
+        }
+        if (!AuthAssign::userHasRole($user->id, $company->id, 4) && $user->id != $company->user_id) {
+            $this->addError($attr, '您没有权限登录此公司!');
+        }
+        $this->user = $user;
+    }
+```
+
+
 ## rules
 ### 自定义过滤函数filter
 
