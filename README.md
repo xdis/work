@@ -5,6 +5,7 @@
 - [Yii2](yii2/)
 
 - setup
+    - [linux](linux/)
 	- [mysql](setup/)
 	- [git](git/)
 
