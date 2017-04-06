@@ -396,6 +396,13 @@ if (!$res) {
 ['id' => [1, 2, 3], 'status' => 2]
 ```
 
+## where_or
+```php
+$users = User::find()
+   ->andWhere(['or', ['username'=>$this->username], ['mobile'=>$this->username]])
+   ->all();
+```
+
 ## where_like
 ```php
   $query->andFilterWhere(['like', 'product.name', $_product_name]);

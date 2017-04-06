@@ -148,6 +148,7 @@
 				- [where_普通使用](model.md#where_普通使用) (andwhere)
 				- [where_大于小于](model.md#where_大于小于) (andFilterWhere)
 				- [where_in](model.md#where_in) 
+				- [where_or](model.md#where_or) and
 				- [where_like查询](model.md#where_like) (andFilterWhere)
 		- [自定义场景](model.md#自定义场景)
 			 - [model定义](model.md#model定义)
