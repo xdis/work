@@ -208,13 +208,18 @@
 		- user组件定义
 			- [company模块里包含"企业用户"与小模块里的"H5店铺"两个用户](user.md#company模块里包含"企业用户"与小模块里的"H5店铺"两个用户)  
 			- [ResultApi用户](user.md#ResultApi用户)  
-		- 企业登陆_z
-			- [配置文件](company_login_z.md#配置文件)
-			- [SignInController_控制器](company_login_z.md#SignInController_控制器) 
-			- [LoginForm](company_login_z.md#LoginForm) //Form类
-			- [CompanyUser](company_login_z.md#CompanyUser)  //Yii::$app->user 所指的类
-			- [User](company_login_z.md#User) //user认证类
-
+		- 分析
+			- Yii::$app->user->identity->username  //怎样获取user.username
+		- 案例
+			- 企业登陆_z
+				- [配置文件](company_login_z.md#配置文件)
+				- [SignInController_控制器](company_login_z.md#SignInController_控制器) 
+				- [LoginForm](company_login_z.md#LoginForm) //Form类
+				- [CompanyUser](company_login_z.md#CompanyUser)  //Yii::$app->user 所指的类
+				- [User](company_login_z.md#User) //user认证类
+				- [时序图](company_login_z.md#时序图)
+			- 仿照一个Module下两个登陆模块
+				- 
 	- 农行
 		- [socket请求文档](nongye/socket.php) tcp/ip请求
 
