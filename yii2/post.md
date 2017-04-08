@@ -150,7 +150,7 @@ public function actionUpdate($id)
 ```
 
 ## 接收post再验证_例b
->(注:$model->save(false))
+>(注:$model->save(false))  
 
 ```php
 use common\models\Blog; 
@@ -247,7 +247,7 @@ public function actionCreate()
 
 
 
-#yii2自带函数连接
+#yii2自带函数连接  
 
 ## leftjoin
 ```php
@@ -533,8 +533,8 @@ public function pro_list($page, $type)
 ---
 # 查询连环招
 ## 利用模型get表关联查询_wqw 
->本例子 产品表获取分类名称
->关联 product.catetory_id = product_category.id,获取product_category.name
+>本例子 产品表获取分类名称  
+>关联 product.catetory_id = product_category.id,获取product_category.name  
 
 ## Controller
 ```php
@@ -580,8 +580,9 @@ public function pro_list($page, $type)
     }
 ```
 
-##Model
-product.php
+## Model
+product.php  
+
 ```php
 //表间的关联
     public function getCategory() {
@@ -590,18 +591,18 @@ product.php
 
 ```
 ---
-#actions
-##指定控制器嵌入全局性方法action
->即全局性方法可以前后台使用, 如短信
->所谓一处定义,全局通用
->来源 [zhoubo短信企业后台调用短信](controller/SignInController.php) 
->company/controllers/SignInController.php
+# actions
+## 指定控制器嵌入全局性方法action
+>即全局性方法可以前后台使用, 如短信  
+>所谓一处定义,全局通用  
+>来源 [zhoubo短信企业后台调用短信](controller/SignInController.php)  
+>company/controllers/SignInController.php  
 
-###使用场景
-如短信，在前后台都会使用
+### 使用场景  
+如短信，在前后台都会使用  
 
-###访问地址
-http://ysk.dev/site/test?get=abc
+### 访问地址 
+http://ysk.dev/site/test?get=abc  
 
 ![](controller/action_global_diy.png)
 
@@ -609,10 +610,10 @@ http://ysk.dev/site/test?get=abc
 - [全局方法定义开发](post.md#全局方法定义开发)
 
 
-##指定控制器设置action配置
-> 本例子参数zhoubo的短信发送的例子 代码如下
+## 指定控制器设置action配置
+> 本例子参数zhoubo的短信发送的例子 代码如下  
 
-frontend/controllers/SiteController.php
+frontend/controllers/SiteController.php  
 
 ```php
 namespace backend\controllers;
@@ -665,8 +666,8 @@ class TestController extends Controller
 }
 ```
 
-##全局方法定义开发
-common/actions/TestAction.php
+## 全局方法定义开发
+common/actions/TestAction.php  
 ```php
 namespace common\actions;
 use yii\base\Action;
