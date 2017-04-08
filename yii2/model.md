@@ -640,7 +640,7 @@ common/models/User.php
         $this->refresh(); //分析1
 
         /**
-		  向timeline_event表插入数据,意图是标识注册来源,什么时候注册等基本信息	  
+		 * 向timeline_event表插入数据,意图是标识注册来源,什么时候注册等基本信息	  
         */
         Yii::$app->commandBus->handle(new AddToTimelineCommand([
             'category' => 'user',
