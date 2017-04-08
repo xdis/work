@@ -550,7 +550,7 @@ common/models/Account.php
      */
     public function createAccount($id)
     {
-        $this->setIsNewRecord(true);
+        $this->setIsNewRecord(true); //设置插入模式! 因为 save有可能是修改！
         $exists = self::findOne($id);
         if (!$exists) {
             $this->balance = 0;
@@ -560,4 +560,13 @@ common/models/Account.php
         }
         return $id;
     }
+```
+
+或者 等于复制，如查询出来的结果，然后修改，使用save()插入一个新的数据  
+
+```php
+$record = Record::find(123);
+$record->primaryKey = null;
+$record->isNewRecord = true;
+$record->save();
 ```

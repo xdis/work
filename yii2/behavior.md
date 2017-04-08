@@ -1,12 +1,12 @@
-#行为
+# 行为
 
-#类的混合
-##猫叫老鼠添加行为
+# 类的混合
+## 猫叫老鼠添加行为
 
-###给狗添加行为方法和行为变量
+### 给狗添加行为方法和行为变量
 
-1. 新建狗行为
-common/behaviors/DogBehavior.php  
+1. 新建狗行为  
+common/behaviors/DogBehavior.php   
 ```php
 namespace common\behaviors;
 
@@ -23,7 +23,7 @@ class DogBehavior extends Behavior {
 }
 ```
 
-1.1 狗的类库绑定行为
+1.1 狗的类库绑定行为  
 vendor/horse003/yii2-event-demo/src/Dog.php  
 ```php
 namespace horse003\event;
@@ -45,7 +45,7 @@ class Dog extends Component {
 }
 ```
 
-2.控制器
+2.控制器  
 backend/controllers/DemoEventController.php  
 ```php
     public function actionDog(){
@@ -59,17 +59,17 @@ backend/controllers/DemoEventController.php
     }
 ```
 
-3.访问地址
+3.访问地址   
 http://ysk.dev/admin/demo-event/dog   
 //输出  
 
 dog eat
 50
 
-###给狗添加事件与触发
+### 给狗添加事件与触发
 
-1.行为里添加要绑定的触发的行为  
-common/behaviors/DogBehavior.php  
+1.行为里添加要绑定的触发的行为    
+common/behaviors/DogBehavior.php   
 ```php
 namespace common\behaviors;
 
@@ -98,8 +98,8 @@ class DogBehavior extends Behavior {
 }
 ```
 
-2.控制器触发事件行为
-backend/controllers/DemoEventController.php
+2.控制器触发事件行为  
+backend/controllers/DemoEventController.php  
 ```php
     public function actionDogEvent() {
         $dog = new Dog();
@@ -108,14 +108,14 @@ backend/controllers/DemoEventController.php
     }
 ```
 
-3.访问输出
-http://ysk.dev/admin/demo-event/dog-event
+3.访问输出  
+http://ysk.dev/admin/demo-event/dog-event  
 //输出  
 
 wang wang wang
 
 ---
-#对象的混合
+# 对象的混合
 
 ## 定义行为类
 vendor/horse003/yii2-event-demo/src/Dog.php  
@@ -133,8 +133,8 @@ class Dog extends Component {
 }
 ```
 
-##控制器绑定或解绑行为
-backend/controllers/DemoEventController.php  
+## 控制器绑定或解绑行为
+backend/controllers/DemoEventController.php   
 ```php
     public function actionDogObject(){
         $dog = new Dog();
@@ -146,5 +146,5 @@ backend/controllers/DemoEventController.php
         echo $dog->eat();
     }
 ```
-##访问与输出
-http://ysk.dev/admin/demo-event/dog-object
+## 访问与输出  
+http://ysk.dev/admin/demo-event/dog-object  
