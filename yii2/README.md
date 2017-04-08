@@ -153,13 +153,16 @@
 		- [自定义场景](model.md#自定义场景)
 			 - [model定义](model.md#model定义)
 			 - [controller使用](model.md#controller使用)
-		-  [指定字段的自定义函数过滤](model.md#指定字段的自定义函数过滤)
+		- [指定字段的自定义函数过滤](model.md#指定字段的自定义函数过滤)
 			- 场景
 			- 登陆获取公司ID_复杂的例子_zhou  
 		- rules定义
-			-  [自定义过滤函数filter](model.md#自定义过滤函数filter)
+			- [自定义过滤函数filter](model.md#自定义过滤函数filter)
 		- setIsNewRecord()使用
 			- [创建账户，如果不存在才创建.存在则直接返回账户id_wqw](model.md#创建账户，如果不存在才创建.存在则直接返回账户id_wqw)
+		- link() 更新 应该有双向更新
+			- [获取Customer的主键,然后order表同时存储该Customer主键](model.md#获取Customer的主键,然后order表同时存储该Customer主键)
+			- [双向更新_link](model.md#双向更新_link)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展

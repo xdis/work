@@ -18,7 +18,7 @@ company/modules/shop/models/LoginForm.php
     }
 ```
 ## $user->afterSignup(); //核心在这里  
-
+common/models/User.php  
 ```php
   /**
      * Creates user profile and application event
@@ -27,6 +27,10 @@ company/modules/shop/models/LoginForm.php
     public function afterSignup(array $profileData = [])
     {
         $this->refresh(); //分析1
+
+        /**
+		  向timeline_event表插入数据,意图是标识注册来源,什么时候注册等基本信息	  
+        */
         Yii::$app->commandBus->handle(new AddToTimelineCommand([
             'category' => 'user',
             'event' => 'signup',
@@ -36,13 +40,16 @@ company/modules/shop/models/LoginForm.php
                 'created_at' => $this->created_at
             ]
         ]));
+
         $profile = new UserProfile();
         $profile->locale = Yii::$app->language;
         $profile->load($profileData, '');
-        $this->link('userProfile', $profile);
+        $this->link('userProfile', $profile);//分析2
+
         $account = new Account();
         $account->id = $this->getId();
         $this->link('account', $account); //分析2
+
         if ($this->user_type == self::USER_TYPE_COMPANY) {
             //添加公司
             $company = new Company();
@@ -59,6 +66,7 @@ company/modules/shop/models/LoginForm.php
             $company->business_license = '';
             $company->request_by = $this->getId();
             $this->link('companyInfo', $company); //分析2
+
             //插入公司后自动初始化产品默认产品分类数据
             if ($this->companyInfo && is_object($this->companyInfo)) {
                 $company_id = $this->companyInfo->id;

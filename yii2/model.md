@@ -570,3 +570,130 @@ $record->primaryKey = null;
 $record->isNewRecord = true;
 $record->save();
 ```
+
+##  link() 更新
+>注: link()第一参数名为定义关联表名字,如 getCustomer()
+
+### 获取Customer的主键,然后order表同时存储该Customer主键
+
+```php
+//传统的方法
+$customer = Customer::findOne(123);
+$order = new Order();
+$order->subtotal = 100;
+// ...
+
+// setting the attribute that defines the "customer" relation in Order
+$order->customer_id = $customer->id;
+$order->save();
+
+//使用link()
+
+public function getCustomer()
+{
+    return $this->hasOne(Customer::className(), ['user_id' => 'id']);
+}
+
+$customer = Customer::findOne(123);
+$order = new Order();
+$order->subtotal = 100;
+// ...
+
+$order->link('customer', $customer);
+
+```
+
+### 双向更新_link
+common/models/User.php  
+```php
+
+    /** 分析1 定义名字
+     * 关联个人资料
+     */
+    public function getUserProfile()
+    {
+        return $this->hasOne(UserProfile::className(), ['user_id' => 'id']);
+    }
+
+    /** 分析2 定义名字
+     * @inheritdoc
+     */
+    public function getAccount()
+    {
+    	return $this->hasOne(Account::className(), ['id' => 'id']);
+    }
+
+    /** 分析3 定义名字
+     * 关联公司
+     */
+    public function getCompanyInfo()
+    {
+        return $this->hasOne(Company::className(), ['user_id' => 'id']);
+    }
+
+  /**
+     * Creates user profile and application event
+     * @param array $profileData
+     */
+    public function afterSignup(array $profileData = [])
+    {
+        $this->refresh(); //分析1
+
+        /**
+		  向timeline_event表插入数据,意图是标识注册来源,什么时候注册等基本信息	  
+        */
+        Yii::$app->commandBus->handle(new AddToTimelineCommand([
+            'category' => 'user',
+            'event' => 'signup',
+            'data' => [
+                'public_identity' => $this->getPublicIdentity(),
+                'user_id' => $this->getId(),
+                'created_at' => $this->created_at
+            ]
+        ]));
+
+        $profile = new UserProfile();
+        $profile->locale = Yii::$app->language;
+        $profile->load($profileData, '');
+        $this->link('userProfile', $profile);//分析1
+
+        $account = new Account();
+        $account->id = $this->getId();
+        $this->link('account', $account); //分析2
+
+        if ($this->user_type == self::USER_TYPE_COMPANY) {
+            //添加公司
+            $company = new Company();
+            $company->name = $this->username;
+            $company->brand_name = $this->username;
+            $company->user_id = $this->getId();
+            $company->city_name = '1';
+            $company->address = '';
+            $company->contact_name = '';
+            $company->contact_phone = '';
+            $company->delegate_name = '';
+            $company->delegate_idcard = '';
+            $company->license_path = '';
+            $company->business_license = '';
+            $company->request_by = $this->getId();
+            $this->link('companyInfo', $company); //分析3
+
+            //插入公司后自动初始化产品默认产品分类数据
+            if ($this->companyInfo && is_object($this->companyInfo)) {
+                $company_id = $this->companyInfo->id;
+                $result = Yii::$app->db->createCommand('CALL p_add_com_product_category_a(:company_id)')
+                    ->bindValue(':company_id', $company_id)
+                    ->execute();
+            }
+/*            $userCompany = new UserCompany();
+            $userCompany->user_id = $this->getId();
+            $userCompany->company_id = '';*/
+        }
+
+        $this->trigger(self::EVENT_AFTER_SIGNUP);
+        // Default role
+//        $auth = Yii::$app->authManager;
+//        $auth->assign($auth->getRole(User::ROLE_USER), $this->getId());
+    }
+
+```
