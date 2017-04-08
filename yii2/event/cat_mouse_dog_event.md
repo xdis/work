@@ -206,8 +206,8 @@ mourse is runing
 ```    
 
 ## 6 根据系统   $this->trigger(self::EVENT_AFTER_REQUEST),action输出后再输出
-###系统
-vendor/yiisoft/yii2/base/Application.php 
+### 系统
+vendor/yiisoft/yii2/base/Application.php   
 ```php
 (new yii\web\Application($config))->run();
 
@@ -240,7 +240,7 @@ vendor/yiisoft/yii2/base/Application.php
     }
 ```  
 ### 控制器
-backend/controllers/DemoEventController.php     
+backend/controllers/DemoEventController.php      
 ``` php
      public function actionAnimal() {
  
