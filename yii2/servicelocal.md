@@ -1,9 +1,10 @@
-#依赖注入
-#服务器定位
+# 依赖注入
+# 服务器定位
 
-##控制器配置调用
+## 控制器配置调用
 
 backend/controllers/ServiceLocalController.php  
+
 ```php
 
 namespace backend\controllers;
@@ -61,16 +62,17 @@ class Car {
 }
 
 ```
-##访问与输出 
+## 访问与输出 
 http://ysk.dev/admin/service-local/index  
-###输出  
+### 输出  
 i am an old man  
 i am an woman driver  
 
 
-##参数配置在文件并调用
+## 参数配置在文件并调用
 
-###backend/config/web.php的配置 
+### backend/config/web.php的配置 
+
 ```php 
  'components'=>[
    ...
@@ -80,7 +82,8 @@ i am an woman driver
   ...
 ]
 ```
-###代码区
+### 代码区
+
 ```php
 namespace backend\controllers;
 
@@ -131,9 +134,10 @@ class Car {
 }
 
 ```
-##访问与输出 
+## 访问与输出 
 http://ysk.dev/admin/di/index  
-###输出 
+
+### 输出 
 注:这里的输出竟然是同样的结果,有点奇怪!   
 i am an old man  
 i am an old man  
