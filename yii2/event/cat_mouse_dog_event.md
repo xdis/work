@@ -1,18 +1,18 @@
-#事件
+# 事件
 
-##猫叫老鼠跑的事件
+## 猫叫老鼠跑的事件
 
-##git仓库
-[github](https://github.com/408824338/yii2-event-demo)
-[coding](https://coding.net/u/horse003/p/yii2-event-demo/git)
+## git仓库
+[github](https://github.com/408824338/yii2-event-demo)  
+[coding](https://coding.net/u/horse003/p/yii2-event-demo/git)  
 
 
-##访问地址 
-http://ysk.dev/admin/demo-event/animal
+## 访问地址 
+http://ysk.dev/admin/demo-event/animal  
 
-##1.猫来了，老鼠就跑了   trigger()  on()  
+## 1.猫来了，老鼠就跑了   trigger()  on()  
 
-###猫 
+### 猫 
 vendor/horse003/yii2-event-demo/src/Cat.php  
 ```php
     public function shout() {
@@ -20,7 +20,7 @@ vendor/horse003/yii2-event-demo/src/Cat.php
         $this->trigger('miao');
     }
 ```
-###老鼠
+### 老鼠
 vendor/horse003/yii2-event-demo/src/Mourse.php  
 ```php
  class Mourse { 
@@ -29,7 +29,7 @@ vendor/horse003/yii2-event-demo/src/Mourse.php
      }
  }
 ```
-###控制器
+### 控制器
 backend/controllers/DemoEventController.php  
 ```php
     public function actionAnimal(){
@@ -39,7 +39,7 @@ backend/controllers/DemoEventController.php
         $cat->shout();
     }
 ```
-###输出
+### 输出
 ```php
  miao maio miao  
  mourse is runing  
@@ -47,7 +47,7 @@ backend/controllers/DemoEventController.php
 
 ## 2.加入事件传参数 
 
-###猫 
+### 猫 
 vendor/horse003/yii2-event-demo/src/Cat.php  
 ```php
 
@@ -61,7 +61,7 @@ vendor/horse003/yii2-event-demo/src/Cat.php
         $this->trigger('miao', $me);
     }
 ```
-###老鼠
+### 老鼠
 vendor/horse003/yii2-event-demo/src/Mourse.php  
 ```php
 
@@ -74,7 +74,7 @@ vendor/horse003/yii2-event-demo/src/Mourse.php
      }
  }
 ```
-###输出
+### 输出
 ```php
 miao maio miao  
 hello my is event  
@@ -83,7 +83,7 @@ mourse is runing
 ## 3.加入dog角色  
 猫叫，老鼠跑了，小跑在看
 
-###dog
+### dog
 vendor/horse003/yii2-event-demo/src/Dog.php
 ```php
 class Dog {
@@ -92,7 +92,7 @@ class Dog {
     }
 }
 ```
-###控制器
+### 控制器
 backend/controllers/DemoEventController.php 
 ```php
     public function actionAnimal(){
@@ -105,7 +105,7 @@ backend/controllers/DemoEventController.php
 
     }
 ```
-###输出
+### 输出
 ```php
     miao maio miao
     hello my is event
@@ -114,7 +114,7 @@ backend/controllers/DemoEventController.php
     
 ```
 
-## 4.取消狗在看的动作
+##  4.取消狗在看的动作
 ```php
     public function actionAnimal(){
         $cat = new Cat();
@@ -127,7 +127,7 @@ backend/controllers/DemoEventController.php
 
     }
 ```
-###输出
+### 输出
 ```php
     miao maio miao
     hello my is event
@@ -148,7 +148,7 @@ backend/controllers/DemoEventController.php
 
     }
 ```
-###输出  
+### 输出  
 ```php 
  miao maio miao
  hello my is event
@@ -170,7 +170,7 @@ backend/controllers/DemoEventController.php
 
     }
 ```
-###输出   
+### 输出   
 ```php 
 miao maio miao
 hello my is event
@@ -196,7 +196,7 @@ mourse is runing
 
     }
 ```
-###输出   
+### 输出   
 ```php
  miao maio miao
  miao event has triggered
@@ -239,7 +239,7 @@ vendor/yiisoft/yii2/base/Application.php
         }
     }
 ```  
-###控制器
+### 控制器
 backend/controllers/DemoEventController.php     
 ``` php
      public function actionAnimal() {
@@ -260,7 +260,7 @@ backend/controllers/DemoEventController.php
          $cat2->shout();
      }
 ```
-###输出  
+### 输出  
 ``` php       
   miao maio miao
   miao event has triggered
