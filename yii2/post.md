@@ -591,11 +591,11 @@ product.php
 
 ```
 ---
-# actions
+# actions全局定义
 ## 指定控制器嵌入全局性方法action
 >即全局性方法可以前后台使用, 如短信  
 >所谓一处定义,全局通用  
->来源 [zhoubo短信企业后台调用短信](controller/SignInController.php)  
+>来源 [zhoubo短信企业后台调用短信](controller/SignInController.php#L46-L67)  
 >company/controllers/SignInController.php  
 
 ### 使用场景  
