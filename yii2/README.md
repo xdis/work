@@ -131,7 +131,7 @@
 			-  [数组加入范围](post.md#数组加入范围)  
 		- 插入
 			- 统计店铺访问量
-		- [存储过程](post.md#存储过程) 
+		- [存储过程使用](post.md#存储过程使用) 
     - model
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)
@@ -158,6 +158,8 @@
 			- 登陆获取公司ID_复杂的例子_zhou  
 		- rules定义
 			-  [自定义过滤函数filter](model.md#自定义过滤函数filter)
+		- setIsNewRecord()使用
+			- 创建账户，如果不存在才创建.存在则直接返回账户id_wqw
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
@@ -211,6 +213,9 @@
 		- 分析
 			- Yii::$app->user->identity->username  //怎样获取user.username
 		- 案例
+			- H5店铺登陆
+				- 环境说明
+				- 
 			- 企业登陆_z
 				- [配置文件](company_login_z.md#配置文件)
 				- [SignInController_控制器](company_login_z.md#SignInController_控制器) 

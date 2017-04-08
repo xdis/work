@@ -537,3 +537,27 @@ public function validateCompanyId($attr)
 
     }
 ```
+
+## setIsNewRecord()使用
+
+### 创建账户，如果不存在才创建.存在则直接返回账户id_wqw
+common/models/Account.php  
+```php
+    /**
+     * 创建账户，如果不存在才创建.存在则直接返回账户id
+     * @param $id
+     * @return bool
+     */
+    public function createAccount($id)
+    {
+        $this->setIsNewRecord(true);
+        $exists = self::findOne($id);
+        if (!$exists) {
+            $this->balance = 0;
+            $this->frozen = 0;
+            $this->reward = 0;
+            return $this->save();
+        }
+        return $id;
+    }
+```
