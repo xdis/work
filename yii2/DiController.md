@@ -99,12 +99,14 @@ class Car {
 }
 
 ```
-##访问与输出 
+## 访问与输出 
 http://ysk.dev/admin/di/index  
-###输出 
-i am an old man
 
-##案例3 以接口方式,添加多一个女司机
+### 输出 
+i am an old man  
+
+## 案例3 以接口方式,添加多一个女司机
+
 ```php
 namespace backend\controllers;
 
@@ -159,9 +161,10 @@ class Car {
 }
 
 ```
-##访问与输出 
+## 访问与输出 
 http://ysk.dev/admin/di/index  
-###输出 
+ 
+### 输出 
 i am an old man  
 i am an woman driver  
 
