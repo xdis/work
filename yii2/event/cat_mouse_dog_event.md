@@ -81,7 +81,7 @@ hello my is event
 mourse is runing  
 ```
 ## 3.加入dog角色  
-猫叫，老鼠跑了，小狗在看
+猫叫，老鼠跑了，小狗在看  
 
 ### dog
 vendor/horse003/yii2-event-demo/src/Dog.php
