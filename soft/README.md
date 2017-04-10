@@ -16,6 +16,7 @@
 			![](totalCommander/3.setTag.png) 
 		
 - Cmder-Win下必备神器(替换cmd.exe)
+	- Cmder.exe /REGISTER ALL  //添加 cmder 到右键菜单
 	- 配置
 		- [配置目录](cmder.md#配置目录)
 		- [配置默认启动目录](cmder.md#配置默认启动目录)
