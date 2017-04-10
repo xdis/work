@@ -1,13 +1,17 @@
 - git
-	- 配置
-		- [配置文件](config/.gitconfig)
-		- [常用别名](config.md#常用别名)
-		- [安装之后配置](config.md#安装之后配置)
-		- [全局ignore配置](config.md#全局ignore配置)
-	- 文件对拷,快速配置_win10
-		- 1.复制 C:/users/当前用户名/.ssh 到 目标window
-		- 2.复制 /gitwork/git/config/.gitconfig 到 C:/users/当前用户名
-		- 
+	- 配置与安装
+		- 配置
+			- [配置文件](config/.gitconfig)
+			- [常用别名](config.md#常用别名)
+			- [安装之后配置](config.md#安装之后配置)
+			- [全局ignore配置](config.md#全局ignore配置)
+		- 文件对拷,快速配置_win10
+			- 1.复制 C:/users/当前用户名/.ssh 到 目标window
+			- 2.复制 /gitwork/git/config/.gitconfig 到 C:/users/当前用户名
+		- git diff 使用与安装    [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+			- 1.安装 node.js  查看版本  npm --version
+			- 2.安装 npm install -g diff-so-fancy
+			- 3.配置文件有设置有!  
 	- git常用
 		- 对上次的提交的commit的描述进行修改  git commit --amend
 		- 仓库操作
