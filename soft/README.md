@@ -10,9 +10,9 @@
 		- 关闭 ctrl+w
 	- 自定义目录上标签 
 		- 1.打开目录 
-		- 2.点击最右边"*" [星号],配置目录名及路径
+		- 2.点击最右边"*" [星号],配置目录名及路径  
 			![](totalCommander/2.selectStart.png)
-		- 3.右键"标签",选择 
+		- 3.右键"标签",选择   
 			![](totalCommander/3.setTag.png) 
 		
 - Cmder-Win下必备神器(替换cmd.exe)
