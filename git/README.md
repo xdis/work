@@ -4,6 +4,10 @@
 		- [常用别名](config.md#常用别名)
 		- [安装之后配置](config.md#安装之后配置)
 		- [全局ignore配置](config.md#全局ignore配置)
+	- 快速配置_win10
+		- 1.复制C:/users/当前用户名/.ssh
+		- 2.复制.gitconfig 到 C:/users/当前用户名
+		- 
 	- git常用
 		- 对上次的提交的commit的描述进行修改  git commit --amend
 		- 仓库操作

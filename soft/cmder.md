@@ -5,19 +5,7 @@
 ###配置目录
 ![](cmder/config.png)
 
-###方案1  
->下面的两个修改是不能执行linux命令的 
-
-#### 参数1
-```
- /icon "%CMDER_ROOT%\icons\cmder.ico"
-```
-#### 参数2
-```
-cmd /k "%ConEmuDir%\..\init.bat"  -new_console:d:E:\cmk\qian100\web\vding\vding_dev -cur_console:t:vding
-```
-
-###方案2 
+###方案1 
 
 #### 参数1  为空  
 
@@ -28,6 +16,17 @@ cmd /k "%ConEmuDir%\..\init.bat"  -new_console:d:E:\cmk\qian100\web\vding\vding_
 ```
 "%ConEmuDrive%\Program Files\Git\git-cmd.exe" --no-cd --command=usr/bin/bash.exe -l -i  -new_console:d:E:\cmk\qian100\web\vding\vding_dev -cur_console:t:vding
 ```
+注:
+```php
+ //关于
+"%ConEmuDrive%\Program Files\Git\git-cmd.exe" --no-cd --command=usr/bin/bash.exe -l -i
+
+
+```
+
+//来源于
+![](cmder/git-url-source.png)
+
 
 
 ###配置默认启动目录
