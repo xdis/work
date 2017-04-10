@@ -11,7 +11,7 @@
 		- git diff 使用与安装    [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 			- 1.安装 node.js  查看版本  npm --version
 			- 2.安装 npm install -g diff-so-fancy
-			- 3.配置文件有设置有!  
+			- 3.上面的配置文件有!  
 	- git常用
 		- 对上次的提交的commit的描述进行修改  git commit --amend
 		- 仓库操作
