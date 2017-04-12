@@ -17,6 +17,8 @@
 			- $res = Yii::$app->db->createCommand($sql)->queryOne(); 存储过程/函数
 			- $res = Yii::$app->db->createCommand($sql)->queryAll();  
 		-  YII_ENV_PROD 判断是否生成环境
+		-  layout
+			-  [根据参数选择不同layout,如充值有个人和企业统一入口,不同身份不同layout](op.md#根据参数选择不同layout,如充值有个人和企业统一入口,不同身份不同layout) 
 	- composer
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
