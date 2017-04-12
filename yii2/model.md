@@ -348,11 +348,7 @@ class UserActivity extends \common\models\***Model{
         return $dataProvider;
     }
 
-
-
 }
-
-
 
 ```
 
@@ -361,13 +357,13 @@ class UserActivity extends \common\models\***Model{
 ```php
 index.php
 ```php
-		[//关联表user.name
-            'attribute' => 'username',
-            'value' => function ($model) {
-                return isset($model->user->username) ? $model->user->username : null;
-            },
-            'filter' => Html::activeTextInput($searchModel, 'username', ['class' => 'form-control']),
-        ],
+[//关联表user.name
+    'attribute' => 'username',
+    'value' => function ($model) {
+        return isset($model->user->user_mobile) ? $model->user->user_mobile : null;
+    },
+    'filter' => Html::activeTextInput($searchModel, 'user_mobile', ['class' => 'form-control']),
+],
 
 ```
 
