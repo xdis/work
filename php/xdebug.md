@@ -76,7 +76,7 @@ http://i.vding.dev/user-company/index
 ![](xdebug/debug_start1.png)
 
 ```
-按F5一步步来调试
+刷新一个浏览器,进入phpStorm,按F5一步步来调试
 ```
 ![](xdebug/debug_start3.png)
 
