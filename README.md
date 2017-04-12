@@ -10,4 +10,6 @@
     - [linux](linux/)
 	- [mysql](setup/)
 	- [git](git/)
+- Other
+	- test
 
