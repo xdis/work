@@ -34,8 +34,6 @@ javascript:(/** @version 0.5.2 */function() {document.cookie='XDEBUG_SESSION='+'
 ## 安装谷歌插件
 jetbrains ide support
 
-## phpStorm 激活码 http://idea.imsxm.com
-
 ## xdebug下载地址 
 https://xdebug.org/download.php
 
