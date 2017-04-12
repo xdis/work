@@ -134,7 +134,7 @@
 		- 插入
 			- 统计店铺访问量
 		- [存储过程使用](post.md#存储过程使用) 
-    - model
+    - model_AR
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)
 			- [列表页使用](model.md#列表页使用)
@@ -165,6 +165,9 @@
 		- link() 等于 更新[update] 应该是双向更新
 			- [获取Customer的主键,然后order表同时存储该Customer主键](model.md#获取Customer的主键,然后order表同时存储该Customer主键)
 			- [双向更新_link](model.md#双向更新_link)
+	- model_form
+		- [登陆_SignupForm](model_form.md#登陆_SignupForm)
+		- 
 	- 权限 authManager assign
 		- [基本使用](authManager.md#基本使用)
 	- 配置
