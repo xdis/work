@@ -220,8 +220,8 @@
 		- 案例
 			- H5店铺登陆_w
 				- [环境说明](h5_login_w.md#环境说明)
-				- 密码登陆
-				- 短信登陆
+				- [密码登陆](h5_login_w.md#密码登陆)
+				- [短信登陆](h5_login_w.md#短信登陆)
 			- 企业登陆_z
 				- [配置文件](company_login_z.md#配置文件)
 				- [SignInController_控制器](company_login_z.md#SignInController_控制器) 
