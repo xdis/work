@@ -27,6 +27,8 @@
 	
 	- function
 		-  [ArrayHelper](function.md#ArrayHelper) 
+		-  上传
+			-  [API通用上传接口_每次仅上传一个_lm](function/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
 	- session
 		- 保存与获取
 			- 方法1
