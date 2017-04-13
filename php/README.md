@@ -28,4 +28,7 @@
 			- 1.临时方案,进入该目录,执行git pull origin master
 			- 2.彻底的解决办法:将composer.lock删除,再执行composer install
 			- 3.如果是开发环境,则将ventor删除,如果是线上,则复制文件上去
+			- 4.亲测 
+				- 4.1 指定版本 "horse003/yii2-event-demo": "^1.0.2",
+				- 4.2 指定更新 composer update horse003/yii2-event-demo
 		

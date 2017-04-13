@@ -54,3 +54,30 @@
         );
     }
 ```
+
+
+## 配置多个数据库_lh
+common/config/web.php    
+```php
+$config = [
+    'components' => [
+        'assetManager' => [
+            'class' => 'yii\web\AssetManager',
+            'linkAssets' => env('LINK_ASSETS'),
+            'appendTimestamp' => YII_ENV_DEV
+        ],
+    	'db2' => [
+    		'class' => 'yii\db\Connection',
+    		'dsn' => 'mysql:host=192.168.1.3;dbname=vding_anyang', // Maybe other DBMS such as psql (PostgreSQL),...
+    		'username' => '',
+    		'password' => '',
+    	] ,
+    	'db3' => [
+    		'class' => 'yii\db\Connection',
+    		'dsn' => 'mysql:host=192.168.1.7;dbname=vding_anyang_test', // Maybe other DBMS such as psql (PostgreSQL),...
+    		'username' => '',
+    		'password' => '',
+    	] ,
+    ],
+];
+```

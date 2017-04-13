@@ -2,7 +2,8 @@
 - Yii2
 	- [计划](plan.md)
 	-  干货
-		- [符合PSR-1/PSR-2的PHP编程规范实例](../php/standard.php)
+		- [符合P
+		- SR-1/PSR-2的PHP编程规范实例](../php/standard.php)
 		- [yii2干货集](college/awesome-yii2.md) 
 	- 常用
 		- user
@@ -29,6 +30,8 @@
 		-  [ArrayHelper](function.md#ArrayHelper) 
 		-  上传 upload
 			-  [API通用上传接口_每次仅上传一个_lm](function/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
+		- db
+			- [配置多个数据库_lh](function.md#配置多个数据库_lh) 
 	- session
 		- 保存与获取
 			- 方法1
@@ -215,10 +218,12 @@
 			-  $this->refresh();
 			-  $this->link('account', $account);	
 	- 短信模块分析
-		- 
-	- 权限分析_yii2_admin
+		- sms短信_z
+			- sms短信_配置
+			- sms短信_使用
+	- 权限分析 [yii2_admin]
 	- App接口全局配置
-	- 用户登陆 yii start kit
+	- 用户登陆 [yii start kit]
 		- user组件定义
 			- [company模块里包含"企业用户"与小模块里的"H5店铺"两个用户](user.md#company模块里包含"企业用户"与小模块里的"H5店铺"两个用户)  
 			- [ResultApi用户](user.md#ResultApi用户)  
