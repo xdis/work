@@ -67,7 +67,7 @@
 
 ## 控制器
 rest/versions/v1/service/controllers/CompanyController.php  
-[源码](upload_lm/CompanyController.php#L149-l158) 
+[源码](upload_lm/CompanyController.php#L149-L158) 
 ```php
     //图片上传接口,单个图片上传
     public function actionUpload(){
