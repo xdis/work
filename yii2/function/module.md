@@ -73,7 +73,7 @@ http://ysk.dev/report
 ```
 
 ### MyComponent组件代码
-** common/components/MyComponent.php **  
+**common/components/MyComponent.php**  
 ```php
 namespace common\components;
 
@@ -98,7 +98,7 @@ class MyComponent extends Component {
 ```
 
 ### report_module下运行
-** frontend/modules/report/controllers/DefaultController.php   **  
+**frontend/modules/report/controllers/DefaultController.php**  
 ```php
 
     public function actionDemoModule() {
@@ -112,7 +112,7 @@ Hello workld
 good
 xxxx
 ```
-** 注: 在其它module下运行,  water的参数不会输出 **
+**注: 在其它module下运行,  water的参数不会输出**
 
 --- 
 
