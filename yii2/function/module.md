@@ -36,7 +36,7 @@ http://ysk.dev/report
 ```
 --- 
 
-## 模块module原理
+## 模块module包含组件使用
 
 ### 配置
 ** common/config/base.php ** 

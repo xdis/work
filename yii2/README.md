@@ -36,7 +36,7 @@
 			- [自定义组件](function/component.md#自定义组件)  [TERRY]
 		- module 
 			- [modules生成与使用](function/module.md#modules生成与使用)
-			- [模块module原理](function/module.md#模块module原理) [TERRY]
+			- [模块module包含组件使用](function/module.md#模块module包含组件使用) [TERRY]
 			- [短信sms配置代码采集](function/module.md#短信sms配置代码采集)
 	- session
 		- 保存与获取
