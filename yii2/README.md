@@ -32,6 +32,10 @@
 			-  [API通用上传接口_每次仅上传一个_lm](function/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
 		- db
 			- [配置多个数据库_lh](function.md#配置多个数据库_lh) 
+		- 组件
+			- [自定义组件](function/component.md#自定义组件)  [TERRY]
+		- module 
+			- 模块module [TERRY]
 	- session
 		- 保存与获取
 			- 方法1
