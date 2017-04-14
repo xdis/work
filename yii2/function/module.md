@@ -1,5 +1,121 @@
 # module
 
+## modules生成与使用
+### 使用GII生成
+
+![](module/module_gii_create.png)
+
+```php
+Module Class : frontend\modules\report\Module
+Module ID : report
+```
+
+### modules使用
+frontend/config/web.php  
+```php
+'modules' => [
+    'user' => [
+        'class' => 'frontend\modules\user\Module',
+        //'shouldBeActivated' => true
+    ],
+    'report' => [
+        'class' => 'frontend\modules\report\Module',
+    ],
+    'api' => [
+        'class' => 'frontend\modules\api\Module',
+        'modules' => [
+            'v1' => 'frontend\modules\api\v1\Module'
+        ]
+    ]
+],
+```
+
+### 地址访问
+```php
+http://ysk.dev/report
+```
+--- 
+
+## 模块module原理
+
+### 配置
+** common/config/base.php ** 
+```php
+    'modules' => [
+		....
+        //modules测试
+        'report' => [
+            'class' => 'frontend\modules\report\Module',
+            'components' => [
+                'mycomponent' => [
+                    'class' => 'common\components\MyComponent',
+                    'terry' => 'xxxx',
+                ],
+            ],
+            'params' => [
+                'water' => 'good',
+            ],
+        ],
+		...
+    ],
+```
+
+** frontend/config/web.php  **
+
+'modules' => [
+	...
+    'report' => [
+        'class' => 'frontend\modules\report\Module',
+        //'shouldBeActivated' => true
+    ],
+	...
+],
+
+
+### MyComponent组件代码
+** common/components/MyComponent.php **  
+```php
+namespace common\components;
+
+use Yii;
+use yii\base\Component;
+
+class MyComponent extends Component {
+
+    public $terry;
+
+    public function welcome() {
+        echo "Hello workld" . "<br />";
+
+        //输出参数
+        if (isset(Yii::$app->controller->module->params['water'])) {
+            echo Yii::$app->controller->module->params['water'] . "<br />";
+        }
+        //输出组件里的参数
+        echo $this->terry . "<br />";
+    }
+}
+```
+
+### report_module下运行
+** frontend/modules/report/controllers/DefaultController.php   **  
+```php
+
+    public function actionDemoModule() {
+
+        $module = \Yii::$app->controller->module;
+       echo  $module->mycomponent->welcome();
+       exit;
+    }
+//输出
+Hello workld
+good
+xxxx
+```
+** 注: 在其它module下运行,  water的参数不会输出 **
+
+--- 
+
 ## 短信sms配置代码采集
 
 ### components配置参数
