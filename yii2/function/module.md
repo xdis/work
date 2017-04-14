@@ -39,7 +39,7 @@ http://ysk.dev/report
 ## 模块module包含组件使用
 
 ### 配置
-** common/config/base.php ** 
+**common/config/base.php** 
 ```php
     'modules' => [
 		....
@@ -60,8 +60,8 @@ http://ysk.dev/report
     ],
 ```
 
-** frontend/config/web.php  **
-
+**frontend/config/web.php**
+```php
 'modules' => [
 	...
     'report' => [
@@ -70,7 +70,7 @@ http://ysk.dev/report
     ],
 	...
 ],
-
+```
 
 ### MyComponent组件代码
 ** common/components/MyComponent.php **  
