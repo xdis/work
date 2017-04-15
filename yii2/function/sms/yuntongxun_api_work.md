@@ -49,43 +49,43 @@ Authorization:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 |func	|String	|可选	|业务功能，根据业务的需要添加|
 |funcdes	|String	|可选	|业务操作，业务功能的各类具体操作分支|
 
-说明
-1. Base URL后跟验证级别
-• Accounts：主帐号鉴权，云通讯平台会对请求中的主帐号和主帐号Token进行验证；
-• SubAccounts：子帐号鉴权，云通讯平台会对请求中的子帐号和子帐号Token进行验证。
-2. SigParameter是REST API 验证参数
-主帐号鉴权：
-• URL后必须带有sig参数，例如：sig=AAABBBCCCDDDEEEFFFGGG。
-• 使用MD5加密（主帐号Id + 主帐号授权令牌 +时间戳）。其中主帐号Id和主帐号授权令牌分别对应管理控制台中的ACCOUNT SID和AUTH TOKEN。
-• 时间戳是当前系统时间，格式"yyyyMMddHHmmss"。时间戳有效时间为24小时，如：20140416142030
-• SigParameter参数需要大写
-子帐号鉴权：
-• URL后必须带有sig参数，例如：sig=AAABBBCCCDDDEEEFFFGGG。
-• 使用MD5加密（子帐号Id + 子帐号授权令牌 +时间戳）。其中子帐号Id和子帐号授权令牌可通过创建子帐号接口得到。
-• 时间戳是当前系统时间，格式"yyyyMMddHHmmss"。时间戳有效时间为24小时，如：20140416142030
-• SigParameter参数需要大写
-3. Authorization是包头验证信息
-• 使用Base64编码（账户Id + 冒号 + 时间戳）其中账户Id根据url的验证级别对应主账户或子账户
-• 冒号为英文冒号
-• 时间戳是当前系统时间，格式"yyyyMMddHHmmss"，需与SigParameter中时间戳相同。
-4. func描述业务功能，funcdes描述业务功能的具体操作
-例如：/ivr/createconf
+说明   
+1. Base URL后跟验证级别   
+• Accounts：主帐号鉴权，云通讯平台会对请求中的主帐号和主帐号Token进行验证；   
+• SubAccounts：子帐号鉴权，云通讯平台会对请求中的子帐号和子帐号Token进行验证。   
+2. SigParameter是REST API 验证参数   
+主帐号鉴权：   
+• URL后必须带有sig参数，例如：sig=AAABBBCCCDDDEEEFFFGGG。   
+• 使用MD5加密（主帐号Id + 主帐号授权令牌 +时间戳）。其中主帐号Id和主帐号授权令牌分别对应管理控制台中的ACCOUNT SID和AUTH TOKEN。   
+• 时间戳是当前系统时间，格式"yyyyMMddHHmmss"。时间戳有效时间为24小时，如：20140416142030   
+• SigParameter参数需要大写   
+子帐号鉴权：   
+• URL后必须带有sig参数，例如：sig=AAABBBCCCDDDEEEFFFGGG。   
+• 使用MD5加密（子帐号Id + 子帐号授权令牌 +时间戳）。其中子帐号Id和子帐号授权令牌可通过创建子帐号接口得到。   
+• 时间戳是当前系统时间，格式"yyyyMMddHHmmss"。时间戳有效时间为24小时，如：20140416142030   
+• SigParameter参数需要大写   
+3. Authorization是包头验证信息   
+• 使用Base64编码（账户Id + 冒号 + 时间戳）其中账户Id根据url的验证级别对应主账户或子账户   
+• 冒号为英文冒号   
+• 时间戳是当前系统时间，格式"yyyyMMddHHmmss"，需与SigParameter中时间戳相同。   
+4. func描述业务功能，funcdes描述业务功能的具体操作   
+例如：/ivr/createconf   
 
 
 3、数据报文格式
 云通讯平台REST接口支持两种主流的报文格式：XML和JSON。通过请求包头的字段Content-Type及Accept，即可决定请求包体和响应包体的格式，如：Content-Type:application/xml;charset=utf-8;Accept:application/xml; 表示请求类型格式是XML，要求服务器响应的包体类型也是XML；Content-Type:application/json;charset=utf-8;Accept:application/json; 表示请求类型格式是JSON，要求服务器响应类型也是JSON；  
 
-4、关于REST (REpresentational State Transfer)
-我们的云通讯平台REST API设计的方式非常友好，让你使用起来简单明了，来源于Wikipedia，REST的支持者认为，Web大范围的扩展和增长直接导致了REST设计原则的产生，以下为REST设计原则：
-	1.应用场景和功能都被分为不同的资源
-	2.每一个资源通过一个全局的资源标识以超链接的方式被访问
-	3.所有资源通过共享标准的接口实现客户侧和资源之间的场景转换，资源包括如下两项：
-		• 已经被定义好的一套有约束的操作集。
-		• 一套有约束的内容类别集和可选的命令支持码。
-REST 协议特点：
-• 客户侧请求服务器模式
-• 状态无关
-• 缓存机制
-• 层次结构
-REST的客户端服务器分离理念大大简化了组件执行，降低了语义间连接的复杂度，改进了性能调整的有效性，增加了服务器组件的可扩展性。分层的结构化系统约束允许在不改变接口的情况下引入中间代理、网关、防火墙等多种接入点，并与之通讯，并且通过可扩展性，以共享内存的方式改进系统性能，有助于信息传递。
-通过对消息的约束，把REST的中间处理变为一个独立的自我描述：无状态交互，使用标准的方法和媒体类型。通过这种方式使语义信息，交互数据，响应信息能够明确的显示其使用缓存的能力。
+4、关于REST (REpresentational State Transfer)   
+我们的云通讯平台REST API设计的方式非常友好，让你使用起来简单明了，来源于Wikipedia，REST的支持者认为，Web大范围的扩展和增长直接导致了REST设计原则的产生，以下为REST设计原则：   
+	1.应用场景和功能都被分为不同的资源   
+	2.每一个资源通过一个全局的资源标识以超链接的方式被访问   
+	3.所有资源通过共享标准的接口实现客户侧和资源之间的场景转换，资源包括如下两项：   
+		• 已经被定义好的一套有约束的操作集。   
+		• 一套有约束的内容类别集和可选的命令支持码。   
+REST 协议特点：   
+• 客户侧请求服务器模式   
+• 状态无关   
+• 缓存机制   
+• 层次结构   
+REST的客户端服务器分离理念大大简化了组件执行，降低了语义间连接的复杂度，改进了性能调整的有效性，增加了服务器组件的可扩展性。分层的结构化系统约束允许在不改变接口的情况下引入中间代理、网关、防火墙等多种接入点，并与之通讯，并且通过可扩展性，以共享内存的方式改进系统性能，有助于信息传递。   
+通过对消息的约束，把REST的中间处理变为一个独立的自我描述：无状态交互，使用标准的方法和媒体类型。通过这种方式使语义信息，交互数据，响应信息能够明确的显示其使用缓存的能力。   
