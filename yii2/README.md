@@ -225,7 +225,7 @@
 			-  $this->link('account', $account);	
 	- 短信模块分析
 		- sms短信_z
-			- sms短信_配置
+			- [sms短信_配置](function/sms_z.md#sms短信_配置)
 			- sms短信_使用
 	- 权限分析 [yii2_admin]
 	- App接口全局配置
