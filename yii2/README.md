@@ -230,9 +230,12 @@
 				- sms短信_使用
 					- 1.使用 new Sms() 【建议使用这种】
 					- 2.使用 Yii::$app->sms
+				-  定义全局sms_actions挂裁
+					- [公司SignInController_z](function/sms_z.md#公司SignInController_z)
+					- [店铺LoginController_w](function/sms_z.md#店铺LoginController_w)
 		    - 代码分析
 			    - [解析“云通讯接口“文档要求与代码开发](function/sms_z.md#解析“云通讯接口“文档要求与代码开发)
-				    - GuzzleHttp\Client [模拟登陆]
+				    - GuzzleHttp\Client [模拟登陆] 代替curl
 	- 权限分析 [yii2_admin]
 	- App接口全局配置
 	- 用户登陆 [yii start kit]
