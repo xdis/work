@@ -225,8 +225,14 @@
 			-  $this->link('account', $account);	
 	- 短信模块分析
 		- sms短信_z
-			- [sms短信_配置](function/sms_z.md#sms短信_配置)
-			- sms短信_使用
+			- 操作使用
+				- [sms短信_配置](function/sms_z.md#sms短信_配置)
+				- sms短信_使用
+					- 1.使用 new Sms() 【建议使用这种】
+					- 2.使用 Yii::$app->sms
+		    - 代码分析
+			    - [解析“云通讯接口“文档要求与代码开发](function/sms_z.md#解析“云通讯接口“文档要求与代码开发)
+				    - GuzzleHttp\Client [模拟登陆]
 	- 权限分析 [yii2_admin]
 	- App接口全局配置
 	- 用户登陆 [yii start kit]
