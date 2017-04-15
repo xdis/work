@@ -79,7 +79,7 @@ class DemoSmsController extends Controller
 
 ---
 ## 解析“云通讯接口“文档要求与代码开发
-[详细的文档](function/sms/yuntongxun_api_work.md)
+[详细的文档](sms/yuntongxun_api_work.md)
 
 ### 文档要求
 
