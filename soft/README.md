@@ -1,5 +1,14 @@
 # 软件
 
+- Beyound Compare
+	- 排除 右键+输入E
+	- 过滤目录[排除文件夹] 继续整理中
+
+  ![](BCompare/filter.png)
+
+	 .svn
+	 nbproject
+	  
 - markdown
 	- [markdownw使用](markdown.md)
 	- [markdownpad](markdownpad.md)
