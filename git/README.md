@@ -48,8 +48,9 @@
 			- 推送 git push origin v1.5 
 		- [回滚](use.md#回滚) reset
 			- 回退
-				- 回退上个版本 git reset --hard HEAD^
-				- 回退n个版本 git reset --hard HEAD~100 
+				- git reset --hard HEAD^  //回退上个版本
+				- git reset --hard HEAD~100 //回退n个版本
+				- git reset --hard dev //如发生冲突,强制回退冲突之前
 			- 回滚到指定版本	git reset --hard e377f60e28c8b84158
 			- [文件回滚到指定版本](use.md#文件回滚到指定版本)
 			- 撤销未提交的修改的文件  git checkout file
