@@ -40,7 +40,6 @@
 			- [短信sms配置代码采集](function/module.md#短信sms配置代码采集)
 			- 创建company Module [复制于Frontend]
 				- [http.conf配置](function/module.md#http.conf配置)
-				- 
 		- console
 			-  基本使用
 				- php /var/www/console/yii app/set-writable  //初始化目录权限
