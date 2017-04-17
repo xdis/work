@@ -165,3 +165,47 @@ xxxx
 ],
 
 ```
+
+## 创建company Module [复制于Frontend]
+### http.conf配置
+```
+<VirtualHost *:80>
+    ServerName ysk.dev
+
+    RewriteEngine on
+    # the main rewrite rule for the frontend application
+    RewriteCond %{HTTP_HOST} ^ysk.dev$ [NC]
+
+    #如果访问的不是backend admin compnay则跳到前台 frontend
+    RewriteCond %{REQUEST_URI} !^/(backend/web|admin|storage/web|company/web|company)
+    RewriteRule !^/frontend/web /frontend/web%{REQUEST_URI} [L]
+
+    #backend配置
+    RewriteCond %{REQUEST_URI} ^/admin$
+    RewriteRule ^/admin /backend/web/index.php [L]
+    
+    RewriteCond %{REQUEST_URI} ^/admin
+    RewriteRule ^/admin(.*) /backend/web$1 [L]
+
+    #company配置
+    RewriteRule ^/company /company/web/index.php [L]
+    RewriteRule ^/company(.*) /company/web$1 [L]
+
+    DocumentRoot E:\cmk\qian100\web\yii2-starter-kit_dev
+
+...
+    <Directory "E:\cmk\qian100\web\yii2-starter-kit_dev\company\web">
+        RewriteEngine on
+        # if a directory or a file exists, use the request directly
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        # otherwise forward the request to index.php
+        RewriteRule . index.php
+
+        Require all granted
+    </Directory>
+
+...
+</VirtualHost>
+
+```
