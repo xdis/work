@@ -321,7 +321,7 @@ class Yuntongxun extends BaseSms implements ISms
 }
 ```
 
-## GuzzleHttp\Client
+## GuzzleHttp\Client [模拟登陆] 代替curl
 ```php
 	$body = [
 	    'to' => $mobile,
