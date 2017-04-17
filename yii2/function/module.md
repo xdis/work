@@ -165,6 +165,7 @@ xxxx
 ],
 
 ```
+---
 
 ## 创建company Module [复制于Frontend]
 ### http.conf配置
@@ -207,5 +208,22 @@ xxxx
 
 ...
 </VirtualHost>
+
+```
+
+## 前后台登陆独立 
+```php
+'components' => [
+...
+    'user' => [
+        'class'=>'yii\web\User',
+        'identityClass' => 'common\models\User',
+        'loginUrl'=>['/user/sign-in/login'],
+        'enableAutoLogin' => true,
+        'as afterLogin' => 'common\behaviors\LoginTimestampBehavior',
+        'idParam' => '__id_company', //加上这个参数即可
+    ]
+...
+]
 
 ```
