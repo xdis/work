@@ -227,7 +227,7 @@
 		- sms短信_z
 			- 操作使用
 				- [sms短信_配置](function/sms_z.md#sms短信_配置)
-				- sms短信_使用
+				- [sms短信_使用](function/sms_z.md#sms短信_使用)
 					- 1.使用 new Sms() 【建议使用这种】
 					- 2.使用 Yii::$app->sms
 				-  定义全局sms_actions挂裁
