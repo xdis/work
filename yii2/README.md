@@ -38,6 +38,10 @@
 			- [modules生成与使用](function/module.md#modules生成与使用)
 			- [模块module包含组件使用](function/module.md#模块module包含组件使用) [TERRY]
 			- [短信sms配置代码采集](function/module.md#短信sms配置代码采集)
+		- console
+			-  基本使用
+				- php /var/www/console/yii app/set-writable  //初始化目录权限
+				- php /var/www/网站根目录/yii car/driver-trip-tips //执行根目录console/controllers/CarController.php下的方法actionDriverTripTips()
 	- session
 		- 保存与获取
 			- 方法1
