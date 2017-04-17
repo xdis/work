@@ -321,3 +321,18 @@ class Yuntongxun extends BaseSms implements ISms
 }
 ```
 
+## GuzzleHttp\Client
+```php
+	$body = [
+	    'to' => $mobile,
+	    'templateId' => $this->templateId,
+	    'appId' => $this->appId,
+	    'datas' => $data
+	];
+	// Request gzipped data, but do not decode it while downloading
+	$response = $client->post($url, [
+	    'headers' => $header,
+	    'json' => $body
+	]);
+
+```

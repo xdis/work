@@ -235,7 +235,7 @@
 					- [店铺LoginController_w](function/sms_z.md#店铺LoginController_w)
 		    - 代码分析
 			    - [解析“云通讯接口“文档要求与代码开发](function/sms_z.md#解析“云通讯接口“文档要求与代码开发)
-				    - GuzzleHttp\Client [模拟登陆] 代替curl
+				    - [GuzzleHttp\Client](function/sms_z.md#GuzzleHttp\Client) [模拟登陆] 代替curl
 	- 权限分析 [yii2_admin]
 	- App接口全局配置
 	- 用户登陆 [yii start kit]
