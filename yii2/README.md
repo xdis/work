@@ -28,6 +28,8 @@
 				- 清空表结构缓存的方法  
 				- 清空所有的缓存--不仅仅是mysql表结构
 				- 使用 yii命令行的方式commond清除缓
+			- 初始化目录权限
+				- ./console/yii app/set-writable
 	- composer
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
