@@ -142,3 +142,17 @@ git push origin dev
 
 ---
 
+### 发布到线上及使用标签回滚
+
+```
+//本地
+git tag -a fn_line -m '线路之前的标签'
+git push origin fn_line
+git push origin master
+
+
+//回退到指定标签
+git reset --hard fn_line
+git push -f origin master //如果报错的话，使用 -f
+
+```

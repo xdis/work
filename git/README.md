@@ -51,6 +51,7 @@
 				- git reset --hard HEAD^  //回退上个版本
 				- git reset --hard HEAD~100 //回退n个版本
 				- git reset --hard dev //如发生冲突,强制回退冲突之前
+				- git reset --hard tagName //回滚到指定标签名
 			- 回滚到指定版本	git reset --hard e377f60e28c8b84158
 			- [文件回滚到指定版本](use.md#文件回滚到指定版本)
 			- 撤销未提交的修改的文件  git checkout file
@@ -74,7 +75,7 @@
 		    - git commit
 		    - git pull origin dev  (再次拉取)
 		    - 没有出现问题
-		    - git push origin dev
+		    - git push origin dev 
 
 	- 案例
 		- [一般使用流程](use.md#一般使用流程)
@@ -86,6 +87,7 @@
 			- [一次性推送](example.md#一次性推送) git push -f origin master
 			- [选择性推送](example.md#选择性推送) gti push cdsn master 
 		- [本地仓库里加入多个远程仓库_fetch_commit到本地仓库](example.md#本地仓库里加入多个远程仓库_fetch_commit到本地仓库)
+		- [发布到线上及使用标签回滚](example.md#发布到线上及使用标签回滚)  tag reset
 	- 问题
 		- [测试推向正式服错](question.md#测试推向正式服错)  git push prod anyang
 		- [composer_sms_报错误](question.md#composer_sms_报错误)
