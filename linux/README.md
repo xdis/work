@@ -8,3 +8,5 @@
 		- 删除用户
 			- userdel -r xxx //删除用户
 			- 或者改一下名字如 _xxx 
+	- 权限
+		-  chmod -R 755 xxx
