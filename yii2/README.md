@@ -23,6 +23,11 @@
 		-  YII_ENV_PROD 判断是否生成环境
 		-  layout
 			-  [根据参数选择不同layout,如充值有个人和企业统一入口,不同身份不同layout](op.md#根据参数选择不同layout,如充值有个人和企业统一入口,不同身份不同layout) 
+		- 发布线上
+			- [缓存清空](op.md#缓存清空)  ./yii cache/flush-all  //根目录运行,清空所有
+				- 清空表结构缓存的方法  
+				- 清空所有的缓存--不仅仅是mysql表结构
+				- 使用 yii命令行的方式commond清除缓
 	- composer
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	

@@ -20,3 +20,29 @@ if (Yii::$app->user->getIsPerson()) {
     $this->layout = '@company/views/layouts/main.php';
 }
 ```
+
+## 发布线上
+### 缓存清空
+```php
+//方法一:清空表结构缓存的方法
+ 
+//flush all the schema cache
+Yii::$app->db->schema->refresh();
+ 
+//clear the particular table schema cache
+Yii::$app->db->schema->refreshTableSchema($tableName);
+ 
+ 
+//方法二:清空所有的缓存--不仅仅是mysql表结构
+Yii::$app->cache->flush();
+ 
+ 
+//方法三:使用 yii命令行的方式commond清除缓存
+cache/flush                Flushes given cache components.
+cache/flush-all            Flushes all caches registered in the system.
+cache/flush-schema         Clears DB schema cache for a given connection component.
+cache/index (default)      Lists the caches that can be flushed.
+ 
+//执行 
+./yii cache/flush-all
+```
