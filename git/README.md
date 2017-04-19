@@ -52,6 +52,7 @@
 				- git reset --hard HEAD~100 //回退n个版本
 				- git reset --hard dev //如发生冲突,强制回退冲突之前
 				- git reset --hard tagName //回滚到指定标签名
+					- [发布到线上及使用标签回滚](example.md#发布到线上及使用标签回滚) 
 			- 回滚到指定版本	git reset --hard e377f60e28c8b84158
 			- [文件回滚到指定版本](use.md#文件回滚到指定版本)
 			- 撤销未提交的修改的文件  git checkout file
