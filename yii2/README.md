@@ -187,6 +187,8 @@
 		- 
 	- 权限 authManager assign
 		- [基本使用](authManager.md#基本使用)
+		- 使用权限
+			- [vding使用权限](authManager.md#vding使用权限) [tianle]
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
