@@ -1,5 +1,6 @@
 # 软件
-
+- winscp 配置导入与导出
+	- ![](winscp/config_import_export.png)
 - bitbucket
 	- 验证码恢复[二次密码]
 		- ssh git@bitbucket.org recovery_codes //输入密码
