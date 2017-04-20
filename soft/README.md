@@ -1,5 +1,9 @@
 # 软件
 
+- bitbucket
+	- 验证码恢复[二次密码]
+		- ssh git@bitbucket.org recovery_codes //输入密码
+		- 获取一串数字,选择其中一个即可
 - Beyound Compare
 	- 排除 右键+输入E
 	- 过滤目录[排除文件夹] 继续整理中
