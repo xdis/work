@@ -14,6 +14,10 @@
 			- 3.上面的配置文件有!  
 	- git常用
 		- 对上次的提交的commit的描述进行修改  git commit --amend
+		- 代码还没有开发完,又想拉数据
+			- git stash  //放进抽届
+			- git pull origin master  //拉取数据
+			- git stash pop //打开抽届
 		- 仓库操作
 			- 修改仓库 git remote set-url origin git@git.v.w:v.git
 			- 添加仓库
