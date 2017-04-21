@@ -14,6 +14,7 @@
 			- 3.上面的配置文件有!  
 	- git常用
 		- 对上次的提交的commit的描述进行修改  git commit --amend
+		- git cherry-pick commit  //单个commit的提交
 		- 代码还没有开发完,又想拉数据
 			- git stash  //放进抽届
 			- git pull origin master  //拉取数据
