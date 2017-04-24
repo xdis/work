@@ -148,6 +148,54 @@ public function actionUpdate($id)
 
 
 ```
+## 没有记录插入_否则就更新_例2
+
+```php
+ public function actionGetBasePriceAdd() {
+if (Yii::$app->request->isPost) {
+    $posts = Yii::$app->request->post();
+    try {
+        //开起事务
+        $trans = Yii::$app->db->beginTransaction();
+        //dp($posts);
+        //1.发团班期入库
+        $model = PricelistLine::find()->where(['product_id' => $posts['product_id'], 'depart_city_id' => $posts['city_id'],])->one();
+        if (!$model) {
+            //插入
+            $model = new PricelistLine();
+            //$model->setIsNewRecord(true);
+            $data['PricelistLine']['product_id'] = $posts['product_id'];
+            $data['PricelistLine']['depart_city_id'] = $posts['city_id'];
+            $data['PricelistLine']['group_schedule'] = $posts['days'];
+            $data['PricelistLine']['created_at'] = time();
+        } else {
+            //更新
+            $data['PricelistLine']['updated_at'] = time();
+            $data['PricelistLine']['group_schedule'] = $posts['days'];
+        }
+
+        $model->load($data);
+        $res = $model->save();
+        if (!$res) {
+            throw new \Exception('发团班期操作失败');
+        }
+
+
+       ....
+
+        $trans->commit();
+        return $this->ajaxSuccess('成功');
+
+    } catch
+    (\Exception $e) {
+
+        $trans->rollback();
+        return $this->ajaxFail('失败', '', $e->getMessage());
+    }
+}
+}
+```
+
 
 ## 接收post再验证_例b
 >(注:$model->save(false))  
