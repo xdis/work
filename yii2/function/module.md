@@ -209,3 +209,56 @@ xxxx
 </VirtualHost>
 
 ```
+
+
+## 创建子域名 如i.ysk.dev
+
+### 将Frontend复制一份改名为company,修改相关的配置
+
+**common/config/bootstrap.php**
+
+```php
+/**
+ * Setting path aliases
+ */
+...
+Yii::setAlias('@company', realpath(__DIR__.'/../../company'));
+...
+
+/**
+ * Setting url aliases
+ */
+...
+Yii::setAlias('@companyUrl', env('COMPANY_URL'));
+...
+```
+
+**company/config/web.php**
+```php
+'homeUrl'=>Yii::getAlias('@companyUrl'),
+'controllerNamespace' => 'company\controllers',
+
+'request' => [
+     'baseUrl' => '',
+    'cookieValidationKey' => env('COMPANY_COOKIE_VALIDATION_KEY')
+],
+
+
+```
+
+
+### http.conf配置
+```
+<VirtualHost *:80> 
+ServerAdmin devgg@devgg.com 
+DocumentRoot "E:\cmk\qian100\web\yii2-starter-kit_dev\company\web" 
+ServerName i.ysk.dev
+ErrorLog logs/i.ysk.devv-error_log 
+CustomLog logs/i.ysk.dev-access_log common 
+<Directory "E:\cmk\qian100\web\yii2-starter-kit_dev\company\web">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+</VirtualHost> 
+```

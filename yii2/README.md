@@ -45,9 +45,13 @@
 			- [modules生成与使用](function/module.md#modules生成与使用)
 			- [模块module包含组件使用](function/module.md#模块module包含组件使用) [TERRY]
 			- [短信sms配置代码采集](function/module.md#短信sms配置代码采集)
-			- 创建company Module [复制于Frontend]
-				- [http.conf配置](function/module.md#http.conf配置)
-		- console
+				- 搭建
+					- 创建company Module [复制于Frontend]
+						- [http.conf配置](function/module.md#http.conf配置)
+					- 创建子域名 如i.ysk.dev
+						- [将Frontend复制一份改名为company,修改相关的配置](function/module.md#将Frontend复制一份改名为company,修改相关的配置)
+						- [http.conf配置](function/module.md#http.conf配置)
+		- console	
 			-  基本使用
 				- php /var/www/console/yii app/set-writable  //初始化目录权限
 				- php /var/www/网站根目录/yii car/driver-trip-tips //执行根目录console/controllers/CarController.php下的方法actionDriverTripTips()
