@@ -407,7 +407,7 @@ $users = User::find()
 
 ## Expression()  查询不过滤
 ### sql语句不过滤
-** 可以在本文件里搜索一下 Expression 有更多的例子 **
+**可以在本文件里搜索一下 Expression 有更多的例子**
 
 ```php
 $_db_all_dates = Pricelist::find()->select(new Expression("(FROM_UNIXTIME(pricelist . start_at, '%Y-%m-%d')) as _start_at"))->where(['product_id' => $product_id, 'type' => 2, 'city_id' => $city_id])->asArray()->all();
