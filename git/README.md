@@ -13,6 +13,9 @@
 			- 2.安装 npm install -g diff-so-fancy
 			- 3.上面的配置文件有!  
 	- git常用
+		- git add -A //stages All
+		- git add . //stages new and modified, without deleted
+		- git add -u //stages modified and deleted, without new
 		- git commit --amend //对上次的提交的commit的描述进行修改
 		- git cherry-pick commit  //单个commit的提交
 		- 代码还没有开发完,又想拉数据
