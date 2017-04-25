@@ -181,6 +181,8 @@
 				- [where_in](model.md#where_in) 
 				- [where_or](model.md#where_or) and
 				- [where_like查询](model.md#where_like) (andFilterWhere)
+			- Expression()  查询不过滤
+				- [sql语句不过滤](model.md#sql语句不过滤)
 		- [自定义场景](model.md#自定义场景)
 			 - [model定义](model.md#model定义)
 			 - [controller使用](model.md#controller使用)
