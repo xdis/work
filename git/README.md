@@ -42,6 +42,9 @@
 			- 删除分支
 				- 远程 git push origin --delete 分支名
 				- 本地 git branch -d 分支名（在主分支中）
+				- 删除远程分支后,git br -a本地依然显示
+					- git fetch -p
+					- git remote prune origin
 		- 标签
 			- 查看 git tag
 				- git show tame  查看指定标签 
