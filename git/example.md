@@ -1,13 +1,13 @@
-#案例
+# 案例
 
-##安阳与微叮操作流程
+## 安阳与微叮操作流程
 >安阳与微叮开发和测试都在8服务器，正式都是4服务器   
 >8服务器，安阳只有anyang(正式)和anyang_test(测试)  [注：master废弃]  
 >8服务器，微叮有 dev(开发) test(测试)  bata(二测)  master(正式)  
 >开发人员仅在微叮上开发  
 >注：微叮和安阳其实是一套系统，只不过后面分离出去了  
 
-###微叮测试commit推送到安阳的测试环境及发布线上  
+### 微叮测试commit推送到安阳的测试环境及发布线上  
 ```
 //微叮开发测试仓库
 git co dev
@@ -40,7 +40,7 @@ git push prod anyang  //推送到正式
 
 
 
-##转移别人的bit仓库到我自己
+## 转移别人的bit仓库到我自己
 ```
 git clone --bare git://github.com/username/project.git
 cd project.git
@@ -51,7 +51,7 @@ git clone git@gitcafe.com/username/newproject.git
 
 ```
 
-##将当前的目录上传至github
+## 将当前的目录上传至github
 ```
 echo "# test-design" >> README.md
 git init
@@ -65,9 +65,9 @@ git push -u origin master
 再输入：$ git remote add origin git@github.com:heshaui/pdfjsDemo.git
 ```
 
-##向多个仓库推送
+## 向多个仓库推送
 
-###一次性推送  
+### 一次性推送  
 将远程仓库地址放入origin即可  
 1. 添加远程仓库  
 git remote set-url --add origin git@code.csdn.net:lhorse003/work.git  
@@ -75,7 +75,7 @@ git remote set-url --add origin git@code.csdn.net:lhorse003/work.git
 2.推送	
 git push -f origin master (注：可以不加-f,如果出现有问题的时候，则加上)  
 
-###选择性推送  
+### 选择性推送  
 将远程仓库加入到指定的命名，如csdn的仓库的，命名为csdn  
 1.添加远程仓库  
 git remote add csdn git@code.csdn.net:lhorse003/work.git  
@@ -85,7 +85,7 @@ git push csdn master (注： 将master分支推送到远程仓库csdn的master�
 git push [alias] [branch]，就会将你的 [branch] 分支推送成为 [alias] 远端上的 [branch] 分支。)  
 
 ---
-##本地仓库里加入多个远程仓库_fetch_commit到本地仓库
+## 本地仓库里加入多个远程仓库_fetch_commit到本地仓库
 >场景：仓库A，仓库B，想要利用仓库A的数据  
 
 
