@@ -1,8 +1,8 @@
-##配置
+## 配置
 
-##分支
-###分支创建策略
-http://www.cnblogs.com/likwo/p/3179651.html  
+## 分支
+### 分支创建策略
+http://www.cnblogs.com/likwo/p/3179651.html   
 分支策略：git上始终保持两个分支，master分支与develop分支。master分支主要用于发布时使用，而develop分支主要用于开发使用。  
 
 创建master的分支develop   
@@ -58,8 +58,8 @@ git merge --no-ff develop  //使用-no-ff
 
 ---
 
-###合并
-####合并例子
+### 合并
+#### 合并例子
 ```
 //子分支feature开发完毕,合并到dev分支
 #git checkout dev
@@ -76,29 +76,29 @@ git pull --rebase origin master
 git push origin master  
 
 ## 开发环境与测试环境的切换
-###开发环境
+### 开发环境
 git co dev  
 git pull --rebase origin master //使用rebase模式  
 git push origin dev  
 git log  
 
-###测试环境
+### 测试环境
 git co test  
 git cp commit  
 git pull origin test  
 git push origin test  
 
 
-##创建分支
+## 创建分支
 在开发分支(dev),创建一个子分类 feature  
 ```
 #git checkout dev
 #git checkout -b feature  //创建分支
 ```
 
-##回滚
+## 回滚
 
->有三个方式   --hard  --soft --mix（默认）
+>有三个方式   --hard  --soft --mix（默认）  
 
 --hard 改变引向指向 替换工作区  替换暂存区
 --soft 仅改变引向指向
@@ -135,7 +135,7 @@ $git reset –hard HEAD@{1} //即可恢复到reset之前的commit上。} //想�
 
 ## git_rebase	
 
-###跟上游分支同步
+### 跟上游分支同步
 ```
 http://blog.chinaunix.net/uid-27714502-id-3436696.html
 
@@ -146,7 +146,7 @@ http://blog.chinaunix.net/uid-27714502-id-3436696.html
 #git rebase master //将主分支的内容导入过来，
 
 ```
-###高级使用
+### 高级使用
 http://www.cppblog.com/deercoder/archive/2011/11/13/160007.aspx  
 
 git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。  
@@ -171,12 +171,12 @@ git commit
 ---
 
 ## 冲突	
-###rebase模式
+### rebase模式
 1.手动把文件合并 
 2.先git --rebase --continue 再不行执行git rebase --skip
 
 
-###merge模式
+### merge模式
 1.手动把文件合并 
 2.git commit 
 
