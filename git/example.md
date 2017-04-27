@@ -32,11 +32,29 @@ git co anyang		//切换anyang
 git pull origin anyang
 git cp commit
 git push origin anyang //推送到分支
+
+#在线上的仓库里创建一个[标签]定位一下,好让后面回退做出退路
+git pull prod anyang  //推送之前,将线上的数据拉下来先
 git push prod anyang  //推送到正式
 
 【注：如果量大的话，可以使用merge】
 
 ```
+
+**git push prod anyang出现的问题,使用 git pull prod anyang即可**
+```
+xxx@xxx MINGW64 ding (anyang)
+$ git push prod anyang
+To ssh://**:5804/anyang-vding.git
+ ! [rejected]          anyang -> anyang (non-fast-forward)
+error: failed to push some refs to 'ssh://**:5804/anyang-vding.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+```
+
 
 
 
