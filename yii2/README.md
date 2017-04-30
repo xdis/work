@@ -163,6 +163,8 @@
 		- 插入
 			- 统计店铺访问量
 		- [存储过程使用](post.md#存储过程使用) 
+		- 接口验证
+			- 
     - model_AR
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)

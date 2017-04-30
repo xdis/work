@@ -21,6 +21,8 @@
 	-  http://idea.imsxm.com
 	-  http://idea.qinxi1992.cn
 	-  http://idea.lanyus.com
+	-  http://idea.qinxi1992.cn
+	-  http://jetbrains.tencent.click
 - editplus
 	- 用户名：Free User   注册码：6AC8D-784D8-DDZ95-B8W3A-45TFA 
 - Total Commander常用 
