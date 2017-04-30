@@ -51,10 +51,18 @@
 					- 创建子域名 如i.ysk.dev
 						- [将Frontend复制一份改名为company,修改相关的配置](function/module.md#将Frontend复制一份改名为company,修改相关的配置)
 						- [http.conf配置](function/module.md#http.conf配置)
+						- 127.0.0.1 i.ysk.dev //hosts
 		- console	
 			-  基本使用
 				- php /var/www/console/yii app/set-writable  //初始化目录权限
 				- php /var/www/网站根目录/yii car/driver-trip-tips //执行根目录console/controllers/CarController.php下的方法actionDriverTripTips()
+		- cache
+			- 常用操作
+				- [组件配置](function/cache_file.md#组件配置) yii\caching\FileCache
+				- [基本的保存与写入](function/cache_file.md#基本的保存与写入)
+				- [清空缓存](function/cache_file.md#清空缓存)
+			- 依赖操作
+				- 
 	- session
 		- 保存与获取
 			- 方法1
