@@ -62,7 +62,9 @@
 				- [基本的保存与写入](function/cache_file.md#基本的保存与写入)
 				- [清空缓存](function/cache_file.md#清空缓存)
 			- 依赖操作
-				- 
+				- 文件
+				- 表达式
+				- DB
 	- session
 		- 保存与获取
 			- 方法1
