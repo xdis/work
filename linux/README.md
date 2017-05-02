@@ -93,7 +93,7 @@
 			``` 
 			 vim /etc/sysconfig/iptables
 			/etc/init.d/iptables restart
-			```
+	- ag xx  //快速搜索该目录下全文的字符串	```
 - 案例
 	- 防止恶性采集
 		``` 
