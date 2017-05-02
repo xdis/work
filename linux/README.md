@@ -1,6 +1,12 @@
 
 - 基本的操作
-
+	- find / -name my.cnf	//查找命令 find
+	- 删除文件
+		- rm -fr *.*
+		- find ./ -iname 'test-file-*' | xargs rm -rf //注：xargs是因为rm -rm 删除会显示列表页过长导致出现，才使用
+	- curl [网络是否通]
+		- curl www.qian100.com -v
+		- curl www.qian100.com -vvv
 	- 用户
 		- 添加用户
 			- useradd xxx  //添加用户  
@@ -25,6 +31,7 @@
 			- for thepid in ` ps aux | grep 9003 | awk '{print $2}'` ; do  kill -9 $thepid; done
 	- ifconfig eth0 192.168.10.2 netmask 255.255.255.0  //快速设置IP
 	- 网关
+		- route
 		- route add default gw xx.xx.xx.xx  //设置网关
 		- route -n  //查看网关信息
 	 - 设置DNS
@@ -45,12 +52,48 @@
 	- ps
 		- ps axu|grep fdfs		//一般查询
 		- ps –ef|grep httpd |wc -l 	//统计HTTPD进程数
+	- df -h 	//查看硬盘以G来看情况
+	- free -g 	//查看内存使用状态
 	- pstree
 		- pstree | grep indexer  //查询是否有进程
 	- du
 		- du --max-depth=1 -h  /*    //批量查询目录与文件大小 
 	- lsof
 		- lsof |grep delete    //命令可以查看已经删除的但是系统仍然在用的文件这些文件不会释放磁盘空间
+	- ssh
+		- ssh 202.104.102.444 -p 5804  //远程登陆
+	- tail
+		``` 
+		如果你想查看文件的后10行，可以使用tail命令，如：
+		tail 10 /etc/passwd
+		tail -f 10 /var/log/messages
+		参数-f使tail不停地去读最新的内容，这样有实时监视的效果
+		```
+	- 查看root的命令的历史数据
+		``` 
+		 cat /root/.bash_history
+		 history | grep 'checksum'
+		```
+	- 防火墙设置
+		``` 
+		 vim /etc/sysconfig/iptables
+		/etc/init.d/iptables restart
+		```
+	- 更新linux时间
+		- 方法1 [手动修改指定的时间]
+			``` 
+			ntpdate time.nist.gov
+			date -s "2016-01-07 10:25:25"
+			```
+		- 方法2 [定时任务]
+			- */15 * * * * ntpdate -u pool.ntp.org >> /var/log/ntpdate.log
+		- 方法3 
+			- */15 * * * * rdate -s stdtime.gov.hk
+		- 方法4 [加朋]
+			``` 
+			 vim /etc/sysconfig/iptables
+			/etc/init.d/iptables restart
+			```
 - 案例
 	- 防止恶性采集
 		``` 
@@ -80,7 +123,8 @@
 		
 		应该运行如下  /home/httpsqs/shell/sqs.sh
 		
-		
 		在后台执行 shell.sh 脚本 
 		nohup /home/shell/xx.sh &
 		```
+	- 
+	-
