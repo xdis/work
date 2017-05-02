@@ -94,6 +94,8 @@
 			 vim /etc/sysconfig/iptables
 			/etc/init.d/iptables restart
 	- ag xx  //快速搜索该目录下全文的字符串	```
+	- netstat
+		- netstat -ntpl		//查询端口列表
 - 案例
 	- 防止恶性采集
 		``` 
