@@ -123,6 +123,11 @@
 			- @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 			- 或 管理员权限的Powershell
 				- iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+		- 常用命令
+			- choco search xx
+			- choco install xx
+			- choco uninstall xx
+			- choco upgrade xx 
 	- netstat
 		- netstat -ntpl		//查询端口列表
 - 案例
