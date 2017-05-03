@@ -1,6 +1,5 @@
 
 - 基本的操作
-	- find / -name my.cnf	//查找命令 find
 	- 删除文件
 		- rm -fr *.*
 		- find ./ -iname 'test-file-*' | xargs rm -rf //注：xargs是因为rm -rm 删除会显示列表页过长导致出现，才使用
@@ -93,7 +92,35 @@
 			``` 
 			 vim /etc/sysconfig/iptables
 			/etc/init.d/iptables restart
-	- ag xx  //快速搜索该目录下全文的字符串	```
+	- 查找与搜索
+		- find / -name my.cnf	//查找命令 find
+		- ag xx  //快速搜索该目录下全文的字符串	```
+			- 安装 [https://github.com/ggreer/the_silver_searcher]
+				- centos安装
+					- 1.安装关联
+						``` 
+						  yum -y groupinstall "Development Tools"
+						  yum -y install pcre-devel xz-devel
+						```
+					- 下载包与安装
+						``` 
+							wget https://github.com/ggreer/the_silver_searcher/archive/master.zip
+							mv master ag.zip
+							unzip ag.zip
+							cd the_silver_searcher-master/
+							./build.sh
+							make install
+						```
+				- windows安装
+					- 使用choco安装
+						- choco install ag		//安装
+						- choco upgrade ag 		//更新
+		- cat /etc/redhat-release  //查看 linux 发布版本
+	- choco安装
+		- 以管理员权限打开cmder
+			- @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+			- 或 管理员权限的Powershell
+				- iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 	- netstat
 		- netstat -ntpl		//查询端口列表
 - 案例
