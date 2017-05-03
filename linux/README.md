@@ -115,7 +115,7 @@
 					- 使用choco安装
 						- choco install ag		//安装
 						- choco upgrade ag 		//更新
-	  - pt xx  //搜索神器
+	  - pt xx  //搜索神器 [windows下执行]
 		  - choco install pt //安装
 		- cat /etc/redhat-release  //查看 linux 发布版本
 	- choco安装
