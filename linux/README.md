@@ -14,6 +14,7 @@
 			- userdel -r xxx //删除用户
 			- 或者改一下名字如 _xxx 
 	- 权限
+		-  chown -R git:git
 		-  chmod -R 755 xxx
 	- tar cvzf xx.tar.gz ./xx  	//压缩 
 	- for tar in *.tar.gz;  do tar zxvf $tar; done 	//批量解压
