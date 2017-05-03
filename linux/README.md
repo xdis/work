@@ -119,7 +119,7 @@
 		  - choco install pt //安装
 		- cat /etc/redhat-release  //查看 linux 发布版本
 	- choco安装
-		- 以管理员权限打开cmder
+		- 以管理员权限打开cmd
 			- @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 			- 或 管理员权限的Powershell
 				- iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
