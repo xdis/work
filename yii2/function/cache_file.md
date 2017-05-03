@@ -1,5 +1,5 @@
 # cache
-## 常用操作 [代码](function/cache_file/DemoCacheController.php)
+## 常用操作 [代码](cache_file/DemoCacheController.php)
 ### 组件配置 yii\caching\FileCache
 ```php
 'components' => [
