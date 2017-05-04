@@ -56,15 +56,19 @@
 			-  基本使用
 				- php /var/www/console/yii app/set-writable  //初始化目录权限
 				- php /var/www/网站根目录/yii car/driver-trip-tips //执行根目录console/controllers/CarController.php下的方法actionDriverTripTips()
-		- cache
-			- 常用操作 [代码](function/cache_file/DemoCacheController.php)
-				- [组件配置](function/cache_file.md#组件配置) yii\caching\FileCache
-				- [基本的保存与写入](function/cache_file.md#基本的保存与写入)
-				- [清空缓存](function/cache_file.md#清空缓存)
-			- 依赖操作
-				- [文件](function/cache_file.md#文件)
-				- [表达式](function/cache_file.md#表达式)
-				- [DB](function/cache_file.md#DB)
+		- 缓存
+			- cache [控制器层]
+				- 常用操作 [代码](function/cache_file/DemoCacheController.php)
+					- [组件配置](function/cache_file.md#组件配置) yii\caching\FileCache
+					- [基本的保存与写入](function/cache_file.md#基本的保存与写入)
+					- [清空缓存](function/cache_file.md#清空缓存)
+				- 依赖操作
+					- [文件](function/cache_file.md#文件)
+					- [表达式](function/cache_file.md#表达式)
+					- [DB](function/cache_file.md#DB)
+			- 页面缓存 [view层]
+				- beginCache
+					- 
 	- session
 		- 保存与获取
 			- 方法1
