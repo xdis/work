@@ -18,6 +18,9 @@ var_dump(get_class($obj));
 
 ### instanceof
 
+>有些时候我们只在乎某个对象是不是属于某个类的继承
+
+
 ```php
 class One{
     public function test2()
