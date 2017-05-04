@@ -2,6 +2,10 @@
 
 - 干货
 	- [符合PSR-1/PSR-2的PHP编程规范实例](standard.php)
+- 对象
+	- 常用函数
+		- [get_class](object_fn.md#get_class) //获取类名
+		- [instanceof](object_fn.md#instanceof) //某个对象是不是属于某个类的继承
 - socket
 	- 农行的demo
 		- [socket整理](socket.md#socket整理) 
