@@ -164,3 +164,95 @@ class DemoCacheController extends Controller {
         echo $data;
     }
 ```
+
+#页面缓存 [view层]
+
+## beginCache
+```php
+
+//缓存时间
+$duration = 15;
+
+?>
+
+<?php if ($this->beginCache('cache-div', ['duration' => $duration])) { ?>
+    <div id="cache-div">
+        <div>这里待会缓存</div>
+    </div>
+
+    <?php
+ $this->endCache();
+}
+?>
+
+```
+### 缓存时间
+```php
+
+//缓存依赖
+$Dependency = [
+    'class' => 'yii\caching\FileDependency',
+    'fileName' => 'hw.txt',
+];
+
+?>
+
+<?php if ($this->beginCache('cache-div', ['dependency' => $Dependency])) { ?>
+    <div id="cache-div">
+        <div>这里待会缓存</div>
+    </div>
+
+    <?php
+ $this->endCache();
+}
+?>
+
+```
+
+### 缓存开关
+```php
+//缓存开关
+$enabled = false;
+
+?>
+
+<?php if ($this->beginCache('cache-div', ['enabled' => $enabled])) { ?>
+    <div id="cache-div">
+        <div>这里待会缓存</div>
+    </div>
+
+    <?php
+ $this->endCache();
+}
+?>
+
+```
+
+### 嵌套缓存
+```php
+
+<?php if ($this->beginCache('cache-out-div', ['duration' => 20])) { ?>
+    <div id="cache-out-div">
+        <div>这里是外层x</div>
+
+        <?php if ($this->beginCache('cache-in-div', ['duration' => 1])) { ?>
+        <div id="cache-in-div">
+            <div>这是内层yy</div>
+        </div>
+
+        <?php
+            $this->endCache();
+        } ?>
+    </div>
+
+    <?php
+    $this->endCache();
+}
+?>
+
+```
+
+
+```php
+
+```

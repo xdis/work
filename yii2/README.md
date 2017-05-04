@@ -67,8 +67,11 @@
 					- [表达式](function/cache_file.md#表达式)
 					- [DB](function/cache_file.md#DB)
 			- 页面缓存 [view层]
-				- beginCache
-					- 
+				- beginCache 
+					- [缓存时间](function/cache_file.md#缓存时间)
+					- [文件依赖](function/cache_file.md#文件依赖)
+					- [缓存开关](function/cache_file.md#缓存开关)
+				- [嵌套缓存](function/cache_file.md#嵌套缓存)
 	- session
 		- 保存与获取
 			- 方法1
