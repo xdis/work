@@ -301,7 +301,7 @@ class DemoCacheController extends Controller {
                 },
                 'etagSeed' => function () {
                     $fp = fopen('hw.txt', 'r');
-                    $title = fgets($fp);
+                    $title = fgets($fp); //采集第一行作为内容的变化的依据,考虑到文档太大了原因
                     fclose($fp);
                     return $title;
                 },
