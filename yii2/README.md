@@ -74,7 +74,7 @@
 				- [嵌套缓存](function/cache_file.md#嵌套缓存)
 			- 页面缓存 [controller层]
 				- [使用behavior进行全局缓存](function/cache_file.md#使用behavior进行全局缓存)
-				- http缓存
+				- [http缓存](function/cache_file.md#http缓存)
 	- session
 		- 保存与获取
 			- 方法1

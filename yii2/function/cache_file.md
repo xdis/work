@@ -281,3 +281,41 @@ class DemoCacheController extends Controller {
         echo 'abc';
     }
 ```
+
+### http缓存
+
+**httpcahe要缓存更新两个要素**
+>lastModified 控制文件时间  
+>etagSeed 控制文件内容  
+>上面两个同时改变的话，缓存才清空  
+
+```php
+class DemoCacheController extends Controller {
+
+  public function behaviors() {
+        return [
+            [
+                'class' => 'yii\filters\HttpCache',
+                'lastModified' => function () {
+                    return filemtime('hw.txt');
+                },
+                'etagSeed' => function () {
+                    $fp = fopen('hw.txt', 'r');
+                    $title = fgets($fp);
+                    fclose($fp);
+                    return $title;
+                },
+            ],
+        ];
+    }
+
+    /**
+     * http://ysk.dev/admin/demo-cache/http-cache
+     * 使用behavior定义,使用httpCache缓存，lastModified与etagSeed 同时变化，缓存才清空
+     * @author cmk
+     */
+    public function actionHttpCache() {
+        $content = file_get_contents('hw.txt');
+        return $this->renderPartial('http-cache', ['content' => $content]);
+    }
+```
