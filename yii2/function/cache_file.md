@@ -251,8 +251,33 @@ $enabled = false;
 ?>
 
 ```
-
-
+## 页面缓存 [controller层]
+### 使用behavior进行全局缓存
 ```php
+class DemoCacheController extends Controller {
 
+    public $cache;
+
+    public function behaviors() {
+      return [
+            [
+                'class'=>'yii\filters\PageCache',
+                'only'=>['index'], //只限index方法有效,如果该注释掉,则全部的方法有效
+                'duration'=>1000,
+                'dependency'=>[
+                    'class'=>'yii\caching\FileDependency',
+                    'fileName'=>'hw.txt'
+                ]
+            ]
+      ];
+    }
+
+    /**
+     * http://ysk.dev/admin/demo-cache/page-cache
+     * 使用behavior进行全局缓存
+     * @author cmk
+     */
+    public function actionPageCache(){
+        echo 'abc';
+    }
 ```

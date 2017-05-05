@@ -72,6 +72,9 @@
 					- [文件依赖](function/cache_file.md#文件依赖)
 					- [缓存开关](function/cache_file.md#缓存开关)
 				- [嵌套缓存](function/cache_file.md#嵌套缓存)
+			- 页面缓存 [controller层]
+				- [使用behavior进行全局缓存](function/cache_file.md#使用behavior进行全局缓存)
+				- http缓存
 	- session
 		- 保存与获取
 			- 方法1
