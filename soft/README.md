@@ -27,6 +27,7 @@
 		-  http://idea.iteblog.com/key.php
 	-  内网
 		-  http://192.168.97.1:8888/
+		-  http://192.168.2.1:8888/
 
 - editplus
 	- 用户名：Free User   注册码：6AC8D-784D8-DDZ95-B8W3A-45TFA 
