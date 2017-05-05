@@ -35,7 +35,6 @@
 		- route add default gw xx.xx.xx.xx  //设置网关
 		- route -n  //查看网关信息
 	- 设置DNS
-		- 
 		``` 
 			vi /etc/resolv.conf
 			nameserver 202.96.134.133
@@ -73,7 +72,7 @@
 			``` 
 			 cat /root/.bash_history
 			 history | grep 'checksum'
-		```
+			```
 		- netstat
 			- netstat -ntpl		//查询端口列表
 			- netstat -tunpl
