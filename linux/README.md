@@ -34,8 +34,7 @@
 		- route
 		- route add default gw xx.xx.xx.xx  //设置网关
 		- route -n  //查看网关信息
-	 - 设置DNS
-		- 
+	- 设置DNS
 		``` 
 			vi /etc/resolv.conf
 			nameserver 202.96.134.133
@@ -49,31 +48,36 @@
 	- scp
 		-  yum install openssh-clients	//安装
 		-  scp @xx:/var/lib/mysql/baidajob/boss_callout_plan.* ./	//远程获取
-	- ps
-		- ps axu|grep fdfs		//一般查询
-		- ps –ef|grep httpd |wc -l 	//统计HTTPD进程数
-	- df -h 	//查看硬盘以G来看情况
-	- free -g 	//查看内存使用状态
-	- pstree
-		- pstree | grep indexer  //查询是否有进程
-	- du
-		- du --max-depth=1 -h  /*    //批量查询目录与文件大小 
-	- lsof
-		- lsof |grep delete    //命令可以查看已经删除的但是系统仍然在用的文件这些文件不会释放磁盘空间
+	- 查看 
+		- uname -a  //查看系统多少位 32位/64
+		- ps
+			- ps axu|grep fdfs		//一般查询
+			- ps –ef|grep httpd |wc -l 	//统计HTTPD进程数
+		- df -h 	//查看硬盘以G来看情况
+		- free -g 	//查看内存使用状态
+		- pstree
+			- pstree | grep indexer  //查询是否有进程
+		- du
+			- du --max-depth=1 -h  /*    //批量查询目录与文件大小 
+		- lsof
+			- lsof |grep delete    //命令可以查看已经删除的但是系统仍然在用的文件这些文件不会释放磁盘空间
+		- tail
+			``` 
+			如果你想查看文件的后10行，可以使用tail命令，如：
+			tail 10 /etc/passwd
+			tail -f 10 /var/log/messages
+			参数-f使tail不停地去读最新的内容，这样有实时监视的效果
+			```
+		- 查看root的命令的历史数据
+			``` 
+			 cat /root/.bash_history
+			 history | grep 'checksum'
+			```
+		- netstat
+			- netstat -ntpl		//查询端口列表
+			- netstat -tunpl
 	- ssh
 		- ssh 202.104.102.444 -p 5804  //远程登陆
-	- tail
-		``` 
-		如果你想查看文件的后10行，可以使用tail命令，如：
-		tail 10 /etc/passwd
-		tail -f 10 /var/log/messages
-		参数-f使tail不停地去读最新的内容，这样有实时监视的效果
-		```
-	- 查看root的命令的历史数据
-		``` 
-		 cat /root/.bash_history
-		 history | grep 'checksum'
-		```
 	- 防火墙设置
 		``` 
 		 vim /etc/sysconfig/iptables
@@ -131,8 +135,6 @@
 			- choco install xx
 			- choco uninstall xx
 			- choco upgrade xx 
-	- netstat
-		- netstat -ntpl		//查询端口列表
 - 案例
 	- 防止恶性采集
 		``` 
