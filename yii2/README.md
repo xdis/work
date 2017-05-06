@@ -76,7 +76,7 @@
 				- [使用behavior进行全局缓存](function/cache_file.md#使用behavior进行全局缓存)
 				- [http缓存](function/cache_file.md#http缓存)
 			- 调试
-				- 
+				- [beginProfile](function/debug.md#beginProfile)  代码区间性能检测
 	- session
 		- 保存与获取
 			- 方法1
