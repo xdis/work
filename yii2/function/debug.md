@@ -18,4 +18,4 @@
 ````
 **debug查看**
 
-![](function\debug\profile.png)
+![](function/debug/profile.png)
