@@ -57,7 +57,7 @@
 				- php /var/www/console/yii app/set-writable  //初始化目录权限
 				- php /var/www/网站根目录/yii car/driver-trip-tips //执行根目录console/controllers/CarController.php下的方法actionDriverTripTips()
 		- 缓存
-			- cache [控制器层]
+			- cache [控制器层] @withy
 				- 常用操作 [代码](function/cache_file/DemoCacheController.php)
 					- [组件配置](function/cache_file.md#组件配置) yii\caching\FileCache
 					- [基本的保存与写入](function/cache_file.md#基本的保存与写入)
@@ -102,13 +102,13 @@
 			- Yii::info($message, $category = 'application');
 				- 如 Yii::info($log,__METHOD__);
 	- 事件
-		- [事件-邮件发送](事件-邮件发送.md) trigger on  白狼栈提供
+		- [事件-邮件发送](事件-邮件发送.md) trigger on  @白狼栈
 		- [事件-简单例子](事件-简单例子.md)
-		- [猫叫老鼠跑的事件](event/cat_mouse_dog_event.md#猫叫老鼠跑的事件) 慕课提供
+		- [猫叫老鼠跑的事件](event/cat_mouse_dog_event.md#猫叫老鼠跑的事件) @withy
 			- 猫添加触发器
 			- 控制器绑定
 	- 行为
-		- 猫叫老鼠添加行为  慕课提供
+		- 猫叫老鼠添加行为  @withy
 			- 类的混合 在类里绑定行为
 				- [给狗添加行为方法和行为变量](behavior.md#给狗添加行为方法和行为变量)
 				- [给狗添加事件与触发](behavior.md#给狗添加事件与触发)
