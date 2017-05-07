@@ -51,7 +51,7 @@ $this->on(self::EVENT_TEST, ['backend\components\event\Event', 'test']);
 
 ## 自带事件_model层
 
-### 保存之前的事件示例		[beforeSave]
+### 保存之前的事件示例
 ```php
 public function beforeSave($insert)
 {
@@ -67,7 +67,7 @@ public function beforeSave($insert)
 }
 ```
 
-### 保存之后的事件示例		[afterSave]
+### 保存之后的事件示例	
 ```php
 public function afterSave($insert, $changedAttributes)
 {
@@ -78,7 +78,7 @@ public function afterSave($insert, $changedAttributes)
     }
 }
 ```	
-### 删除之后的事件示例		[afterDelete]
+### 删除之后的事件示例
 ```php
 public function afterDelete()
 {
@@ -86,7 +86,7 @@ public function afterDelete()
 }
 ```
 
-### 事件怎么保证数据事务呢		[transactions]
+### 事件怎么保证数据事务呢
 ```php
 public function transactions()
 {
@@ -99,7 +99,7 @@ public function transactions()
 
 ## 自带事件_controller层
 
-### 每次请求之前操作示例 [beforeAction]
+### 每次请求之前操作示例
 ```php
 /**
  * @param \yii\base\Action $action
@@ -119,7 +119,7 @@ public function beforeAction($action)
 }
 ```
 
-### 每次请求之后操作示例	[afterAction]
+### 每次请求之后操作示例
 ```php
 /**
  * @param \yii\base\Action $action
