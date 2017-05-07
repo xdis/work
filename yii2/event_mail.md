@@ -3,6 +3,11 @@
 
 来源:[yii2项目实战-用事件优雅的发送邮件](http://www.manks.top/document/yii2-event-email-example.html)   
 
+## 时序图
+
+[时序图路径](uml/事件-邮件发送.oom)
+
+![](function/event/event_mail.png)
 
 ## 访问地址
 http://ysk.dev/admin/demo-send-mail/send  
@@ -137,8 +142,3 @@ class Mail {
 
 ```
 
-## 时序图
-
-[时序图路径](uml/事件-邮件发送.oom)
-
-![](function/event/event_mail.png)
