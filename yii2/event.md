@@ -136,6 +136,7 @@ public function afterAction($action, $result)
 ---
 
 ## 触发saving事件_同时保存日志和缓存
+>来源 https://getyii.com/topic/358  
 
 >事件的话，也就是观察者模式，触发一个事件后通知所有观察这个事件的观察者，观察者可以是多个。比如当保存一个 Model 的时候，触发 saving 事件，这个时候就可以编写一个保存日志和一个更新缓存的观察者，以后只要保存 Model ，就可以把日志记录下来，同时更新缓存  
 
