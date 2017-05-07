@@ -116,6 +116,7 @@
 			- controller层
 				- [每次请求之前操作示例](event.md#每次请求之前操作示例)		[beforeAction]
 				- [每次请求之后操作示例](event.md#每次请求之后操作示例)		[afterAction]
+		- [触发saving事件_同时保存日志和缓存](event.md#触发saving事件_同时保存日志和缓存)	 [使用观察者模式] @ilvsx
 	- 行为
 		- 猫叫老鼠添加行为  @withy
 			- 类的混合 在类里绑定行为
@@ -125,7 +126,7 @@
 				- [定义行为类](behavior.md#定义行为类)
 				- [控制器绑定或解绑行为](behavior.md#控制器绑定或解绑行为) 
 	- 依赖注入
-		- 慕课    
+		- @withy    
 			- [容器](DiController.md) 定义并解决依赖关系  new Container()   set  get 
 			- [服务器定位](servicelocal.md) 配置服务的参数信息
 				- [控制器配置调用](servicelocal.md#控制器配置调用)

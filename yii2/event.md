@@ -133,3 +133,87 @@ public function afterAction($action, $result)
     return $result;
 }
 ```
+---
+
+## 触发saving事件_同时保存日志和缓存
+
+>事件的话，也就是观察者模式，触发一个事件后通知所有观察这个事件的观察者，观察者可以是多个。比如当保存一个 Model 的时候，触发 saving 事件，这个时候就可以编写一个保存日志和一个更新缓存的观察者，以后只要保存 Model ，就可以把日志记录下来，同时更新缓存  
+
+```php
+<?php
+
+abstract class Model
+{
+
+  private $event;
+
+  public function __construct(Event $event)
+  {
+    $this->event = $event;
+  }
+
+  public function save()
+  {
+    $this->event->notify('saving', $this);
+  }
+
+}
+
+class User extends Model
+{
+}
+
+class Blog extends Model
+{
+}
+
+class Event
+{
+  private $events;
+
+  public function addObserver($name, IObserver $observer){
+    $this->events[$name][] = $observer;
+  }
+
+  public function notify($name, $model){
+    echo get_class($model) . PHP_EOL;
+    foreach ($this->events[$name] as $observer) {
+      $observer->doSomething($model);
+    }
+  }
+}
+
+interface IObserver{
+  public function doSomething(Model $model);
+}
+
+class LogObserver implements IObserver{
+  public function doSomething(Model $model){
+    echo 'Log...' . PHP_EOL;
+  }
+}
+
+class CacheObserver implements IObserver{
+  public function doSomething(Model $model){
+    echo 'Cache...' . PHP_EOL;
+  }
+}
+
+
+$event = new Event();
+$event->addObserver('saving', new LogObserver());
+$event->addObserver('saving', new CacheObserver());
+
+$user = new User($event);
+$user->save();
+$blog = new Blog($event);
+$blog->save();
+
+//输出
+User
+Log...
+Cache...
+Blog
+Log...
+Cache...
+```
