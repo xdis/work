@@ -5,9 +5,9 @@
 
 ## 时序图
 
-[时序图路径](uml/事件-邮件发送.oom)
+[时序图路径](../uml/事件-邮件发送.oom)
 
-![](function/event/event_mail.png)
+![](event_mail.png)
 
 ## 访问地址
 http://ysk.dev/admin/demo-send-mail/send  
