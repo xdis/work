@@ -21,6 +21,17 @@ if (Yii::$app->user->getIsPerson()) {
 }
 ```
 
+### controller传值给layout
+**在控制器中这样写**
+```php
+$this->view->params['customParam'] = 'customValue';
+```
+
+**在视图中这样调用**
+```php
+echo $this->params['customParam'];
+```
+
 ## 发布线上
 ### 缓存清空
 ```php

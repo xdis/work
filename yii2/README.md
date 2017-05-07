@@ -23,6 +23,7 @@
 		-  YII_ENV_PROD 判断是否生成环境
 		-  layout
 			-  [根据参数选择不同layout,如充值有个人和企业统一入口,不同身份不同layout](op.md#根据参数选择不同layout,如充值有个人和企业统一入口,不同身份不同layout) 
+			- [controller传值给layout](op.md#controller传值给layout) 
 		- 发布线上
 			- [缓存清空](op.md#缓存清空)  ./yii cache/flush-all  //根目录运行,清空所有
 				- 清空表结构缓存的方法  
@@ -195,8 +196,6 @@
 		- 插入
 			- 统计店铺访问量
 		- [存储过程使用](post.md#存储过程使用) 
-		- 接口验证
-			- 
     - model_AR
 	    - [managesearch方法_个性化+自定义配置](model.md#managesearch方法_个性化+自定义配置)
 		    - [使用子查询使用](model.md#使用子查询使用)
