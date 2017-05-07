@@ -49,3 +49,87 @@ $this->on(self::EVENT_TEST, ['backend\components\event\Event', 'test']);
 
 ---
 
+## 自带事件_model层
+
+### 保存之前的事件示例		[beforeSave]
+```php
+public function beforeSave($insert)
+{
+    if (parent::beforeSave($insert)) {
+        // 插入新数据判断订单号是否存在
+        if (!Order::findModel(['trade_no' => $this->order_trade_no])) {
+            throw new Exception("订单号不存在");
+        }
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+### 保存之后的事件示例		[afterSave]
+```php
+public function afterSave($insert, $changedAttributes)
+{
+    parent::afterSave($insert, $changedAttributes);
+    if ($insert) {
+        // 插入新数据之后修改订单状态
+        Order::updateAll(['shipping_status' => Order::SHIPPING_STATUS1, 'shipping_at' => time()], ['trade_no' => $this->order_trade_no]);
+    }
+}
+```	
+### 删除之后的事件示例		[afterDelete]
+```php
+public function afterDelete()
+{
+    parent::afterDelete();
+}
+```
+
+### 事件怎么保证数据事务呢		[transactions]
+```php
+public function transactions()
+{
+    return [
+        self::SCENARIO_DEFAULT => self::OP_INSERT | self::OP_UPDATE | self::OP_DELETE
+        // self::SCENARIO_DEFAULT => self::OP_INSERT
+    ];
+}
+```
+
+## 自带事件_controller层
+
+### 每次请求之前操作示例 [beforeAction]
+```php
+/**
+ * @param \yii\base\Action $action
+ * @return bool
+ * @throws \yii\web\BadRequestHttpException
+ */
+public function beforeAction($action)
+{
+    if (parent::beforeAction($action)) {
+        $this->request = Yii::$app->request;
+        Yii::info($this->request->absoluteUrl, '请求地址');
+        Yii::info($this->request->rawBody, '请求数据');
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+### 每次请求之后操作示例	[afterAction]
+```php
+/**
+ * @param \yii\base\Action $action
+ * @param mixed $result
+ * @return array|mixed
+ * @throws BusinessException
+ */
+public function afterAction($action, $result)
+{
+    Yii::info(\yii\helpers\Json::encode($result), '请求返回结果');
+    return $result;
+}
+```

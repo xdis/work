@@ -107,6 +107,15 @@
 		- [猫叫老鼠跑的事件](event/cat_mouse_dog_event.md#猫叫老鼠跑的事件) @withy
 			- 猫添加触发器
 			- 控制器绑定
+		- 自带事件	@foreach
+			- model层 
+				- [保存之前的事件示例](event.md#保存之前的事件示例)	[beforeSave]
+				- [保存之后的事件示例](event.md#保存之后的事件示例)	[afterSave]
+				- [删除之后的事件示例](event.md#删除之后的事件示例)	[afterDelete]
+				- [事件怎么保证数据事务呢？](event.md#事件怎么保证数据事务呢)	[transactions]
+			- controller层
+				- [每次请求之前操作示例](event.md#每次请求之前操作示例)		[beforeAction]
+				- [每次请求之后操作示例](event.md#每次请求之后操作示例)		[afterAction]
 	- 行为
 		- 猫叫老鼠添加行为  @withy
 			- 类的混合 在类里绑定行为
