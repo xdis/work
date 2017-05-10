@@ -11,6 +11,11 @@ public function actionHash()
 }
 ``` 
 
+--- 
+**注意**
+> rest rest\versions\v1\service 为企业帐号登陆 其它的是个人帐号
+
+
 ## 获取token  
 
 **请求URL：** 
