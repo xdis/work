@@ -142,8 +142,20 @@
 			- yum provides "*nslookup"
 	- dig安装
 		- linux
-			- 
-		- window
+			- 方法1 [依赖工具安装]
+				- yum install bind-utils	//Fedora / Centos
+				- sudo apt-get install dnsutils		//Ubuntu
+				- Debian
+					- apt-get update
+					- apt-get install dnsutils
+			- 方法2 
+				- 
+		- window [详情地址](http://blog.csdn.net/lhorse003/article/details/71629960)
+			- 去镜像网站下载 ftp://ftp.nominum.com/pub/isc/bind9/
+				- 选择版本 如 9.9.7 
+				- 选择多少位 BIND9.9.7.x64.zip
+			- 解压
+				- 将所有的*.dll和dig.exe文件复制到C:\Windows\System32\
 	- 域名常见问题
 		- DNS检测
 			- 域名whois检测
