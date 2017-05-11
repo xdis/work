@@ -135,6 +135,27 @@
 			- choco install xx
 			- choco uninstall xx
 			- choco upgrade xx 
+	- dig安装
+		- linux
+			- 
+		- window
+	- 域名常见问题
+		- DNS检测
+			- 域名whois检测
+				- https://www.whois.com/whois/vding.wang  
+				- https://support.dnspod.cn/Tools/tools/
+		- nslookup
+		- dig使用
+			- dig chenrongrong.info
+			- 查询MX记录 MX（Mail Exchanger）记录查询
+				-  dig redhat.com  MX +noall +answer
+				-  dig -t MX redhat.com +noall +answer  //后者`-t`代表查询类型，可以是`A`,`MX`,`NS`等,`+noall` 代表清除所有显示的选项
+			- dig -t NS chenrongrong.info +noall +answer 		//查询域名服务器
+			- dig -t ANY chenrongrong.info +answer		//查询所有DNS记录
+			- dig -t NS chenrongrong.info +short		//简洁显示+short
+			- dig -x 8.8.8.8 +short		//DNS反向解析dig -x
+			- dig cname www.baidu.com +short		//显示域名的CNAME记录
+			- dig -h 	//帮助
 - 案例
 	- 防止恶性采集
 		``` 
