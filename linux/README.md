@@ -156,6 +156,12 @@
 				- 选择多少位 BIND9.9.7.x64.zip
 			- 解压
 				- 将所有的*.dll和dig.exe文件复制到C:\Windows\System32\
+			- 使用Google Public DNS 
+				- 修改该文件  C:\Windows\System32\drivers\etc\resolv.conf
+				- 内容如下
+					- nameserver 202.96.134.33
+					-  nameserver 8.8.8.8
+					-  nameserver 8.8.4.4
 	- 域名常见问题
 		- DNS检测
 			- 域名whois检测
@@ -163,12 +169,18 @@
 				- https://support.dnspod.cn/Tools/tools/
 		- nslookup
 		- dig使用
-			- dig chenrongrong.info
+			- 测试该域名能否正常解析
+				- dig vding.wang
+				- dig @8.8.8.8 vding.wang  //使用8.8.8.8作为指定SERVER
+					- [解析成功](function/dig.md#解析成功)
+					- [解析失败](function/dig.md#解析失败)
 			- 查询MX记录 MX（Mail Exchanger）记录查询
-				-  dig redhat.com  MX +noall +answer
-				-  dig -t MX redhat.com +noall +answer  //后者`-t`代表查询类型，可以是`A`,`MX`,`NS`等,`+noall` 代表清除所有显示的选项
+				- dig redhat.com  MX +noall +answer
+				- dig -t MX redhat.com +noall +answer  		//后者`-t`代表查询类型，可以是`A`,`MX`,`NS`等,`+noall` 代表清除所有显示的选项
 			- dig -t NS chenrongrong.info +noall +answer 		//查询域名服务器
 			- dig -t ANY chenrongrong.info +answer		//查询所有DNS记录
+				- [vding为例](function/dig.md#vding为例)
+				- [baidajob为例](function/dig..md#baidajob为例)
 			- dig -t NS chenrongrong.info +short		//简洁显示+short
 			- dig -x 8.8.8.8 +short		//DNS反向解析dig -x
 			- dig cname www.baidu.com +short		//显示域名的CNAME记录
