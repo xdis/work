@@ -135,6 +135,11 @@
 			- choco install xx
 			- choco uninstall xx
 			- choco upgrade xx 
+	- yum
+		- yum install bind-utils	//安装
+		- 查看某个命令是属于哪个软件包
+			- yum provides "*bin/nslookup"
+			- yum provides "*nslookup"
 	- dig安装
 		- linux
 			- 
