@@ -86,6 +86,9 @@
 			-  方法2
 				-  Yii::$app->session->set('rtn_url', $_rtn_url);
 				-  Yii::$app->session->get('rtn_url');
+	- cookie
+		- 保存与获取
+			- [user登陆信息保存](function/cookie.md#登陆信息保存)
 	- 异常类
 		- 常用
 			- yii\web\BadRequestHttpException
