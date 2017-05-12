@@ -152,6 +152,7 @@
 				报错原因?
 				http://mirrors.163.com/centos/6/os/x86_64/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 404 Not Found
 			```
+				- 解决方案:
 				- cat /etc/redhat-release  //查看当前的centos版本是几 如 6.8
 				- CentOS-Base.repo数据替换
 					- mirrors.163.com 替换 vault.centos.org 	
