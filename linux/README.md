@@ -140,6 +140,23 @@
 		- 查看某个命令是属于哪个软件包
 			- yum provides "*bin/nslookup"
 			- yum provides "*nslookup"
+		- 更换yum 163	http://mirrors.163.com/.help/centos.html
+			- 一般操作
+				- mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.old
+				- cd /etc/yum.repos.d/ 
+				- wget wget spacer.gifhttp://mirrors.163.com/.help/CentOS6-Base-163.repo
+				- mv CentOS6-Base-163.repo CentOS-Base.repo 
+				- yum clean all & yum makecache
+			-  **yum makecache报错** [CentOS-Base.repo最终文件](functino/yum/CentOS-Base.repo) [centos 6.8]  by 20170512 11:02
+			
+				```
+			http://mirrors.163.com/centos/6/os/x86_64/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 404 Not Found"
+				```
+				- cat /etc/redhat-release  //查看当前的centos版本是几 如 6.8
+				- CentOS-Base.repo数据替换
+					- mirrors.163.com 替换 vault.centos.org 	
+					- $releasever 替换为 6.8
+					-  yum clean all & yum makecache		
 	- dig安装
 		- linux
 			- 方法1 [依赖工具安装]
@@ -149,7 +166,7 @@
 					- apt-get update
 					- apt-get install dnsutils
 			- 方法2 
-				- 
+				- 复杂 - 不建议
 		- window [详情地址](http://blog.csdn.net/lhorse003/article/details/71629960)
 			- 去镜像网站下载 ftp://ftp.nominum.com/pub/isc/bind9/
 				- 选择版本 如 9.9.7 
