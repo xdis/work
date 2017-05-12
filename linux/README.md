@@ -148,11 +148,9 @@
 				- mv CentOS6-Base-163.repo CentOS-Base.repo 
 				- yum clean all & yum makecache
 			-  **yum makecache报错** [CentOS-Base.repo最终文件](function/yum/CentOS-Base.repo) [centos 6.8]  by 20170512 11:02
-
 			```
 				http://mirrors.163.com/centos/6/os/x86_64/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 404 Not Found
 			```
-
 				- cat /etc/redhat-release  //查看当前的centos版本是几 如 6.8
 				- CentOS-Base.repo数据替换
 					- mirrors.163.com 替换 vault.centos.org 	
