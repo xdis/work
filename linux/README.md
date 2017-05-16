@@ -157,6 +157,7 @@
 				- CentOS-Base.repo数据替换
 					- mirrors.163.com 替换 vault.centos.org 	
 					- $releasever 替换为 6.8
+					- rpm -qi centos-release   //查看$releasever的值 
 					-  yum clean all & yum makecache		
 	- dig安装
 		- linux
