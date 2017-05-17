@@ -8,7 +8,7 @@
 
 - setup
     - [linux](linux/)
-	- [mysql](setup/)
+	- [mysql](mysql/)
 	- [git](git/)
 - Other
 	- test
