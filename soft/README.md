@@ -1,4 +1,15 @@
 # 软件
+- 抓包工具
+	- Fiddler
+		- 前端线上调试
+			- js的调试
+				- 1.下载要调试的JS文件至本地
+				- 2.打开fiddler,获取要调试的请求地址,并换上本地文件
+
+					![](fiddler/fiddler_AutoResponder.png)
+				- 3.结果显示
+
+				![](fiddler/result.png)
 - winscp 配置导入与导出
 	- ![](winscp/config_import_export.png)
 - bitbucket
