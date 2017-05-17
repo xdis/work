@@ -3,8 +3,8 @@
 - 常用功能
 	- 转换类型	
 		- CONVERT(xxx,类型) 或 CAST(xxx AS 类型)
-			- varchar转Int 	用 cast(a as signed) 
-			- Int转为varcha  用 concat(8,’0′) 
+			- cast(a as signed) 	//varchar转Int
+			- concat(8,’0′) 		//Int转为varcha
 			- 类型
 				- 二进制,同带binary前缀的效果 : BINARY
 				- 字符型,可带参数 : CHAR()
