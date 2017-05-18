@@ -57,3 +57,10 @@ cache/index (default)      Lists the caches that can be flushed.
 //执行 
 ./yii cache/flush-all
 ```
+
+## 打印sql
+```php
+$query = Dporder::find()->select($select)->where(['cus_order_no' =>$cus_order_no]);
+$commandQuery = clone $query;
+echo $commandQuery->createCommand()->getRawSql();
+```
