@@ -32,11 +32,13 @@
 			- 初始化目录权限
 				- ./console/yii app/set-writable
 		- 打印sql
+
 			```php
-		$query = Dporder::find()->select($select)->where(['cus_order_no' =>$cus_order_no]);
+$query = Dporder::find()->select($select)->where(['cus_order_no' =>$cus_order_no]);
         $commandQuery = clone $query;
         echo $commandQuery->createCommand()->getRawSql();
-			```
+```
+
 	- composer
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
