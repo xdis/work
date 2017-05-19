@@ -236,5 +236,25 @@
 		在后台执行 shell.sh 脚本 
 		nohup /home/shell/xx.sh &
 		```
-	- 
-	-
+	- 程序后台运行并开机自动启动
+		- 以"搭建IntelliJ IDEA license server"为例
+			- 根据选择的执行文件编写启动脚本，选择运行平台对应的可执行文件
+			```
+			vim /usr/ideaActivation/start.sh
+			# 文件内容：
+			#! /bin/bash
+			sudo /usr/ideaActivation/IntelliJIDEALicenseServer_linux_amd64 & bg
+			```
+			- 设置执行权限：
+			```
+			chmod a+x /usr/ideaActivation/start.sh
+			```
+			- 开机启动：
+			```
+			# 编辑开机启动文件
+			vim /etc/rc.d/rc.local
+			# 在文件尾加入启动脚本，开机自动启动：
+			#!/bin/sh
+			#secu_agent init monitor, install at Sat Mar 26 02:55:13 CST 2016
+			/usr/ideaActivation/start.sh
+			```
