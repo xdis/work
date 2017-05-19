@@ -2,6 +2,18 @@
 
 - 干货
 	- [符合PSR-1/PSR-2的PHP编程规范实例](standard.php)
+- function
+	- 闭包与匿名函数
+		- create_function() [PHP4.1和PHP5中就有了]
+			- 不是真正的匿名函数,因为该函数是**有函数名**
+			- 只是创建卫一个全局唯一的函数而已
+		- Closure	【匿名函数/闭包函数】
+			- [__invoke魔幻方法](function/Closure.md#__invoke魔幻方法) 
+			- [匿名函数的实现](function/Closure.md#匿名函数的实现) 
+			- use
+				- [普通use使用](function/Closure.md#普通use使用) 
+				- [use使用其外部作用域的变量](function/Closure.md#use使用其外部作用域的变量)
+				- [yii2关联查询用use加载外界参数](function/Closure.md#yii2关联查询用use加载外界参数)
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类

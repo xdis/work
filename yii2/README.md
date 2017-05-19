@@ -32,6 +32,15 @@
 			- 初始化目录权限
 				- ./console/yii app/set-writable
 		-  [打印sql](op.md#打印sql)  //$commandQuery->createCommand()->getRawSql()
+		-  $this->route		//获取当前路由字符串
+		-  $this->action	//获取当前action对象
+		-  \Yii::$app->controller->id	//获取当前控制器ID
+		-  $this->module->id	//获取当前模块ID
+		-  获取最后插入的id.
+			-  \Yii::$app->getDb()->lastInsertId;
+			-  model->attributes['id']
+			-  $model->getOldAttribute("id")
+		- yii\helpers\BaseHtml::encode($str)    //字符串进行转义
 	- composer
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
