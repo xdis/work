@@ -11,9 +11,15 @@
 			- [__invoke魔幻方法](function/Closure.md#__invoke魔幻方法) 
 			- [匿名函数的实现](function/Closure.md#匿名函数的实现) 
 			- use
+				- 在普通函数中当做参数传入也可以被返回
+					- [在函数里定义一个匿名函数_并且调用它](function/Closure.md#在函数里定义一个匿名函数_并且调用它) 
+					- [在函数中把匿名函数返回_并且调用它](function/Closure.md#在函数中把匿名函数返回_并且调用它) 
+					- [把匿名函数当做参数传递_并且调用它](function/Closure.md#把匿名函数当做参数传递_并且调用它) 
+					- [直接将匿名函数进行传递](function/Closure.md#直接将匿名函数进行传递) 
 				- [普通use使用](function/Closure.md#普通use使用) 
 				- [use使用其外部作用域的变量](function/Closure.md#use使用其外部作用域的变量)
 				- [yii2关联查询用use加载外界参数](function/Closure.md#yii2关联查询用use加载外界参数)
+				
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类

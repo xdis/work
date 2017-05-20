@@ -28,6 +28,58 @@ echo get_class($func);  // Closure
 
 ## use
 
+### 在普通函数中当做参数传入也可以被返回
+
+#### 在函数里定义一个匿名函数_并且调用它
+```php
+function printStr() {
+    $func = function( $str ) {
+        echo $str;
+    };
+    $func( 'some string' );
+}
+
+printStr();
+```
+
+#### 在函数中把匿名函数返回_并且调用它
+```php
+function getPrintStrFunc() {
+    $func = function( $str ) {
+        echo $str;
+    };
+    return $func;
+}
+
+
+$printStrFunc = getPrintStrFunc();
+$printStrFunc( 'some string' );
+
+
+```
+
+#### 把匿名函数当做参数传递_并且调用它
+```php
+function callFunc( $func ) {
+    $func( 'some string' );
+}
+
+$printStrFunc = function( $str ) {
+    echo $str;
+};
+callFunc( $printStrFunc );
+
+```
+
+#### 直接将匿名函数进行传递
+```php
+callFunc( function( $str ) {
+    echo $str;
+} );
+```
+
+
+
 ### 普通use使用
 
 ```php
