@@ -123,7 +123,7 @@
 						- ag xx ./*   //最后加上 ./*是比较完整,否则有些目录是不会搜索
 	  - pt xx  //搜索神器 [windows下执行]
 		  - choco install pt //安装
-		  - pt xx ./*     //最后加上 ./*是比较完整,否则有些目录是不会搜索
+		  - pt xx ./* 或 ./    //最后加上 ./* 或 ./ 是比较完整,否则有些目录是不会搜索
 		- cat /etc/redhat-release  //查看 linux 发布版本
 	- choco安装
 		- 以管理员权限打开cmd
