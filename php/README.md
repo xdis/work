@@ -3,6 +3,30 @@
 - 干货
 	- [符合PSR-1/PSR-2的PHP编程规范实例](standard.php)
 - function
+	- 函数
+		- array_walk
+			- [购物车实例](function/Closure.md#购物车实例)  array_walk
+			- [把数组(可多维)中值null转为空](function/op.md#把数组(可多维)中值null转为空) 		
+			- [二维数组自定义键str转numberic](function/op.md#二维数组自定义键str转numberic) 	
+			- [等同于foreach](function/op.md#等同于foreach)
+			- [多个array_walk使用](function/op.md#多个array_walk使用)
+			- [路由自定义组装](function/op.md#路由自定义组装)
+			- [tp_清除缓存](function/op.md#tp_清除缓存) [大雄]
+    - 功能模块
+	    - [二维数组自定义键str转numberic](function/op.md#二维数组自定义键str转numberic) 	
+	    - [把数组(可多维)中值null转为空](function/op.md#把数组(可多维)中值null转为空) 	
+	    - [获取当前时间戳_精确到毫秒](function/fn_module.md#获取当前时间戳_精确到毫秒) 
+	    - [需要反序列化的-反序列化](function/fn_module.md#需要反序列化的-反序列化) 
+	    - [时间戳相差输出](function/fn_module.md#时间戳相差输出) 
+	    - [打印输出_pt](function/fn_module.md#打印输出_pt)  [tianle]
+	    - [打印输出_dp](function/fn_module.md#打印输出_dp)  [tianle] [常用]
+	    - [字符串截取_单字节截取模式](function/fn_module.md#字符串截取_单字节截取模式) 
+	    - [用于生成随机的数字和字母组合](function/fn_module.md#用于生成随机的数字和字母组合) 
+	    - [随机数字数字](function/fn_module.md#随机数字数字) 
+	    - [验证手机号码](function/fn_module.md#验证手机号码) 
+	    - [导出excel封装方法](function/fn_module.md#导出excel封装方法) 
+	    - [身份证号验证](function/fn_module.md#身份证号验证) 
+	    - [出月份的第一天最后一天及当月有多少天](function/fn_module.md#出月份的第一天最后一天及当月有多少天) 
 	- 闭包与匿名函数
 		- create_function() [PHP4.1和PHP5中就有了]
 			- 不是真正的匿名函数,因为该函数是**有函数名**
@@ -16,9 +40,11 @@
 					- [在函数中把匿名函数返回_并且调用它](function/Closure.md#在函数中把匿名函数返回_并且调用它) 
 					- [把匿名函数当做参数传递_并且调用它](function/Closure.md#把匿名函数当做参数传递_并且调用它) 
 					- [直接将匿名函数进行传递](function/Closure.md#直接将匿名函数进行传递) 
-				- [普通use使用](function/Closure.md#普通use使用) 
-				- [use使用其外部作用域的变量](function/Closure.md#use使用其外部作用域的变量)
-				- [yii2关联查询用use加载外界参数](function/Closure.md#yii2关联查询用use加载外界参数)
+				- 实例 use $name[只复制变量一份],use &$name[绑定上下变量关系]
+					- [普通use使用](function/Closure.md#普通use使用) 
+					- [use使用其外部作用域的变量](function/Closure.md#use使用其外部作用域的变量)
+					- [yii2关联查询用use加载外界参数](function/Closure.md#yii2关联查询用use加载外界参数)
+					- [购物车实例](function/Closure.md#购物车实例)  array_walk
 				
 - 面向对象
 	- 常用类
