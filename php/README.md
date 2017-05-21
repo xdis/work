@@ -45,7 +45,16 @@
 					- [use使用其外部作用域的变量](function/Closure.md#use使用其外部作用域的变量)
 					- [yii2关联查询用use加载外界参数](function/Closure.md#yii2关联查询用use加载外界参数)
 					- [购物车实例](function/Closure.md#购物车实例)  [array_walk]
-				
+	- 跨域
+		- 头允许跨域
+		```
+		// 允许 fizzday.net 发起的跨域请求
+		header("Access-Control-Allow-Origin: fizzday.net"); 
+		
+		//如果需要设置允许所有域名发起的跨域请求，可以使用通配符 *
+		header("Access-Control-Allow-Origin: *");
+		```
+		- jsonp跨域
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类

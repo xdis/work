@@ -109,12 +109,12 @@
 						```
 					- 下载包与安装
 						``` 
-							wget https://github.com/ggreer/the_silver_searcher/archive/master.zip
-							mv master ag.zip
-							unzip ag.zip
-							cd the_silver_searcher-master/
-							./build.sh
-							make install
+						wget https://github.com/ggreer/the_silver_searcher/archive/master.zip
+						mv master ag.zip
+						unzip ag.zip
+						cd the_silver_searcher-master/
+						./build.sh
+						make install
 						```
 				- windows安装
 					- choco安装
