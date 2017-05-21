@@ -2,6 +2,7 @@
 
 ---
 ## array_walk
+使用用户自定义函数对数组中的每个元素做回调处理  
 >bool array_walk ( array &$array , callable $callback [, mixed $userdata = NULL ] )  
 >callback
 典型情况下 callback 接受两个参数。array 参数的 "键值" 作为第一个，"键名" 作为第二个。  

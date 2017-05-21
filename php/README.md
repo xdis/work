@@ -18,8 +18,8 @@
 	    - [获取当前时间戳_精确到毫秒](function/fn_module.md#获取当前时间戳_精确到毫秒) 
 	    - [需要反序列化的-反序列化](function/fn_module.md#需要反序列化的-反序列化) 
 	    - [时间戳相差输出](function/fn_module.md#时间戳相差输出) 
-	    - [打印输出_pt](function/fn_module.md#打印输出_pt)  [tianle]
-	    - [打印输出_dp](function/fn_module.md#打印输出_dp)  [tianle] [常用]
+	    - [打印输出_pt](function/fn_module.md#打印输出_pt)  @tianle
+	    - [打印输出_dp](function/fn_module.md#打印输出_dp)  @tianle [常用]
 	    - [字符串截取_单字节截取模式](function/fn_module.md#字符串截取_单字节截取模式) 
 	    - [用于生成随机的数字和字母组合](function/fn_module.md#用于生成随机的数字和字母组合) 
 	    - [随机数字数字](function/fn_module.md#随机数字数字) 
@@ -44,7 +44,7 @@
 					- [普通use使用](function/Closure.md#普通use使用) 
 					- [use使用其外部作用域的变量](function/Closure.md#use使用其外部作用域的变量)
 					- [yii2关联查询用use加载外界参数](function/Closure.md#yii2关联查询用use加载外界参数)
-					- [购物车实例](function/Closure.md#购物车实例)  array_walk
+					- [购物车实例](function/Closure.md#购物车实例)  [array_walk]
 				
 - 面向对象
 	- 常用类
