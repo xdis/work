@@ -55,6 +55,8 @@
 		header("Access-Control-Allow-Origin: *");
 		```
 		- jsonp跨域
+		- 设置P3P头,IE有安全策略限制页面不带cookie,针对IE旧版本,firefox与谷歌没有问题
+		- [php后端跨越的代码](function/fn_corss_domain.md#php后端跨越的代码)   [Trait]
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类
