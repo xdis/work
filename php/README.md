@@ -152,6 +152,10 @@
 		 - [基本的定义与使用](object_class.md#基本的定义与使用)  
 	- Traits	代码复用的一个方法
 		 - 删除的公共方法例子
+		 - 例子
+			 - [php后端跨越的代码](function/fn_corss_domain.md#php后端跨越的代码)   [Trait] [跨域]
+			 - [短信模块_zhou](function/fn_corss_domain.md#短信模块_zhou)
+
 - socket
 	- 农行的demo
 		- [socket整理](socket.md#socket整理) 
