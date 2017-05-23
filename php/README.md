@@ -55,14 +55,14 @@
 			//如果需要设置允许所有域名发起的跨域请求，可以使用通配符 *
 			header("Access-Control-Allow-Origin: *");
 			```
- 			- [yii店铺设置_后端跨域解决方案](../yii2/shop.md#1后端跨域解决方案) 
+ 			- [yii店铺设置_后端跨域解决方案](../yii2/shop.md#1后端跨域解决方案)
+ 			- [php后端跨越的代码](function/fn_corss_domain.md#php后端跨越的代码)   [Trait]
 		- jsonp跨域
 			- jsonp不支付post
 			- example
 				- [b.com请求a.com](function/jsonp.md#b.com请求a.com)  
 					- 请求与返回都要定义callback对应的名称
 		- 设置P3P头,IE有安全策略限制页面不带cookie,针对IE旧版本,firefox与谷歌没有问题
-		- [php后端跨越的代码](function/fn_corss_domain.md#php后端跨越的代码)   [Trait]
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类
