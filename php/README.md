@@ -156,7 +156,7 @@
 		- ReflectionClass::export    输出类结构报告
 	- 抽象类 	abstract
 		 - [基本的定义与使用](object_class.md#基本的定义与使用)  
-	- Traits	代码复用的一个方法
+	- Traits	//代码复用的一个方法,为了减少单继承语言的限制，使开发人员能够自由地在不同层次结构内独立的类中复用方法集
 		 - 删除的公共方法例子
 		 - 例子
 			 - [php后端跨越的代码](function/fn_corss_domain.md#php后端跨越的代码)   [Trait] [跨域]
