@@ -63,7 +63,7 @@
 				- [b.com请求a.com](function/jsonp.md#b.com请求a.com)  
 					- 请求与返回都要定义callback对应的名称
 		- 设置P3P头,IE有安全策略限制页面不带cookie,针对IE旧版本,firefox与谷歌没有问题
-	- 模拟表单提交 
+	- 模拟表单提交 @ghost Wu
 		- fiddler抓包
 		- [file_get_contents或fopen_post](function/simulation_post.md#file_get_contents或fopen_post)
 		- curl
