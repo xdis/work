@@ -227,7 +227,7 @@ var_dump($res);
 
 ### 优化解决socket访问慢
 
- [源码](function/simulation_post/socket3.php)  
+ [源码](simulation/socket3.php)  
 
 ```php
 <?php
@@ -298,7 +298,7 @@ echo $return;
 
 ### socket函数封装_提供post与get选择_支持cookie
 
- [源码](function/simulation_post/socket4.php)    
+ [源码](simulation/socket4.php)    
 
 
 ```php
