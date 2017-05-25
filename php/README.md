@@ -70,7 +70,11 @@
 			- [curl_post](function/simulation_post.md#curl_post)
 			- [curl_参数封装_curl_setopt_array](function/simulation_post.md#curl_参数封装_curl_setopt_array)
 		- socket
-			- [socket_post](function/simulation_post.md#socket_post)
+			- 访问socket存在慢
+				- [socket_post](function/simulation_post.md#socket_post)
+			- 解决socket慢
+				- [优化解决socket访问慢](function/simulation_post.md#优化解决socket访问慢)
+				- [socket函数封装_提供post与get选择_支持cookie](function/simulation_post.md#socket函数封装_提供post与get选择_支持cookie)
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类
