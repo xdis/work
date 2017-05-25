@@ -66,8 +66,11 @@
 	- 模拟表单提交 
 		- fiddler抓包
 		- [file_get_contents或fopen_post](function/simulation_post.md#file_get_contents或fopen_post)
-		- [curl_post](function/simulation_post.md#curl_post)
-		- 
+		- curl
+			- [curl_post](function/simulation_post.md#curl_post)
+			- [curl_参数封装_curl_setopt_array](function/simulation_post.md#curl_参数封装_curl_setopt_array)
+		- socket
+			- [socket_post](function/simulation_post.md#socket_post)
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类

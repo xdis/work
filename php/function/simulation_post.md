@@ -96,7 +96,9 @@ $context = stream_context_create($ops);
 
 ```
 
-## curl_post
+##curl
+
+### curl_post
 
 ```php
  $postData = [
@@ -141,9 +143,81 @@ echo $output;
 ```
 
 
-## file_get_contents或fopen
+## curl_参数封装_curl_setopt_array
 
 ```php
 
+function curl_post($url, $post) {
+    $options = array(
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HEADER         => false,
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => $post,
+    );
+
+    $ch = curl_init($url);
+    curl_setopt_array($ch, $options);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    return $result;
+}
+
+$data = curl_post("http://www.xxx.com/post.php", array('name'=>'manongjc', 'email'=>'manongjc@gmail.com'));
+
+var_dump($data);
+
+```
+
+## socket
+
+### socket_post
+
+```php
+/**
+* Socket版本
+* 使用方法：
+* $post_string = "app=socket&version=beta";
+* request_by_socket('facebook.cn','/restServer.php',$post_string);
+*/
+function request_by_socket($remote_server,$remote_path,$post_string,$port = 80,$timeout = 30){
+   $socket = fsockopen($remote_server,$port,$errno,$errstr,$timeout);
+   if (!$socket) die("$errstr($errno)");
+
+   fwrite($socket,"POST $remote_path HTTP/1.1\r\n");
+   fwrite($socket,"User-Agent: Socket Example\r\n");
+   fwrite($socket,"HOST: $remote_server\r\n");
+   fwrite($socket,"Content-type: application/x-www-form-urlencoded\r\n");
+   fwrite($socket,"Content-length: ".strlen($post_string)."\r\n");
+   fwrite($socket,"Accept:*/*\r\n");
+   fwrite($socket,"\r\n");
+   fwrite($socket,$post_string."\r\n");
+   fwrite($socket,"\r\n");
+
+   $header = "";
+   while ($str = trim(fgets($socket,4096))) {
+      $header.=$str;
+   }
+//var_dump($header);exit;
+   $data = "";
+   while (!feof($socket)) {
+      $data .= fgets($socket,4096);
+   }
+
+   return $data;
+}
+
+ $postData = [
+            'procduct_category_id' => '3',
+            'name' => "手套4",
+            'amount' => "3",
+            'price' => "100",
+            'status' => "1",
+            'memo' => "456",
+        ];
+
+$_postData = http_build_query($postData);
+$res = request_by_socket('www.a.com','/post.php',$_postData);
+
+var_dump($res);
 
 ```
