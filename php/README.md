@@ -45,6 +45,7 @@
 					- [use使用其外部作用域的变量](function/Closure.md#use使用其外部作用域的变量)
 					- [yii2关联查询用use加载外界参数](function/Closure.md#yii2关联查询用use加载外界参数)
 					- [购物车实例](function/Closure.md#购物车实例)  [array_walk]
+				- [闭包函数_参数类型为Closure](function/Closure.md#闭包函数_参数类型为Closure)
 	- 跨域
 		- 头部设置
 			- 头允许跨域

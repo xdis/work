@@ -170,3 +170,19 @@ $my_cart->add('eggs', 6);
 print $my_cart->getTotal(0.05) . "\n";
 // 最后结果是 54.29
 ```
+
+### 闭包函数_参数类型为Closure
+
+```php
+function test_Closure($name,Closure $clo){
+ echo "Hello,{$name}\n";
+ $clo();
+}
+
+test_Closure("Lili",function(){
+  echo "Redirect to VIP Welcome page.";
+});
+
+//输出 
+Hello,Lili Redirect to VIP Welcome page.
+```
