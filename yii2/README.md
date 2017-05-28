@@ -41,6 +41,8 @@
 			-  model->attributes['id']
 			-  $model->getOldAttribute("id")
 		- yii\helpers\BaseHtml::encode($str)    //字符串进行转义
+	- 总结
+		- beforeAction优先于behavior的执行
 	- composer
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
