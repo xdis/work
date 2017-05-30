@@ -78,3 +78,32 @@
 
 ### 时序图分析
 [时序图源文件](../uml/登陆-yii-web-user-login2.oom) 
+
+
+## 获取身份信息
+
+
+### 对应identityClass下companyInfo方法下的id
+
+**company/config/web.php**
+```php
+//identityClass指定的model名
+'user' => [
+    'class'=>'company\components\CompanyUser',
+    'identityClass' => 'common\models\User',
+    'loginUrl'=>['sign-in/login'],
+    'enableAutoLogin' => false,
+    'as afterLogin' => 'common\behaviors\LoginTimestampBehavior'
+],
+```
+
+**common/models/User.php**
+```php
+/**
+ * 关联公司
+ */
+public function getCompanyInfo()
+{
+    return $this->hasOne(Company::className(), ['user_id' => 'id']);
+}
+```

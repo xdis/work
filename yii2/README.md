@@ -350,6 +350,8 @@
 			    - [login](source/user.md#login)   
 			    - [时序图分析](source/user.md#时序图分析) 
 		    - 获取身份信息
+			    - Yii::$app->user->identity->username //获取用户表 user.realname
+			    - Yii::$app->user->getIdentity()->companyInfo->id  //api获取公司id获取,[对应identityClass下companyInfo方法下的id](source/user.md#对应identityClass下companyInfo方法下的id)
 
 
 
