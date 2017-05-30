@@ -328,10 +328,28 @@
 				- [User](company_login_z.md#User) //user认证类
 				- [时序图](company_login_z.md#时序图)
 			- 仿照一个Module下两个登陆模块
-				- 
 	- 农行
 		- [socket请求文档](nongye/socket.php) tcp/ip请求
-
+    - 源码分析
+	    - user [vendor/yiisoft/yii2/web/User.php]
+		    - \Yii::$app->getSecurity()->generateRandomString(40);	//生成token
+		    - 对象变量
+			    - 变量分析
+				    - $enableAutoLogin //默认为false,设置是否自动登陆
+				    - $idParam = '__id'	//保存user.id对应自定义的变量名
+				    - $authTimeout	//默认没有赋值,设置用户多少内秒没有操作,则超时 ,[如果enableAutoLogin设置为真,则该参数则无效]
+				    - $authTimeoutParam = '__expire'  //用于存储已验证状态的过期时间戳值的会话变量名[当authTimeout设置,该变量名才使用]
+				    - $absoluteAuthTimeout //不管用户是否有操作,多少秒之内都会自动注销,[如果enableAutoLogin设置为真,则该参数则无效]
+				    - $absoluteAuthTimeoutParam = '__absoluteExpire'  //用于存储已验证状态的过期时间戳值的会话变量名,[当absoluteAuthTimeout设置,该变量名才使用]
+				- 总结常用变量
+					- $idParam 
+					- $identityCookie  //区分多模型的如下
+						-  'identityCookie' => ['name' => '_identity_shop', 'httpOnly' => false],  //店铺模型
+						-  'identityCookie' => ['name' => '_identity_company', 'httpOnly' => false],  //企业后台模型
+		    - 用户登陆  [yii2/web/User->login]
+			    - [login](source/user.md#login)   
+			    - [时序图分析](source/user.md#时序图分析) 
+		    - 获取身份信息
 
 
 
