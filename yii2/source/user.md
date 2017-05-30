@@ -4,7 +4,8 @@
 
 ### login
 **vendor/yiisoft/yii2/web/User.php**
-```php`
+
+```php
    public function login(IdentityInterface $identity, $duration = 0)
     {
         if ($this->beforeLogin($identity, false, $duration)) {
