@@ -279,10 +279,14 @@
 			- access-token模拟生成
 			- 完整访问地址
 		- 第三方
-			- [模拟登陆](vding_api.md#模拟登陆)
+			- [模拟登陆](vding_api.md#模拟登陆)  //其它系统获取登陆token
 		- API创建过程
 			- [创建控制器继续基类](vding_api.md#创建控制器继续基类)
 			- [rule设置](vding_api.md#rule设置)
+		- APP应用在多台手机上登陆短信提示
+			- 控制器继承BaseRestController
+			- auth认证接口access-token源头解析
+			- 登陆控制器userController
 	- [店铺](shop/README.md)
 		- 核心技术
 			- [1后端跨域解决方案](shop.md#1后端跨域解决方案)  
