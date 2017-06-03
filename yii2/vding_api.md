@@ -355,7 +355,7 @@ rest/config/_rules.php
 
     'GET,POST /v1/service/supplier/test' => '/v1/service/supplier/test',
 ```
-
+---
 
 ## APP应用在多台手机上登陆短信提示
 

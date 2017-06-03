@@ -245,9 +245,12 @@
 		- link() 等于 更新[update] 应该是双向更新
 			- [获取Customer的主键,然后order表同时存储该Customer主键](model.md#获取Customer的主键,然后order表同时存储该Customer主键)
 			- [双向更新_link](model.md#双向更新_link)
-	- model_form
-		- [登陆_SignupForm](model_form.md#登陆_SignupForm)
-		- 
+		- model_form
+			- [登陆_SignupForm](model_form.md#登陆_SignupForm)
+		- save
+			- [beforeSave](model.md#beforeSave)  @foreach
+			- [afterSave](model.md#afterSave)
+			- [afterDelete](model.md#afterDelete)
 	- 权限 authManager assign
 		- [基本使用](authManager.md#基本使用)
 		- 使用权限

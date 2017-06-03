@@ -702,3 +702,68 @@ common/models/User.php
     }
 
 ```
+
+## save
+**company/models/UserCompany.php**   
+
+### beforeSave
+```php
+/**
+ * @param bool $insert
+ * @return bool
+ */
+public function beforeSave($insert)
+{
+    if (parent::beforeSave($insert)) {
+        $this->company_id = Yii::$app->user->getCompanyId();
+        $this->user_id = $this->mobileUser->id;
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+### afterSave
+
+```php
+/**
+ * @param bool $insert
+ * @param array $changedAttributes
+ * @throws Exception
+ */
+public function afterSave($insert, $changedAttributes)
+{
+    parent::afterSave($insert, $changedAttributes);
+    if (!empty($changedAttributes['department_id'])) {
+        Department::updateAllCounters(['staff_amount' => -1], ['id' => $changedAttributes['department_id'], 'company_id' => $this->company_id]);
+    }
+    Department::updateAllCounters(['staff_amount' => 1], ['id' => $this->department_id, 'company_id' => $this->company_id]);
+    // 添加和更新个人店铺
+    $company_store = DpStore::find()->where(['company_id' => $this->company_id, 'type' => DpStore::TYPE_COMPANY])->one();
+    if ($company_store) {
+        $conditions = ['company_id' => $this->company_id, 'ower_id' => $this->user_id, 'type' => DpStore::TYPE_PERSON];
+        $model = DpStore::findOne($conditions) ?: new DpStore();
+        $model->setAttributes($conditions + [
+            'status' => $this->is_opened_store,
+            'parent_store_id' => DpStore::getParentId(['company_id' => $this->company_id]) ?: 0,
+            'store_url' => get_person_html5_shop_url($this->company_id, $this->user_id),
+            'created_by' => Yii::$app->user->id
+        ]);
+
+        if (!$model->save()) {
+            throw new Exception(Json::encode($model->firstErrors));
+        }
+    }
+}
+```
+
+### afterDelete
+
+```php
+public function afterDelete()
+{
+    parent::afterDelete();
+    AuthAssign::deleteAll(['user_id' => $this->user_id, 'company_id' => $this->company_id]);
+}
+```
