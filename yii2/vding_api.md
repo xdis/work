@@ -358,7 +358,7 @@ rest/config/_rules.php
 ---
 
 ## APP应用在多台手机上登陆短信提示
-
+[本例子源代码](vding_api.md)
 ### 控制器继承BaseRestController
 
 **common/controllers/BaseRestController.php**
@@ -431,7 +431,7 @@ class SecureTokenAuthV2 extends AuthMethod
             if ($identity !== null) {
                 return $identity;
             }
-			//如果user.
+			//代码到了这里感觉有问题! 就是执行不下来
             $identity = $user->loginByAccessTokenPrev($accessTokenPlain, get_class($this));
             if ($identity !== null) {
                 $this->handleFailureTokenExpired($response, $identity);
@@ -448,6 +448,58 @@ class SecureTokenAuthV2 extends AuthMethod
 ```
 
 ### 登陆控制器userController
+```php
+class UserController extends V1UserController
+{
+    //设备型号
+    public $device_model;
 
+    /**
+     * v2 版的getTheAccessToken
+     * @param bool $debug
+     * @author HuangYeWuDeng
+     * @return array
+     */
+    protected function getTheAccessToken($debug = false)
+    {
+        //生成新的token
+        $newToken = \Yii::$app->getSecurity()->generateRandomString(40);
+        //保存上一次的token
+        $token = \Yii::$app->user->identity->getAccessToken();
+        \Yii::$app->user->identity->access_token_prev = $token;ee
+        \Yii::$app->user->identity->access_token .                        z    = $newToken;
+        \Yii::$app->user->identity->save();
+
+        $accessTokenEnc = Yii::$app->rsa->privateEncrypt($newToken);
+        if (!$debug) {
+            return ['token' => strtoupper(bin2hex($accessTokenEnc)), 'id' => \Yii::$app->user->identity->id];
+        }
+        $accessTokenClient = Yii::$app->rsa->publicEncrypt($newToken);
+        return [
+            'token' => strtoupper(bin2hex($accessTokenEnc)),
+            'token_client' => strtoupper(bin2hex($accessTokenClient)),
+            'token_plain' => $token,
+            'id' => \Yii::$app->user->identity->id
+        ];
+    }
+
+    /**
+     * 登录接口 v2 登录时校验唯一设备登录
+     * 接收参数：mobile or username password loginType (password or sms)
+     * @return string AuthKey or model with errors
+     * @throws BadRequestHttpException
+     */
+    public function actionLogin()
+    {
+        $model = new LoginForm();
+        $this->chooseScenario($model);
+        if ($model->load(\Yii::$app->getRequest()->post(), '') && $model->login()) {
+            return $this->getTheAccessToken();
+        } else {
+            throw new BadRequestHttpException(current($model->getErrors())[0]);
+        }
+    }
+}
+```
 
 
