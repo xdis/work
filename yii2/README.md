@@ -287,9 +287,9 @@
 			- [创建控制器继续基类](vding_api.md#创建控制器继续基类)
 			- [rule设置](vding_api.md#rule设置)
 		- APP应用在多台手机上登陆短信提示
-			- 控制器继承BaseRestController
-			- auth认证接口access-token源头解析
-			- 登陆控制器userController
+			- [控制器继承BaseRestController](vding_api.md#控制器继承BaseRestController)
+			- [auth认证接口access-token源头解析](vding_api.md#auth认证接口access-token源头解析)
+			- [登陆控制器userController](vding_api.md#登陆控制器userController)
 	- [店铺](shop/README.md)
 		- 核心技术
 			- [1后端跨域解决方案](shop.md#1后端跨域解决方案)  
