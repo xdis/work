@@ -358,7 +358,9 @@ rest/config/_rules.php
 ---
 
 ## APP应用在多台手机上登陆短信提示
-[本例源代码](vding_api.md)
+[本例源代码](function/api/APP应用在多台手机上登陆短信提示_source/rest/versions/v2/controllers/UserController.php)
+[本例时序图](uml/APP应用在多台手机上登陆短信提示.oom)
+
 ### 控制器继承BaseRestController
 
 **common/controllers/BaseRestController.php**
