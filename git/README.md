@@ -8,10 +8,15 @@
 		- 文件对拷,快速配置_win10
 			- 1.复制 C:/users/当前用户名/.ssh 到 目标window
 			- 2.复制 /gitwork/git/config/.gitconfig 到 C:/users/当前用户名
-		- git diff 使用与安装    [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-			- 1.安装 node.js  查看版本  npm --version
-			- 2.安装 npm install -g diff-so-fancy
-			- 3.上面的配置文件有!  
+		- 比较工具
+			- git diff 使用与安装    [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+				- 1.安装 node.js  查看版本  npm --version
+				- 2.安装 npm install -g diff-so-fancy
+				- 3.上面的配置文件有!  
+			- meld https://stackoverflow.com/a/34119867
+				- 对比 test 和 dev 分支中， vfet/css/custom-manage.css 这个文件的差异
+					- git difftool test..dev vfet/css/custom-manage.css
+				- git mergetool	//出现冲突时运行
 	- git常用
 		- git add -A //stages All
 		- git add . //stages new and modified, without deleted
