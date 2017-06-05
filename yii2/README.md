@@ -102,6 +102,12 @@
 	- cookie
 		- 保存与获取
 			- [user登陆信息保存](function/cookie.md#登陆信息保存)
+		- add a cookie
+			- $response->cookies->add(new Cookie(['name' => $name,'value' => $value,]);
+		- remove a cookie
+			- $response->cookies->remove('name');
+		- alternatively
+			- unset($response->cookies['name']);
 	- 异常类
 		- 常用
 			- yii\web\BadRequestHttpException
