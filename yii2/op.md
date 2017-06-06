@@ -64,3 +64,71 @@ $query = Dporder::find()->select($select)->where(['cus_order_no' =>$cus_order_no
 $commandQuery = clone $query;
 echo $commandQuery->createCommand()->getRawSql();
 ```
+
+## isAjax
+## 权限添加的demo
+
+**company/controllers/RouteController.php**
+```php
+ /**
+ * 编辑
+ * @param integer $id
+ * @return mixed
+ */
+public function actionUpdate($id)
+{
+    $request = Yii::$app->request;
+    $model = $this->findModel($id);       
+
+    if($request->isAjax){
+        /*
+        *   Process for ajax request
+        */
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        if($request->isGet){
+            $look_data = Lookup::find()->where(['type'=>'industry_appid'])->asArray()->all();
+            $industry_appid = ArrayHelper::map($look_data, 'code','name');
+            return [
+                'title'=> "编辑",
+                'content'=>$this->renderAjax('update', [
+                    'model' => $model,
+                    'industry_appid' => $industry_appid
+                ]),
+                'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                            Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
+            ];         
+        }else if($model->load($request->post()) && $model->save()){
+            return [
+                'forceReload'=>'#crud-datatable-pjax',
+                'title'=> "详情",
+                'content'=>$this->renderAjax('view', [
+                    'model' => $model,
+                ]),
+                'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                        Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
+            ];    
+        }else{
+             return [
+                'title'=> "Update AuthI22tem #".$id,
+                'content'=>$this->renderAjax('update', [
+                    'model' => $model,
+                ]),
+                'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                            Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
+            ];        
+        }
+    }else{
+        /*
+        *   Process for non-ajax request
+        */
+        if ($model->load($request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
+}
+
+```
