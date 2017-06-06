@@ -1,0 +1,71 @@
+<?php
+
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
+
+/* @var $this \yii\web\View */
+/* @var $content string */
+
+$this->beginContent('@company/modules/shop/views/layouts/_clear.php')
+?>
+<div class="wrap">
+    <?php
+    NavBar::begin([
+        'brandLabel' => Yii::$app->name,
+        'brandUrl' => Yii::$app->homeUrl,
+        'options' => [
+            'class' => 'navbar-inverse navbar-fixed-top',
+        ],
+    ]); ?>
+    <?php echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => [
+            ['label' => Yii::t('frontend', 'Homasdfase'), 'url' => ['/shop/site/index']],
+            ['label' => 'shop', 'url' => ['/shop/manage/index']],
+            ['label' => Yii::t('frontend', 'Signup'), 'url' => ['/shop/sign-in/signup'], 'visible'=>Yii::$app->shopUser->isGuest],
+            ['label' => Yii::t('frontend', 'Login'), 'url' => ['/shop/sign-in/login'], 'visible'=>Yii::$app->shopUser->isGuest],
+            [
+                'label' => Yii::$app->shopUser->isGuest ? '' : Yii::$app->shopUser->identity->getPublicIdentity(),
+                'visible'=>!Yii::$app->shopUser->isGuest,
+                'items'=>[
+                    [
+                        'label' => Yii::t('frontend', 'Settings'),
+                        'url' => ['/shop/default/index']
+                    ],
+                    [
+                        'label' => Yii::t('frontend', 'Backend'),
+                        'url' => Yii::getAlias('@backendUrl'),
+                        'visible'=>Yii::$app->shopUser->can('manager')
+                    ],
+                    [
+                        'label' => Yii::t('frontend', 'Logout'),
+                        'url' => ['/shop/sign-in/logout'],
+                        'linkOptions' => ['data-method' => 'post']
+                    ]
+                ]
+            ],
+            [
+                'label'=>Yii::t('frontend', 'Language'),
+                'items'=>array_map(function ($code) {
+                    return [
+                        'label' => Yii::$app->params['availableLocales'][$code],
+                        'url' => ['/site/set-locale', 'locale'=>$code],
+                        'active' => Yii::$app->language === $code
+                    ];
+                }, array_keys(Yii::$app->params['availableLocales']))
+            ]
+        ]
+    ]); ?>
+    <?php NavBar::end(); ?>
+
+    <?php echo $content ?>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; My Company <?php echo date('Y') ?></p>
+        <p class="pull-right"><?php echo Yii::powered() ?></p>
+    </div>
+</footer>
+<?php $this->endContent() ?>

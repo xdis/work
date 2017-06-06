@@ -341,6 +341,8 @@
 				- [User](company_login_z.md#User) //user认证类
 				- [时序图](company_login_z.md#时序图)
 			- 仿照一个Module下两个登陆模块
+				- [访问方式](function/module_two_login.md#访问方式)
+				- [components_配置](function/module_two_login.md#components_配置)
 	- 农行
 		- [socket请求文档](nongye/socket.php) tcp/ip请求
     - 源码分析
