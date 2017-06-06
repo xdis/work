@@ -65,7 +65,9 @@ $commandQuery = clone $query;
 echo $commandQuery->createCommand()->getRawSql();
 ```
 
-## isAjax
+---
+
+# isAjax
 ## 权限添加的demo
 
 **company/controllers/RouteController.php**
@@ -132,3 +134,32 @@ public function actionUpdate($id)
 }
 
 ```
+
+## 没有限定post和get
+
+**company/controllers/AuthController.php**
+
+```php
+
+/**
+ * 角色列表
+ * @return mixed
+ */
+public function actionIndex()
+{
+    $searchModel = new AuthItemSearch(['type' => AuthItem::TYPE_ROLE]);
+    $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+    //ajax
+    if (Yii::$app->request->getIsAjax()) {
+        Yii::$app->getResponse()->format = Response::FORMAT_JSON;
+        return $dataProvider->getModels();
+    }
+    return $this->render('index', [
+        'searchModel' => $searchModel,
+        'dataProvider' => $dataProvider,
+    ]);
+}
+```
+
+---

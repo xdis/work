@@ -44,6 +44,7 @@
 			- yii\helpers\BaseHtml::encode($str)    //字符串进行转义
 		- isAjax  可以包括 post和get
 			- [权限添加的demo](op.md#权限添加的demo)
+			- [没有限定post和get](op.md#没有限定post和get) getIsAjax()
 	- 总结
 		- beforeAction优先于behavior的执行
 			- 来源于 [服务模块仅企业帐号可登陆](vding_api.md#服务模块仅企业帐号可登陆) 
