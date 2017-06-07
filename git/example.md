@@ -164,13 +164,12 @@ git push origin dev
 
 ```
 //本地
-git tag -a fn_line -m '线路发布之前的标签'
+git tag -a master_20170515_1455 -m '提交之前备份'
 git push origin master_20170515_1455
-git push origin master
 
 
 //发现提前的东西有问题,回退到指定标签
-git reset --hard fn_line
+git reset --hard master_20170515_1455
 git push -f origin master //如果报错的话，使用 -f
 
 ```
