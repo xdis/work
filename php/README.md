@@ -89,6 +89,9 @@
 				- [socket整理](socket.md#socket整理) 
 				- [查询](socket/s1.php) 
 				- [分账](socket/c1.php)
+	- rsa
+		- [php_rsa](function/rsa/rsa_php_source/php_rsa.php)
+		- [模拟登陆_vding](../yii2/vding_api.md#模拟登陆_vding) //其它系统获取登陆token
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类
