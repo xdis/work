@@ -12,6 +12,14 @@
 			- [多个array_walk使用](function/op.md#多个array_walk使用)
 			- [路由自定义组装](function/op.md#路由自定义组装)
 			- [tp_清除缓存](function/op.md#tp_清除缓存) [大雄]
+		- strncmp
+			- [IP星号匹配](function/op.md#IP星号匹配) 如192.168.2.1 是不是192.168.*
+		- array_map 
+			- [调用自定义函数](function/op.md#调用自定义函数)
+			- [内置函数strtoupper](function/op.md#内置函数strtoupper)
+		- fnmatch
+			- [正则匹配文件名](function/op.md#正则匹配文件名)
+			- [yii匹配例子](function/op.md#yii匹配例子)
     - 功能模块
 	    - [二维数组自定义键str转numberic](function/op.md#二维数组自定义键str转numberic) 	
 	    - [把数组(可多维)中值null转为空](function/op.md#把数组(可多维)中值null转为空) 	

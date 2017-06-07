@@ -284,7 +284,7 @@
 			- [api分页效果](restful_api.md#api分页效果) 
 
 - 疑问
-	- [为什么日志不入数据库](question.md#为什么日志不入数据库)
+	- [x] [为什么日志不入数据库](question.md#为什么日志不入数据库)
 - 案例 
 	- vding_api
 		- 操作
@@ -314,8 +314,8 @@
 			- [使用postman模拟参数php解析获取](shop.md#使用postman模拟参数php解析获取)
 	- 待分析 
 		- [loginForm_注册_afterSignup](daiFenXi/loginForm.md)  wqw   
-			-  $this->refresh();
-			-  $this->link('account', $account);	
+			- [x] $this->refresh();
+			- [x] $this->link('account', $account);	
 	- 短信模块分析
 		- sms短信_z
 			- 操作使用

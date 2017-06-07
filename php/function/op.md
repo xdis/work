@@ -125,5 +125,122 @@ if ($keys) {
 
 ---
 
+## strncmp
+> - int strncmp （string $str1 ，string $str2 ，int $len ）
+> - strncmp - 二进制安全字符串比较前n个字符
+> http://php.net/manual/en/function.strncmp.php
+
+### IP星号匹配
+```php
+    /**
+     * 判断匹配 如 192.168.1.2 是不是 192.168.* [*号之前的匹配] 
+     * @param string $ip the IP address
+     * @return bool whether the rule applies to the IP address
+     */
+    protected function matchIP($ip)
+    {
+        if (empty($this->ips)) {
+            return true;
+        }
+        foreach ($this->ips as $rule) {
+            if ($rule === '*' || $rule === $ip || (($pos = strpos($rule, '*')) !== false && !strncmp($ip, $rule, $pos))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+``` 
+
+## array_map
+> - array array_map ( callable $callback , array $array1 [, array $... ] )
+> - array_map - 将回调应用于给定数组的元素
+> http://php.net/manual/en/function.array-map.php
 
 
+### 调用自定义函数
+
+```php
+function cube($n){
+    return($n * $n * $n);
+}
+
+$a = array(1, 2, 3, 4, 5);
+$b = array_map("cube", $a);
+print_r($b);
+
+//输出 
+（
+    [0] => 1
+    [1] => 8
+    [2] => 27
+    [3] => 64
+    [4] => 125
+）
+```
+
+### 内置函数strtoupper
+
+```php
+    /**
+     * @param string $verb the request method.
+     * @return bool whether the rule applies to the request
+     */
+    protected function matchVerb($verb)
+    {
+        return empty($this->verbs) || in_array(strtoupper($verb), array_map('strtoupper', $this->verbs), true);
+    }
+```
+
+## fnmatch
+
+> - bool fnmatch （string $pattern ，string $string [，int $flags= 0 ]）
+> - fnmatch - 匹配文件名与模式
+> http://php.net/manual/en/function.fnmatch.php
+
+
+### 正则匹配文件名
+
+```php
+if (fnmatch("*gr[ae]y", $color)) {
+  echo "some form of gray ...";
+}
+```
+
+### yii匹配例子
+
+```php
+    /**
+     * Returns a value indicating whether the filter is active for the given action.
+     * @param Action $action the action being filtered
+     * @return bool whether the filter is active for the given action.
+     */
+    protected function isActive($action)
+    {
+        $id = $this->getActionId($action);
+
+        if (empty($this->only)) {
+            $onlyMatch = true;
+        } else {
+            $onlyMatch = false;
+            foreach ($this->only as $pattern) {
+                if (fnmatch($pattern, $id)) {
+                    $onlyMatch = true;
+                    break;
+                }
+            }
+        }
+
+        $exceptMatch = false;
+        foreach ($this->except as $pattern) {
+            if (fnmatch($pattern, $id)) {
+                $exceptMatch = true;
+                break;
+            }
+        }
+
+        return !$exceptMatch && $onlyMatch;
+    }
+}
+```
