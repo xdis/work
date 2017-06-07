@@ -204,7 +204,9 @@ http://api.v2.v.w/v1/user/token-test?access-token=3eeb6ade484c07e28e72fe676d237a
 ```
 ---
 ## 第三方
-### 模拟登陆
+### 模拟登陆_vding
+[代码源码](function/rsa/模拟登陆_vding_source)
+
 ```php
 <?php
 //账号 15014600030 密码：123456、

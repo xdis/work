@@ -302,7 +302,7 @@
 			- access-token模拟生成
 			- 完整访问地址
 		- 第三方
-			- [模拟登陆](vding_api.md#模拟登陆)  //其它系统获取登陆token
+			- [模拟登陆_vding](vding_api.md#模拟登陆_vding)  //其它系统获取登陆token
 		- API创建过程
 			- [创建控制器继续基类](vding_api.md#创建控制器继续基类)
 			- [rule设置](vding_api.md#rule设置)
