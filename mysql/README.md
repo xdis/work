@@ -17,5 +17,6 @@
 			- 举例
 				- select cast(‘125e342.83’ as signed) as clm1		//转换正型
 
-
+	- 1=1妙用
+		- AND IF(_which_day !='0000-00-00', dj_checklist.which_date = _which_day, '1=1') 
 

@@ -1,7 +1,7 @@
 - git
 	- 配置与安装
 		- 配置
-			- [配置文件](config/.gitconfig)
+			- [我的配置文件](config/.gitconfig)
 			- [常用别名](config.md#常用别名)
 			- [安装之后配置](config.md#安装之后配置)
 			- [全局ignore配置](config.md#全局ignore配置)
@@ -10,13 +10,26 @@
 			- 2.复制 /gitwork/git/config/.gitconfig 到 C:/users/当前用户名
 		- 比较工具
 			- git diff 使用与安装    [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-				- 1.安装 node.js  查看版本  npm --version
-				- 2.安装 npm install -g diff-so-fancy
-				- 3.上面的配置文件有!  
+				- [配置文件](fn/compare/diff/.gitconfig)
+				- 操作
+					- 1.安装 node.js  查看版本  npm --version
+					- 2.安装 npm install -g diff-so-fancy
+					- 3.上面的配置文件有!  
 			- meld https://stackoverflow.com/a/34119867
-				- 对比 test 和 dev 分支中， vfet/css/custom-manage.css 这个文件的差异
-					- git difftool test..dev vfet/css/custom-manage.css
-				- git mergetool	//出现冲突时运行
+				- [配置文件](fn/compare/meld/.gitconfig)
+				- 使用
+					- 不同分支文件比较
+						- git difftool test..dev vfet/css/custom-manage.css
+					- 不同分支目录比较
+						- git difftool --dir-diff test..dev
+						- git dtd test..dev
+					- 当前分支文件的比较
+						- git difftool 文件名 //指定文件的比较
+						- git difftool //当前分支所有变化文件的比较,不建议使用
+						- git dt //同上
+					- 冲突解决
+						- git mergetool	//出现冲突时运行
+						- git mt //同上 
 	- git常用
 		- git add -A //stages All
 		- git add . //stages new and modified, without deleted

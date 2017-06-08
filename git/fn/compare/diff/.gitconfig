@@ -1,0 +1,25 @@
+[user]
+	name = cmk02
+[user]
+	email = 408824338@qq.com
+[pull]
+	rebase = false
+[core]
+	autocrlf = false
+	quotepath = false
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = C:/Users/cmk/.gitignore_global
+[alias]
+	lg1 = log --graph --abbrev-commit --decorate --date-order --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --date-order --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	st = status
+	ci = commit
+	df = diff
+	br = branch
+	co = checkout
+	cp = cherry-pick
+[i18n "commit"]
+	encoding = utf-8
+[i18n]
+	logoutputencoding = utf-8
+[diff-so-fancy]
