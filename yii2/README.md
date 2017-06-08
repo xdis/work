@@ -274,7 +274,15 @@
 			- [基本使用](authManager.md#基本使用)
 			- 使用权限
 				- [vding使用权限](authManager.md#vding使用权限) [tianle]
-		- 
+		- 企业后台_globalAccesss配置  [ysk_dev/admin]
+		- 企业后台权限控制 [i.vding.dev]
+			- 自定义globalAccesss配置
+			- 3个表
+				- 表的数据结构
+				- auth_item
+					- 角色/权限/特殊权限/菜单_添加
+				- auth_item_child 角色分配权限
+				- auth_assign 角色指派
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展

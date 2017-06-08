@@ -56,8 +56,33 @@ git merge --no-ff develop  //使用-no-ff
 最后删除分支: 
 　　git branch -d fixbug-* 
 
-### 给远程仓库指定分支创建标签
-> git remote -v 查看仓库的地址如 
+### 给远程线上仓库指定分支创建标签
+
+1. git remote -v 查看仓库的地址如
+
+```
+origin  ssh://git@git.*:5808/*.git (fetch) //开发与测试
+origin  ssh://git@git.*:5808/*.git (push)
+prod    ssh://git@v2.*:5804/*.git (fetch) //线上
+prod    ssh://git@v2.*:5804/*.git (push)
+```
+2.给线上创建一个标签
+
+```
+ git fetch prod    //fetch一下线上 如commit及tag等
+ git co prod/master   //切勿到线上的master分支
+ git -a master_20170608_1016 -m '提交之前备份'
+ git pull prod master  //再拉一下线上的master分支到本地
+ git push prod master_20170608_1016 //将新建的标签推送到线上prod
+```
+
+3.发现提前的东西有问题,回退到指定标签
+
+```
+git co prod/master
+git reset --hard master_20170608_1016   //强制切换到指定标签
+git push -f prod master //推送,如果报错的话，使用 -f
+```
 
 ---
 

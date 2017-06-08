@@ -38,7 +38,7 @@
 			- [创建分支](use.md#创建分支) git checkout -b 分支名
 				- git co -b dev_bak(将当前的分支备份一个)
 				-  [分支创建策略](use.md#分支创建策略)
-				-  [给远程仓库指定分支创建标签](use.md#给远程仓库指定分支创建标签)
+				-  [给远程线上仓库指定分支创建标签](use.md#给远程线上仓库指定分支创建标签)
 			- 获取
 				- 最新的分支列表  git fetch origin
 				- 远程所有分支 get branch -a 
@@ -105,7 +105,11 @@
 			- [一次性推送](example.md#一次性推送) git push -f origin master
 			- [选择性推送](example.md#选择性推送) gti push cdsn master 
 		- [本地仓库里加入多个远程仓库_fetch_commit到本地仓库](example.md#本地仓库里加入多个远程仓库_fetch_commit到本地仓库)
-		- [发布到线上及使用标签回滚](example.md#发布到线上及使用标签回滚)  tag reset
+		- 发布上线创建标签与回退
+			- 独立的线上的仓库操作
+				- [发布到线上及使用标签回滚](example.md#发布到线上及使用标签回滚)  tag reset
+			- 本地包含多个仓库的操作
+				- [给远程线上仓库指定分支创建标签](use.md#给远程线上仓库指定分支创建标签)
 	- 问题
 		- [测试推向正式服错](question.md#测试推向正式服错)  git push prod anyang
 		- [composer_sms_报错误](question.md#composer_sms_报错误)
