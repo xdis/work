@@ -56,24 +56,24 @@
 	- composer
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
-	- function	功能模块
-		-  [ArrayHelper](function.md#ArrayHelper) 
+	- fn	功能模块
+		-  [ArrayHelper](fn.md#ArrayHelper) 
 		-  上传 upload
-			-  [API通用上传接口_每次仅上传一个_lm](function/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
+			-  [API通用上传接口_每次仅上传一个_lm](fn/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
 		- db
-			- [配置多个数据库_lh](function.md#配置多个数据库_lh) 
+			- [配置多个数据库_lh](fn.md#配置多个数据库_lh) 
 		- 组件
-			- [自定义组件](function/component.md#自定义组件)  [TERRY]
+			- [自定义组件](fn/component.md#自定义组件)  [TERRY]
 		- module 
-			- [modules生成与使用](function/module.md#modules生成与使用)
-			- [模块module包含组件使用](function/module.md#模块module包含组件使用) [TERRY]
-			- [短信sms配置代码采集](function/module.md#短信sms配置代码采集)
+			- [modules生成与使用](fn/module.md#modules生成与使用)
+			- [模块module包含组件使用](fn/module.md#模块module包含组件使用) [TERRY]
+			- [短信sms配置代码采集](fn/module.md#短信sms配置代码采集)
 				- 搭建
 					- 创建company Module [复制于Frontend]
-						- [http.conf配置](function/module.md#http.conf配置)
+						- [http.conf配置](fn/module.md#http.conf配置)
 					- 创建子域名 如i.ysk.dev
-						- [将Frontend复制一份改名为company,修改相关的配置](function/module.md#将Frontend复制一份改名为company,修改相关的配置)
-						- [http.conf配置](function/module.md#http.conf配置)
+						- [将Frontend复制一份改名为company,修改相关的配置](fn/module.md#将Frontend复制一份改名为company,修改相关的配置)
+						- [http.conf配置](fn/module.md#http.conf配置)
 						- 127.0.0.1 i.ysk.dev //hosts
 		- console	
 			-  基本使用
@@ -81,25 +81,25 @@
 				- php /var/www/网站根目录/yii car/driver-trip-tips //执行根目录console/controllers/CarController.php下的方法actionDriverTripTips()
 		- 缓存
 			- cache [控制器层] @withy
-				- 常用操作 [代码](function/cache_file/DemoCacheController.php)
-					- [组件配置](function/cache_file.md#组件配置) yii\caching\FileCache
-					- [基本的保存与写入](function/cache_file.md#基本的保存与写入)
-					- [清空缓存](function/cache_file.md#清空缓存)
+				- 常用操作 [代码](fn/cache_file/DemoCacheController.php)
+					- [组件配置](fn/cache_file.md#组件配置) yii\caching\FileCache
+					- [基本的保存与写入](fn/cache_file.md#基本的保存与写入)
+					- [清空缓存](fn/cache_file.md#清空缓存)
 				- 依赖操作
-					- [文件](function/cache_file.md#文件)
-					- [表达式](function/cache_file.md#表达式)
-					- [DB](function/cache_file.md#DB)
+					- [文件](fn/cache_file.md#文件)
+					- [表达式](fn/cache_file.md#表达式)
+					- [DB](fn/cache_file.md#DB)
 			- 页面缓存 [view层]
 				- beginCache 
-					- [缓存时间](function/cache_file.md#缓存时间)
-					- [文件依赖](function/cache_file.md#文件依赖)
-					- [缓存开关](function/cache_file.md#缓存开关)
-				- [嵌套缓存](function/cache_file.md#嵌套缓存)
+					- [缓存时间](fn/cache_file.md#缓存时间)
+					- [文件依赖](fn/cache_file.md#文件依赖)
+					- [缓存开关](fn/cache_file.md#缓存开关)
+				- [嵌套缓存](fn/cache_file.md#嵌套缓存)
 			- 页面缓存 [controller层]
-				- [使用behavior进行全局缓存](function/cache_file.md#使用behavior进行全局缓存)
-				- [http缓存](function/cache_file.md#http缓存)
+				- [使用behavior进行全局缓存](fn/cache_file.md#使用behavior进行全局缓存)
+				- [http缓存](fn/cache_file.md#http缓存)
 			- 调试
-				- [beginProfile](function/debug.md#beginProfile)  代码区间性能检测
+				- [beginProfile](fn/debug.md#beginProfile)  代码区间性能检测
 	- session
 		- 保存与获取
 			- 方法1
@@ -110,7 +110,7 @@
 				-  Yii::$app->session->get('rtn_url');
 	- cookie
 		- 保存与获取
-			- [user登陆信息保存](function/cookie.md#登陆信息保存)
+			- [user登陆信息保存](fn/cookie.md#登陆信息保存)
 		- add a cookie
 			- $response->cookies->add(new Cookie(['name' => $name,'value' => $value,]);
 		- remove a cookie
@@ -332,16 +332,16 @@
 	- 短信模块分析
 		- sms短信_z
 			- 操作使用
-				- [sms短信_配置](function/sms_z.md#sms短信_配置)
-				- [sms短信_使用](function/sms_z.md#sms短信_使用)
+				- [sms短信_配置](fn/sms_z.md#sms短信_配置)
+				- [sms短信_使用](fn/sms_z.md#sms短信_使用)
 					- 1.使用 new Sms() 【建议使用这种】
 					- 2.使用 Yii::$app->sms
 				-  定义全局sms_actions挂裁
-					- [公司SignInController_z](function/sms_z.md#公司SignInController_z)
-					- [店铺LoginController_w](function/sms_z.md#店铺LoginController_w)
+					- [公司SignInController_z](fn/sms_z.md#公司SignInController_z)
+					- [店铺LoginController_w](fn/sms_z.md#店铺LoginController_w)
 		    - 代码分析
-			    - [解析“云通讯接口“文档要求与代码开发](function/sms_z.md#解析“云通讯接口“文档要求与代码开发)
-				    - [GuzzleHttp\Client](function/sms_z.md#GuzzleHttp\Client) [模拟登陆] 代替curl
+			    - [解析“云通讯接口“文档要求与代码开发](fn/sms_z.md#解析“云通讯接口“文档要求与代码开发)
+				    - [GuzzleHttp\Client](fn/sms_z.md#GuzzleHttp\Client) [模拟登陆] 代替curl
 	- 权限分析 [yii2_admin]
 	- App接口全局配置
 	- 用户登陆 [yii start kit]
@@ -363,8 +363,8 @@
 				- [User](company_login_z.md#User) //user认证类
 				- [时序图](company_login_z.md#时序图)
 			- 仿照一个Module下两个登陆模块
-				- [访问方式](function/module_two_login.md#访问方式)
-				- [components_配置](function/module_two_login.md#components_配置)
+				- [访问方式](fn/module_two_login.md#访问方式)
+				- [components_配置](fn/module_two_login.md#components_配置)
 	- 农行
 		- [socket请求文档](nongye/socket.php) tcp/ip请求
     - 源码分析

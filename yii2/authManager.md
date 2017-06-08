@@ -21,4 +21,4 @@ $auth->assign($auth->getRole(User::ROLE_USER), $this->getId());
 
 ```
 // 不需要校验权限的方法就写在这里
-![](function/auth/vding/filter_auth.png)
+![](fn/auth/vding/filter_auth.png)

@@ -205,7 +205,7 @@ http://api.v2.v.w/v1/user/token-test?access-token=3eeb6ade484c07e28e72fe676d237a
 ---
 ## 第三方
 ### 模拟登陆_vding
-[代码源码](function/rsa/模拟登陆_vding_source)
+[代码源码](fn/rsa/模拟登陆_vding_source)
 
 ```php
 <?php
@@ -360,7 +360,7 @@ rest/config/_rules.php
 ---
 
 ## APP应用在多台手机上登陆短信提示
-[本例源代码](function/api/APP应用在多台手机上登陆短信提示_source/rest/versions/v2/controllers/UserController.php)
+[本例源代码](fn/api/APP应用在多台手机上登陆短信提示_source/rest/versions/v2/controllers/UserController.php)
 [本例时序图](uml/APP应用在多台手机上登陆短信提示.oom)
 
 ### 控制器继承BaseRestController
