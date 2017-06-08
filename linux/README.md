@@ -184,6 +184,7 @@
 	- shell
 		- 让你的git_pull之后自动运行命令 如yarn run build
 			- [调用函数代码](fn/shell.md#调用函数代码)
+		- [改造cp命令_文件不存在则创建_并且过滤文件名](fn/shell.md#改造cp命令_文件不存在则创建_并且过滤文件名)
 	- 域名常见问题
 		- DNS检测
 			- 域名whois检测
