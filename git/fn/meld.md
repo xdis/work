@@ -1,5 +1,8 @@
 # meld
 > 官网  http://meldmerge.org  
+> github repo: https://github.com/GNOME/meld  
+> gnome wiki: https://wiki.gnome.org/Apps/Meld
+> https://stackoverflow.com/a/34119867  
 
 ## 配置
 

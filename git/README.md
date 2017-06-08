@@ -15,7 +15,7 @@
 					- 1.安装 node.js  查看版本  npm --version
 					- 2.安装 npm install -g diff-so-fancy
 					- 3.上面的配置文件有!  
-			- meld https://stackoverflow.com/a/34119867
+			- meld 
 				- [配置文件](fn/compare/meld/.gitconfig)
 				- 使用
 					- 不同分支文件比较
