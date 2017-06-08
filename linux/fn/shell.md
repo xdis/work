@@ -29,7 +29,7 @@ check_run vfet "cd vfet && yarn run build"
 
 ## 改造cp命令_文件不存在则创建_并且过滤文件名
 
-```
+```shell
 #!/bin/bash
 
 # 运行的例子
