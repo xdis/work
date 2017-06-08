@@ -147,7 +147,7 @@
 				- wget wget spacer.gifhttp://mirrors.163.com/.help/CentOS6-Base-163.repo
 				- mv CentOS6-Base-163.repo CentOS-Base.repo 
 				- yum clean all & yum makecache
-			-  **yum makecache报错** [CentOS-Base.repo最终文件](function/yum/CentOS-Base.repo) [centos 6.8]  by 20170512 11:02
+			-  **yum makecache报错** [CentOS-Base.repo最终文件](fn/yum/CentOS-Base.repo) [centos 6.8]  by 20170512 11:02
 			```
 				报错原因?
 				http://mirrors.163.com/centos/6/os/x86_64/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 404 Not Found
@@ -181,6 +181,9 @@
 					- nameserver 202.96.134.33
 					-  nameserver 8.8.8.8
 					-  nameserver 8.8.4.4
+	- shell
+		- 让你的git_pull之后自动运行命令 如yarn run build
+			- [调用函数代码](fn/shell.md#调用函数代码)
 	- 域名常见问题
 		- DNS检测
 			- 域名whois检测
@@ -191,15 +194,15 @@
 			- 测试该域名能否正常解析
 				- dig vding.wang
 				- dig @8.8.8.8 vding.wang  //使用8.8.8.8作为指定SERVER
-					- [解析成功](function/dig.md#解析成功)
-					- [解析失败](function/dig.md#解析失败)
+					- [解析成功](fn/dig.md#解析成功)
+					- [解析失败](fn/dig.md#解析失败)
 			- 查询MX记录 MX（Mail Exchanger）记录查询
 				- dig redhat.com  MX +noall +answer
 				- dig -t MX redhat.com +noall +answer  		//后者`-t`代表查询类型，可以是`A`,`MX`,`NS`等,`+noall` 代表清除所有显示的选项
 			- dig -t NS chenrongrong.info +noall +answer 		//查询域名服务器
 			- dig -t ANY chenrongrong.info +answer		//查询所有DNS记录
-				- [vding为例](function/dig.md#vding为例)
-				- [baidajob为例](function/dig..md#baidajob为例)
+				- [vding为例](fn/dig.md#vding为例)
+				- [baidajob为例](fn/dig..md#baidajob为例)
 			- dig -t NS chenrongrong.info +short		//简洁显示+short
 			- dig -x 8.8.8.8 +short		//DNS反向解析dig -x
 			- dig cname www.baidu.com +short		//显示域名的CNAME记录

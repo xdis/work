@@ -19,4 +19,13 @@
 
 	- 1=1妙用
 		- AND IF(_which_day !='0000-00-00', dj_checklist.which_date = _which_day, '1=1') 
+	- 动态执行sql
 
+		```
+		BEGIN
+		 SET @sql = concat('select * from ', $tableName);	 
+		 PREPARE stmt1 FROM @sql;
+		 EXECUTE stmt1;
+		 DEALLOCATE PREPARE stmt1;
+		END;
+		```
