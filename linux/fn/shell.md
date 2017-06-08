@@ -5,7 +5,8 @@
 ### 调用函数代码
 
 ![](shell/git_push_after.png)
-```
+
+```shell
 #! /bin/bash
 #
 # post-checkout hook that checks for changes to composer.lock, and fires a composer install if required.
