@@ -56,7 +56,7 @@
 	- composer
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
-	- fn	功能模块
+	- fn 功能模块
 		-  [ArrayHelper](fn.md#ArrayHelper) 
 		-  上传 upload
 			-  [API通用上传接口_每次仅上传一个_lm](fn/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
