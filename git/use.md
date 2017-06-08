@@ -56,6 +56,9 @@ git merge --no-ff develop  //使用-no-ff
 最后删除分支: 
 　　git branch -d fixbug-* 
 
+### 给远程仓库指定分支创建标签
+> git remote -v 查看仓库的地址如 
+
 ---
 
 ### 合并
