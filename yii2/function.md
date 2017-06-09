@@ -1,5 +1,11 @@
 # function
-## ArrayHelper
+
+**vendor/yiisoft/yii2/helpers/BaseArrayHelper.php**
+
+# ArrayHelper
+
+## ArrayHelper::merge
+
 ```php
   //例A
     public function scenarios()
@@ -55,6 +61,35 @@
     }
 ```
 
+## ArrayHelper::map
+
+```php
+$array = [
+    ['id' => '123', 'name' => 'aaa', 'class' => 'x'],
+    ['id' => '124', 'name' => 'bbb', 'class' => 'x'],
+    ['id' => '345', 'name' => 'ccc', 'class' => 'y'],
+];
+     *
+$result = ArrayHelper::map($array, 'id', 'name');
+// the result is:
+// [
+//     '123' => 'aaa',
+//     '124' => 'bbb',
+//     '345' => 'ccc',
+// ]
+     *
+$result = ArrayHelper::map($array, 'id', 'name', 'class');
+// the result is:
+// [
+//     'x' => [
+//         '123' => 'aaa',
+//         '124' => 'bbb',
+//     ],
+//     'y' => [
+//         '345' => 'ccc',
+//     ],
+// ]
+```
 
 ## 配置多个数据库_lh
 common/config/web.php    

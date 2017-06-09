@@ -57,11 +57,13 @@
 		- 如yii2的更新,手动删除vendor下目录yiisoft,再执行 composer install by_zhou 
 	
 	- fn 功能模块
-		-  [ArrayHelper](fn.md#ArrayHelper) 
+		-  ArrayHelper
+			- [ArrayHelper::merge](function.md#ArrayHelper::merge) 
+			- [ArrayHelper::map](function.md#ArrayHelper::map) 
 		-  上传 upload
 			-  [API通用上传接口_每次仅上传一个_lm](fn/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
 		- db
-			- [配置多个数据库_lh](fn.md#配置多个数据库_lh) 
+			- [配置多个数据库_lh](function.md#配置多个数据库_lh) 
 		- 组件
 			- [自定义组件](fn/component.md#自定义组件)  [TERRY]
 		- module 
@@ -266,7 +268,7 @@
 			- [beforeSave](model.md#beforeSave)  @foreach
 			- [afterSave](model.md#afterSave)
 			- [afterDelete](model.md#afterDelete)
-	- 权限
+	- 权限 rbac
 		- 基本信息
 			- ? 代表"访客用户"
 			- @ 代表"已认证用户"

@@ -126,4 +126,44 @@ CREATE TABLE `auth_item_child` (
 
 ## auth_item
 
-> 访问的地址:http://i.vding.dev/route
+### 列表页
+>http://i.vding.dev/route/
+
+![](rabc/rbac_vding_v1/list.png)
+
+
+### 创建页
+
+> 访问的地址:http://i.vding.dev/route/create
+
+![](rabc/rbac_vding_v1/create.png)
+
+
+```php
+/**
+ * 新增
+ * @return mixed
+ */
+public function actionCreate()
+{
+    $request = Yii::$app->request;
+    $model = new AuthItem();  
+    
+    $model->type = 1;
+    if ($model->load($request->post()) && $model->save()) {
+        return $this->redirect(['view', 'id' => $model->id]);
+    } else {
+        $parent_id = $request->get('id',0);
+        $model->parent_id = $parent_id;
+        $look_data = Lookup::find()->where(['type'=>'industry_appid'])->asArray()->all();
+        $industry_appid = ArrayHelper::map($look_data, 'code','name');
+        return $this->render('create', [
+            'model' => $model,
+            'industry_appid'=>$industry_appid
+        ]);
+    }
+
+   
+}
+
+```
