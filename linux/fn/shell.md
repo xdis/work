@@ -6,6 +6,10 @@
 
 ![](shell/git_push_after.png)
 
+> - 进入 .git/hooks 目录，  
+> - 创建名为 post-merge 的文件，没有后缀  
+> 内容如下：  
+ 
 ```shell
 #! /bin/bash
 #
