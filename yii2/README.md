@@ -58,8 +58,8 @@
 	
 	- fn 功能模块
 		-  ArrayHelper
-			- [ArrayHelper::merge](function.md#ArrayHelper::merge) 
-			- [ArrayHelper::map](function.md#ArrayHelper::map) 
+			- [ArrayHelper::merge](function.md#ArrayHelper_merge) 
+			- [ArrayHelper::map](function.md#ArrayHelper_map) 
 		-  上传 upload
 			-  [API通用上传接口_每次仅上传一个_lm](fn/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
 		- db

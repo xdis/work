@@ -4,7 +4,7 @@
 
 # ArrayHelper
 
-## ArrayHelper::merge
+## ArrayHelper_merge
 
 ```php
   //例A
@@ -61,7 +61,7 @@
     }
 ```
 
-## ArrayHelper::map
+## ArrayHelper_map
 
 ```php
 $array = [
