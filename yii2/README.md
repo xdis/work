@@ -275,10 +275,10 @@
 			- 使用权限
 				- [vding使用权限](authManager.md#vding使用权限) [tianle]
 		- 企业后台_globalAccesss配置  [ysk_dev/admin]
-		- 企业后台权限控制 [i.vding.dev]
-			- 自定义globalAccesss配置
+		- 企业后台权限控制_v1 [i.vding.dev]
+			- [自定义globalAccesss配置](fn/rbac.md#自定义globalAccesss配置)
 			- 3个表
-				- 表的数据结构
+				- [表的数据结构](fn/rbac.md#表的数据结构)
 				- auth_item
 					- 角色/权限/特殊权限/菜单_添加
 				- auth_item_child 角色分配权限
