@@ -279,9 +279,11 @@
 				- [vding使用权限](authManager.md#vding使用权限) [tianle]
 		- 企业后台_globalAccesss配置  [ysk_dev/admin]
 		- 企业后台权限控制_v1 [i.vding.dev]
-			- [自定义globalAccesss配置](fn/rbac.md#自定义globalAccesss配置)
 			- 3个表
 				- [表的数据结构](fn/rbac.md#表的数据结构)
+				- 配置文件及过滤
+					- [自定义globalAccesss配置](fn/rbac.md#自定义globalAccesss配置)
+					- [改造过的过滤器](fn/rbac.md#改造过的过滤器)
 				- auth_item  角色/权限/特殊权限/菜单_添加
 					- [auth_item_列表页](fn/rbac.md#auth_item_列表页)
 					- [auth_item_创建页](fn/rbac.md#auth_item_创建页)
@@ -291,6 +293,9 @@
 					- [权限入auth_item_child](fn/rbac.md#权限入auth_item_child)
 					- 选择权限_列表[选择权限_列表](fn/rbac.md#选择权限_列表)
 				- auth_assign 角色指派
+					- [auth_assign_列表页](fn/rbac.md#auth_assign_列表页)
+					- [auth_assign_创建页](fn/rbac.md#auth_assign_创建页)
+					- [auth_assign_编辑](fn/rbac.md#auth_assign_编辑)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
