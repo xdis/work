@@ -62,7 +62,7 @@
 ```
 
 ## ArrayHelper_map
-
+> 获取数据自定义的映射数组  必须传 key 与value
 ```php
 $array = [
     ['id' => '123', 'name' => 'aaa', 'class' => 'x'],
@@ -89,6 +89,23 @@ $result = ArrayHelper::map($array, 'id', 'name', 'class');
 //         '345' => 'ccc',
 //     ],
 // ]
+```
+
+## ArrayHelper_column  
+>获取指定数组的键名
+
+```php
+$array = [
+    ['id' => '123', 'data' => 'abc'],
+    ['id' => '345', 'data' => 'def'],
+];
+$result = ArrayHelper::getColumn($array, 'id');
+// the result is: ['123', '345']
+     *
+// using anonymous function
+$result = ArrayHelper::getColumn($array, function ($element) {
+    return $element['id'];
+});
 ```
 
 ## 配置多个数据库_lh

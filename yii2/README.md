@@ -2,8 +2,7 @@
 - Yii2
 	- [计划](plan.md)
 	-  干货
-		- [符合P
-		- SR-1/PSR-2的PHP编程规范实例](../php/standard.php)
+		- [符合PSR-1/PSR-2的PHP编程规范实例](../php/standard.php)
 		- [yii2干货集](college/awesome-yii2.md) 
 	- 常用
 		- user
@@ -24,7 +23,6 @@
 		-  layout
 			-  [根据参数选择不同layout,如充值有个人和企业统一入口,不同身份不同layout](op.md#根据参数选择不同layout,如充值有个人和企业统一入口,不同身份不同layout) 
 			- [controller传值给layout](op.md#controller传值给layout) 
-		- 发布线上
 			- [缓存清空](op.md#缓存清空)  ./yii cache/flush-all  //根目录运行,清空所有
 				- 清空表结构缓存的方法  
 				- 清空所有的缓存--不仅仅是mysql表结构
@@ -58,8 +56,9 @@
 	
 	- fn 功能模块
 		-  ArrayHelper
-			- [ArrayHelper::merge](function.md#ArrayHelper_merge) 
-			- [ArrayHelper::map](function.md#ArrayHelper_map) 
+			- [ArrayHelper::merge](function.md#ArrayHelper_merge) 数组合并
+			- [ArrayHelper::map](function.md#ArrayHelper_map) //获取自定义键名/键值的数组
+			- [ArrayHelper::column](function.md#ArrayHelper_column) 获取数组指定的字段
 		-  上传 upload
 			-  [API通用上传接口_每次仅上传一个_lm](fn/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
 		- db
@@ -219,7 +218,8 @@
 				- [全局方法定义开发](post.md#全局方法定义开发)
 		- 批量插入
 			- [原始的方法foreach](post.md#原始的方法foreach)
-			- [batchInsert](post.md#batchInsert) batchInsert
+			- [批量_batchInsert](post.md#批量_batchInsert) batchInsert
+			- [封装批量插入](post.md#封装批量插入) @foreach
 		- 更新 updateAll
 			- [updateAll](post.md#updateAll) 
 			- [updateAllCounters](post.md#updateAllCounters)  计数器专用
@@ -281,9 +281,14 @@
 			- [自定义globalAccesss配置](fn/rbac.md#自定义globalAccesss配置)
 			- 3个表
 				- [表的数据结构](fn/rbac.md#表的数据结构)
-				- auth_item
-					- 角色/权限/特殊权限/菜单_添加
+				- auth_item  角色/权限/特殊权限/菜单_添加
+					- [auth_item_列表页](fn/rbac.md#auth_item_列表页)
+					- [auth_item_创建页](fn/rbac.md#auth_item_创建页)
 				- auth_item_child 角色分配权限
+					- [auth_item_child_列表页](fn/rbac.md#auth_item_child_列表页)
+					- [auth_item_child_创建页](fn/rbac.md#auth_item_child_创建页)
+					- [权限入auth_item_child](fn/rbac.md#权限入auth_item_child)
+					- 选择权限_列表[选择权限_列表](fn/rbac.md#选择权限_列表)
 				- auth_assign 角色指派
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 

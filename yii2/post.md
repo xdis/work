@@ -802,7 +802,7 @@ class TestAction extends Action
                     }
                 }
 ```
-### batchInsert
+### 批量_batchInsert
 
 ```php
 
@@ -845,6 +845,46 @@ class TestAction extends Action
                     throw new \Exception('价目表入库失败');
                 }
 ```
+
+### 封装批量插入
+
+```php
+namespace common\helpers;
+
+class ModelHelper
+{
+    /**
+     * 批量插入数据保存
+     * 使用示例：
+     *
+     * $rows = [];
+     * foreach ($items as $key => $value) {
+     *     $rows[$key]['title'] = $value['title'];
+     *     $rows[$key]['user_id'] = $userId;
+     * }
+     * if (!ModelHelper::saveAll(Post::tableName(), $rows)) {
+     *     throw new Exception();
+     * }
+     *
+     * @param $tableName
+     * @param array $rows
+     * @return int
+     * @throws \yii\db\Exception
+     */
+    public static function saveAll($tableName, $rows = [])
+    {
+        if ($rows) {
+            return \Yii::$app->db->createCommand()
+                ->batchInsert($tableName, array_keys(array_values($rows)[0]), $rows)
+                ->execute();
+        }
+        return false;
+    }
+}
+
+```
+
+
 
 ## 更新
 ### updateAll
