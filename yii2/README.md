@@ -40,6 +40,10 @@
 				-  model->attributes['id']
 				-  $model->getOldAttribute("id")
 			- yii\helpers\BaseHtml::encode($str)    //字符串进行转义
+			- beforeAction($action)
+				-  $module_id = $action->controller->module->id;
+				-  $url = $action->getUniqueId();
+				-  $controller = $action->controller->id;
 		- isAjax  可以包括 post和get
 			- [权限添加的demo](op.md#权限添加的demo)
 			- [没有限定post和get](op.md#没有限定post和get) getIsAjax()
@@ -296,6 +300,8 @@
 					- [auth_assign_列表页](fn/rbac.md#auth_assign_列表页)
 					- [auth_assign_创建页](fn/rbac.md#auth_assign_创建页)
 					- [auth_assign_编辑](fn/rbac.md#auth_assign_编辑)
+		- yii2 admin 分析
+			- 	
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
