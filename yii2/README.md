@@ -220,6 +220,7 @@
 			- [原始的方法foreach](post.md#原始的方法foreach)
 			- [批量_batchInsert](post.md#批量_batchInsert) batchInsert
 			- [封装批量插入](post.md#封装批量插入) @foreach
+				- [例子使用](post.md#封装批量插入_例子)
 		- 更新 updateAll
 			- [updateAll](post.md#updateAll) 
 			- [updateAllCounters](post.md#updateAllCounters)  计数器专用

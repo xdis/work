@@ -883,7 +883,35 @@ class ModelHelper
 }
 
 ```
+### 封装批量插入_例子
 
+**company/models/AuthAssign.php**
+```php
+public static function create($userId, $roleIds)
+{
+    if ($roleIds) {
+        $rows = [];
+        $time = time();
+        $companyId = Yii::$app->user->getCompanyId();
+        $roles = ArrayHelper::map(AuthItem::getRoles(), 'id', 'name');
+        self::deleteAll(['user_id' => $userId, 'company_id' => $companyId]);
+        foreach ($roleIds as $key => $roleId) {
+            $rows[$key]['auth_item_id'] = $roleId;
+            $rows[$key]['auth_item_name'] = $roles[$roleId];
+            $rows[$key]['company_id'] = $companyId;
+            $rows[$key]['user_id'] = $userId;
+            $rows[$key]['created_at'] = $time;
+            $rows[$key]['updated_at'] = $time;
+        }
+        if (!ModelHelper::saveAll(self::tableName(), $rows)) {
+            throw new Exception('分配角色失败');
+        }
+    }
+    return true;
+}
+
+
+```
 
 
 ## 更新
