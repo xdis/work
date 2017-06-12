@@ -78,11 +78,14 @@
 			- netstat -tunpl
 	- ssh
 		- ssh 202.104.102.444 -p 5804  //远程登陆
-	- 防火墙设置
-		``` 
-		 vim /etc/sysconfig/iptables
-		/etc/init.d/iptables restart
-		```
+	- 防火墙
+		- 设置
+			``` 
+			 vim /etc/sysconfig/iptables
+			/etc/init.d/iptables restart
+			```
+		- 查看
+			- iptables -L -n
 	- 更新linux时间
 		- 方法1 [手动修改指定的时间]
 			``` 
