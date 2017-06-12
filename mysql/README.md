@@ -48,7 +48,7 @@
 	  - grant all privileges on *.* to root@"%";  //允许远程连接
 	  - grant all privileges on *.* to 'bitnami'@'%' identified by 'a4f90127b5'; （bitnami 为用户名，a4f90127b5 为密码） 
 	  - FLUSH PRIVILEGES; 
-- 配置
+- 配置文件 my.cnf
 	- 仅允许本地127.0.0.1连接
 		- [mysqld] bind-address=127.0.0.1
 	- 修改数据库,不使用密码
