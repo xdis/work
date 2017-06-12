@@ -41,9 +41,9 @@
 				-  $model->getOldAttribute("id")
 			- yii\helpers\BaseHtml::encode($str)    //字符串进行转义
 			- beforeAction($action)
-				-  $module_id = $action->controller->module->id;
-				-  $url = $action->getUniqueId();
-				-  $controller = $action->controller->id;
+				-  $module_id = $action->controller->module->id; //company
+				-  $url = $action->getUniqueId(); //user-company/index
+				-  $controller = $action->controller->id; //user-company
 		- isAjax  可以包括 post和get
 			- [权限添加的demo](op.md#权限添加的demo)
 			- [没有限定post和get](op.md#没有限定post和get) getIsAjax()

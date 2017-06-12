@@ -65,6 +65,8 @@
 					- git fetch -p
 					- git remote prune origin
 		- 标签
+			- 匹配
+				- git tag -l 'V1.0.*'	//查找 V1.0.*
 			- 查看 git tag
 				- git show tame  查看指定标签 
 				- git tag -l 'v1.4.2.*'  过滤显示
@@ -74,8 +76,14 @@
 				- git tag -a v3.1 f1bb97a 为之前的提交添加标签
 			- 删除
 				- 本地 git tag -d v0.1  
-				- 远程 git push origin :refs/tags/v1.1  
-			- 推送 git push origin v1.5 
+				- 远程
+					-  git push origin :refs/tags/v1.1
+					-  git push origin --delete v1.1 
+			- 推送 
+				- git push origin v1.5   //推送 tag 到远程服务器
+				- git push origin --tags  //将本地所有 tag 推送到远程
+			- 拉取
+				- git pull origin --tags	//拉取远程 tag 到本地
 		- [回滚](use.md#回滚) reset
 			- 回退
 				- git reset --hard HEAD^  //回退上个版本
