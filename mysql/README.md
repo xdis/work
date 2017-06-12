@@ -43,7 +43,7 @@
 		  - mysqld_safe –skip-grant-tables &
 		  - mysqld_safe --skip-grant-tables >/dev/null 2>&1 &
 	- 创建用户与授权
-	  - insert into user(host,user,password) values('%','root',password('!@#qian100mysql#@!'));  //创建一个帐号
+	  - insert into user(host,user,password) values('%','root',password('!123456'));  //创建一个帐号
 	  - update mysql.user set password=password('123456') where User='root'; //root重置密码
 	  - grant all privileges on *.* to root@"%";  //允许远程连接
 	  - grant all privileges on *.* to 'bitnami'@'%' identified by 'a4f90127b5'; （bitnami 为用户名，a4f90127b5 为密码） 
