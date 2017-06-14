@@ -5,55 +5,58 @@
 - function
 	- 函数
 		- array_walk
-			- [购物车实例](function/Closure.md#购物车实例)  array_walk
-			- [把数组(可多维)中值null转为空](function/op.md#把数组(可多维)中值null转为空) 		
-			- [二维数组自定义键str转numberic](function/op.md#二维数组自定义键str转numberic) 	
-			- [等同于foreach](function/op.md#等同于foreach)
-			- [多个array_walk使用](function/op.md#多个array_walk使用)
-			- [路由自定义组装](function/op.md#路由自定义组装)
-			- [tp_清除缓存](function/op.md#tp_清除缓存) [大雄]
+			- [购物车实例](fn/Closure.md#购物车实例)  array_walk
+			- [把数组(可多维)中值null转为空](fn/op.md#把数组(可多维)中值null转为空) 		
+			- [二维数组自定义键str转numberic](fn/op.md#二维数组自定义键str转numberic) 	
+			- [等同于foreach](fn/op.md#等同于foreach)
+			- [多个array_walk使用](fn/op.md#多个array_walk使用)
+			- [路由自定义组装](fn/op.md#路由自定义组装)
+			- [tp_清除缓存](fn/op.md#tp_清除缓存) [大雄]
 		- strncmp
-			- [IP星号匹配](function/op.md#IP星号匹配) 如192.168.2.1 是不是192.168.*
+			- [IP星号匹配](fn/op.md#IP星号匹配) 如192.168.2.1 是不是192.168.*
 		- array_map 
-			- [调用自定义函数](function/op.md#调用自定义函数)
-			- [内置函数strtoupper](function/op.md#内置函数strtoupper)
+			- [调用自定义函数](fn/op.md#调用自定义函数)
+			- [内置函数strtoupper](fn/op.md#内置函数strtoupper)
 		- fnmatch
-			- [正则匹配文件名](function/op.md#正则匹配文件名)
-			- [yii匹配例子](function/op.md#yii匹配例子)
+			- [正则匹配文件名](fn/op.md#正则匹配文件名)
+			- [yii匹配例子](fn/op.md#yii匹配例子)
+		- call_user_func
+			- [调用对象的方法](fn/op.md#调用对象的方法)
+			- [调用对象的静态方法](fn/op.md#调用对象的静态方法)
     - 功能模块
-	    - [二维数组自定义键str转numberic](function/op.md#二维数组自定义键str转numberic) 	
-	    - [把数组(可多维)中值null转为空](function/op.md#把数组(可多维)中值null转为空) 	
-	    - [获取当前时间戳_精确到毫秒](function/fn_module.md#获取当前时间戳_精确到毫秒) 
-	    - [需要反序列化的-反序列化](function/fn_module.md#需要反序列化的-反序列化) 
-	    - [时间戳相差输出](function/fn_module.md#时间戳相差输出) 
-	    - [打印输出_pt](function/fn_module.md#打印输出_pt)  @tianle
-	    - [打印输出_dp](function/fn_module.md#打印输出_dp)  @tianle [常用]
-	    - [字符串截取_单字节截取模式](function/fn_module.md#字符串截取_单字节截取模式) 
-	    - [用于生成随机的数字和字母组合](function/fn_module.md#用于生成随机的数字和字母组合) 
-	    - [随机数字数字](function/fn_module.md#随机数字数字) 
-	    - [验证手机号码](function/fn_module.md#验证手机号码) 
-	    - [导出excel封装方法](function/fn_module.md#导出excel封装方法) 
-	    - [身份证号验证](function/fn_module.md#身份证号验证) 
-	    - [出月份的第一天最后一天及当月有多少天](function/fn_module.md#出月份的第一天最后一天及当月有多少天) 
+	    - [二维数组自定义键str转numberic](fn/op.md#二维数组自定义键str转numberic) 	
+	    - [把数组(可多维)中值null转为空](fn/op.md#把数组(可多维)中值null转为空) 	
+	    - [获取当前时间戳_精确到毫秒](fn/fn_module.md#获取当前时间戳_精确到毫秒) 
+	    - [需要反序列化的-反序列化](fn/fn_module.md#需要反序列化的-反序列化) 
+	    - [时间戳相差输出](fn/fn_module.md#时间戳相差输出) 
+	    - [打印输出_pt](fn/fn_module.md#打印输出_pt)  @tianle
+	    - [打印输出_dp](fn/fn_module.md#打印输出_dp)  @tianle [常用]
+	    - [字符串截取_单字节截取模式](fn/fn_module.md#字符串截取_单字节截取模式) 
+	    - [用于生成随机的数字和字母组合](fn/fn_module.md#用于生成随机的数字和字母组合) 
+	    - [随机数字数字](fn/fn_module.md#随机数字数字) 
+	    - [验证手机号码](fn/fn_module.md#验证手机号码) 
+	    - [导出excel封装方法](fn/fn_module.md#导出excel封装方法) 
+	    - [身份证号验证](fn/fn_module.md#身份证号验证) 
+	    - [出月份的第一天最后一天及当月有多少天](fn/fn_module.md#出月份的第一天最后一天及当月有多少天) 
 	- 闭包与匿名函数
 		- create_function() [PHP4.1和PHP5中就有了]
 			- 不是真正的匿名函数,因为该函数是**有函数名**
 			- 只是创建卫一个全局唯一的函数而已
 		- Closure	【匿名函数/闭包函数】
-			- [__invoke魔幻方法](function/Closure.md#__invoke魔幻方法) 
-			- [匿名函数的实现](function/Closure.md#匿名函数的实现) 
+			- [__invoke魔幻方法](fn/Closure.md#__invoke魔幻方法) 
+			- [匿名函数的实现](fn/Closure.md#匿名函数的实现) 
 			- use
 				- 在普通函数中当做参数传入也可以被返回
-					- [在函数里定义一个匿名函数_并且调用它](function/Closure.md#在函数里定义一个匿名函数_并且调用它) 
-					- [在函数中把匿名函数返回_并且调用它](function/Closure.md#在函数中把匿名函数返回_并且调用它) 
-					- [把匿名函数当做参数传递_并且调用它](function/Closure.md#把匿名函数当做参数传递_并且调用它) 
-					- [直接将匿名函数进行传递](function/Closure.md#直接将匿名函数进行传递) 
+					- [在函数里定义一个匿名函数_并且调用它](fn/Closure.md#在函数里定义一个匿名函数_并且调用它) 
+					- [在函数中把匿名函数返回_并且调用它](fn/Closure.md#在函数中把匿名函数返回_并且调用它) 
+					- [把匿名函数当做参数传递_并且调用它](fn/Closure.md#把匿名函数当做参数传递_并且调用它) 
+					- [直接将匿名函数进行传递](fn/Closure.md#直接将匿名函数进行传递) 
 				- 实例 use $name[只复制变量一份],use &$name[绑定上下变量关系]
-					- [普通use使用](function/Closure.md#普通use使用) 
-					- [use使用其外部作用域的变量](function/Closure.md#use使用其外部作用域的变量)
-					- [yii2关联查询用use加载外界参数](function/Closure.md#yii2关联查询用use加载外界参数)
-					- [购物车实例](function/Closure.md#购物车实例)  [array_walk]
-				- [闭包函数_参数类型为Closure](function/Closure.md#闭包函数_参数类型为Closure)
+					- [普通use使用](fn/Closure.md#普通use使用) 
+					- [use使用其外部作用域的变量](fn/Closure.md#use使用其外部作用域的变量)
+					- [yii2关联查询用use加载外界参数](fn/Closure.md#yii2关联查询用use加载外界参数)
+					- [购物车实例](fn/Closure.md#购物车实例)  [array_walk]
+				- [闭包函数_参数类型为Closure](fn/Closure.md#闭包函数_参数类型为Closure)
 	- 跨域
 		- 头部设置
 			- 头允许跨域
@@ -65,32 +68,32 @@
 			header("Access-Control-Allow-Origin: *");
 			```
  			- [yii店铺设置_后端跨域解决方案](../yii2/shop.md#1后端跨域解决方案)
- 			- [php后端跨越的代码](function/fn_corss_domain.md#php后端跨越的代码)   [Trait]
+ 			- [php后端跨越的代码](fn/fn_corss_domain.md#php后端跨越的代码)   [Trait]
 		- jsonp跨域
 			- jsonp不支付post
 			- example
-				- [b.com请求a.com](function/jsonp.md#b.com请求a.com)  
+				- [b.com请求a.com](fn/jsonp.md#b.com请求a.com)  
 					- 请求与返回都要定义callback对应的名称
 		- 设置P3P头,IE有安全策略限制页面不带cookie,针对IE旧版本,firefox与谷歌没有问题
 	- 模拟表单提交 @ghost Wu
 		- fiddler抓包
-		- [file_get_contents或fopen_post](function/simulation_post.md#file_get_contents或fopen_post)
+		- [file_get_contents或fopen_post](fn/simulation_post.md#file_get_contents或fopen_post)
 		- curl
-			- [curl_post](function/simulation_post.md#curl_post)
-			- [curl_参数封装_curl_setopt_array](function/simulation_post.md#curl_参数封装_curl_setopt_array)
+			- [curl_post](fn/simulation_post.md#curl_post)
+			- [curl_参数封装_curl_setopt_array](fn/simulation_post.md#curl_参数封装_curl_setopt_array)
 		- socket [fsockopen]
 			- 访问socket存在慢
-				- [socket_post](function/simulation_post.md#socket_post)
+				- [socket_post](fn/simulation_post.md#socket_post)
 			- 解决socket慢
-				- [优化解决socket访问慢](function/simulation_post.md#优化解决socket访问慢)
-				- [socket函数封装_提供post与get选择_支持cookie](function/simulation_post.md#socket函数封装_提供post与get选择_支持cookie)
+				- [优化解决socket访问慢](fn/simulation_post.md#优化解决socket访问慢)
+				- [socket函数封装_提供post与get选择_支持cookie](fn/simulation_post.md#socket函数封装_提供post与get选择_支持cookie)
 		- socket [socket_create]
 			- 农行的demo
 				- [socket整理](socket.md#socket整理) 
 				- [查询](socket/s1.php) 
 				- [分账](socket/c1.php)
 	- rsa
-		- [php_rsa](function/rsa/rsa_php_source/php_rsa.php)
+		- [php_rsa](fn/rsa/rsa_php_source/php_rsa.php)
 		- [模拟登陆_vding](../yii2/vding_api.md#模拟登陆_vding) //其它系统获取登陆token
 - 面向对象
 	- 常用类
@@ -188,8 +191,8 @@
 	- Traits	//代码复用的一个方法,为了减少单继承语言的限制，使开发人员能够自由地在不同层次结构内独立的类中复用方法集
 		 - 删除的公共方法例子
 		 - 例子
-			 - [php后端跨越的代码](function/fn_corss_domain.md#php后端跨越的代码)   [Trait] [跨域]
-			 - [短信模块_zhou](function/fn_corss_domain.md#短信模块_zhou)
+			 - [php后端跨越的代码](fn/fn_corss_domain.md#php后端跨越的代码)   [Trait] [跨域]
+			 - [短信模块_zhou](fn/fn_corss_domain.md#短信模块_zhou)
 - RestfulApi
 	- 会飞的鱼Xia
 		- [例子说明_会飞的鱼Xia](RestfulApi.md#例子说明_会飞的鱼Xia)

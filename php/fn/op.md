@@ -244,3 +244,38 @@ if (fnmatch("*gr[ae]y", $color)) {
     }
 }
 ```
+
+## call_user_func
+
+### 调用对象的方法
+
+```php
+class User{
+    public function getUser(){
+        echo 'peter';
+    }
+}
+
+$user = new User();
+call_user_func([$user,'getUser']); //peter
+```
+
+### 调用对象的静态方法
+
+```php
+class User{
+    static function say_hello(){
+        echo 'hello';
+    }
+}
+
+//方法1 实例化
+$user = new User();
+call_user_func([$user,'say_hello']);
+
+//方法2 不用实例化
+call_user_func(['User','say_hello']);
+
+//方法3 直接使用 ::
+call_user_func("User::say_hello");
+```
