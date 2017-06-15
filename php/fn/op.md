@@ -247,6 +247,18 @@ if (fnmatch("*gr[ae]y", $color)) {
 
 ## call_user_func
 
+### 调用一般的函数
+
+```php
+function say($name){
+    echo "hello boy ".$name;
+}
+
+
+call_user_func('say','peter'); 
+
+//hello boy peter
+```
 ### 调用对象的方法
 
 ```php
