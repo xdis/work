@@ -50,7 +50,7 @@
 		- vding_v2
 			- vue首次的操作
 				- cd 根目录/vfet
-				- npm install
+				- npm install /yarn install
 				- npm run build
 	- 总结
 		- beforeAction优先于behavior的执行
