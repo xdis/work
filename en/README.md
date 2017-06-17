@@ -25,20 +25,20 @@
 
 ## fn
 
-|词性的简写|
-|:----    |:---|:----- |----- |-----  |
-|名词|Noun||n.|Boy|Water|
-|动词|Verb|v.|Raise|Rise|
-|形容词|Adjective|adj.|Beautiful|Fine|
-|副词|Adverb||adv.|Often|Carefully|
-|代词|Pronoun|pron.|They|It|
-|介词|Preposition|prep.|In|With|
-|连词|Conjunction|conj.|And|But|
-|数词|Number|num.|One|First|
+词性的简写|&nbsp;|&nbsp;|&nbsp;|&nbsp;
+----|---|----- |----- |-----
+名词|Noun|n.|Boy|Water
+动词|Verb|v.|Raise|Rise
+形容词|Adjective|adj.|Beautiful|Fine
+副词|Adverb||adv.|Often|Carefully
+代词|Pronoun|pron.|They|It
+介词|Preposition|prep.|In|With
+连词|Conjunction|conj.|And|But
+数词|Number|num.|One|First
 
 - 构词法
 
-|构成名词的词尾 |
+|构成名词的词尾|&nbsp;|&nbsp;
 |:----    |:--- |-----   |
 |-er fighter |-or sailor| -ist artist|
 |-ant assistant |-ee employee |-ian librarian|
@@ -46,18 +46,18 @@
 |-ness eagerness |-ism socialism |-ship friendship|
 |-ure pleasure |-ty cruelty| -ence reference|
 
-|构成形容词的词尾 |
+|构成形容词的词尾 |&nbsp;|&nbsp;
 |:----    |:---|:-----  |
 |-ful careful |-less careless |-ish selfish|
 |-ive active |-ous famous| -able drinkable|
 |-ible audible |-y easy |-ese Chinese|
 |-al natural |-ent different| -ant important|
 
-|构成动词的词尾 |
+|构成动词的词尾 |&nbsp;|&nbsp;
 |:----    |:---|:-----   |
 |-ize realize |-en strengthen |-ify simplify|
 
-|构成副词的词尾 |
+|构成副词的词尾 |&nbsp;|&nbsp;
 |:----    |:---|:-----   |
 |-ly luckily| -ward(s)homeward |-wise likewise
 
