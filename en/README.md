@@ -2,6 +2,7 @@
 
 ## 常用
 - 冠词 a the 区分
+
 ![](fn/op/a_the.png)
 
 	- 单数 a,复制加s	[如果没有说要多少个/只,则使用复数s]
@@ -25,7 +26,7 @@
 ## fn
 
 |词性的简写|
-|:----    |:---|:----- |-----   |
+|:----    |:---|:----- |----- |-----  |
 |名词|Noun||n.|Boy|Water|
 |动词|Verb|v.|Raise|Rise|
 |形容词|Adjective|adj.|Beautiful|Fine|
@@ -38,7 +39,7 @@
 - 构词法
 
 |构成名词的词尾 |
-|:----    |:---|:----- |-----   |
+|:----    |:--- |-----   |
 |-er fighter |-or sailor| -ist artist|
 |-ant assistant |-ee employee |-ian librarian|
 |-tion action |-ment government| -dom freedom|
@@ -46,18 +47,18 @@
 |-ure pleasure |-ty cruelty| -ence reference|
 
 |构成形容词的词尾 |
-|:----    |:---|:----- |-----   |
+|:----    |:---|:-----  |
 |-ful careful |-less careless |-ish selfish|
 |-ive active |-ous famous| -able drinkable|
 |-ible audible |-y easy |-ese Chinese|
 |-al natural |-ent different| -ant important|
 
 |构成动词的词尾 |
-|:----    |:---|:----- |-----   |
+|:----    |:---|:-----   |
 |-ize realize |-en strengthen |-ify simplify|
 
 |构成副词的词尾 |
-|:----    |:---|:----- |-----   |
+|:----    |:---|:-----   |
 |-ly luckily| -ward(s)homeward |-wise likewise
 
 
