@@ -64,9 +64,25 @@
 
 
 - 基本句型
+	- 例句_最近,这个公共的活动获得支持,也就是政府的资金
+		- 修饰名称:定语
+		- 修改句子:状态
+		- 解释名称:同位语
 	- 简单句	
-		- 主（Subject）谓宾（Object）
-		- 主（Subject）谓
-		- 主（Subject）谓双宾（ Double-Objects ）
-		- 主（Subject）谓宾（ Object ）补（ Complement ）
-		- 主（Subject）系表（Predictive）
+		- [主谓宾](base.md#主谓宾)
+			- 谓词动词
+				- [例句_政府应该打击暴力不色情信息](base.md#例句_政府应该打击暴力不色情信息)
+					- shoult fight  辅助动词+实在动词 = 谓词动词
+						- shoult 为情态动词 也叫 辅助动词
+						- fight 为实实在在的动词 也叫 实义动词
+			- 动名词作主语
+				- [例句_学一门外语有劣于求职](base.md#例句_学一门外语有劣于求职)
+					- learn动词要做主语,所以加 ing,变成动名词才能做主语
+					- 动名词作主语,所以动名词是看作**单数**,谓语动词要加s 如contributes to
+					- 阅读有利于学习 Reading benefits learing.
+						-  read是动词,要做主语,则必须加ing 变成 reading
+						-  动名词看作单三(单数第三人称),所以谓语动词要加s
+		- 主谓
+		- 主谓双宾
+		- 主谓宾补
+		- 主系表
