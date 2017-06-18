@@ -20,9 +20,9 @@
 > 关键词：violence, pornography  
 > Governments should fight violence and pornography.
 
-![](/taiji/1/1_subject_object.png)
+![](taiji/1/1_subject_object.png)
 
-![](/taiji/1/1.1_subject_object.png)
+![](taiji/1/1.1_subject_object.png)
 
 
 ## 过程总结
@@ -35,8 +35,8 @@
 > 关键词：contribute to  
 > Learning a foreign language contributes to job hunting.
 
-![](/taiji/1/2.1_subject_object.png)
-![](/taiji/1/2_subject_object.png)
+![](taiji/1/2.1_subject_object.png)
+![](taiji/1/2_subject_object.png)
 
 ## 过程总结
 -  动名词作主语
