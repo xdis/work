@@ -1,3 +1,18 @@
+# 及物劢词和丌及物劢词
+## raise和rise区分
+> You raise me up.
+> The sun is rising.
+
+![](taiji/vi_vt.png)
+
+
+**总结**
+- 动词后面跟名词(宾语) 叫及物,否则叫不及物
+- You raise me up  #raise 翻译:举起 抬起
+	- 你举起我  raise 后面跟 宾语则是 及物动词
+- The sun is rising. #rise 翻译:上升
+	-  太阳升起 rise后面没有跟对象(物),所以叫不及物动词 
+
 # 基本句型
 
 ## 例句_最近,这个公共的活动获得支持,也就是政府的资金
@@ -50,4 +65,26 @@
 		- contribute to + 名	 	#不及物动词
 
 
-## 
+## 主谓
+
+## **例句_犯罪率正在大幅度下降**
+> The crime rate is falling significantly.
+
+![](taiji/1/2.subject.png)
+![](taiji/1/2.1subject.png)
+
+## 过程总结
+- significantly 状语,意思 "大幅度"
+	- 副词,所以可以放在 falling的前面,即 significantly falling
+- 谓语 "下降"
+	- 判断及物与不及物
+		- 只有什么什么下降,不能说下降什么什么
+		- 下隆后面跟不上物(宾语),则叫 不及物动词
+
+## 主谓双宾
+
+### 区分间接宾语和直接宾语
+![](taiji/1/3.subject_dObject.png)
+
+## 过程总结
+- 我买票,不是买人,所以 a ticket是直接宾语 
