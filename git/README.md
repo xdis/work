@@ -115,6 +115,8 @@
 		    - git pull origin dev  (再次拉取)
 		    - 没有出现问题
 		    - git push origin dev 
+		- 使用rsync对多个服务器推送数据
+			 - rsync  /path/to/code user@127.0.0.1::path/to/code  --exclude-list=exclude.list
 
 	- 案例
 		- [一般使用流程](use.md#一般使用流程)
