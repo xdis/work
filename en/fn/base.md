@@ -12,6 +12,7 @@
 	- 你举起我  raise 后面跟 宾语则是 及物动词
 - The sun is rising. #rise 翻译:上升
 	-  太阳升起 rise后面没有跟对象(物),所以叫不及物动词 
+- 不及物动词+介词(如 to),就变成及物了
 
 # 基本句型
 
@@ -87,4 +88,76 @@
 ![](taiji/1/3.subject_dObject.png)
 
 ## 过程总结
-- 我买票,不是买人,所以 a ticket是直接宾语 
+- 我给他买了票
+	- I bought him a ticket.
+	- I bought a ticket for him. 
+
+## 过程总结
+- 我买票,不是买人,所以 **a ticket**是直接宾语 
+
+## 例句_赌博会给我们带来金钱的损失
+> 关键词：gambling  
+> Gambling could bring us loss of money.  
+
+![](taiji/1/3.1.subject_dObject.png)
+![](taiji/1/3.2.subject_dObject.png)
+
+## 过程总结
+- 赌博会给我们带来金钱的损失
+	- Gambling could bring us loss of money.
+	- Gambling could bring loss of money to us.
+
+## 例句_社区服务给了孩子们一个给社会做贡献的途径
+> 关键词：contribute to
+
+![](taiji/1/3.4.subject_dObject.png)  
+
+![](taiji/1/3.3.subject_dObject.png)  
+
+## 过程总结
+- 社区服务给了孩子们一个途径
+	- Community service gives children a way.
+	- Community service gives a way to children.
+- to contribute to society 定语修饰 a way
+
+## 主谓宾补
+
+# 形容词做补语
+
+## 例句_孩子们的经验丌足使他们易受伤害
+>Children’s inexperience makes them vulnerable.
+
+![](taiji/1/4.subject_object_c.png) 
+![](taiji/1/4.1.subject_object_c.png) 
+
+## 过程总结
+- 最简单的主谓宾补 I found him ill.
+
+# 动词不定式做补语
+
+## 例句_互联网诱使人们梦想一夜暴富
+> 关键词：tempt
+> The Internet tempts people to dream of being rich rapidly.
+
+![](taiji/1/4.2.subject_object_c.png) 
+![](taiji/1/4.3.subject_object_c.png) 
+
+## 过程总结
+- 我想她知道  I want her to know.
+- tempts及物动词,要补充说明
+- tempts和dream两个动词之间用to联接起来
+
+## 主系表
+
+## 例句_电视能够成为一种信息的来源
+>Television can be a source of information.  
+
+![](taiji/1/5.xi.png)
+![](taiji/1/5.1.xi.png)
+
+## 例句_我感到困惑和沮丧
+> 关键词：puzzled, upset  
+>I feel puzzled and upset.   
+
+![](taiji/1/5.2.xi.png)
+

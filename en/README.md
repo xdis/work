@@ -61,9 +61,11 @@
 |:----    |:---|:-----   |
 |-ly luckily| -ward(s)homeward |-wise likewise
 
-
-- 及物劢词和丌及物劢词
-	- [raise和rise区分](fn/base.md#raise和rise区分)
+- 总结
+	- 及物劢词(vi)和不及物动词（vt）
+		- [raise和rise区分](fn/base.md#raise和rise区分)
+	- 宾语 都是用名词 
+	- 
 - 基本句型
 	- 例句_最近,这个公共的活动获得支持,也就是政府的资金
 		- 修饰名称:定语
@@ -87,5 +89,25 @@
 			- [例句_犯罪率正在大幅度下降](fn/base.md#例句_犯罪率正在大幅度下降)
 		- 主谓双宾
 			- [区分间接宾语和直接宾语](fn/base.md#区分间接宾语和直接宾语)
+			- [例句_赌博会给我们带来金钱的损失](fn/base.md#例句_赌博会给我们带来金钱的损失)
+			- [例句_社区服务给了孩子们一个给社会做贡献的途径](fn/base.md#例句_社区服务给了孩子们一个给社会做贡献的途径)
 		- 主谓宾补
+			- 形容词做补语
+				- [例句_孩子们的经验丌足使他们易受伤害](fn/base.md#例句_孩子们的经验丌足使他们易受伤害)
+				- 最简单的主谓宾补 I found him ill.
+			- 动词不定式做补语
+				- [例句_互联网诱使人们梦想一夜暴富](fn/base.md#例句_互联网诱使人们梦想一夜暴富)
+				- 我想她知道  I want her to know.
 		- 主系表
+			- [例句_电视能够成为一种信息的来源](fn/base.md#例句_电视能够成为一种信息的来源)
+				- be劢词：理解为“是”
+			- [例句_我感到困惑和沮丧](fn/base.md#例句_我感到困惑和沮丧)
+				- 感官劢词：feel, look, smell, sound, taste
+
+趋势动词|&nbsp;|&nbsp;|&nbsp;
+----|---|-----|-----|
+grow|become|turn|get
+fall|go|run|&nbsp;
+keep|remain|stay|rest
+appear|seem|prove|&nbsp;
+
