@@ -1,6 +1,8 @@
 # 基础
-## 条件控制
 
+# 条件控制
+
+## if/elif
 ```python
 #!/usr/bin/python3
 age = int(input("请输入你的年龄"))
