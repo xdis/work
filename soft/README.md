@@ -1,4 +1,11 @@
 # 软件
+- 下载神器
+	- 流媒体
+		- Chrome 配合 IDM 
+			- 安装 Internet Download Manager （IDM）
+				- 官网地址 https://www.internetdownloadmanager.com/
+			- 启动 Chrome ，提示添加了 IDM Integration Module 扩展
+		- VSO Downloader [破解版已放百度云盘]
 - excel
 	- 相对单元格如 A3变为 $A$3
 		- 固定单元格A3与其它的单元计算 如 $A$3 * A4
