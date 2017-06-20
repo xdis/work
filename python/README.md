@@ -4,3 +4,4 @@
 ## 基础
 - 条件控制
 	- [if/elif](fn/base.md#if/elif) 
+	- [try/except/while](fn/base.md#try/except/while)  
