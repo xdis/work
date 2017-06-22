@@ -9,6 +9,7 @@
     - [linux](linux/)
 	- [mysql](mysql/)
 	- [git](git/)
+	- [python](python/)
 - Other
 	- [en](en/)
 
