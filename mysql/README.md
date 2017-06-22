@@ -49,7 +49,7 @@
 		left join (SELECT Amount,CreateTime,LoanId FROM invest WHERE IsValid = 1 AND invest.TransferFlag != 3) AS invest 
 		```
 	- function函数
-		- [循环DECLARE cur_1 CURSOR再运行操作](fn/function/function_循环DECLARE_cur_1 CURSOR再运行操作.sql)
+		- [循环DECLARE cur_1 CURSOR再运行操作](fn/function/function_循环DECLARE cur_1_CURSOR再运行操作.sql)
 	- 找回密码
 	  - 方法1
 		  - 在 [mysqld]  加入 skip_grant_tables
