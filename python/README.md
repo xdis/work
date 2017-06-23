@@ -38,8 +38,33 @@
 		- [global_demo](fn/base.md#global_demo)
 		- [nonlocal_demo](fn/base.md#nonlocal_demo)
 - 类对象
+	- 类的专有方法
+		- `__init__` : 构造函数，在生成对象时调用
+		- `__del__` : 析构函数，释放对象时使用
+		- `__repr__` : 打印，转换
+		- `__setitem__` : 按照索引赋值
+		- `__getitem__`: 按照索引获取值
+		- `__len__`: 获得长度
+		- `_cmp__`: 比较运算
+		- `__call__`: 函数调用
+		- `__add__`: 加运算
+		- `__sub__`: 减运算
+		- `__mul__`: 乘运算
+		- `__div__`: 除运算
+		- `__mod__`: 求余运算
+		- `__pow__`: 称方
+	- 私有变量前面加__ 	如	__secretCount = 0
+	- 私有方法前面加__	如  def __foo(self): 
 	- [访问类的属性和方法](fn/base.md#访问类的属性和方法)
 	- [构造函数__init__](fn/base.md#构造函数__init__)
 	- [self代表类的实例_而非类](fn/base.md#self代表类的实例_而非类)
 	- [类的方法_def和self](fn/base.md#类的方法_def和self)
-	- 继承
+	- [继承](fn/base.md#继承)
+	- [多继承](fn/base.md#多继承)
+	- [方法重写](fn/base.md#方法重写)
+	- [运算符重载](fn/base.md#运算符重载)
+- Python3标准库
+	- [操作系统接口](fn/base.md#操作系统接口)
+		- os.getcwd()
+		- 进入目录 os.chdir('/server/accesslogs')
+		- 创建目录  os.system('mkdir today')
