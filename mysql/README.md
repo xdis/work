@@ -16,10 +16,25 @@
 				- 无符号整数 : UNSIGNED
 			- 举例
 				- select cast(‘125e342.83’ as signed) as clm1		//转换正型
+	- 批量查询表的记录数量
+		- use information_schema
 
+			```
+			SELECT CONCAT(
+			    'select "', 
+			    TABLE_name, 
+			    '", count(*) from ', 
+			    TABLE_SCHEMA, 
+			    '.',
+			    TABLE_name,
+			    ' union all'
+			) FROM TABLES 
+			WHERE TABLE_SCHEMA='数据库名';
+			```
 	- 1=1妙用
 		- AND IF(_which_day !='0000-00-00', dj_checklist.which_date = _which_day, '1=1') 
 	- 动态执行sql
+
 		```
 		BEGIN
 		 SET @sql = concat('select * from ', $tableName);	 
@@ -33,6 +48,8 @@
 		```
 		left join (SELECT Amount,CreateTime,LoanId FROM invest WHERE IsValid = 1 AND invest.TransferFlag != 3) AS invest 
 		```
+	- function函数
+		- [循环DECLARE cur_1 CURSOR再运行操作](fn/function/function_循环DECLARE_cur_1_CURSOR再运行操作.sql)
 	- 找回密码
 	  - 方法1
 		  - 在 [mysqld]  加入 skip_grant_tables

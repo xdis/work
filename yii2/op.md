@@ -162,4 +162,24 @@ public function actionIndex()
 }
 ```
 
----
+## glide控制生成图片指定大小
+
+```php
+$picUrl = Yii::$app->glide->createSignedUrl([
+                    'glide/index',
+                    'path' => $thumbnail_path,
+                    'w' => 650,
+                    'h' => 440,
+                    'fit' => 'crop',
+                ], true);
+
+$picUrl = Yii::$app->glide->createSignedUrl([
+                    'glide/index',
+                    'path' => $thumbnail_path,
+                    'w' => 650,
+                    'h' => 440,
+                ], true);
+
+ 'glide/index', 是固定的
+ 只有path是必须参数
+```

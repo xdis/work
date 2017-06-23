@@ -52,6 +52,7 @@
 				- cd 根目录/vfet
 				- npm install /yarn install
 				- npm run build
+		- [glide控制生成图片指定大小](op.md#glide控制生成图片指定大小)
 	- 总结
 		- beforeAction优先于behavior的执行
 			- 来源于 [服务模块仅企业帐号可登陆](vding_api.md#服务模块仅企业帐号可登陆) 
