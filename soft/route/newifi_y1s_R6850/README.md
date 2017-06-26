@@ -1,3 +1,4 @@
+# newifi_y1_R6850刷机
 配置情况 | &nbsp;
 ------------ | -------------
 CPU | MediaTek MT7620A ver 2, eco 6
