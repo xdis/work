@@ -161,3 +161,48 @@
 
 ![](taiji/1/5.2.xi.png)
 
+## 趋势动词
+趋势动词|&nbsp;|&nbsp;|&nbsp;
+----|---|-----|-----|
+grow|become|turn|get
+fall|go|run|&nbsp;
+keep|remain|stay|rest
+appear|seem|prove|&nbsp;
+
+# 并列句
+> 1、用并列关系词：and, or, either…or…,neither…nor…, not only…but also…  
+> 2、用转折关系词：but, yet, while, whereas  
+> 3、用分号并列,后面跟**小写**
+
+## 错误表达
+```
+错误表达：The human race has entered a
+marvelous age, the world is developing at an
+amazing rate.
+```
+![](taiji/1/binglie1.png)
+
+## 正确表达
+
+![](taiji/1/binglie2.png)
+![](taiji/1/binglie3.png)
+
+正确表达3： The human race has entered amarvelous age; **t**he world is developing at anamazing rate.
+![](taiji/1/binglie4.png)
+
+## 复合句
+> I bought a book that was written by a famous person when I went to a shop which was near my home yesterday.  
+
+![](taiji/1/fuhe1.png)
+
+
+## 并列复合句
+> Some think that dinosaurs are cold-blooded, whileothers oppose that they have many features ofwarm-blooded animals.  
+
+![](taiji/1/binglieFuHe1.png)
+![](taiji/1/binglieFuHe2.png)
+
+# 动词
+# 非谓语动词
+## 动词不定式
+
