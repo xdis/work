@@ -87,5 +87,5 @@
 				- [官网](http://www.itkeji.top "官网")
 			- [breed包下载](https://breed.hackpascal.net/)
 			- [固件下载](http://p4davan.80x86.io/download/ " 固件下载")
-		- [newifi_y1_R6850刷机](/route/newifi_y1s_R6850/README.md)
+		- [newifi_y1_R6850刷机](route/newifi_y1s_R6850/README.md)
 		
