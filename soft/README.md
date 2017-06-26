@@ -79,3 +79,13 @@
  - 路由器
 	- ss上不了网的解决方案
 		- 修改DNS Provider第二或第三选项 与 端口由原来的 443修改为53
+	- 有时候2.4信号或5信号找不到
+		- 修改无线区域 
+	- 刷机
+		- 工具
+			- [路由器刷breed Web助手下载](http://qiannao.com/ls/huzibbs/01399c29/)
+				- [官网](http://www.itkeji.top "官网")
+			- [breed包下载](https://breed.hackpascal.net/)
+			- [固件下载](http://p4davan.80x86.io/download/ " 固件下载")
+		- newifi_y1s_R6850
+		
