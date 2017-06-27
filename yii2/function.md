@@ -108,6 +108,24 @@ $result = ArrayHelper::getColumn($array, function ($element) {
 });
 ```
 
+## 项目例子_获取指定的字段的值
+
+```php
+/*
+    * @param $company_id 公司ID
+    * @param $user_id 用户ID
+    * 获取用户的角色，如果用户是超级管理员，不需要调用这个函数
+    */
+public function getUserRoles($company_id,$user_id){
+    $query = AuthAssign::find()
+        ->select('auth_item_id')
+        ->where(['user_id'=>$user_id,'company_id'=>$company_id]);
+    $roles = $query->asArray()->all();
+
+    return $roles?ArrayHelper::getColumn($roles,'auth_item_id'):[];
+}
+```
+
 ## 配置多个数据库_lh
 common/config/web.php    
 ```php

@@ -729,3 +729,250 @@ public function actionCreate()
         }
     }
 ```
+
+# 企业后台权限控制_v2
+[源代码](rbac/企业后台权限控制_v2_source)  
+
+## 表的数据结构_v2
+
+```
+# auth_assign  角色指派 
+CREATE TABLE `auth_assign` (
+  `auth_item_id` int(11) NOT NULL,
+  `auth_item_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '角色名、权限名',
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL COMMENT '企业ID',
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`auth_item_id`,`user_id`,`company_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户关联角色表'
+
+# auth_item  创建权限
+CREATE TABLE `auth_item` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '角色名、权限名',
+  `url` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `industry_appid` tinyint(11) DEFAULT NULL COMMENT '企业开通的应用//look_up(industry_appid)',
+  `company_id` int(11) DEFAULT '0' COMMENT '企业ID 0表示共用',
+  `parent_id` int(11) DEFAULT '0' COMMENT '父级',
+  `type` tinyint(4) NOT NULL COMMENT '类型：1角色 2权限,3 特殊权限,4 菜单',
+  `description` text CHARACTER SET utf8 COLLATE utf8_bin COMMENT '描述',
+  `visible` tinyint(4) DEFAULT '1' COMMENT '是否显示//0 否，1 是',
+  `level` tinyint(4) DEFAULT '0' COMMENT '级别//-1 type为角色时,0 应用（模块级）， 1 控制器， 2  操作 ',
+  `depth` int(4) DEFAULT '0' COMMENT '节点深度// 顶级 0 ， 一级 1，  二级 2 ， 三级 3 ... (程序如果需要可以使用这个字段）',
+  `status` tinyint(11) unsigned DEFAULT '1' COMMENT '状态 1有效 0无效',
+  `sort` mediumint(8) DEFAULT '0' COMMENT '排序，值越大，排越前',
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  `is_platform` tinyint(4) DEFAULT '0' COMMENT '是否为平台角色权限 1:是 0:不是',
+  `api_url` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `type` (`type`) USING BTREE,
+  KEY `company_id` (`company_id`) USING BTREE,
+  KEY `url` (`url`) USING BTREE,
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4993 DEFAULT CHARSET=utf8 COMMENT='角色、权限表'
+
+
+# auth_item_child  创建角色
+CREATE TABLE `auth_item_child` (
+  `parent` int(11) NOT NULL COMMENT 'auth_item=>id type=1',
+  `child` int(11) NOT NULL COMMENT 'auth_item=>id type=2',
+  PRIMARY KEY (`parent`,`child`),
+  KEY `child` (`child`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色权限关联表'
+
+```
+
+# 配置文件及过滤
+## 自定义globalAccesss配置_v2
+**company/config/web.php**
+```php
+'as globalAccess'=>[
+        'class'=>'\common\behaviors\GlobalAccessBehavior',
+        'accessControlFilter' => 'common\filters\UrlAccessFilter'
+    ],
+```
+
+## 改造过的过滤器_v2
+**common/filters/UrlAccessFilter.php**
+
+```php
+
+namespace common\filters;
+
+use Yii;
+use yii\base\ActionFilter;
+use yii\web\ForbiddenHttpException;
+use company\models\AuthAssign;
+use yii\di\Instance;
+use yii\caching\Cache;
+use company\models\RoleManageForm;
+
+class UrlAccessFilter extends ActionFilter
+{
+    public $db = 'db';
+
+    public $cache;
+
+    public $cacheKey = 'vding_rbac';
+
+    /**
+     * @var Item[] all auth items (name => Item)
+     */
+    protected $items;
+
+    public $denyCallback;
+
+    public $rules;
+
+    /**
+     * 需要登录但是不需要rbac控制的
+     * @var array
+     */
+    public $noRbacController = [
+        'site', // site/error default error handle action
+        'debug',
+        'util',
+        'admin-notice',
+        'company-notice',
+    ];
+
+    /**
+     * 不需要登录的
+     * @var array
+     */
+    public $publicController= [
+        'sign-in',
+        'settle-in', //企业入驻
+        'payment',
+        'binding',
+        'alipay',
+        'wechat-pay',
+        'new',
+        'sms-util',
+        'upload-util',
+        'verify-code',
+        'alipay',
+        'error',
+        'city'//城市搜索
+    ];
+
+    public $publicModules = [
+        'shop',
+    ];
+
+    public $noRbacModules = [
+        'debug',
+        'ucenter',
+        'admin',
+    ];
+
+    public $noRbacAction = [
+        'index/index',
+        'company-account/check-condition',//检测提现条件是否满足  例如：实名认证，设置支付密码，綁卡
+        'car/requisition/validate-form',
+        'auth/load-auth-date',//异步加载权限数据
+        'product-line/list',//线路管理--列表--view
+        'product-line/preset-setting',//线路管理--预定设置--view
+        'product-line/price-date',//线路管理--价格班期--view
+        'product-line/delivery',//线路管理--分销商须知--view
+        'product-line/detail',//线路管理--详情--view
+        'product-line/to-do-list',
+        'product-line/procurement',
+        'product-line/order-list',//线路订单管理列表
+        'product-line/order-detail',//线路订单详情
+        'product-line/product-route-view',//线路详情页面
+        'product-line/product-trip-list',//行程列表
+        'product-line/base-info',//基本信息--view
+        'product-line/travel',//行程安排--view
+        'line-order/order-list',//线路订单列表
+        'index/company-list',//获取公司列表
+    ];
+
+    /**
+     * @param \yii\base\Action $action
+     * @return bool
+     * @throws ForbiddenHttpException
+     */
+    public function beforeAction($action)
+    {
+        $module_id = $action->controller->module->id;
+        $url = $action->getUniqueId();
+        $controller = $action->controller->id;
+        $user = Yii::$app->user;
+
+        //fix module layout
+        if (in_array($module_id, ['sms', 'settings', 'lookup', 'log', 'key-storage', 'cache', 'file-manager', 'system-information'])) {
+            Yii::$app->name = '平台管理后台';
+            $action->controller->layout = '@company/modules/admin/views/layouts/main'; //your layout name
+        }
+
+        if (in_array($module_id, $this->publicModules)) {
+            $action->controller->layout = 'main'; //your layout name
+        }
+
+        if (in_array($module_id, $this->publicModules)) {
+            return true;
+        }
+        if (in_array($controller, $this->publicController)) {
+            return true;
+        }
+        //登录检测
+        if ($user->getIsGuest()) {
+            $user->loginRequired();
+            return false;
+        }
+        if (in_array($controller, $this->noRbacController)) {
+            return true;
+        }
+        if (in_array($module_id, $this->noRbacModules)) {
+            return true;
+        }
+        if (in_array($url, $this->noRbacAction)) {
+            return true;
+        }
+
+        //必须是 company_id = 1 的用户才能进这里
+        if (in_array($module_id, ['admin', 'sms', 'lookup']) && $compnayId && Yii::$app->user->isAdminCompany()) {
+            if (Yii::$app->user->isCompanySuperUser()) {
+                //超级管理员不检测
+                return true;
+            }
+            $items = AuthAssign::findByUserId($userId, 1);
+            foreach ($items as $item) {
+                foreach($item->authItem->children as $node) {
+                    if ($node) {
+                        if ($url == trim($node->url, '/')) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        $roleManage = new RoleManageForm;
+        return $roleManage->checkAccess($module_id,$controller,$action->id);
+    }
+
+    /**
+     * Denies the access of the user.
+     * The default implementation will redirect the user to the login page if he is a guest;
+     * if the user is already logged, a 403 HTTP exception will be thrown.
+     * @param User $user the current user
+     * @throws ForbiddenHttpException if the user is already logged in.
+     */
+    protected function denyAccess($url)
+    {
+        $user = Yii::$app->user;
+        if ($user->getIsGuest()) {
+            $user->loginRequired();
+        } else {
+            if (YII_ENV_DEV || YII_ENV_TEST) {
+                return true;
+            }
+            throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
+        }
+    }
+}
+```
+

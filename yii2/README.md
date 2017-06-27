@@ -64,6 +64,7 @@
 			- [ArrayHelper::merge](function.md#ArrayHelper_merge) 数组合并
 			- [ArrayHelper::map](function.md#ArrayHelper_map) //获取自定义键名/键值的数组
 			- [ArrayHelper::column](function.md#ArrayHelper_column) 获取数组指定的字段
+				- 项目例子_获取指定的字段的值
 		-  上传 upload
 			-  [API通用上传接口_每次仅上传一个_lm](fn/upload_lm.md#API通用上传接口_每次仅上传一个_lm) 
 		- db
@@ -301,6 +302,17 @@
 					- [auth_assign_列表页](fn/rbac.md#auth_assign_列表页)
 					- [auth_assign_创建页](fn/rbac.md#auth_assign_创建页)
 					- [auth_assign_编辑](fn/rbac.md#auth_assign_编辑)
+		- 企业后台权限控制_v2 [i2.vding.dev]
+			- [表的数据结构_v2](fn/rbac.md#表的数据结构_v2)
+			- 配置文件及过滤
+					- [自定义globalAccesss配置_v2](fn/rbac.md#自定义globalAccesss配置_v2)
+					- [改造过的过滤器_v2](fn/rbac.md#改造过的过滤器_v2) 
+			- auth_item_v2  角色/权限/特殊权限/菜单_添加
+
+			- auth_item_child_v2 角色分配权限
+
+			- auth_assign_v2 角色指派
+
 		- yii2 admin 分析
 			- 	
 	- 配置
