@@ -976,3 +976,36 @@ class UrlAccessFilter extends ActionFilter
 }
 ```
 
+# auth_item_v2
+> 创建角色使用  
+
+[时序图](../uml/rbac_vding_v2/角色添加.oom)  
+
+## auth_item_child_列表页
+> http://i2.vding.dev/role-manage/list  
+
+![](rbac/rbac_vding_v2/auth_item_child_list.png)
+
+**company/controllers/RoleManageController.php**
+
+```php
+/*
+    * @API 子账号管理 -- 角色管理 -- 子账号角色列表
+    * @param int $company_id
+    * @param string $role_name
+    * @param int $page_index
+    * @param int $page_size
+    */
+public function actionList()
+{
+    if(!Yii::$app->request->isPost){
+        return $this->render('index',[]);
+    }
+    $keyword = Yii::$app->request->post('role_name');
+    $pageIndex = Yii::$app->request->post('page_index',1);
+    $pageSize = Yii::$app->request->post('page_size',5);
+    $pageOffset = $pageSize*($pageIndex-1);
+    $list = (new RoleManageForm)->roleList($keyword,$pageOffset,$pageSize);
+    return $this->ajaxSuccess('','',$list);
+}
+```
