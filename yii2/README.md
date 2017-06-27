@@ -305,8 +305,8 @@
 		- 企业后台权限控制_v2 [i2.vding.dev]
 			- [表的数据结构_v2](fn/rbac.md#表的数据结构_v2)
 			- 配置文件及过滤
-					- [自定义globalAccesss配置_v2](fn/rbac.md#自定义globalAccesss配置_v2)
-					- [改造过的过滤器_v2](fn/rbac.md#改造过的过滤器_v2) 
+				- [自定义globalAccesss配置_v2](fn/rbac.md#自定义globalAccesss配置_v2)
+				- [改造过的过滤器_v2](fn/rbac.md#改造过的过滤器_v2) 
 			- auth_item_v2  角色/权限/特殊权限/菜单_添加
 
 			- auth_item_child_v2 角色分配权限
