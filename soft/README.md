@@ -5,12 +5,16 @@
 		- start /f/cmk100/gitwork/soft/fn;   (cmder命令行操作) 
 - vscode
 	- PC配置
-		- 路径  C:\Users\Administrator\AppData\Roaming\Code\User
+		- 路径  C:\Users\Administrator\AppData\Roaming\Code\User  (Administrator为用户名)
 		- [keybindings.json](fn/vscode/keybindings.json)
 		- [settings.json](fn/vscode/settings.json)
 -   - 安装的扩展
 		- Markdown All in One
 		- Markdown Theme Kit
+	- 快捷键
+		- ctrl+shift+s 打开当前的文件的window资源管理器
+		- alt+s 在右边打开当前的markdown的预览
+		- alt+` 显示/隐藏 侧边栏
 -   - 颜色主题
 		- Light(Visual Studio)
 - 格式转化

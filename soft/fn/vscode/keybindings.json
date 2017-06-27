@@ -13,5 +13,17 @@
     {
         "key": "alt+`",
         "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "alt+1",
+        "command": "workbench.action.switchWindow"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.files.revealActiveFileInWindows"
+    },
+    {
+        "key": "ctrl+k r",
+        "command": "-workbench.action.files.revealActiveFileInWindows"
     }
 ]
