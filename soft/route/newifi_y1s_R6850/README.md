@@ -23,5 +23,5 @@ Flash | Winbond W25Q128 @ 24MHz (16MB)
 
 ## 还原之前系统
 - 固件更新 -> 编辑器固件 选择 "编辑器固件" 即可
-![](../images/reset_os1.png) 
+	![](../images/reset_os1.png) 	
 	![](../images/reset_os2.png)

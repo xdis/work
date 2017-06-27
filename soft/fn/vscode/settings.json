@@ -1,0 +1,9 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "workbench.colorTheme": "Visual Studio Light",
+    "window.menuBarVisibility": "default",
+    "markdown.preview.scrollPreviewWithEditorSelection": false,
+    "files.autoSave": "afterDelay",
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": true
+}
