@@ -205,4 +205,9 @@ amazing rate.
 # 动词
 # 非谓语动词
 ## 动词不定式
+>事事皆懂，无一精通  
+>To know everything is to know nothing.  
+
+
+
 
