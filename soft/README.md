@@ -1,4 +1,15 @@
 # 软件
+- 命令行打开window资源管理器
+	- start + 路径
+		- start c:\
+		- start /f/cmk100/gitwork/soft/fn;   (cmder命令行操作) 
+- vscode
+	- PC配置
+		- 路径  C:\Users\Administrator\AppData\Roaming\Code\User
+		- [keybindings.json](fn/vscode/keybindings.json)
+		- [settings.json](fn/vscode/settings.json)
+- 格式转化
+	- 格式工厂 (包括音频\视频等)
 - 下载神器
 	- 流媒体
 		- Chrome 配合 IDM 
