@@ -8,6 +8,11 @@
 		- 路径  C:\Users\Administrator\AppData\Roaming\Code\User
 		- [keybindings.json](fn/vscode/keybindings.json)
 		- [settings.json](fn/vscode/settings.json)
+-   - 安装的扩展
+		- Markdown All in One
+		- Markdown Theme Kit
+-   - 颜色主题
+		- Light(Visual Studio)
 - 格式转化
 	- 格式工厂 (包括音频\视频等)
 - 下载神器
