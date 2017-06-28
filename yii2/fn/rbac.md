@@ -981,7 +981,7 @@ class UrlAccessFilter extends ActionFilter
 
 [时序图](../uml/rbac_vding_v2/角色添加.oom)  
 
-## auth_item_child_列表页
+## auth_item_child_列表页_v2
 > http://i2.vding.dev/role-manage/list  
 
 ![](rbac/rbac_vding_v2/auth_item_child_list.png)
@@ -1007,5 +1007,208 @@ public function actionList()
     $pageOffset = $pageSize*($pageIndex-1);
     $list = (new RoleManageForm)->roleList($keyword,$pageOffset,$pageSize);
     return $this->ajaxSuccess('','',$list);
+}
+```
+
+## auth_item_child_创建页_v2
+> http://i2.vding.dev/role-manage/create  
+
+[角色添加_时序图](../uml/rbac_vding_v2/角色添加.oom)  
+
+["分配权限" 列表_时序图](../uml/rbac_vding_v2/分配权限_列表.oom)  
+
+![](rbac/rbac_vding_v2/auth_item_child_create.png)
+
+**company/controllers/RoleManageController.php**
+
+```php
+/*
+    * @API 子账号管理 -- 角色管理 -- 创建角色
+    */
+public function actionCreate()
+{
+    if(!Yii::$app->request->isPost){
+        return $this->render('create',[]);
+    }
+    $role_name = Yii::$app->request->post('role_name');
+    $company_id = Yii::$app->user->getCompanyId();
+    if($this->isRoleNameExist($role_name,$company_id)){
+        return $this->ajaxFail('角色名称已经存在','','');
+    }
+    $model = new AuthItem();
+    $model->scenario = AuthItem::SCENE_ROLE_AUTH;
+    $model->type = AuthItem::TYPE_ROLE;
+    if ($model->load(Yii::$app->request->post(),'')) {
+        $model->company_id = Yii::$app->user->getCompanyId();
+        $role_auth_id = Yii::$app->request->post('role_auth_id');
+        $model->name = Yii::$app->request->post('role_name');
+        $model->description = Yii::$app->request->post('role_desc');
+        //创建角色并分配权限
+        if ($model->editAuth(1, $role_auth_id)){
+            return $this->ajaxSuccess('添加角色成功','','');
+        }
+        return $this->ajaxFail(current($model->getFirstErrors()),'','');
+    }
+    $error = $model->getFirstErrors();
+    return $this->ajaxFail($error,'','');
+}
+```
+## "分配权限"列表
+> http://i2.vding.dev/role-manage/auth-list  
+
+[结果输出](../uml/rbac_vding_v2/auth-list.php)
+
+**company/controllers/RoleManageController.php**
+
+```php
+/*
+* @API 子账号管理 -- 角色管理 -- 子账号权限列表
+*/
+public function actionAuthList()
+{
+    $authList = (new RoleManageForm)->queryAuthList();
+    return $this->ajaxSuccess('', '', $authList);
+}
+```
+
+# auth_assign_v2
+
+## auth_assign_列表页_v2
+> 角色指派  
+> http://i2.vding.dev/staff-manage/list  
+
+![](rbac/rbac_vding_v2/auth_assign_list.png)
+
+**company/controllers/StaffManageController.php**
+```php
+/*
+    * @API 子账号管理 -- 员工管理 -- 查看列表
+    * @Author code lighter
+    * @Date 2017-06-01
+    */
+public function actionList()
+{
+    if(!Yii::$app->request->isPost){
+        return $this->render('index');
+    }
+    $company_id = Yii::$app->user->getCompanyId();
+    $page_index = Yii::$app->request->post('page_index',1);
+    $page_size = Yii::$app->request->post('page_size',5);
+    $keyword = Yii::$app->request->post('keyword','');
+    $status = Yii::$app->request->post('status','');
+    $page_offset = ($page_index-1)*$page_size;
+    $expr = new Expression('S.id,S.staff_name,S.staff_no,
+            S.staff_mobile,D.name AS staff_department,group_concat(A.auth_item_name) AS staff_role,S.is_activated AS staff_status');
+    $query = (new Yii\db\Query())->select($expr)
+            ->from('user_company S')
+            ->leftJoin('department D','S.department_id=D.id')
+            ->leftJoin('auth_assign A','A.company_id=S.company_id AND A.user_id=S.user_id')
+            ->where(['S.company_id'=>$company_id]);
+    if($keyword!=''){
+        $query->andFilterWhere(['or',['like','S.staff_mobile',$keyword],
+            ['like','S.staff_name',$keyword],
+            ['like','D.name',$keyword]]);
+    }
+    if($status==1||$status==0){
+        $query->andFilterWhere(['S.is_activated'=>$status]);
+    }
+    $total_num = $query->groupBy('S.staff_no')->count();
+    $staff = $query->groupBy('S.staff_no')->orderBy('S.staff_no')->offset($page_offset)->limit($page_size)->all();
+    /*foreach($staff as $k=>$v){
+
+    }*/
+    $data = ['total_num'=>$total_num,'staff'=>$staff];
+    return $this->ajaxSuccess('','',$data);
+}
+```
+
+## auth_assign_创建页_v2
+> 角色指派  添加  
+> http://i2.vding.dev/staff-manage/create  
+
+![](rbac/rbac_vding_v2/auth_assign_add.png)
+
+**company/controllers/StaffManageController.php**
+
+**参数**
+
+```
+staff_name:管理员
+staff_mobile:18610000025
+department_id:452
+roleIds[0]:4993
+roleIds[1]:4994
+id:311
+```
+**代码**
+
+```php
+public function actionCreate()
+{
+    if(!Yii::$app->request->isPost){
+        return $this->render('create');
+    }
+    $company_id = Yii::$app->user->getCompanyId();
+    $user_id = Yii::$app->user->id;
+    $role_ids = Yii::$app->request->post('roleIds',[]);
+//        if(count($role_ids)==0){
+//            return $this->ajaxFail('请添加角色名称 !','','');
+//        }
+
+    $mobile = Yii::$app->request->post('staff_mobile','');
+    //查看该员工是否已经离职
+    $old_staff =UserCompany::findOne(['company_id'=>$company_id,'staff_mobile'=>$mobile]);
+    if($old_staff){
+        if($old_staff->is_activated==0){
+            return $this->ajaxFail('离职员工不能再次添加 !','','');
+        }else{
+            return $this->ajaxFail('该员工已存在 !','','');
+        }
+    }
+    $model = new UserCompany();
+    $model->scenario = 'add_user_company';
+    if ($model->load(Yii::$app->request->post(),'') && $model->validate()) {
+        $transaction = Yii::$app->db->beginTransaction();
+        try {
+            $ret = $this->registerVding($mobile,$company_id);
+            //保存员工信息
+            $model->isNewRecord = true;
+            $model->user_id = $this->new_staff_user_id;
+            $model->company_id = $company_id;
+            $model->staff_no = $this->getStaffNo($company_id);
+            $model->is_activated = 1; //处于激活状态
+            $model->staff_status = 1;
+            $model->is_deleted = 0;
+            $ret = $ret && $model->save();
+            $staff_id = $model->insert_staff_id;
+            //保存操作记录
+            $log = new OperationLog;
+            $log->isNewRecord = true;
+            $log->company_id = $company_id;
+            $log->user_id = $user_id;
+            $log->relation_type = 12; //操作员工记录
+            $log->relation_id = $staff_id;//员工ID
+            $log->name = "创建账户";
+            $ret = $ret && $log->save(false);
+            //分配角色
+            if($role_ids!='') {
+                AuthAssign::deleteAll(['company_id' => $company_id, 'user_id' => $model->user_id]);
+                if ($model->roleIds) {
+                    $ret = $ret &&AuthAssign::create($model->user_id, $model->roleIds);
+                }
+            }
+            if($ret) {
+                $transaction->commit();
+                return $this->ajaxSuccess('', '', ['id' => $staff_id]);
+            }
+                $transaction->rollBack();
+                return $this->ajaxFail('添加员工失败!','','');
+        }catch(\Exception $e) {
+            $transaction->rollBack();
+            return $this->ajaxFail($e->getMessage(),'','');
+        }
+    }
+    $error = current($model->getFirstErrors());
+    return $this->ajaxFail($error,'','');
 }
 ```
