@@ -16,7 +16,7 @@
 	- 权限
 		-  chown -R git:git
 		-  chmod -R 755 xxx
-	- tar cvzf xx.tar.gz ./xx  	//压缩 
+	- tar cvzf xx.tar.gz ./xx  	//压缩备份 
 	- for tar in *.tar.gz;  do tar zxvf $tar; done 	//批量解压
 	- tar -zxvf xx.tar.gx 	//解压
 	- cp -rfi ./* /usr/local/mysql/data/	//全文件夹与文件复制

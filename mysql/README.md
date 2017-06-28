@@ -62,8 +62,8 @@
 	- 创建用户与授权
 	  - insert into user(host,user,password) values('%','root',password('!123456'));  //创建一个帐号
 	  - update mysql.user set password=password('123456') where User='root'; //root重置密码
-	  - grant all privileges on *.* to root@"%";  //允许远程连接
-	  - grant all privileges on *.* to 'bitnami'@'%' identified by 'a4f90127b5'; （bitnami 为用户名，a4f90127b5 为密码） 
+	  - grant all privileges on `*.*` to root@"%";  //允许远程连接
+	  - grant all privileges on `*.*` to 'bitnami'@'%' identified by 'a4f90127b5'; （bitnami 为用户名，a4f90127b5 为密码） 
 	  - FLUSH PRIVILEGES; 
 - 配置文件 my.cnf
 	- 仅允许本地127.0.0.1连接
