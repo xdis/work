@@ -976,10 +976,25 @@ class UrlAccessFilter extends ActionFilter
 }
 ```
 
-# auth_item_v2
-> 创建角色使用  
+## 后台栏目列表_v2
+>http://i2.vding.dev/role-manage/role-menu  
 
-[时序图](../uml/rbac_vding_v2/角色添加.oom)  
+[结果输出](../uml/rbac_vding_v2/role-menu.php)
+
+```php
+/*
+    * @API 子账号管理 -- 角色管理 -- 子账号菜单
+    */
+public function actionRoleMenu()
+{
+    $menu = (new RoleManageForm)->getRoleMenu();
+    return $this->ajaxSuccess('','',$menu);
+}
+```
+
+
+# auth_item_v2
+> 直接操作数据库
 
 ## auth_item_child_列表页_v2
 > http://i2.vding.dev/role-manage/list  

@@ -307,6 +307,7 @@
 			- 配置文件及过滤
 				- [自定义globalAccesss配置_v2](fn/rbac.md#自定义globalAccesss配置_v2)
 				- [改造过的过滤器_v2](fn/rbac.md#改造过的过滤器_v2) 
+			- 后台栏目列表_v2
 			- auth_item_v2  角色/权限/特殊权限/菜单_添加
 			- auth_item_child 角色分配权限
 				- [auth_item_child_列表页_v2](fn/rbac.md#auth_item_child_列表页_v2) 
