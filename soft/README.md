@@ -1,4 +1,20 @@
 # 软件
+- 替代windows神器
+	- [Seer](https://sourceforge.net/projects/ccseer/) 给 Windows 增加类似 Mac OS X 系统的空格键快速预览文件功能的工具
+	- [windowtabs](http://windowtabs.com/) 多标签  百度云:soft/代替window神器
+	- [Wise Reminder](http://www.iplaysoft.com/wise-reminder.html) 简单实用的电脑待办事项定时提醒闹钟软件
+	- 数据备份与同步
+		- [Toucan](http://www.iplaysoft.com/toucan.html)   小巧免费绿色开源的本机文件同步/备份(加密)软件
+		- [GoodSync](http://www.iplaysoft.com/goodsync.html)  真正实用的本地双向文件同步工具 (自动备份利器，支持U盘/移动硬盘/FTP)
+	- [BooguNote](http://www.iplaysoft.com/boogunote.html) 碎片化信息收集与组织工具 (免费轻巧的树形笔记软件)
+	- [Cameyo](http://www.iplaysoft.com/cameyo.html)  简单几步轻松制作单文件绿色版软件！
+	- 便签工具
+		- [Stickies](http://www.iplaysoft.com/stickies.html) 免费且小巧精致的桌面便签条记事工具
+			- [官网](http://www.zhornsoftware.co.uk)
+- 资源管理器神器
+	- [Listary](http://www.listary.com/)	[顶] 
+	- [everything](http://www.iplaysoft.com/everything.html)
+	- directory opus
 - 命令行打开window资源管理器
 	- start + 路径
 		- start c:\
@@ -107,5 +123,11 @@
 				- [官网](http://www.itkeji.top "官网")
 			- [breed包下载](https://breed.hackpascal.net/)
 			- [固件下载](http://p4davan.80x86.io/download/ " 固件下载")
-		- [newifi_y1_R6850刷机](route/newifi_y1s_R6850/README.md)
-		
+		- 牌子
+			- [newifi_y1_R6850刷机](route/newifi_y1s_R6850/README.md)
+			- [k2_PSG1218刷机](route/k2_PSG1218/README.md)
+		- 华硕固件配置
+			- 过滤广告
+				- 看VIP视频过滤规则
+			- SS的配置
+				- [添加节点的顺序](route/README.md)
