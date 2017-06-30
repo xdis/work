@@ -205,9 +205,61 @@ amazing rate.
 # 动词
 # 非谓语动词
 ## 动词不定式
->事事皆懂，无一精通  
->To know everything is to know nothing.  
+>事事皆懂，无一精通    
+>To know everything is to know nothing.   
 
+![](taiji/2/v_bds1.png)
+![](taiji/2/v_bds2.png)
+![](taiji/2/v_bds3.png)
+
+## 动名词
+>阅读有益亍语言学习   
+>Reading benefits language learning.    
+
+ ![](taiji/2/v_bds2-1.png)
+![](taiji/2/v_bds2-2.png)
+
+## 过程总结
+- 动名单是单数,则动词要加s
+
+# 现在分词做后置定语
+## 我们是休戚不共的兄弟
+
+**普通的写法及演示**  
+
+We are brothers. We are sharing happiness and sadness.
+We are brothers sharing happiness and sadness.
+
+![](taiji/2/v_bds3-1.png)
+
+## 过程总结
+- We are 是重复,则可以合并在一起
+
+
+![](taiji/2/v_bds3-2.png)
+![](taiji/2/v_bds3-3.png)
+
+## 这是一只杀狗的猫
+**翻译演变过程**
+- 方法1
+	- This is a cat.
+	- The cat is killing the dog. 或 The cat is killing dogs.
+- 方法2 合并  使用定语
+	- This is a cat which is killing the dog.
+- 方法3 将 **is** 也去掉  合并(因为上面的两句,将名词与动词去掉) 
+	- This is a cat killing the dog. (killing the dog 做后置,则先翻译) 这是一只**杀狗**的猫
+
+## 这是一帮学英语的学生
+
+- These are student learning English.
+
+# 过去分词做后置定语
+
+## 战争中获得的经验对我们将会有重大价值
+
+**骨干先翻译**
+>经验将会有重大价值   
+Experience will(将会) have(有) great value(重大价值) to us. 
 
 
 

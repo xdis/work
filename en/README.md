@@ -61,10 +61,15 @@
 |:----    |:---|:-----   |
 |-ly luckily| -ward(s)homeward |-wise likewise
 
-- 总结
+- **总结**
 	- 及物劢词(vi)和不及物动词（vt）
 		- [raise和rise区分](fn/base.md#raise和rise区分)
 	- 宾语 都是用名词 
+	- 什么什么的 叫定语
+		- 我们是休戚不共的兄弟
+	- 什么什么地 叫状语
+	- 现在分词  动词+ding  如 doing   做主动
+	- 过去分司  done				 做被动
 - 作业 
 	- 6.13
 		- [环境恶化导致全球变暖以及物种灭绝](fn/assignment.md#环境恶化导致全球变暖以及物种灭绝)
@@ -115,4 +120,17 @@
 	- 动词
 		- 非谓语动词
 			- 动词不定式
+				- [事事皆懂，无一精通](fn/base.md#事事皆懂，无一精通)
+					- To know everything is to know nothing.
+			- 动名词
+				- [阅读有益亍语言学习](fn/base.md#阅读有益亍语言学习)
+					- Reading benefits language learning.
+			- 现在分词和过去分词做后置定语
+				- 现在分词做后置定语  [做主动]
+					- [我们是休戚不共的兄弟](fn/base.md#我们是休戚不共的兄弟)
+					- [这是一只杀狗的猫](fn/base.md#这是一只杀狗的猫)
+					- [这是一帮学英语的学生](fn/base.md#这是一帮学英语的学生)
+				- 过去分词做后置定语 [做被动]
+					- 战争中获得的经验对我们将会有重大价值
 		- 谓语动词
+			- 
