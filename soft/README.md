@@ -14,6 +14,7 @@
 - 资源管理器神器
 	- [Listary](http://www.listary.com/)	[顶] 
 	- [everything](http://www.iplaysoft.com/everything.html)
+	- directory opus
 - 命令行打开window资源管理器
 	- start + 路径
 		- start c:\
