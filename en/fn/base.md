@@ -259,7 +259,48 @@ We are brothers sharing happiness and sadness.
 
 **骨干先翻译**
 >经验将会有重大价值   
+
 Experience will(将会) have(有) great value(重大价值) to us. 
 
+>经验被从战争当中获得
 
+![](taiji/2/v_bds3-4.png)
+
+Experience is/was obtained/gained from the war.
+
+>两个简单句  
+
+The experience is gained **in** the war.   
+The Experience will **be of** great value to us.  
+
+**上面总结**
+  - **在**战争中 in the war 
+  - **从**战争中 from the war
+  - be of 等于have "有"的意思
+
+>两个简单句合并  
+
+![](taiji/2/v_bds3-5.png)
+
+**上面总结**
+ - 两个简单句合并,则主语去掉,对应的动词也去掉
+ - 为什么gained 前面不能加is呢?因为在于一个简单句子里不能有两个谓词动词
+
+## 这是一只被猫杀的狗  
+
+![](taiji/2/v_bds3-6.png)
+
+>使用两个简单句  
+
+This is a dog.  
+The dog was killed by the cat.  
+
+>合并  
+This is a dog killed by the cat.
+
+**上面总结**
+- 主语(The dog)删除 对应的谓语(was)也要删除 
+
+## 我有一张我爸爸买给我的票
+I have a ticket bought by my dad for me.  
 
