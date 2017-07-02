@@ -365,6 +365,17 @@ Some people think old buildings should **be** preserve**d**.
 ## 一般状态
  ![](taiji/2/shitai_3.png)
 
+时态  |一般 | 例子 
+------------ | -------------| -------------
+现在 | do/does	| I learn/He learns English everyday.
+&nbsp;	 | am/are/is |  I am/You are/He is in Beijing now.
+过去|  did	| I/He learned English yesterday.
+&nbsp;|  were/was | I was/You were/He was in Beijing yesterday.
+将来 will|  will do | I will learn English tomorrow.
+&nbsp; | will be|  I will be in Beijing tomorrow.
+过去将来 would|  would do | Yesterday I thought I would learn English tomorrow.
+&nbsp; | would be | Yesterday I thought I would be in Beijing tomorrow.
+
 ## 现在状态
  ![](taiji/2/shitai_4.png)
 
