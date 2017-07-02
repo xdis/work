@@ -284,7 +284,17 @@ The Experience will **be of** great value to us.
 
 **上面总结**
  - 两个简单句合并,则主语去掉,对应的动词也去掉
- - 为什么gained 前面不能加is呢?因为在于一个简单句子里不能有两个谓词动词
+ - 为什么gained 前面不能加is呢?因为在于一个简单句子里不能有两个谓词动词(有be的) 
+
+## 过程总结
+### 谓语动词与非谓语动词区别
+- 没有be变成后置定语
+- 谓语动词,一个句子里只有一个谓语动词
+	- The experience **is gained** in the war. The experience
+will be of great value to us.
+- 非谓语动词,是短语
+	- The experience **gained in the war** will be of great
+value to us.
 
 ## 这是一只被猫杀的狗  
 
@@ -304,3 +314,62 @@ This is a dog killed by the cat.
 ## 我有一张我爸爸买给我的票
 I have a ticket bought by my dad for me.  
 
+# 谓语动词
+## 第三人称单数
+![](taiji/2/v_wy_01.png)
+![](taiji/2/v_wy_02.png)
+![](taiji/2/v_wy_03.png)
+
+## 过程总结
+- 单数 公式: 名词+劢词S
+	- The boy is/was …
+	- The boy does …
+	- The boy has …
+- 复数 公式 名词S+劢词
+	- The boys are/were …
+	- The boys do …
+	- The boys have …
+
+## 情态动词
+ ![](taiji/2/v_wy_2_1.png)
+ ![](taiji/2/v_wy_2_2.png)
+
+> 被动语句  
+
+ ![](taiji/2/v_wy_2_3.png)
+
+
+> 中文的"把"字句 与 "被"字句
+- "把"字句 为主动语态
+	- 我把他打了
+- "被"字句 为被动语态
+	- 他被我打了
+> 人们觉得建筑需要被保护  
+Some people think old buildings should **be** preserve**d**.
+
+> 被劢语态公式  英国人说英语  
+
+ ![](taiji/2/v_wy_2_4.png)
+
+	主语 + be done + （by sb）
+	- British speak English.
+	- English is spoken by British.
+
+# 时态
+
+## 常用时态
+ ![](taiji/2/shitai_1.png)
+
+ ![](taiji/2/shitai_2.png)
+
+## 一般状态
+ ![](taiji/2/shitai_3.png)
+
+## 现在状态
+ ![](taiji/2/shitai_4.png)
+
+## 完成状态
+ ![](taiji/2/shitai_5.png)
+
+## 完成进行状态
+ ![](taiji/2/shitai_6.png)
