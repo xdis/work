@@ -111,7 +111,7 @@
 				- LSET  :通过索引设置列表元素的值
 				- UNDEX :通过索引获取列表中的元素
 				- LRANGE :获取列表指定范围内的元素
-		- [RabbitMQ]((fn/RabbitMQ/README.md)  更专业的消息系统实现方案  @WiconWang
+		- [RabbitMQ](fn/RabbitMQ/README.md)  更专业的消息系统实现方案  @WiconWang
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类
