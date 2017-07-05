@@ -2,6 +2,9 @@
 
 - 干货
 	- [符合PSR-1/PSR-2的PHP编程规范实例](standard.php)
+- 类库 工具库
+	- [db](fn/lib/db.php) @WiconWang
+	- 
 - function
 	- 函数
 		- array_walk
@@ -96,6 +99,17 @@
 	- rsa
 		- [php_rsa](fn/rsa/rsa_php_source/php_rsa.php)
 		- [模拟登陆_vding](../yii2/vding_api.md#模拟登陆_vding) //其它系统获取登陆token
+	- 高并发处理
+		- [redis的List类型实现秒杀_例子](fn/redis/miaosha.md#redis的List类型实现秒杀_例子)
+			- LPUSH/LPUSHX :将值插入到（/存在的）列表头部
+			- RPUSH/RPUSHX :将值插入到（/存在的）列表尾部	
+			- LPOP :移出并获取列表的第一个元素
+			- RPOP :移出并获取列表的最后一个元素
+			- LTRIM :保留指定区间内的元素
+			- LLEN  :获取列表长度
+			- LSET  :通过索引设置列表元素的值
+			- UNDEX :通过索引获取列表中的元素
+			- LRANGE :获取列表指定范围内的元素
 - 面向对象
 	- 常用类
 		- Closure        闭包类，匿名函数对象的final类
