@@ -105,7 +105,8 @@
 		- 冲突
 			- [rebase模式](use.md#rebase模式) 
 			- [merge模式](use.md#merge模式) 
-	    - 追踪修改 git blame 文件
+	    - 追踪文件修改,精确到某行都由谁修改过?
+			-  git blame 
 	    - 查看该文件是否被提交版本库 git ls-files | grep 文件名
 	    - 合并分支_流程
 		    - git pull origin dev  (merge模式下)
