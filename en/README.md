@@ -61,10 +61,28 @@
 |:----    |:---|:-----   |
 |-ly luckily| -ward(s)homeward |-wise likewise
 
-- 总结
+- **总结**
 	- 及物劢词(vi)和不及物动词（vt）
 		- [raise和rise区分](fn/base.md#raise和rise区分)
 	- 宾语 都是用名词 
+	- 动名词 相当于"名词"
+	- 的与地
+		- 什么什么**的** 叫定语  相当于形容词
+			- 我们是休戚不共的兄弟
+		- 什么什么**地** 叫状语  相当于副词
+	- 现在分词与过去分词
+		- 现在分词 动词+ing  如 doing   做主动
+		- 过去分司 is/was done	 表被动
+			- 使用is  表示常态的事
+			- 使用was ,表示从过去
+			- 英国人说英语
+				- 被劢语态公式  主语 + be done + （by sb）
+					- British speak English.
+					- English is spoken by British.
+	- [谓语动词与非谓语动词区别](fn/base.md#谓语动词与非谓语动词区别)
+		- 没有be变成后置定语
+		- 谓语动词,一个句子里只有一个谓语动词
+		- 非谓语动词,是短语
 - 作业 
 	- 6.13
 		- [环境恶化导致全球变暖以及物种灭绝](fn/assignment.md#环境恶化导致全球变暖以及物种灭绝)
@@ -114,5 +132,35 @@
 	- [并列复合句](fn/base.md#并列复合句)  主 + 从 + 主1 + 主2 
 	- 动词
 		- 非谓语动词
-			- 动词不定式
+			- 动词不定式  to do
+				- [事事皆懂，无一精通](fn/base.md#事事皆懂，无一精通)
+					- To know everything is to know nothing.
+			- 动名词 doing
+				- [阅读有益亍语言学习](fn/base.md#阅读有益亍语言学习)
+					- Reading benefits language learning.
+			- 现在分词和过去分词做后置定语
+				- 现在分词做后置定语  [做主动]
+					- [我们是休戚不共的兄弟](fn/base.md#我们是休戚不共的兄弟)
+					- [这是一只杀狗的猫](fn/base.md#这是一只杀狗的猫)
+					- [这是一帮学英语的学生](fn/base.md#这是一帮学英语的学生)
+				- 过去分词做后置定语 [做被动]
+					- 战争中获得的经验对我们将会有重大价值
 		- 谓语动词
+			- 第三人称单数
+				- 单数 公式: 名词+劢词S
+					- The boy is/was …
+					- The boy does …
+					- The boy has …
+				- 复数 公式 名词S+劢词
+					- The boys are/were …
+					- The boys do …
+					- The boys have …
+			- 情态动词
+				- 情态劢词后面一律用原型
+					- can/could, may/might, will/would, shall/should, must
+			- 时态
+				- [常用时态](fn/base.md#常用时态)
+				- [一般状态](fn/base.md#一般状态)
+				- [现在状态](fn/base.md#现在状态)
+				- [完成状态](fn/base.md#完成状态)
+				- [完成进行状态](fn/base.md#完成进行状态)
