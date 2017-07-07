@@ -20,4 +20,4 @@
 
 ![Image of Yaktocat](log/list.png)
 
-![Image of Yaktocat](log/view.png)
+![Image of Yaktocat](log/list.png)
