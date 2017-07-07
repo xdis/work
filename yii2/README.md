@@ -140,6 +140,9 @@
 			- Yii::warning($message, $category = 'application');
 			- Yii::info($message, $category = 'application');
 				- 如 Yii::info($log,__METHOD__);
+		- logreader 后台查看日志 第三方插件 
+			- [logreader配置](fn/log.md#logreader配置)
+			- [logreader使用](fn/log.md#logreader使用)
 	- 事件
 		- [事件-简单例子](event.md#简单例子) @白狼栈
 		- [事件-邮件发送](event/event_mail.md) trigger on  @白狼栈
@@ -192,7 +195,7 @@
 		- [radio自定义模板](radio自定义模板.md)
 		- [时间字段年月日显示](view.md#时间字段年月日显示)
 		- [时间区间范围的选择](view.md#时间区间范围的选择)
-		- [lookup](lookup.md)
+		- [lookup](lookup.md)  第三方插件
 			- 配置
 			- 使用
 				- 1.数据入库
