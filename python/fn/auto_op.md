@@ -186,7 +186,7 @@ True
     - log_archive_path  //设定日志归档路径
     - use_syslog    //默认设定Nagio信息加入系统日志
     - log_notifications     //默认设定Nagios的通知信息是记录的
-    - log_service_retries   //默认设定记录服努重启信息
+    - log_service_retries   //默认设定记录服努重启信息土
     - log_host_retries      //默认设定记录主机重启信息
     - log_event_handlers    //默认启用记录事件处理程序信息
     - log_initial_states    //默认不记录初始化状态信息

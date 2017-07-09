@@ -72,10 +72,10 @@
 	- python自动化运维篇
 		- [ansible](fn/auto_op.md#ansible) [自动化管理IT资源工具]
 			- [ansible安装](fn/auto_op.md#ansible安装)
-			- Ansible配置文件路径
-			- Ansible配置文件获取
+			- [Ansible配置文件路径](fn/auto_op.md#Ansible配置文件路径)
+			- [Ansible配置文件获取](fn/auto_op.md#Ansible配置文件获取)
 			- 实战操作 (至少须要有2个服务器)
-				- ansible新手上路
+				- [ansible新手上路](fn/auto_op.md#ansible新手上路)
 		- [saltstack](fn/auto_op.md#saltstack)
 			- [saltstack安装](fn/auto_op.md#saltstack安装)
 			- [SaltStack启动](fn/auto_op.md#SaltStack启动)
