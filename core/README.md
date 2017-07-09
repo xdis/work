@@ -1,5 +1,5 @@
 # core
-
+- 大数据
 - 高并发处理
     - redis
         - [redis的List类型实现秒杀_例子](../php/fn/redis/miaosha.md#redis的List类型实现秒杀_例子)

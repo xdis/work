@@ -68,3 +68,21 @@
 		- os.getcwd()
 		- 进入目录 os.chdir('/server/accesslogs')
 		- 创建目录  os.system('mkdir today')
+- fn
+	- python自动化运维篇
+		- [ansible](fn/auto_op.md#ansible) [自动化管理IT资源工具]
+			- [ansible安装](fn/auto_op.md#ansible安装)
+			- Ansible配置文件路径
+			- Ansible配置文件获取
+			- 实战操作 (至少须要有2个服务器)
+				- ansible新手上路
+		- [saltstack](fn/auto_op.md#saltstack)
+			- [saltstack安装](fn/auto_op.md#saltstack安装)
+			- [SaltStack启动](fn/auto_op.md#SaltStack启动)
+			- [SaltStack测试](fn/auto_op.md#SaltStack测试)
+		- [nagios](fn/auto_op.md#nagios)
+			- [nagios安装](fn/auto_op.md#nagios安装)
+			- [nagios配置文件](fn/auto_op.md#nagios配置文件)
+			- [Nagios主配置文件](fn/auto_op.md#Nagios主配置文件)
+			- [nagios安装使用](fn/auto_op.md#nagios安装使用)
+
