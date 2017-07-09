@@ -128,6 +128,6 @@
 			- [k2_PSG1218刷机](route/k2_PSG1218/README.md)
 		- 华硕固件配置
 			- 过滤广告
-				- 看VIP视频过滤规则
+				- 看VIP视频过滤规则 vip_rules.txt
 			- SS的配置
 				- [添加节点的顺序](route/README.md)

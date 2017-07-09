@@ -1,6 +1,10 @@
 # mysql
 
 - 常用功能
+	- 时间戳转与日期转换
+		- select FROM_UNIXTIME(1156219870);
+		- Select UNIX_TIMESTAMP(’2006-11-04 12:23:00′);
+		- SELECT DATE_FORMAT(FROM_UNIXTIME(1499415050),'%Y-%m-%d')  //时间翠转换为日期
 	- 转换类型	
 		- CONVERT(xxx,类型) 或 CAST(xxx AS 类型)
 			- cast(a as signed) 	//varchar转Int
