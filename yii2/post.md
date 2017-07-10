@@ -948,6 +948,23 @@ $model->updateCounters(['view_count' => 1]);
 
 ```
 
+## 取代updateAllCounters方法
+
+```php
+  $res = self::updateAll([
+            'settlement_amount' => new Expression('`settlement_amount` + ' . $settlement_amount),
+            'settlement_status' => new Expression(' CASE WHEN settlement_amount = actual_pay_amount THEN 2 ELSE 1 END'),
+            'updated_at' => time(),
+        ], [
+            'id' => $dp_order_id,
+        ]);
+        if (!$res) {
+            throw new Exception('更新订单表失败');
+        }
+```
+
+
+
 ## 删除
 ### 字符串格式删除
 ```php

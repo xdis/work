@@ -232,7 +232,9 @@
 				- [例子使用](post.md#封装批量插入_例子)
 		- 更新 updateAll
 			- [updateAll](post.md#updateAll) 
-			- [updateAllCounters](post.md#updateAllCounters)  计数器专用
+			- updateAllCounters使用
+				- [updateAllCounters](post.md#updateAllCounters)  计数器专用
+				- [取代updateAllCounters方法](post.md#取代updateAllCounters方法)
 		- 删除 deleteAll  between
 			- [字符串格式删除](post.md#字符串格式删除)  
 			-  [数组加入范围](post.md#数组加入范围)  
