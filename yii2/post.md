@@ -845,6 +845,72 @@ class TestAction extends Action
                     throw new \Exception('价目表入库失败');
                 }
 ```
+## 批量_batchInsert_syg
+**common/models/Account.php**
+
+```php
+   public function transfer($from_user_id, $to_user_id, $amount,$order_no,$trade_type,$relation_id,$memo = '') {
+        if(is_numeric($from_user_id) and is_numeric($to_user_id) and is_numeric($amount)){
+            try {
+                //开起事务
+                $trans = Yii::$app->db->beginTransaction();
+                $fromAccount = $this::findOne(['and',['id'=>$from_user_id],['>=','balance',$amount]]);
+                $fromAccount->balance -= $amount;
+                if(!$fromAccount->update()){
+                    throw new \Exception($this->errors);
+                }
+
+                $toAccount = $this::findOne(['id'=>$to_user_id]);
+                $toAccount->balance += $amount;
+                if(!$toAccount->update()){
+                    throw new \Exception($this->errors);
+                }
+
+                //账户资金流水
+                $AccountLog =[
+                    [
+                        'order_no' => $order_no,
+                        'account_id' => $from_user_id,
+                        'other_account_id' => $to_user_id,
+                        'amount' => $amount,
+                        'trade_balance' => $fromAccount->balance,
+                        'is_income' => 0, //支出
+                        'trade_type' => $trade_type,
+                        'relation_id' => $relation_id,
+                        'memo'=>$memo,
+                        'created_at' => time(),
+                    ],
+                    [
+                        'order_no' => $order_no,
+                        'account_id' => $to_user_id,
+                        'other_account_id' => $from_user_id,
+                        'amount' => $amount,
+                        'trade_balance' => $toAccount->balance,
+                        'is_income' => 1, //收入
+                        'trade_type' => $trade_type,
+                        'relation_id' => $relation_id,
+                        'memo'=>$memo,
+                        'created_at' => time(),
+                    ]
+                ];
+
+                if(!Yii::$app->db->createCommand()
+                    ->batchInsert(AccountLog::tableName(),['order_no','account_id','other_account_id','amount','trade_balance','is_income','trade_type','relation_id','memo','created_at'],$AccountLog)
+                    ->execute()){
+                    throw new \Exception('添加账户资金流水失败');
+                }
+
+                $trans->commit();
+                return true;
+
+            } catch (\Exception $e) {
+                $trans->rollback();
+                return $e->getMessage();
+            }
+        }
+        return false;
+    }
+```
 
 ### 封装批量插入
 
@@ -964,6 +1030,15 @@ $res = self::updateAll([
     }
 ```
 
+## 使用fineOne更新
+
+```php
+$toAccount = $this::findOne(['id'=>$to_user_id]);
+$toAccount->balance += $amount;
+if(!$toAccount->update()){
+    throw new \Exception($this->errors);
+}
+```
 
 
 ## 删除
