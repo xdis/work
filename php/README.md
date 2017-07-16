@@ -211,7 +211,7 @@
 			 - [php后端跨越的代码](fn/fn_corss_domain.md#php后端跨越的代码)   [Trait] [跨域]
 			 - [短信模块_zhou](fn/fn_corss_domain.md#短信模块_zhou)
 	- stdClass使用
-		- 认证宝stdClass使用
+		- [认证宝stdClass使用](fn/stdClass.md#认证宝stdClass使用)
 - RestfulApi
 	- 会飞的鱼Xia
 		- [例子说明_会飞的鱼Xia](RestfulApi.md#例子说明_会飞的鱼Xia)

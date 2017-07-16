@@ -324,6 +324,18 @@
 			- auth_assign_v2 角色指派
 				- [auth_assign_列表页_v2](fn/rbac.md#auth_assign_列表页_v2)
 				- [auth_assign_创建页_v2](fn/rbac.md#auth_assign_创建页_v2)
+		- 权限管理_猴子
+			- 基础
+				- [权限模型列表](fn/rbac.md#权限模型列表)
+				- [ACL和RBAC对比](fn/rbac.md#ACL和RBAC对比)
+				- [RBAC优势](fn/rbac.md#RBAC优势)
+				- [RBAC流程图](fn/rbac.md#RBAC流程图)
+				- [RBAC模块功能](fn/rbac.md#RBAC模块功能)
+				- [RBAC控制流程](fn/rbac.md#RBAC控制流程)
+				- [RBAC数据库设计](fn/rbac.md#RBAC数据库设计)
+			- 实战
+				- 前端css和js加上时间版本_方便管理强制刷新
+				- 
 		- yii2 admin 分析
 			- 	
 	- 配置
