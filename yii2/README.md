@@ -228,11 +228,16 @@
 		- 批量插入
 			- [原始的方法foreach](post.md#原始的方法foreach)
 			- [批量_batchInsert](post.md#批量_batchInsert) batchInsert
+				- [批量_batchInsert_syg](post.md#批量_batchInsert_syg) 字段值"增量"更新 error赋值
 			- [封装批量插入](post.md#封装批量插入) @foreach
 				- [例子使用](post.md#封装批量插入_例子)
 		- 更新 updateAll
 			- [updateAll](post.md#updateAll) 
-			- [updateAllCounters](post.md#updateAllCounters)  计数器专用
+			- updateAllCounters使用
+				- [updateAllCounters](post.md#updateAllCounters)  计数器专用
+				- [取代updateAllCounters方法](post.md#取代updateAllCounters方法)
+				- [使用fineOne更新](post.md#使用fineOne更新)
+					- [批量_batchInsert_syg](post.md#批量_batchInsert_syg) 字段值"增量"更新
 		- 删除 deleteAll  between
 			- [字符串格式删除](post.md#字符串格式删除)  
 			-  [数组加入范围](post.md#数组加入范围)  
@@ -319,6 +324,18 @@
 			- auth_assign_v2 角色指派
 				- [auth_assign_列表页_v2](fn/rbac.md#auth_assign_列表页_v2)
 				- [auth_assign_创建页_v2](fn/rbac.md#auth_assign_创建页_v2)
+		- 权限管理_猴子
+			- 基础
+				- [权限模型列表](fn/rbac.md#权限模型列表)
+				- [ACL和RBAC对比](fn/rbac.md#ACL和RBAC对比)
+				- [RBAC优势](fn/rbac.md#RBAC优势)
+				- [RBAC流程图](fn/rbac.md#RBAC流程图)
+				- [RBAC模块功能](fn/rbac.md#RBAC模块功能)
+				- [RBAC控制流程](fn/rbac.md#RBAC控制流程)
+				- [RBAC数据库设计](fn/rbac.md#RBAC数据库设计)
+			- 实战
+				- 前端css和js加上时间版本_方便管理强制刷新
+				- 
 		- yii2 admin 分析
 			- 	
 	- 配置

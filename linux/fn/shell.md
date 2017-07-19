@@ -76,3 +76,163 @@ fi
 cp -R "$1" "$filterResult"
 
 ```
+
+## 加入日志模块_锁模块_注释参考_模板shell
+
+```shell
+#!/bin/bash
+#######################################################
+# $Name:         shell_template.sh
+# $Version:      v1.0
+# $Function:     Backup MySQL Databases Template Script
+# $Author:       Jason Zhao
+# $organization: https://www.unixhot.com/
+# $Create Date:  2016-08-27
+# $Description:  You know what i mean,hehe
+#######################################################
+
+# Shell Env
+SHELL_NAME="shell_template.sh"
+SHELL_DIR="c:/opt/shell"
+SHELL_LOG="${SHELL_DIR}/${SHELL_NAME}.log"
+LOCK_FILE="c:/tmp/${SHELL_NAME}.lock"
+
+#Write Log 
+shell_log(){
+    LOG_INFO=$1
+    echo "$(date "+%Y-%m-%d") $(date "+%H-%M-%S") : ${SHELL_NAME} : ${LOG_INFO}" >> ${SHELL_LOG}
+}
+
+# Shell Usage
+shell_usage(){
+    echo $"Usage: $0 {backup}"
+}
+
+shell_lock(){
+    touch ${LOCK_FILE}
+}
+
+shell_unlock(){
+    rm -f ${LOCK_FILE}
+}
+
+# Backup MySQL All Database with mysqldump or innobackupex
+mysql_backup(){
+    if [ -f "$LOCK_FILE" ];then
+        shell_log "${SHELL_NAME} is running"
+        echo "${SHELL_NAME}" is running && exit
+    fi
+    shell_log "mysql backup start"
+    shell_lock
+    sleep 10
+    shell_log "mysql backup stop"
+    shell_unlock
+}
+
+# Main Function
+main(){
+    case $1 in
+        backup)
+            mysql_backup
+            ;;
+        *)
+            shell_usage;
+    esac
+}
+
+#Exec
+main $1
+```
+
+## 自动化部署脚本
+
+```shell
+#!/bin/bash
+
+#Date/Time
+CTIME=$(date "+%Y-%m-%d-%H-%M")
+
+#Shell
+CODE_DIR="/deploy/code/deploy"
+CONFIG_DIR="/deploy/config"
+TMP_DIR="/deploy/tmp"
+TAR_DIR="/deploy/tar"
+
+
+usage(){
+	echo $"Usage: $0 [ deploy | rollback-list | rollback-pro ver]"
+}
+
+git_pro(){
+  echo "begin git pull"
+  cd "$CODE_DIR" && git pull
+  API_VERL=$(git show | grep commit | cut -d ' ' -f2)
+  API_VER=$(echo ${API_VERL:0:6})
+  cp -r "$CODE_DIR" "$TMP_DIR"
+}
+
+config_pro(){
+  echo "copy pro config to dir"
+  /bin/cp "$CONFIG_DIR"/* $TMP_DIR/deploy/
+  TAR_VER="$API_VER"-"$CTIME"
+  cd $TMP_DIR && mv deploy pro_deploy_"$TAR_VER"
+}
+
+tar_pro(){
+  echo "begin tar"
+  cd $TMP_DIR && tar czf pro_deploy_"$TAR_VER".tar.gz pro_deploy_"$TAR_VER"
+  echo "tar end pro_deploy_"$TAR_VER".tar.gz"
+}
+
+scp_pro(){
+  echo "begin scp"
+  /bin/cp $TMP_DIR/pro_deploy_"$TAR_VER".tar.gz /opt
+  #scp $TMP_DIR/pro_deploy_"$TAR_VER".tar.gz 192.168.1.2:/opt
+  #scp $TMP_DIR/pro_deploy_"$TAR_VER".tar.gz 192.168.1.3:/opt
+  #scp $TMP_DIR/pro_deploy_"$TAR_VER".tar.gz 192.168.1.4:/opt
+}
+#执行部署操作
+deploy_pro(){
+  #socat haproxy unix nginx 
+  echo "begin deploy"
+  cd /opt && tar zxf pro_deploy_"$TAR_VER".tar.gz
+  rm -f /var/www/html && ln -s /opt/pro_deploy_"$TAR_VER" /var/www/html
+}
+#测试部署
+test_pro(){
+  echo "begin test"
+  #curl --head http://192.168.56.31/index.php | grep xxxx
+  echo "add cluster" # socat haproxy-nginx+php
+}
+#回滚列表
+rollback_list(){
+  ls -l /opt/*.tar.gz
+}
+#制定版本回滚
+rollback_pro(){
+  #ssh 192.168.56.31 
+  rm -f /var/www/html && ln -s /opt/$1 /var/www/html
+}
+#主函数，对之前编写的进行组合
+main(){
+  case $1 in
+	deploy)
+		git_pro;
+		config_pro;
+		tar_pro;
+		scp_pro;
+		deploy_pro;
+		test_pro;
+		;;
+	rollback-list)
+		rollback_list;
+		;;
+	rollback-pro)
+		rollback_pro $2;
+		;;
+	*)
+		usage;
+  esac
+}
+main $1 $2
+```

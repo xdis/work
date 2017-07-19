@@ -2,8 +2,9 @@
 {
     "workbench.colorTheme": "Visual Studio Light",
     "window.menuBarVisibility": "default",
-    "markdown.preview.scrollPreviewWithEditorSelection": false,
+    "markdown.preview.scrollPreviewWithEditorSelection": true,
     "files.autoSave": "afterDelay",
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": true
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "markdown.styles": ["e:/cmk/gtiwork/soft/fn/vscode/github-markdown.css"]
 }
