@@ -107,6 +107,9 @@
 				- [http缓存](fn/cache_file.md#http缓存)
 			- 调试
 				- [beginProfile](fn/debug.md#beginProfile)  代码区间性能检测
+	- 单元测试
+		- demo
+			- [一行代码验证短信](fn/u_test/demo.md#一行代码验证短信) @zhou
 	- session
 		- 保存与获取
 			- 方法1
