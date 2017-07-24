@@ -1,0 +1,49 @@
+<!DOCTYPE html> <html> <head> <meta charset=UTF-8> <meta http-equiv=X-UA-Compatible content="IE=edge"> <title>有道云笔记｜5000万用户的选择</title> <meta name=keywords content="有道云笔记 - 记录，成为更好的自己, 有道, office, 办公软件, 有道云笔记, 印象笔记, 笔记, tower, 云笔记, 有道笔记, 团队协作, 协作, etc."> <meta name=description content=有道云笔记是网易出品，获得5000万用户青睐的笔记软件。提供了PC端、移动端、网页端等多端应用，用户可以随时随地对线上资料进行编辑、分享以及协同。> <link rel=icon href="http://note.youdao.com/favicon.ico?v=2"> <link type=text/css rel=stylesheet href="styles/0f4e5bc9.index.css"> <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="styles/92e1c317.glb.ie8lt.css">
+    <![endif]--> <script type=text/javascript>function detectmob() {
+            return navigator.userAgent.match(/Android/i)
+                    || navigator.userAgent.match(/webOS/i)
+                    || navigator.userAgent.match(/iPhone/i)
+                    || navigator.userAgent.match(/BlackBerry/i)
+                    || navigator.userAgent.match(/Windows Phone/i);
+        }
+        if (navigator.userAgent.match(/iPad/i)) {
+            window.location.href = '/web';
+        }
+        if (detectmob()) {
+            window.location.href = 'WAP/intro' + location.search;
+        }</script> <script src=scripts/cd741045.indexPage.js></script>  <body> <!--[if IE 6]>
+<script src="/scripts/849d7004.DD_belatedPNG_0.0.8a-min.js"></script>
+<script>
+    document.write('<script type="text/javascript" id="domready" defer="defer" src="javascript:void(0)"><\/script>');
+    document.getElementById("domready").onreadystatechange = function() {
+        if (this.readyState == "complete") {
+            var imgs = document.getElementsByTagName('img')
+            for(i=0; i < imgs.length; i++) {
+                if(imgs[i].src.toLowerCase().search(/\.png$/) != -1) {
+                    DD_belatedPNG.fixPng(imgs[i]);
+                }
+            }
+
+            var children = document.body.getElementsByTagName('*');
+            for(i=0; i < children.length; i++) {
+                var bg = children[i].currentStyle.backgroundImage;
+                if(bg != 'none' && bg.toLowerCase().search(/\.png("|\')?\)$/) != -1) {
+                    DD_belatedPNG.fixPng(children[i]);
+                }
+            }
+        }
+    }
+</script>
+<![endif]--> <div id=header> <div id=header-warp> <div id=header-right> <a id=register href=http://reg.163.com/reg/reg.jsp target=_blank>注册</a> <div id=user-info> <a id=dropdown-button href=/web>登录网页版</a> <span id=dropdown><i></i></span> <ul id=dropdown-list> <li id=logout><a>注销</a></li> </ul> </div> <!--<div id="login-register">--> <!--<ul>--> <!--<li>--> <!--<a id="login" href="/signIn">进入网页版</a>--> <!--<i id="dropdown"></i>--> <!--<ul id="dropdown-list-signIn">--> <!--<li ><a href="#">进入云笔记</a></li>--> <!--<li class="divider"><a></a></li>--> <!--<li ><a href="#">进入云协作</a></li>--> <!--</ul>--> <!--</li>--> <!--<li><a id="register" href="http://reg.163.com/reg/reg.jsp" target="_blank"></a></li>--> <!--</ul>--> <!--</div>--> <!--<div id="user-info">--> <!--&lt;!&ndash;<img id="user-info-picture"/>&ndash;&gt;--> <!--&lt;!&ndash;<span id="user-info-name"></span>&ndash;&gt;--> <!--<span id="dropdown-button">进入网页版</span>--> <!--<i id="dropdown"></i>--> <!--<ul id="dropdown-list">--> <!--<li id="web"><a>进入云笔记</a></li>--> <!--<li class="divider"><a></a></li>--> <!--<li id="group"><a>进入云协作</a></li>--> <!--<li class="divider"><a></a></li>--> <!--<li id="logout"><a>注销</a></li>--> <!--</ul>--> <!--</div>--> </div> <a id=logo href=/index.html title=有道云笔记> <img src="../images/index/1aeec7c7.logo.png"> </a> <ul id=header-nav> <li id=index-tab><a href=/index.html>首页</a></li> <li id=noteintro-tab><a href=/noteintro.html>云笔记</a></li> <li id=groupintro-tab><a href=/groupintro.html>云协作</a></li> <li id=download-tab><a href=/download.html>下载</a></li> <!--<li id="blog-tab"><a href="/iyoudao/">博客</a></li>--> <li id=charge-tab><a href=/charge/setMeal.html>会员</a></li> <li id=biz-tab><a href="/biz/">企业版</a></li> </ul> </div> </div> <div id=doc2> <div id=hd> <div class=bd-wrap> <div class=bd> <div class=slogan></div> <div id=download-btn-container> <a data-vlog=/sd_index.v href=# id=download-btn class="logit ynote-download dl-link" data-logname=index.windowsBanner.download-btn-windows></a> <p class=ynote-dl-info> <span id=ynote-version></span> <span id=ynote-date></span> <span class=common-vip>赠vip版</span> </p> </div> <div id=mac-dl-container> <a data-vlog=/sd_index.v href=# id=mac-dl class="logit dl-link" data-logname=index.windowsBanner.download-btn-mac></a> <a data-vlog=/sd_index.v href="https://itunes.apple.com/cn/app/you-dao-yun-bi-ji/id1121484812?l=zh&ls=1&mt=12" target=_blank id=mac-appstore-dl class=logit data-logname=index.windowsBanner.download-btn-mac></a> <p class=ynote-dl-info> 官网版本：<span id=mac-version>2.1.0</span>运行环境：OS X 10.10或以上 </p> </div> <div id=webkit-dl-container> <a data-vlog=/sd_index.v href=# id=webkit-dl class="logit dl-link" data-logname=index.windowsBanner.download-btn-webkit> <span class=text>立即下载</span> <span class=version>V<span id=webkit-version></span></span> <span class=send-vip>赠vip版</span> </a> <a href=https://note.youdao.com/web id=to-web>使用网页版</a> </div> </div> <div id=download-bar> <ul class=download-bar-list> <li class=windows-download> <a href=http://download.ydstatic.com/notewebsite/downloads/YNote.exe></a> </li> <li class=mac-download> <a href=http://download.ydstatic.com/notewebsite/downloads/YoudaoNote.dmg></a> </li> <li class=android-download> <div class=download-bar-sub> <div class=btn-normal> <!-- [if lte IE 7]>
+                                    <a href="images/946c6672.QR-code.png" alt="二维码下载"></a>
+                                    <![endif]--> 二维码下载 <div class=download-qrcode><img src=images/946c6672.QR-code.png alt="二维码下载"></div> </div> <div class=btn-normal> <a href="http://m.note.youdao.com/noteproxy/download?todo=download&platform=android&keyfrom=youdaohome&vendor=">本地下载</a> </div> </div> </li> <li class=iphone-download> <div class=download-bar-sub> <div class=btn-normal> <!-- [if lte IE 7]>
+                                    <a href="images/946c6672.QR-code.png" alt="二维码下载"></a>
+                                    <![endif] --> 二维码下载 <div class=download-qrcode><img src=images/946c6672.QR-code.png alt="二维码下载"></div> </div> <div class=btn-normal> <a href="http://itunes.apple.com/cn/app/id450748070?ls=1&mt=8" target=_blank>App Store下载</a> </div> </div> </li> <li class=ipad-download> <a href="http://itunes.apple.com/cn/app/id483995181?ls=1&mt=8" target=_blank></a> </li> </ul> </div> </div> </div> <div id=bd class=clearfix> <ul class=intros> <li> <a class=btn-video-play> <div> <img src=styles/images/a9214b22.ynote4_6.jpg alt="全新的有道云笔记：开启文档管理新体验！"> <img src=styles/images/71fec3d9.video_play.png alt=play class="video-play"> <span class=intro-desc><p>全新的有道云笔记：开启文档管理新体验！</p></span> </div> </a> <a href="video.html?auto=1" target=_blank><span class=intro-more>更多视频 ></span></a> </li> <li class=intro-platform> <!--<a href="/iyoudao/?p=86">--> <a href="http://xueba.youdao.com/?keyfrom=gw" target=_blank> <div> <img src=styles/images/83738fcf.new-xueba.jpg alt="学霸笔记"> <span class=intro-desc><p>学习考试资料，一网打尽</p></span> <!--<img src="styles/images/55bcf621.public_platform.png" alt="有道云笔记博客-云协作介绍"/>
+                            <span class="intro-desc"><p>有道云协作：团队协作就是这么简单！</p></span>--> </div> </a> <a href="/iyoudao/" target=_blank><span class=intro-more>更多产品动态 ></span></a> </li> <li> <div> <img src=styles/images/528ece73.appstore.png alt="AppStore精选效率APP"> <!--<span class="intro-desc"><p>AppStore精选效率APP</p></span>--> </div> <!--<a href=""><span class="intro-more">更多 ></span></a>--> </li> </ul> </div> <div id=footer> <ul id=ft-follow-us> <li><a href=http://weibo.com/youdaonote id=weibo target=_blank></a></li> <li><a id=wechat><img src="/styles/images/4948c0af.wechat_qrcode.png"></a></li> </ul> <ul id=ft-links> <li><a href="/iyoudao/" target=_blank>博客</a></li> · <li><a href="http://tieba.baidu.com/f?kw=有道云笔记" target=_blank>官方贴吧</a></li> · <li><a href=/open/exchange.html target=_blank>空间兑换</a></li> · <li><a href=/vipexchange target=_blank>会员兑换</a></li> · <li><a href=/open target=_blank>开放平台</a></li> </ul> <ul id=ft-about-links> <li><a href=/about.html target=_blank>关于我们</a></li> | <li><a href=# onclick="ysf.open();return false" target=_blank>联系我们</a></li> | <li><a href=/license.html target=_blank>服务条款</a></li> | <li><a href=/privacy.html target=_blank>隐私协议</a></li> | <li><a href=http://noteyoudao.udesk.cn/hc target=_blank>帮助</a></li> | <li><a href="/changelog.html?auto=1" target=_blank>更新日志</a></li> | <li><a href="https://qiye.yixin.im/" target=_blank>企业易信</a></li> | <li>违法和不良信息举报电话：010-82558163</li> | <li><a href=http://www.itrust.org.cn/home/index/itrust_certifi/wm/PJ2017012001 target=_blank>网易网站相关资质证明</a></li> </ul> <div id=copyright>©2017 北京网易有道计算机系统有限公司 京ICP证080268号</div> </div> <script src=https://qiyukf.com/script/2dac580226b83fb71d8e31c5b40041cf.js defer async></script> </div> <script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?30b679eb2c90c60ff8679ce4ca562fcc";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script>  

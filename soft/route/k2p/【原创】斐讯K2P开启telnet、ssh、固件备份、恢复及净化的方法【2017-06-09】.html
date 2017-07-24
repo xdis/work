@@ -1,0 +1,2333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)http://www.right.com.cn/forum/thread-217088-1-1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" class=" widthauto"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】 - 斐讯版面，禁发广告、返利链接、二维码购买链接 - 恩山无线论坛 - Powered by Discuz!</title>
+<link href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="canonical">
+<meta name="keywords" content="【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】">
+<meta name="description" content="斐讯K2P的配置文件加密方式与K2一模一样，因此可以用配置文件恢复法来开启telnet或运行任何命令。**** 本内容被作者隐藏 ****注：下述方法仅保证在官方固件或官方 ... 【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】 ,恩山无线论坛">
+<meta name="generator" content="Discuz! X3.3">
+<meta name="author" content="Discuz! Team and Comsenz UI Team">
+<meta name="copyright" content="2001-2017 Comsenz Inc.">
+<meta name="MSSmartTagsPreventParsing" content="True">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<!--<base href="http://www.right.com.cn/FORUM/">--><base href="."><link rel="stylesheet" type="text/css" href="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/style_1_common.css"><link rel="stylesheet" type="text/css" href="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/style_1_forum_viewthread.css"><script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/push.js.下载"></script><script type="text/javascript" charset="utf-8" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/ODU4MjY5OQ==.js.下载"></script><script type="text/javascript">var STYLEID = '1', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'O4Z', charset = 'gbk', discuz_uid = '0', cookiepre = 'DJyZ_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'login|tradeorder', creditnotice = '1|贡献|分,2|恩山币|nb', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy5yaWdodC5jb20uY24vRk9SVU0vdGhyZWFkLTIxNzA4OC0xLTEuaHRtbA==', SITEURL = 'http://www.right.com.cn/FORUM/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</script>
+<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/common.js.下载" type="text/javascript"></script>
+<meta name="application-name" content="恩山无线论坛">
+<meta name="msapplication-tooltip" content="恩山无线论坛">
+<meta name="msapplication-task" content="name=门户;action-uri=http://www.right.com.cn/FORUM/portal.php;icon-uri=http://www.right.com.cn/FORUM/static/image/common/portal.ico"><meta name="msapplication-task" content="name=论坛;action-uri=http://www.right.com.cn/FORUM/forum.php;icon-uri=http://www.right.com.cn/FORUM/static/image/common/bbs.ico">
+<meta name="msapplication-task" content="name=群组;action-uri=http://www.right.com.cn/FORUM/group.php;icon-uri=http://www.right.com.cn/FORUM/static/image/common/group.ico"><meta name="msapplication-task" content="name=家园;action-uri=http://www.right.com.cn/FORUM/home.php;icon-uri=http://www.right.com.cn/FORUM/static/image/common/home.ico"><link rel="archives" title="恩山无线论坛" href="http://www.right.com.cn/FORUM/archiver/">
+<link rel="stylesheet" id="css_widthauto" type="text/css" href="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/style_1_widthauto.css">
+<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/forum.js.下载" type="text/javascript"></script>
+
+<style type="text/css">
+div#diy1.area,div.a_p,div.a_pr,DIV.column.frame-1-c,div.wp.a_f,div.a_cn,.a_mu,.a_pt{ display: none !important; disiplay: none }
+
+</style>
+<style>@charset "utf-8";
+@font-face{font-family:'nc_iconfont';src:url("//at.alicdn.com/t/font_1465353706_4784257.eot");src:url("//at.alicdn.com/t/font_1465353706_4784257.eot?#iefix") format('embedded-opentype'),url("//at.alicdn.com/t/font_1465353706_4784257.woff") format('woff'),url("//at.alicdn.com/t/font_1465353706_4784257.ttf") format('truetype'),url("//at.alicdn.com/t/font_1465353706_4784257.svg#iconfont") format('svg')}.nc-container div#nc-loading-circle{background:transparent;width:20px;height:20px;display:inline-block;position:relative;vertical-align:middle}.nc-container div#nc-loading-circle .sk-circle{background:transparent;width:100%;height:100%;position:absolute;left:0;top:0}.nc-container #nc-loading-circle .sk-circle:before{content:'';display:block;margin:0 auto;width:15%;height:15%;background-color:#818181;border-radius:100%;-webkit-animation:sk-circleFadeDelay 1.2s infinite ease-in-out both;animation:sk-circleFadeDelay 1.2s infinite ease-in-out both}.nc-container #nc-loading-circle .sk-circle2{-webkit-transform:rotate(30deg);-ms-transform:rotate(30deg);transform:rotate(30deg)}.nc-container #nc-loading-circle .sk-circle3{-webkit-transform:rotate(60deg);-ms-transform:rotate(60deg);transform:rotate(60deg)}.nc-container #nc-loading-circle .sk-circle4{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}.nc-container #nc-loading-circle .sk-circle5{-webkit-transform:rotate(120deg);-ms-transform:rotate(120deg);transform:rotate(120deg)}.nc-container #nc-loading-circle .sk-circle6{-webkit-transform:rotate(150deg);-ms-transform:rotate(150deg);transform:rotate(150deg)}.nc-container #nc-loading-circle .sk-circle7{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.nc-container #nc-loading-circle .sk-circle8{-webkit-transform:rotate(210deg);-ms-transform:rotate(210deg);transform:rotate(210deg)}.nc-container #nc-loading-circle .sk-circle9{-webkit-transform:rotate(240deg);-ms-transform:rotate(240deg);transform:rotate(240deg)}.nc-container #nc-loading-circle .sk-circle10{-webkit-transform:rotate(270deg);-ms-transform:rotate(270deg);transform:rotate(270deg)}.nc-container #nc-loading-circle .sk-circle11{-webkit-transform:rotate(300deg);-ms-transform:rotate(300deg);transform:rotate(300deg)}.nc-container #nc-loading-circle .sk-circle12{-webkit-transform:rotate(330deg);-ms-transform:rotate(330deg);transform:rotate(330deg)}.nc-container #nc-loading-circle .sk-circle2:before{-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.nc-container #nc-loading-circle .sk-circle3:before{-webkit-animation-delay:-1s;animation-delay:-1s}.nc-container #nc-loading-circle .sk-circle4:before{-webkit-animation-delay:-.9s;animation-delay:-.9s}.nc-container #nc-loading-circle .sk-circle5:before{-webkit-animation-delay:-.8s;animation-delay:-.8s}.nc-container #nc-loading-circle .sk-circle6:before{-webkit-animation-delay:-.7s;animation-delay:-.7s}.nc-container #nc-loading-circle .sk-circle7:before{-webkit-animation-delay:-.6s;animation-delay:-.6s}.nc-container #nc-loading-circle .sk-circle8:before{-webkit-animation-delay:-.5s;animation-delay:-.5s}.nc-container #nc-loading-circle .sk-circle9:before{-webkit-animation-delay:-.4s;animation-delay:-.4s}.nc-container #nc-loading-circle .sk-circle10:before{-webkit-animation-delay:-.3s;animation-delay:-.3s}.nc-container #nc-loading-circle .sk-circle11:before{-webkit-animation-delay:-.2s;animation-delay:-.2s}.nc-container #nc-loading-circle .sk-circle12:before{-webkit-animation-delay:-.1s;animation-delay:-.1s}@-webkit-keyframes sk-circleFadeDelay{0%,39%,100%{opacity:0}40%{opacity:1}}@-webkit-keyframes sk-circleFadeDelay{0%,39%,100%{opacity:0}40%{opacity:1}}@keyframes sk-circleFadeDelay{0%,39%,100%{opacity:0}40%{opacity:1}}.nc-container .scale_text2 #nc-loading-circle .sk-circle:before{background-color:#fff}.nc_iconfont{font-family:"nc_iconfont";color:#ff3f08;font-size:16px;font-style:normal}.captcha-error .icon_ban{float:left;font-size:16px;padding-right:5px;line-height:14px}.clickCaptcha_text .btn_refresh{font-style:normal;cursor:pointer;background:#fff;color:#737383}.imgCaptcha .btn_refresh{font-size:20px;cursor:pointer;background:#fff;color:#737383}.nc_voice{display:none;position:relative;margin-top:-34px;z-index:99;width:auto;height:34px;background:#fff}.omeo-code-img,.omeo-code-audio{font-size:0;text-align:left}.omeo-code-audiobox,.omeo-code-img a,.omeo-code-audio a,.omeo-code-state{display:inline-block;*display:inline;zoom:1;height:32px;vertical-align:top;font-size:12px}.omeo-code .omeo-code-refresh{background:transparent;width:32px;height:32px;font-size:20px;color:#888;text-align:center;text-decoration:none;padding-left:4px;line-height:32px}.omeo-code .omeo-switch{display:none;width:32px;height:32px;border-left:1px solid #e1e1e1;background-image:url("//g.alicdn.com/sd/ncpc/images/checkcode.png");background-repeat:no-repeat}.omeo-img-active .omeo-code-img{display:block}.omeo-img-active .omeo-code-audio{display:none}.omeo-code-img img{border:1px solid #cdcdcd;cursor:pointer}.omeo-code-img .omeo-switch{background-position:9px -41px}.omeo-audio-active .omeo-code-audio{display:block}.omeo-audio-active .omeo-code-img{display:none}.omeo-code-refresh{position:relative;left:95px}.omeo-code-audiobox{position:relative;height:30px;line-height:32px;border:1px solid #e1e1e1;text-align:center;overflow:hidden;left:100px;top:1px;width:45%;min-width:80px;background-color:#eee}.omeo-code-audiobox a{display:block;text-decoration:none;color:#06c}.omeo-code-audiobox-playing a{visibility:hidden}.omeo-code-audiobox span,.omeo-code-audiobox b{visibility:hidden;position:absolute;top:0;left:0;height:30px;font-weight:100;overflow:hidden}.omeo-code-audiobox-playing span,.omeo-code-audiobox-playing b{visibility:visible}.omeo-code-audiobox span{z-index:0;width:0;background:#186bca}.omeo-code-audiobox b{width:100%;z-index:1;text-align:left;text-indent:30px;color:#999;background:url("//g.alicdn.com/sd/ncpc/images/checkcode.png") no-repeat 14px -89px}.omeo-code-audio .omeo-switch{background-position:5px 10px}input[type=text]::-ms-clear{display:none}.omeo-box{position:relative;background-color:#fff}.omeo-code-echo{position:absolute;top:2px;left:2px}.omeo-code-echo input{padding:5px;height:18px;line-height:18px;border:1px solid #ddd;width:80px;outline:0}.omeo-code-state{height:30px;line-height:30px;text-indent:25px;white-space:nowrap;background-image:url("//g.alicdn.com/sd/ncpc/images/checkcode.png");background-repeat:no-repeat;background-position:100px 100px}.omeo-code-echo .omeo-code-state-error{width:auto;background-position:7px -193px}.omeo-code-echo .omeo-code-state-success{position:absolute;width:30px;background-position:7px -243px}.omeo-code-state{position:absolute;left:0;top:28px}.nc_voice_close{display:inline-block;position:relative;cursor:pointer;left:95px;top:0;border-left:#ddd 2px solid;padding:0 0 0 7px;background-color:#fff;font-size:20px;color:#888;line-height:32px}.nc_help{position:absolute;width:100%;height:100%;left:0;top:0;z-index:99999}.nc_help .mask{background-color:#000;opacity:.5;filter:alpha(opacity=50);width:100%;height:100%;top:0;left:0}.nc_btn_close{position:absolute;height:20px;left:500px;border-radius:20px;padding:10px 30px;background-color:#aaa;color:#fff;cursor:pointer;z-index:10}.nc_btn_close:hover{background-color:#afafaf}.nc_hand{position:absolute;width:68px;height:53px;background-image:url("//g.alicdn.com/sd/ncpc/images/hand.png");z-index:3}.nc_slide_bg{z-index:3;font-size:12px;text-align:center;color:#fff;line-height:34px}.nc_voicebtn{position:absolute;padding:0;right:-25px;font-size:23px;color:#888;cursor:pointer;line-height:34px}.nc_helpbtn{position:absolute;cursor:pointer;right:-95px;top:4px;font-size:12px;background-color:#ffb668;color:#fff;padding:4px;border-radius:2px;line-height:18px;display:none}.nc_helpbtn:before{width:0;height:0;content:"";position:absolute;left:-2px;top:6px;border-top:4px solid transparent;border-bottom:4px solid transparent;border-right:4px solid #ffb668}.nc-container .errloading{border:#faf1d5 1px solid;text-indent:3px;background-image:none;font-size:12px;width:290px;line-height:20px;padding:7px 5px 8px 5px;color:#ef9f06;}.nc-container .errloading a{color:#30a7fc}.nc_captcha_text .nc_err{float:left;text-indent:0}.button_move{transition:left .5s;-moz-transition:left .5s;-webkit-transition:left .5s;-o-transition:left .5s}.bg_move{transition:width .5s;-moz-transition:width .5s;-webkit-transition:width .5s;-o-transition:width .5s}.nc_slide_box{position:absolute}.nc_captcha_text{height:auto;line-height:20px;visibility:hidden;font-size:12px;color:#999;font-weight:normal}.nc-container .nc_captcha_img_text{width:auto;height:auto;line-height:20px;visibility:hidden;font-size:12px;color:#999;font-weight:normal;display:none;padding:0 0 10px 0;background-position:0 0;}.nc-container .nc_captcha_img_text span.nc-lang-cnt{line-height:inherit}.nc-container .imgCaptcha .nc_captcha_img_text{width:auto}.nc_captcha_img_text{height:auto;line-height:20px;visibility:hidden;font-size:12px;color:#999;font-weight:normal;display:none;padding:0 0 10px 3px;background-position:0 0}.nc-container .nc_wrapper{width:auto}.nc_scale{width:auto;height:34px;background:#e8e8e8;position:relative;margin:0;padding:0}.nc_scale.is_audio{margin-right:25px}.nc-container .nc_scale div{height:auto}.nc-container .nc_scale ul{list-style:none}.nc-container .nc_scale .btn_slide{color:#737383;background-image:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.nc-container .nc_scale span{text-align:center;width:40px;height:32px;line-height:32px;border:1px solid #ccc;position:absolute;left:0;cursor:move;background:#fff;z-index:2}.nc-container .nc_scale span.nc-lang-cnt{*line-height:34px;float:none;width:auto;height:auto;*height:34px;border:none;position:static;cursor:inherit;background:none;z-index:0;display:inline}.nc_slide_button{width:40px;height:32px;border:1px solid #ccc;position:absolute;left:0;cursor:move;background:#fff url("//g.alicdn.com/sd/ncpc/images/rt.png") no-repeat center;z-index:2}@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){.nc_scale span{height:32px}}.nc-container .nc_scale .btnok{cursor:default;background:#fff url("//g.alicdn.com/sd/ncpc/images/yes.png") no-repeat center;z-index:3}.nc-container .nc_scale .btnok2{cursor:default;font-size:20px;background:#fff url("//g.alicdn.com/sd/ncpc/images/no.png") no-repeat center;z-index:3}.nc-container .nc_scale .btn_warn{cursor:default;color:#ff3f08;line-height:34px;text-align:center;font-size:20px;background:#fff;z-index:3}.nc-container .clickCaptcha_text .btn_refresh{font-size:20px}.nc-container .clickCaptcha_text .icon_close{line-height:30px;margin-left:8px;cursor:default;color:#ff3f08;font-size:16px;float:left;margin-right:2px;background:transparent;z-index:3}.nc-container .nc_captcha_img_text .icon_close{cursor:default;color:#ff3f08;font-size:16px;float:left;margin-right:4px;background:transparent;z-index:3;line-height:18px}.nc-container .errloading .icon_warn{cursor:default;color:#ff3f08;font-size:18px;float:left;background:transparent;z-index:3}.nc-container .nc_scale .btn_ok{cursor:default;line-height:34px;text-align:center;font-size:20px;background:#fff;z-index:3;color:#76c61d}.nc-container .nc_scale .nc_ok,.nc-container .nc_scale .nc_bg{background:#7ac23c}.nc-container .nc_scale .nc_bg{position:absolute;height:100%;_height:34px;left:0;width:10px}.nc-container .nc_scale div.redbar{background:#fc461e;opacity:.5;filter:alpha(opacity=50)}.nc-container .nc_scale div.orange{background:#f00}.nc-container .nc_scale .scale_text{width:100%;height:100%;text-align:center;position:absolute;z-index:1;background:transparent;color:#9c9c9c;line-height:34px;font-size:12px;cursor:pointer}.nc-container .nc_scale .scale_text2{text-align:left;color:#fff;font-size:12px;text-indent:10px}.nc-container .nc_scale .scale_text2 b{padding-left:0;font-weight:normal}.nc-container .nc_scale .scale_text.scale_loading_text{text-align:center}.nc-container .nc_scale .imgCaptcha,.nc-container .nc_scale .clickCaptcha{display:none;overflow:hidden;border:1px solid #ccc;background:#fff;z-index:20000;}.nc-container .nc_scale .imgCaptcha p.error span,.nc-container .nc_scale .clickCaptcha p.error span{line-height:normal}.nc-container .nc_scale .imgCaptcha{height:auto}.nc-container .nc_scale .clickCaptcha{position:absolute;left:0;top:35px;height:270px;background:#fff;display:none;}.nc-container .nc_scale .clickCaptcha p.error i{color:#ff3f08;font-style:normal}.nc-container .nc_scale .clickCaptcha div{position:static;clear:both;width:100%;background:#fff;height:auto}.nc-container .nc_scale .clickCaptcha .clickCaptcha_text{height:30px;line-height:30px;font-size:12px;color:#999;}.nc-container .nc_scale .clickCaptcha .clickCaptcha_text b{font-weight:normal}.nc_btn_2{position:absolute;right:0;top:0;cursor:pointer;margin:2px 9px 0 0}.nc_iconfont.nc_btn_2{position:absolute;right:0;top:0;cursor:pointer}.nc_iconfont.nc_btn_1{position:absolute;top:10px;right:5px}.nc_btn_1{top:10px;right:10px}.scale_text i{font-style:normal;border:none;position:static;cursor:default;color:#fffc00;background:none;display:inline;width:100%}.nc-container .clickCaptcha .clickCaptcha_img{margin:0 auto;clear:both;position:relative;}.nc-container .clickCaptcha .clickCaptcha_img img{width:230px;height:230px;margin-left:10px;margin-top:5px}.nc-container .clickCaptcha .clickCaptcha_btn{margin:10px 0 0 15px;position:relative;text-align:left;}.nc-container .clickCaptcha .clickCaptcha_btn img{cursor:pointer}.nc-container .imgCaptcha{position:absolute;left:0;top:35px;height:auto;padding-bottom:15px;border:1px solid #ccc;background:#fff;}.nc-container .imgCaptcha div{position:static;width:90%;background-color:#fff}.nc-container .imgCaptcha,.nc-container .clickCaptcha{text-align:left;}.nc-container .imgCaptcha a,.nc-container .clickCaptcha a{color:#ff3f08}.nc-container .imgCaptcha .imgCaptcha_text{height:42px;line-height:42px;width:120px;background:#fff;font-size:14px;text-align:left;color:#747474;float:left;margin-left:10px;}.nc-container .imgCaptcha .imgCaptcha_text input{margin-top:5px;height:30px;line-height:30px;font-size:14px;width:90px;background:#fff}.nc-container .imgCaptcha .imgCaptcha_text input:focus{outline:none;color:#bbb}.nc-container .imgCaptcha .imgCaptcha_btn{margin:0 0 0 12px;*margin-left:0;clear:both;padding-top:5px;width:90%;}.nc-container .imgCaptcha .imgCaptcha_btn img{cursor:pointer}.nc-container .imgCaptcha .nc_scale_submit{margin:0 auto;cursor:pointer;background-color:#fc461e;width:120px;height:32px;line-height:32px;color:#fff;text-align:center}.nc-container .imgCaptcha .imgCaptcha_img{margin:4px 0 0 100px;height:40px;width:130px;overflow:hidden;cursor:pointer;}.nc-container .imgCaptcha .imgCaptcha_img img{width:130px}.nc-container .imgCaptcha .imgCaptcha_img input{border:solid 1px #ccc}.nc-lang-ar_MA,.nc-lang-ar_SA,.nc-lang-iw_HE,.nc-lang-iw_IL{text-align:right;*text-align:left;}.nc-lang-ar_MA .nc_scale .scale_text2,.nc-lang-ar_SA .nc_scale .scale_text2,.nc-lang-iw_HE .nc_scale .scale_text2,.nc-lang-iw_IL .nc_scale .scale_text2{text-align:right;}.nc-lang-ar_MA .nc_scale .scale_text2 span,.nc-lang-ar_SA .nc_scale .scale_text2 span,.nc-lang-iw_HE .nc_scale .scale_text2 span,.nc-lang-iw_IL .nc_scale .scale_text2 span{*display:inline-block;padding:0 56px 0 0}.nc-lang-ar_MA .nc_captcha_img_text,.nc-lang-ar_SA .nc_captcha_img_text,.nc-lang-iw_HE .nc_captcha_img_text,.nc-lang-iw_IL .nc_captcha_img_text{*text-align:right}.nc-lang-ar_MA span.nc-lang-cnt,.nc-lang-ar_SA span.nc-lang-cnt,.nc-lang-iw_HE span.nc-lang-cnt,.nc-lang-iw_IL span.nc-lang-cnt{text-align:right;direction:rtl}.nocaptcha span.nc-lang-cnt{float:none;height:auto;line-height:30px}.nc-container{font-size:12px;-ms-touch-action:none;touch-action:none;}.nc-container p{margin:0;padding:0;display:inline}.nc-container .scale_text.scale_text span[data-nc-lang="_startTEXT"]{display:inline-block;width:100%}.nc-container .scale_text.scale_text.slidetounlock span[data-nc-lang="_startTEXT"]{background:-webkit-gradient(linear,left top,right top,color-stop(0,#4d4d4d),color-stop(.4,#4d4d4d),color-stop(.5,#fff),color-stop(.6,#4d4d4d),color-stop(1,#4d4d4d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;-webkit-animation:slidetounlock 3s infinite;-webkit-text-size-adjust:none}.nc-container .nc_scale .nc-align-center.scale_text2{text-align:center;text-indent:-42px}@-webkit-keyframes slidetounlock{0%{background-position:-200px 0}100%{background-position:200px 0}}.nc-container.tb-login .clickCaptcha_text .icon_close{line-height:30px;margin-left:0;cursor:default;color:#ff3f08;font-size:16px;float:left;margin-right:0;background:transparent;z-index:3}.nc-container.tb-login{position:relative;margin-top:20px;display:none;}.nc-container.tb-login .nc_scale{width:auto;}.nc-container.tb-login .nc_scale .scale_text2{text-indent:-42px;text-align:center;}.nc-container.tb-login .nc_scale .scale_text2 b{padding:0}.nc-container.tb-login .nc_scale.nc_err div.scale_text{background:#f79977}.nc-container.tb-login .errloading{width:auto}.nc-container.tb-login .imgCaptcha,.nc-container.tb-login .clickCaptcha{width:252px;*width:256px;border:0;*height:300px;min-height:300px;max-height:inherit !important;}.nc-container.tb-login .imgCaptcha div.login-msg.error,.nc-container.tb-login .clickCaptcha div.login-msg.error{background:#fff2f2}.nc-container.tb-login .imgCaptcha .captcha-error,.nc-container.tb-login .clickCaptcha .captcha-error{position:absolute;top:0;width:244px;height:auto;margin-bottom:15px;padding:3px;border:solid 1px #ff8e8e;line-height:18px}.nc-container.tb-login .imgCaptcha .captcha-inform,.nc-container.tb-login .clickCaptcha .captcha-inform{font-size:110%;margin-left:20px}.nc-container.tb-login .imgCaptcha{padding-top:66px;}.nc-container.tb-login .imgCaptcha .imgCaptcha_text{width:100px;margin-left:0;}.nc-container.tb-login .imgCaptcha .imgCaptcha_text input:focus{color:#000}.nc-container.tb-login .imgCaptcha .imgCaptcha_img{width:120px;_width:100px}.nc-container.tb-login .imgCaptcha .imgCaptcha_btn{width:100%;margin-left:0}.nc-container.tb-login .imgCaptcha .nc_scale_submit{width:100%;height:36px;line-height:36px;margin-top:20px;margin-left:0;border-radius:3px;font-size:16px;font-family:Tahoma,Helvetica,Arial,sans-serif;background:#ff3f08}.nc-container.tb-login .clickCaptcha{padding-top:40px;}.nc-container.tb-login .clickCaptcha .clickCaptcha_text{text-indent:4px}.nc-container.tb-login .clickCaptcha .clickCaptcha_img img{margin-left:10px}.nc-container.tb-login .nc_btn_1{top:77px;_top:57px}.nc-container.tb-login .nc_btn_2{top:36px}.login .nc-container.tb-login .login-msg p,.login-box .nc-container.tb-login .login-msg p{width:auto;float:left}.nc-container.tb-login.nc-old-login{margin:20px 0 10px 0;width:250px;}.nc-container.tb-login.nc-old-login .nc_wrapper{width:250px}.nc-container.tb-login.nc-old-login .imgCaptcha,.nc-container.tb-login.nc-old-login .clickCaptcha{width:250px;min-height:auto;}.nc-container.tb-login.nc-old-login .imgCaptcha .captcha-error,.nc-container.tb-login.nc-old-login .clickCaptcha .captcha-error{line-height:16px}.nc-container.tb-login.nc-old-login .clickCaptcha{padding-top:28px;}.nc-container.tb-login.nc-old-login .clickCaptcha .clickCaptcha_img img{width:200px;height:200px}.nc-container.nc-old-login.show-click-captcha{padding-bottom:60px}.nc-container.nc-old-login.show-click-captcha.nc-tm-min-fix{padding-bottom:40px}.nc-container.tb-login.nc-tm-min-fix .clickCaptcha{max-height:340px !important}#content .login-box .bd .nc-container.tb-login .login-msg{margin:10px auto 15px auto}#content .login-box .bd .nc-container.tb-login.nc-old-login.show-click-captcha .login-msg{margin:2px 0 0 0}.nc-container .nc_scale .nc-cc{display:none;position:absolute;left:0;top:35px;z-index:20000;width:360px;height:570px;border:1px solid #5eaef1;border-radius:4px;background:#fff;font-size:14px;line-height:18px;color:#333;}.nc-container .nc_scale .nc-cc.nc-cc-status-loading .nc-cc-btn,.nc-container .nc_scale .nc-cc.nc-cc-status-verifing .nc-cc-btn{background-color:#90c1eb}.nc-container .nc_scale .nc-cc.nc-cc-status-loading .nc-cc-btn,.nc-container .nc_scale .nc-cc.nc-cc-status-verifing .nc-cc-btn,.nc-container .nc_scale .nc-cc.nc-cc-status-loading .nc-cc-refresh,.nc-container .nc_scale .nc-cc.nc-cc-status-verifing .nc-cc-refresh{cursor:default}.nc-container .nc_scale .nc-cc.nc-cc-status-loading .nc-cc-refresh,.nc-container .nc_scale .nc-cc.nc-cc-status-verifing .nc-cc-refresh{color:#999}.nc-container .nc_scale .nc-cc a{color:#3199f4;text-decoration:none}.nc-container .nc_scale .nc-cc .nc_iconfont{vertical-align:top;margin-right:8px}.nc-container .nc_scale .nc-cc-btn{display:inline-block;*display:inline;*zoom:1;vertical-align:top;letter-spacing:normal;word-spacing:normal;width:100px;line-height:30px;text-align:center;background-color:#3199f4;color:#fff;border-radius:4px;cursor:pointer;}.nc-container .nc_scale .nc-cc-btn.nc-cc-disabled{background-color:#90c1eb;cursor:default}.nc-container .nc_scale .nc-cc-btn .nc-lang-cnt{line-height:18px}.nc-container .nc_scale .nc-cc-header{padding:20px 20px 19px 20px;height:100px;background:#f4f8fa;border-bottom:1px solid #ccc}.nc-container .nc_scale .nc-cc-img1-box{float:left;width:100px;height:100px;margin-right:16px}.nc-container .nc_scale .nc-cc-txt{overflow:hidden;*zoom:1;line-height:30px;padding-top:11px}.nc-container .nc_scale .nc-cc-img2-box{position:relative;padding:0 20px;margin-top:20px}.nc-container .nc_scale .nc-cc-items{position:absolute;left:20px;_left:0;top:0;width:320px;overflow:hidden}.nc-container .nc_scale .nc-cc-items-inner{margin-right:-20px}.nc-container .nc_scale .nc-cc-item{position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:top;letter-spacing:normal;word-spacing:normal;margin-right:10px;margin-bottom:10px;border:1px solid #ccc;width:98px;height:98px;background:url("//gtms02.alicdn.com/tps/i2/T1ty2QFNNXXXc6Yc2r-1-1.gif");}.nc-container .nc_scale .nc-cc-item:hover{border-color:#3199f4}.nc-container .nc_scale .nc-cc-item .nc_iconfont{display:none;position:absolute;right:0;bottom:0;color:#3199f4;font-size:22px;margin-right:0}.nc-container .nc_scale .nc-cc-item.nc-cc-selected .nc_iconfont{display:block}.nc-container .nc_scale .nc-cc-tip{display:none;position:absolute;left:0;bottom:60px;width:360px;line-height:18px;text-align:center;color:#eb4f38;}.nc-container .nc_scale .nc-cc-tip span{line-height:normal}.nc-container .nc_scale .nc-cc-footer{position:absolute;left:0;bottom:20px;width:360px;height:30px;line-height:30px;text-align:center;}.nc-container .nc_scale .nc-cc-footer .nc_iconfont{color:#c4cbd0}.nc-container .nc_scale .nc-cc-refresh,.nc-container .nc_scale .nc-cc-wait{position:absolute;left:20px;top:0;color:#3199f4;cursor:pointer}.nc-container .nc_scale .nc-cc-wait{display:none}.nc-container .nc_scale .nc-cc-cancel{position:absolute;right:20px;top:0;color:#3199f4;cursor:pointer;}.nc-container .nc_scale .nc-cc-cancel .nc_iconfont{position:relative;top:-1px}.nc-container .nc_scale .nc-cc-loading{margin-top:247px;text-align:center;line-height:14px}.nc-container .nc_scale .nc-cc-loading-img{display:inline-block;*display:inline;*zoom:1;vertical-align:top;letter-spacing:normal;word-spacing:normal;vertical-align:middle;background:url("//img.alicdn.com/tps/TB1OdxsKpXXXXcgXFXXXXXXXXXX-14-14.gif") no-repeat;width:14px;height:14px;position:relative;top:-1px;margin-right:9px}.nc-container .nc_scale .nc-cc-fail{position:absolute;left:50%;top:50%;width:320px;height:180px;margin-left:-160px;margin-top:-90px;background:#fff;border-radius:4px}.nc-container .nc_scale .nc-cc-fail-inner{text-align:center;padding:55px 10px 10px}.nc-container .nc_scale .nc-cc-fail-action{margin:28px 0 18px;}.nc-container .nc_scale .nc-cc-fail-action a{display:inline-block;*display:inline;*zoom:1;vertical-align:top;letter-spacing:normal;word-spacing:normal;line-height:30px;margin-left:16px}.nc-container .nc_scale .nc-cc-contact{text-align:right;color:#666;padding-right:9px}.nc-container .nc_scale .nc-cc-mask{display:none;position:absolute;left:0;top:0;width:360px;height:570px;background:rgba(0,0,0,0.3);filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#4C000000', endColorstr='#4C000000');}:root .nc-container .nc_scale .nc-cc-mask{-webkit-filter:none;filter:none}.nc-container .nc_scale .nc-cc-arrow-1,.nc-container .nc_scale .nc-cc-arrow-2{display:none;position:absolute;top:340px;border:solid transparent;height:0;width:0}.nc-container .nc_scale .nc-cc-arrow-1{border-width:16px;margin-top:-1px}.nc-container .nc_scale .nc-cc-arrow-2{border-width:15px}.nc-container .nc_scale .nc-cc-right .nc-cc-arrow-1,.nc-container .nc_scale .nc-cc-left .nc-cc-arrow-1,.nc-container .nc_scale .nc-cc-right .nc-cc-arrow-2,.nc-container .nc_scale .nc-cc-left .nc-cc-arrow-2{display:block;_display:none}.nc-container .nc_scale .nc-cc-right{left:180px;top:-339px;}.nc-container .nc_scale .nc-cc-right .nc-cc-arrow-1{border-right-color:#5eaef1;left:-32px}.nc-container .nc_scale .nc-cc-right .nc-cc-arrow-2{border-right-color:#fff;left:-30px}.nc-container .nc_scale .nc-cc-left{left:-335px;top:-339px;}.nc-container .nc_scale .nc-cc-left .nc-cc-arrow-1{border-left-color:#5eaef1;right:-32px}.nc-container .nc_scale .nc-cc-left .nc-cc-arrow-2{border-left-color:#fff;right:-30px}</style></head>
+<body id="nv_forum" class="pg_viewthread" onkeydown="if(event.keyCode==27) return false;"><a style="width: 92px; height: 22px; background: url(&quot;http://open.t.qq.com/apps/qshare/images/icon.gif&quot;) no-repeat rgb(255, 0, 0); position: absolute; display: none;" href="javascript:;"></a>
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="toptb" class="cl">
+<div class="wp">
+<div class="z"><a href="javascript:;" onclick="setHomepage(&#39;http://www.right.com.cn/forum/&#39;);">设为首页</a><a href="http://www.right.com.cn/forum/" onclick="addFavorite(this.href, &#39;恩山无线论坛&#39;);return false;">收藏本站</a><script type="text/javascript">var _speedMark = new Date();</script></div>
+<div class="y">
+<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="开启辅助访问" class="switchblind">开启辅助访问</a>
+<a href="javascript:;" id="switchwidth" onclick="widthauto(this)" title="切换到窄版" class="switchwidth">切换到窄版</a>
+</div>
+</div>
+</div>
+<div id="hd">
+<div class="wp">
+<div class="hdc cl"><h2><a href="http://item.jd.com/12860562623.html" target="_blank" title="恩山无线论坛"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/logo.gif" alt="恩山无线论坛" border="0"></a></h2><script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/logging.js.下载" type="text/javascript"></script>
+<form method="post" autocomplete="off" id="lsform" action="http://www.right.com.cn/FORUM/member.php?mod=logging&amp;action=login&amp;loginsubmit=yes&amp;infloat=yes&amp;lssubmit=yes" onsubmit="pwmd5(&#39;ls_password&#39;);return lsSubmit();">
+<div class="fastlg cl">
+<span id="return_ls" style="display:none"></span>
+<div class="y pns">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td><label for="ls_username">帐号</label></td>
+<td><input type="text" name="username" id="ls_username" class="px vm xg1" value="用户名/Email" onfocus="if(this.value == &#39;用户名/Email&#39;){this.value = &#39;&#39;;this.className = &#39;px vm&#39;;}" onblur="if(this.value == &#39;&#39;){this.value = &#39;用户名/Email&#39;;this.className = &#39;px vm xg1&#39;;}" tabindex="901"></td>
+<td class="fastlg_l"><label for="ls_cookietime"><input type="checkbox" name="cookietime" id="ls_cookietime" class="pc" value="2592000" tabindex="903">自动登录</label></td>
+<td>&nbsp;<a href="javascript:;" onclick="showWindow(&#39;login&#39;, &#39;member.php?mod=logging&amp;action=login&amp;viewlostpw=1&#39;)">找回密码</a></td>
+</tr>
+<tr>
+<td><label for="ls_password">密码</label></td>
+<td><input type="password" name="password" id="ls_password" class="px vm" autocomplete="off" tabindex="902"></td>
+<td class="fastlg_l"><button type="submit" class="pn vm" tabindex="904" style="width: 75px;"><em>登录</em></button></td>
+<td>&nbsp;<a href="http://www.right.com.cn/FORUM/member.php?mod=register" class="xi2 xw1">立即注册</a></td>
+</tr>
+</tbody></table>
+<input type="hidden" name="quickforward" value="yes">
+<input type="hidden" name="handlekey" value="ls">
+</div>
+<div class="fastlg_fm y" style="margin-right: 10px; padding-right: 10px">
+<p><a href="http://www.right.com.cn/FORUM/connect.php?mod=login&amp;op=init&amp;referer=forum.php%3Fmod%3Dviewthread%26tid%3D217088%26extra%3Dpage%253D1%26page%3D1&amp;statfrom=login_simple"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/qq_login.gif" class="vm" alt="QQ登录"></a></p>
+<p class="hm xg1" style="padding-top: 2px;">只需一步，快速开始</p>
+</div>
+<link rel="stylesheet" href="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/oculus.css">
+<link rel="stylesheet" href="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/nc.css" disabled="">
+<script type="text/javascript" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/nc.js.下载"></script>
+<script type="text/javascript" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/oculus_nc.js.下载"></script>
+<div id="nc-float" style="display:none;">
+<div class="nc-f-head">
+<img class="nc-f-icon" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/TB1_3FrKVXXXXbdXXXXXXXXXXXX-129-128.png" alt="" height="20" width="20">
+<span class="nc-f-title">安全验证</span>
+<a class="close" href="http://www.right.com.cn/FORUM/#"><i class="nc_iconfont"></i></a>
+</div>
+<div class="nc-f-body" id="oculus-nc-f-body">
+<div class="nc-f-des">请完成以下验证码</div>
+<div id="_umfp" style="width:1px;height:1px"></div>
+<div id="nocaptcha"></div>
+</div>
+</div>
+<script type="text/javascript" reload="1" defer="true">
+            paxmac_ready(function(){
+            var lsform = document.getElementById('lsform');
+            var o = document.createElement("button");
+            o.id = "header-loggin-btn";
+            o.setAttribute('type', 'submit');
+            o.value = "";
+            o.style.display = "none";
+            try{
+            lsform.appendChild(o);
+                }
+            catch(err){
+                
+            }
+            window['aq-nc-grey-ratio'] = 1;
+            o.onclick = function() {
+                var ncf = new NCFloat(document.getElementById('nc-float'));
+                _nc_plugin_init('FFFF00000000016840F6', 'nocaptcha', 'lsform', 'discuz_header_nc');
+                discuz_header_nc.on('success', function(){
+                            ncf.hide(1);
+                            lsSubmit();
+                    });
+                discuz_header_nc.on('after_code', function() {
+                    document.getElementById('oculus-nc-f-body').style.height = "300px";
+                });
+                ncf.show();
+
+            };
+            });
+            </script> </div>
+<button id="header-loggin-btn" type="submit" value="" style="display: none;"></button></form>
+<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/md5.js.下载" type="text/javascript" reload="1"></script>
+</div>
+<div id="nv" style="border-left-width: 0px; border-right-width: 0px; height: 33px; width: 1865px; top: 0px; left: 19.0313px; position: fixed; z-index: 199; opacity: 0.85;">
+<a href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({&#39;ctrlid&#39;:&#39;qmenu&#39;,&#39;pos&#39;:&#39;34!&#39;,&#39;ctrlclass&#39;:&#39;a&#39;,&#39;duration&#39;:2});showForummenu(158);})">快捷导航</a>
+<ul><li id="mn_portal"><a href="http://www.right.com.cn/FORUM/portal.php" hidefocus="true" title="Portal">门户<span>Portal</span></a></li><li class="a" id="mn_forum"><a href="http://www.right.com.cn/FORUM/forum.php" hidefocus="true" title="BBS">论坛<span>BBS</span></a></li><li id="mn_forum_10"><a href="http://www.right.com.cn/FORUM/forum.php?mod=guide" hidefocus="true" title="Guide">导读<span>Guide</span></a></li><li id="mn_group"><a href="http://www.right.com.cn/FORUM/group.php" hidefocus="true" title="Group">群组<span>Group</span></a></li><li id="mn_home"><a href="http://www.right.com.cn/FORUM/home.php" hidefocus="true" title="Space">家园<span>Space</span></a></li><li id="mn_home_9"><a href="http://www.right.com.cn/FORUM/home.php?mod=follow" hidefocus="true" title="Follow">广播<span>Follow</span></a></li><li id="mn_N12a7"><a href="http://www.right.com.cn/FORUM/misc.php?mod=ranklist" hidefocus="true" title="Ranklist">排行榜<span>Ranklist</span></a></li><li id="mn_forum_11"><a href="http://www.right.com.cn/FORUM/forum.php?mod=collection" hidefocus="true" title="Collection">淘帖<span>Collection</span></a></li><li id="mn_Nc48e"><a href="http://www.right.com.cn/forum/home.php?mod=spacecp&amp;ac=credit&amp;op=buy" hidefocus="true" title="购买积分" style="font-weight: bold;text-decoration: underline;color: yellow">购买积分<span>购买积分</span></a></li></ul>
+</div>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><div id="mu" class="cl">
+</div><div class="a_mu"><script type="text/javascript">
+    /*创建于 2017/6/18 热门板块*/
+    var cpro_id = "u3009663";
+</script>
+<script type="text/javascript" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/c.js.下载"></script>
+</div><div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($(&#39;scbar_txt&#39;))" action="http://www.right.com.cn/FORUM/search.php?searchsubmit=yes" target="_blank">
+<input type="hidden" name="mod" id="scbar_mod" value="forum">
+<input type="hidden" name="formhash" value="07247ef0">
+<input type="hidden" name="srchtype" value="title">
+<input type="hidden" name="srhfid" value="158">
+<input type="hidden" name="srhlocality" value="forum::viewthread">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech="" speech="" class=" xg1" placeholder="请输入搜索内容"></td>
+<td class="scbar_type_td"><a href="javascript:;" id="scbar_type" class="xg1" onclick="showMenu(this.id)" hidefocus="true">帖子</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+</div>
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a href="javascript:;" rel="curforum" fid="158">本版</a></li><li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
+<script type="text/javascript">
+initSearchmenu('scbar', '');
+</script>
+</div>
+</div>
+<link rel="stylesheet" href="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/oculus.css">
+<link rel="stylesheet" href="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/nc.css">
+<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/nc.js.下载"></script>
+<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/oculus_nc.js.下载"></script>
+<div id="nc-float" style="display:none;">
+<div class="nc-f-head">
+<img class="nc-f-icon" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/TB1_3FrKVXXXXbdXXXXXXXXXXXX-129-128.png" alt="" height="20" width="20">
+<span class="nc-f-title">安全验证</span>
+<a class="close" href="http://www.right.com.cn/FORUM/#"><i class="nc_iconfont"></i></a>
+</div>
+<div class="nc-f-body" id="oculus-nc-f-body">
+<div class="nc-f-des">请完成以下验证码</div>
+<div id="nocaptcha"></div>
+</div>
+</div>
+<div id="wp" class="wp">
+<script type="text/javascript">var fid = parseInt('158'), tid = parseInt('217088');</script>
+<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/forum_viewthread.js.下载" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(0);var imagemaxwidth = '800';var aimgcount = new Array();</script>
+<style id="diy_style" type="text/css"></style>
+ <div id="diynavtop" class="area"></div> 
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="http://www.right.com.cn/FORUM/" class="nvhm" title="首页">恩山无线论坛</a><em>&#187;</em><a href="http://www.right.com.cn/FORUM/forum.php">论坛</a> <em>&#8250;</em> <a href="http://www.right.com.cn/FORUM/forum.php?gid=55">无线设备硬件相关板块</a> <em>&#8250;</em> <a href="http://www.right.com.cn/FORUM/forum-158-1.html">斐讯版面，禁发广告、返利链接、二维码购买链接</a> <em>&#8250;</em> <a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html">【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化 ...</a>
+</div>
+</div>
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+ <div id="diy1" class="area"></div> 
+</div>
+<div id="ct" class="wp cl">
+<div id="pgt" class="pgs mbm cl ">
+<div class="pgt"><div class="pg"><strong>1</strong><a href="http://www.right.com.cn/FORUM/thread-217088-2-1.html">2</a><a href="http://www.right.com.cn/FORUM/thread-217088-3-1.html">3</a><a href="http://www.right.com.cn/FORUM/thread-217088-4-1.html">4</a><a href="http://www.right.com.cn/FORUM/thread-217088-5-1.html">5</a><a href="http://www.right.com.cn/FORUM/thread-217088-6-1.html">6</a><a href="http://www.right.com.cn/FORUM/thread-217088-7-1.html">7</a><a href="http://www.right.com.cn/FORUM/thread-217088-8-1.html">8</a><a href="http://www.right.com.cn/FORUM/thread-217088-9-1.html">9</a><a href="http://www.right.com.cn/FORUM/thread-217088-10-1.html">10</a><a href="http://www.right.com.cn/FORUM/thread-217088-60-1.html" class="last">... 60</a><label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="1" onkeydown="if(event.keyCode==13) {window.location=&#39;forum.php?mod=viewthread&amp;tid=217088&amp;extra=page%3D1&amp;page=&#39;+this.value;; doane(event);}"><span title="共 60 页"> / 60 页</span></label><a href="http://www.right.com.cn/FORUM/thread-217088-2-1.html" class="nxt">下一页</a></div></div>
+<span class="y pgb"><a href="http://www.right.com.cn/FORUM/forum-158-1.html">返回列表</a></span>
+<a id="newspecial" onmouseover="$(&#39;newspecial&#39;).id = &#39;newspecialtmp&#39;;this.id = &#39;newspecial&#39;;showMenu({&#39;ctrlid&#39;:this.id})" onclick="showWindow(&#39;newthread&#39;, &#39;forum.php?mod=post&amp;action=newthread&amp;fid=158&#39;)" href="javascript:;" title="发新帖"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/pn_post.png" alt="发新帖"></a></div>
+<div id="postlist" class="pl bm">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls ptn pbn">
+<div class="hm ptn">
+<span class="xg1">查看:</span> <span class="xi1">44504</span><span class="pipe">|</span><span class="xg1">回复:</span> <span class="xi1">908</span>
+</div>
+</td>
+<td class="plc ptm pbn vwthd">
+<h1 class="ts">
+<span id="thread_subject">【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】</span>
+</h1>
+<span class="xg1">
+&nbsp;<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/recommend_1.gif" alt="" title="评价指数 9">
+&nbsp;<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/hot_3.gif" alt="" title="热度: 1118">
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" onclick="return copyThreadUrl(this, &#39;恩山无线论坛&#39;)">[复制链接]</a>
+</span>
+</td>
+</tr>
+</tbody></table>
+<table cellspacing="0" cellpadding="0" class="ad">
+<tbody><tr>
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table><div id="post_1846707"><table id="pid1846707" class="plhin" summary="pid1846707" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846707" class="pls favatar" style="top: 33px; position: fixed;">
+<div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-140971.html" target="_blank" class="xw1">abccba94</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846707" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846707_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-140971.html" target="_blank" class="xi2">abccba94</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=140971&amp;do=profile" target="_blank" class="xi2">11717</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=140971&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-140971.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846707" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846707">发表于 2017-6-3 18:46</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+<span class="pipe show">|</span><a href="javascript:;" onclick="readmode($(&#39;thread_subject&#39;).innerHTML, 1846707);" class="show">阅读模式</a>
+</div>
+</div>
+</div><div class="pct"><div style="display:none"><font size="2"><a href="http://js.50bang.org/?formType=8122" target="_blank"><span style="color:red">2345装机设主页可以赚钱，一键安装软件，终身领工资。快来看看！</span></a></font></div><style type="text/css">.pcb{margin-right:0}</style><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846707">
+<div class="a_pr" style="margin-left:10px;width:auto"><a href="https://item.jd.com/11160105652.html" target="_blank">
+<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/ak.gif">
+</a></div><i class="pstatus"> 本帖最后由 abccba94 于 2017-6-21 09:25 编辑 </i><br>
+<br>
+斐讯K2P的配置文件加密方式与K2一模一样，因此可以用配置文件恢复法来开启telnet或运行任何命令。<br>
+<br>
+配置文件加密原理请参考我的【<a href="http://iytc.net/wordpress/?p=1869" target="_blank">博客文章</a>】<br>
+<br>
+<strong><font color="Blue">注：下述方法仅保证在官方固件或官方定制固件下有效，刷入第三方固件后执行不一定有效（命令和分区不同）</font></strong><br>
+<br>
+<strong>【开启telnet方法】</strong><br>
+1、进入<a href="http://iytc.net/k2p.php" target="_blank">http://iytc.net/k2p.php</a><br>
+2、输入你的WAN口MAC地址，下载配置文件(如验证码不能校验，请开启cookie或更换浏览器再试)<br>
+3、用此配置文件恢复即可开启telnet<br>
+恢复此配置文件不会更改你的其他配置<br>
+恢复配置会重启路由器，重启完成后计算机即可通过telnet或putty工具连接K2P<br>
+后续如需取消telnet，可以编辑/etc/rc.local，加#号注释telnet行即可：<br>
+#/usr/sbin/telnetd -l /bin/login.sh<br>
+<br>
+<br>
+<strong>【备份固件方法】</strong><br>
+<br>
+一、编程器固件备份（所有分区）<br>
+-------------------------------------------------------------------------------------------------------<br>
+计算机telnet连接K2P后，按如下操作输入命令<br>
+1、将固件保存到内存<br>
+<div class="blockcode"><div id="code_d3m"><ol><li>dd if=/dev/mtd0 of=/tmp/all.bin</li></ol></div><em onclick="copycode($(&#39;code_d3m&#39;));">复制代码</em></div><br>
+2、将内存固件映射到http目录<br>
+<div class="blockcode"><div id="code_B4H"><ol><li>cd /www<br>
+</li><li>touch all.bin<br>
+</li><li>mount --bind /tmp/all.bin /www/all.bin</li></ol></div><em onclick="copycode($(&#39;code_B4H&#39;));">复制代码</em></div><br>
+3、下载备份固件到计算机<br>
+计算机访问<br>
+<a href="http://192.168.2.1/all.bin" target="_blank">http://192.168.2.1/all.bin</a><br>
+即可下载固件<br>
+192.168.2.1为K2P地址，如你已修改，则更改此地址<br>
+备份的固件大小为16M，为整个FLASH的备份（含boot、eeprom、固件及你的配置），这个就是所谓的<strong><font color="Blue">编程器固件</font></strong>，适用于编程器刷入或用命令恢复整个FLASH<br>
+<br>
+二、纯固件备份（firmware分区）<br>
+-------------------------------------------------------------------------------------------------------<br>
+如果要备份纯固件，则将mtd0改成mtd5，只备份纯固件（firmware）部分：<br>
+<div class="blockcode"><div id="code_aQz"><ol><li>dd if=/dev/mtd5 of=/tmp/fs.bin<br>
+</li><li>cd /www<br>
+</li><li>touch fs.bin<br>
+</li><li>mount --bind /tmp/fs.bin /www/fs.bin</li></ol></div><em onclick="copycode($(&#39;code_aQz&#39;));">复制代码</em></div><br>
+计算机访问<br>
+<a href="http://192.168.2.1/fs.bin" target="_blank">http://192.168.2.1/fs.bin</a><br>
+即可下载fs固件<br>
+<br>
+三、EEPROM备份（出厂分区Factory）<br>
+-------------------------------------------------------------------------------------------------------<br>
+其实所谓的“EEPROM”就是FLASH中的Factory分区，标识为mtd3，包含了你K2P的一些关键参数信息，如MAC、无线出厂参数，此分区在编程器固件中已经包含<br>
+备份方法：<br>
+<div class="blockcode"><div id="code_tZC"><ol><li>dd if=/dev/mtd3 of=/tmp/eeprom.bin<br>
+</li><li>cd /www<br>
+</li><li>touch eeprom.bin<br>
+</li><li>mount --bind /tmp/eeprom.bin /www/eeprom.bin</li></ol></div><em onclick="copycode($(&#39;code_tZC&#39;));">复制代码</em></div><br>
+计算机访问<br>
+<a href="http://192.168.2.1/eeprom.bin" target="_blank">http://192.168.2.1/eeprom.bin</a><br>
+即可下载eeprom固件<br>
+注：升级官方固件或官方定制固件不会更改eeprom<br>
+<br>
+固件备份后建议重启一下路由器或"rm -f /tmp/*.bin"删除备份固件，否则会占用内存<br>
+重启后可以用“rm -f /www/*.bin”删除多余文件<br>
+<br>
+<strong>【恢复固件方法】</strong><br>
+<strong><font color="Red">注意：此操作为高危操作，请仔细阅读下面的说明</font></strong><br>
+<br>
+一、<font color="RoyalBlue"><strong>编程器固件</strong></font>恢复方法<br>
+-------------------------------------------------------------------------------------------------------<br>
+一定要是编程器固件【<strong><font color="Blue">大小应该是16,777,216字节</font></strong>】哦，不然死给你看：<br>
+1、检查编程器固件all.bin的大小是否为16,777,216字节，不是的话不要刷<br>
+2、用winscp将编程器固件all.bin传到/tmp目录 <br>
+3、telnet连接K2P，输入<br>
+<div class="blockcode"><div id="code_tnL"><ol><li>mtd -r write /tmp/all.bin ALL</li></ol></div><em onclick="copycode($(&#39;code_tnL&#39;));">复制代码</em></div><br>
+注意ALL要大写<br>
+耐心等待FLASH写完，K2P会自动复位，启动后即恢复为原始固件<br>
+<br>
+如果你刷了第三方固件，上面第3步的命令可能不一定合适，你需要先用cat /proc/mtd命令查看分区信息，然后mtd刷入包含整个FLASH的分区<br>
+比如潘多拉固件，他的分区信息如下：<br>
+
+<ignore_js_op>
+
+<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/153840blup7guxupe3pgce.jpg" alt="20170606153758.jpg" title="20170606153758.jpg">
+
+</ignore_js_op>
+<br>
+整个flash的分区是mtd3（size大小为0x1000000），名称为fullflash，那么恢复编程器固件的命令为：<br>
+<div class="blockcode"><div id="code_T0V"><ol><li>mtd -r write /tmp/all.bin fullflash</li></ol></div><em onclick="copycode($(&#39;code_T0V&#39;));">复制代码</em></div><br>
+第3步改成上面的命令即可<br>
+<br>
+二、单独分区的恢复方法<br>
+-------------------------------------------------------------------------------------------------------<br>
+如果你恢复了编程器固件，就不再需要恢复单独的分区了<br>
+<br>
+如果你需要在<font color="Blue"><strong>官方或官改固件</strong></font>上<strong><font color="Blue">单独</font></strong>恢复eeprom或firmware，只需执行如下操作：<br>
+恢复eeprom：<br>
+用winscp将编程器固件eeprom.bin传到/tmp目录，执行“mtd -r write /tmp/eeprom.bin Factory”<br>
+恢复firmware纯固件：<br>
+用winscp将编程器固件fs.bin传到/tmp目录，执行“mtd -r write /tmp/fs.bin firmware”<br>
+其他第三方固件操作方式类似，但命令需根据分区名称来修改<br>
+<br>
+<strong>【安装开启SSH】</strong><br>
+1、安装SSH<br>
+<div class="blockcode"><div id="code_acA"><ol><li>opkg install http://downloads.openwrt.org/chaos_calmer/15.05/ramips/mt7621/packages/base/dropbear_2015.67-1_ramips_1004kc.ipk </li></ol></div><em onclick="copycode($(&#39;code_acA&#39;));">复制代码</em></div>安装过程中会提示错误，可以不用理会，继续往下执行。<br>
+2、设置ssh自启动，添加ssh账户<br>
+<div class="blockcode"><div id="code_cEh"><ol><li>/etc/init.d/dropbear enable<br>
+</li><li>echo -e 'admin\nadmin' | passwd root<br>
+</li><li>/etc/init.d/dropbear start</li></ol></div><em onclick="copycode($(&#39;code_cEh&#39;));">复制代码</em></div>ssh用户名root，密码admin<br>
+<br>
+<strong>【净化方法】</strong><br>
+计算机telnet连接K2P后，按如下操作输入命令<br>
+1、禁用广告推送<br>
+<div class="blockcode"><div id="code_VDG"><ol><li>/etc/init.d/adpush stop<br>
+</li><li>/etc/init.d/adpush disable</li></ol></div><em onclick="copycode($(&#39;code_VDG&#39;));">复制代码</em></div><br>
+2、禁用可疑进程<br>
+注：下面几个禁用后无法使用APP远程：<br>
+<div class="blockcode"><div id="code_SoV"><ol><li>/etc/init.d/lc stop<br>
+</li><li>/etc/init.d/lc disable<br>
+</li><li>/etc/init.d/tr069 stop<br>
+</li><li>/etc/init.d/tr069 disable<br>
+</li><li>/etc/init.d/collect stop<br>
+</li><li>/etc/init.d/collect disable<br>
+</li><li>/etc/init.d/capp stop<br>
+</li><li>/etc/init.d/capp disable</li></ol></div><em onclick="copycode($(&#39;code_SoV&#39;));">复制代码</em></div><br>
+
+<br>
+telnet：<br>
+
+<ignore_js_op>
+
+<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/190229ifzz5fi6l00dklk9.jpg" alt="QQ图片20170603151350.jpg" title="QQ图片20170603151350.jpg">
+
+</ignore_js_op>
+<br>
+<br>
+<br>
+固件备份：<br>
+
+<ignore_js_op>
+
+<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/190329etksa87t54ox0ft0.png" alt="QQ图片20170603190316.png" title="QQ图片20170603190316.png">
+
+</ignore_js_op>
+<br>
+<br>
+ssh：<br>
+
+<ignore_js_op>
+
+<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/210027wtawuteegdtudfod.png" alt="QQ图片20170603205941.png" title="QQ图片20170603205941.png">
+
+</ignore_js_op>
+<br>
+<br>
+K2P官方固件的FLASH分区：<br>
+
+<ignore_js_op>
+
+<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/090350md969brtr377rdr9.jpg" alt="20170609090332.jpg" title="20170609090332.jpg">
+
+</ignore_js_op>
+</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846707" class="cm">
+<h3 class="psth xs1"><span class="icon_ring vm"></span>点评</h3>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-154240.html" c="1" mid="card_5184"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/40_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-154240.html" class="xi2 xw1">xytb</a>
+</div>
+<div class="psti">
+补充一条：crontab -u root -r&nbsp;
+<span class="xg1">
+发表于 2017-6-10 06:55</span>
+</div>
+</div>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-369987.html" c="1" mid="card_1753"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-369987.html" class="xi2 xw1">hstgames</a>
+</div>
+<div class="psti">
+就我一人提示说：配置文件错误，请重新选择! 就我一人 就我一人&nbsp;
+<span class="xg1">
+发表于 2017-6-9 17:16</span>
+</div>
+</div>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-151669.html" c="1" mid="card_7243"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/69_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-151669.html" class="xi2 xw1">chaohua27</a>
+</div>
+<div class="psti">
+备份固件那块命令可以再简化下，①dd if=/dev/mtd5 of=/tmp/fs.bin，②ln -s /tmp/*.bin /www/；还有下载的话建议用wget命令，这样能保证下载下来的文件完整性，浏览器在这块还是不可靠，特别是IE&nbsp;
+<span class="xg1">
+发表于 2017-6-5 00:15</span>
+</div>
+</div>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-313006.html" c="1" mid="card_6928"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-313006.html" class="xi2 xw1">kaka111222</a>
+</div>
+<div class="psti">
+怪我看的不仔细，大神帖子里说的很清楚了“如果采用无线扩展组网或网页上的MAC不正确，可以查看K2机器底部的MAC地址”，我用的无线扩展,MAC不一致，路由恢复出厂后一致了。&nbsp;
+<span class="xg1">
+发表于 2017-6-4 20:29</span>
+</div>
+</div>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-313006.html" c="1" mid="card_6928"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-313006.html" class="xi2 xw1">kaka111222</a>
+</div>
+<div class="psti">
+MAC地址页面里显示的跟路由器背面印刷的不一致，选哪个？
+http://www.right.com.cn/forum/thread-217224-1-1.html&nbsp;
+<span class="xg1">
+发表于 2017-6-4 20:10</span>
+</div>
+</div>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-365034.html" c="1" mid="card_9308"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-365034.html" class="xi2 xw1">dtspsfans</a>
+</div>
+<div class="psti">
+确实很酷炫诶，&nbsp;
+<span class="xg1">
+发表于 2017-6-4 08:40</span>
+</div>
+</div>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-33286.html" c="1" mid="card_8537"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-33286.html" class="xi2 xw1">newscat</a>
+</div>
+<div class="psti">
+大神！&nbsp;
+<span class="xg1">
+发表于 2017-6-3 21:19</span>
+</div>
+</div>
+</div>
+
+<h3 class="psth xs1"><span class="icon_ring vm"></span>评分</h3>
+<dl id="ratelog_1846707" class="rate">
+<dd style="margin:0">
+<div id="post_rate_1846707"></div>
+<table class="ratl">
+<tbody><tr>
+<th class="xw1" width="120"><a href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=viewratings&amp;tid=217088&amp;pid=1846707" onclick="showWindow(&#39;viewratings&#39;, this.href)" title="查看全部评分"> 参与人数 <span class="xi1">52</span></a></th><th class="xw1" width="80">恩山币 <i><span class="xi1">+58</span></i></th>
+<th>
+<a href="javascript:;" onclick="toggleRatelogCollapse(&#39;ratelog_1846707&#39;, this);" class="y xi2 op">收起</a>
+<i class="txt_h">理由</i>
+</th>
+</tr>
+</tbody><tbody class="ratl_l"><tr id="rate_1846707_80452">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-80452.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-80452.html" target="_blank">xhz2008</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_384324">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-384324.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-384324.html" target="_blank">107382917</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你太牛逼了，走，我请你吃鳇鱼头去～～～</td>
+</tr>
+<tr id="rate_1846707_298468">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-298468.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-298468.html" target="_blank">yebin20000</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_373178">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-373178.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-373178.html" target="_blank">khzhao</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">字字珠玑</td>
+</tr>
+<tr id="rate_1846707_145029">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-145029.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/29_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-145029.html" target="_blank">Wit</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">强大的恩山！(以下重复1万次)</td>
+</tr>
+<tr id="rate_1846707_378202">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-378202.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-378202.html" target="_blank">qq943063692</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_226978">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-226978.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-226978.html" target="_blank">lajiaomian</a>
+</td><td class="xi1"> + 3</td>
+<td class="xg1">支付宝已转500w给你！</td>
+</tr>
+<tr id="rate_1846707_207333">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-207333.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-207333.html" target="_blank">29752659</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">哎呀，我得赶紧去打酱油了。</td>
+</tr>
+<tr id="rate_1846707_103241">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-103241.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-103241.html" target="_blank">net1201</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">支付宝已转500w给你！</td>
+</tr>
+<tr id="rate_1846707_135477">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-135477.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/77_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-135477.html" target="_blank">lurixian</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">支付宝已转500w给你！</td>
+</tr>
+<tr id="rate_1846707_73773">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-73773.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-73773.html" target="_blank">asrock2006</a>
+</td><td class="xi1"> + 3</td>
+<td class="xg1">支付宝已转500w给你！</td>
+</tr>
+<tr id="rate_1846707_314093">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-314093.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-314093.html" target="_blank">cixiclq</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_376934">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-376934.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-376934.html" target="_blank">ysdlj0819</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">#/usr/sbin/telnetd -l /bin/login.sh 禁用Telnet 没有成功，什么原因呢？</td>
+</tr>
+<tr id="rate_1846707_59967">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-59967.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-59967.html" target="_blank">xiaoo</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">强大的恩山！(以下重复1万次)</td>
+</tr>
+<tr id="rate_1846707_375376">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-375376.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-375376.html" target="_blank">gdsdmw</a>
+</td><td class="xg1">-1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_347677">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-347677.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-347677.html" target="_blank">waybq</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你这么厉害，我想做你的经纪人！</td>
+</tr>
+<tr id="rate_1846707_175144">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-175144.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/44_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-175144.html" target="_blank">lcsy</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">支付宝已转500w给你！</td>
+</tr>
+<tr id="rate_1846707_334382">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-334382.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-334382.html" target="_blank">xi452686571</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你太牛逼了，走，我请你吃鳇鱼头去～～～</td>
+</tr>
+<tr id="rate_1846707_302237">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-302237.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-302237.html" target="_blank">royal007</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_356211">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-356211.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/11_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-356211.html" target="_blank">powerpc2008</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">城会玩</td>
+</tr>
+<tr id="rate_1846707_283806">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-283806.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-283806.html" target="_blank">cll6401</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_177500">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-177500.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-177500.html" target="_blank">loie</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">泥马，真给力，我要顶!</td>
+</tr>
+<tr id="rate_1846707_267866">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-267866.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/66_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-267866.html" target="_blank">vov</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_328182">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-328182.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-328182.html" target="_blank">oH-Shit</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">楼主威武—我就想问问挖掘机技术哪家强?</td>
+</tr>
+<tr id="rate_1846707_103222">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-103222.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/22_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-103222.html" target="_blank">zonly</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">按照楼主第一步说明，恢复配置文件时，提示配置文件错误</td>
+</tr>
+<tr id="rate_1846707_323249">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-323249.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-323249.html" target="_blank">guyedupiao0</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_245467">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-245467.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-245467.html" target="_blank">mlbf</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_34639">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-34639.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-34639.html" target="_blank">lxd21</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你这么厉害，我想做你的经纪人！</td>
+</tr>
+<tr id="rate_1846707_281946">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-281946.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/46_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-281946.html" target="_blank">anywlan5526</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_354187">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-354187.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-354187.html" target="_blank">princewang</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_362855">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-362855.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/55_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-362855.html" target="_blank">淡若如墨</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你这么厉害，我想做你的经纪人！</td>
+</tr>
+<tr id="rate_1846707_327274">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-327274.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-327274.html" target="_blank">小贱、网络</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">支付宝已转500w给你！</td>
+</tr>
+<tr id="rate_1846707_347542">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-347542.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-347542.html" target="_blank">ujjl</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_332977">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-332977.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-332977.html" target="_blank">wmjan</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_375317">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-375317.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-375317.html" target="_blank">nineten</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_51595">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-51595.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-51595.html" target="_blank">a543264</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_344638">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-344638.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/38_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-344638.html" target="_blank">liangcanming</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">关闭telnet?</td>
+</tr>
+<tr id="rate_1846707_319462">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-319462.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/62_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-319462.html" target="_blank">yamaraja</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">支付宝已转500w给你！</td>
+</tr>
+<tr id="rate_1846707_376094">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-376094.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-376094.html" target="_blank">hskey</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你这么厉害，我想做你的经纪人！</td>
+</tr>
+<tr id="rate_1846707_354307">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-354307.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-354307.html" target="_blank">kadilac</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">支付宝已转500w给你！</td>
+</tr>
+<tr id="rate_1846707_151669">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-151669.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/69_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-151669.html" target="_blank">chaohua27</a>
+</td><td class="xi1"> + 5</td>
+<td class="xg1">亲，你太牛逼了，走，我请你吃鳇鱼头去～～～</td>
+</tr>
+<tr id="rate_1846707_371084">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-371084.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/84_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-371084.html" target="_blank">xcyouxi</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你太牛逼了，走，我请你吃鳇鱼头去～～～</td>
+</tr>
+<tr id="rate_1846707_352818">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-352818.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-352818.html" target="_blank">wllpder</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你太牛逼了，走，我请你吃鳇鱼头去～～～</td>
+</tr>
+<tr id="rate_1846707_231328">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-231328.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-231328.html" target="_blank">kp_wu</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_204908">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-204908.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-204908.html" target="_blank">343534191</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">感谢大神提供教程，大神辛苦</td>
+</tr>
+<tr id="rate_1846707_286304">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-286304.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/04_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-286304.html" target="_blank">fengma</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_367005">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-367005.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-367005.html" target="_blank">墨守成规_</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">我来恩山就是为了看你！</td>
+</tr>
+<tr id="rate_1846707_212689">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-212689.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-212689.html" target="_blank">kersay</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你太牛逼了，走，我请你吃鳇鱼头去～～～</td>
+</tr>
+<tr id="rate_1846707_229185">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-229185.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_small.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-229185.html" target="_blank">mouse168</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你这么厉害，我想做你的经纪人！</td>
+</tr>
+<tr id="rate_1846707_307138">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-307138.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/38_avatar_small(1).jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-307138.html" target="_blank">AN_drew</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">谢谢官改大神提供备份教程</td>
+</tr>
+<tr id="rate_1846707_174275">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-174275.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/75_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-174275.html" target="_blank">lwiibj</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你这么厉害，我想做你的经纪人！</td>
+</tr>
+<tr id="rate_1846707_371642">
+<td>
+<a href="http://www.right.com.cn/FORUM/space-uid-371642.html" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/42_avatar_small.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a> <a href="http://www.right.com.cn/FORUM/space-uid-371642.html" target="_blank">鲜锅兔儿</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">亲，你这么厉害，我想做你的经纪人！</td>
+</tr>
+</tbody>
+</table>
+<p class="ratc">
+<a href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=viewratings&amp;tid=217088&amp;pid=1846707" onclick="showWindow(&#39;viewratings&#39;, this.href)" title="查看全部评分" class="xi2">查看全部评分</a>
+</p>
+</dd>
+</dl>
+</div>
+</div>
+
+<div class="cm">
+<h3 class="psth xs1"><span class="icon_ring vm"></span>本帖被以下淘专辑推荐:</h3>
+<ul class="mbw xl xl2 cl"><li>· <a href="http://www.right.com.cn/FORUM/forum.php?mod=collection&amp;action=view&amp;ctid=122" title="K2P" target="_blank" class="xi2 xw1">K2P</a><span class="pipe">|</span><span class="xg1">主题: 33, 订阅: 24</span></li>
+<li>· <a href="http://www.right.com.cn/FORUM/forum.php?mod=collection&amp;action=view&amp;ctid=125" title="刷机改机参考教程" target="_blank" class="xi2 xw1">刷机改机参考教程</a><span class="pipe">|</span><span class="xg1">主题: 48, 订阅: 8</span></li>
+<li>· <a href="http://www.right.com.cn/FORUM/forum.php?mod=collection&amp;action=view&amp;ctid=127" title="K2P刷机参考" target="_blank" class="xi2 xw1">K2P刷机参考</a><span class="pipe">|</span><span class="xg1">主题: 12, 订阅: 2</span></li>
+<li>· <a href="http://www.right.com.cn/FORUM/forum.php?mod=collection&amp;action=view&amp;ctid=132" title="斐讯K2P刷机相关" target="_blank" class="xi2 xw1">斐讯K2P刷机相关</a><span class="pipe">|</span><span class="xg1">主题: 21, 订阅: 0</span></li>
+</ul>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846707"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;reppost=1846707&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846707&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846707&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+<div class="a_p"><script type="text/javascript">
+    /*创建于 2017/6/18 一二楼之间横幅*/
+    var cpro_id = "u3009658";
+</script>
+<script type="text/javascript" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/c.js.下载"></script></div></td>
+</tr>
+</tbody></table>
+<script type="text/javascript" reload="1">
+aimgcount[1846707] = ['165500','165501','165548','165896','166353'];
+attachimggroup(1846707);
+var aimgfid = 0;
+</script>
+</div><div id="post_1846720"><table id="pid1846720" class="plhin" summary="pid1846720" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846720" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-314735.html" target="_blank" class="xw1">cherry_520</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846720" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846720_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-314735.html" target="_blank" class="xi2">cherry_520</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=314735&amp;do=profile" target="_blank" class="xi2">203</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=314735&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-314735.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846720" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846720">发表于 2017-6-3 18:49</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div style="display:none"><font size="2&quot;"><a href="http://www.right.com.cn/forum" target="_blank"><span style="color:red">如需在此处投放广告，请联系QQ68610888</span></a></font></div><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846720">
+不明觉厉{:soso__3110130392203091378_3:}</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846720" class="cm">
+</div>
+
+<div id="post_rate_div_1846720"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846720"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846720&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846720&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846720&#39;).innerHTML ? $(&#39;review_support_1846720&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846720"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846720&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846720&#39;).innerHTML ? $(&#39;review_against_1846720&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846720"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846720&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846720&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846723"><table id="pid1846723" class="plhin" summary="pid1846723" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846723" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-174275.html" target="_blank" class="xw1">lwiibj</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846723" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846723_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-174275.html" target="_blank" class="xi2">lwiibj</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=174275&amp;do=profile" target="_blank" class="xi2">1887</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=174275&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-174275.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/75_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846723" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846723">发表于 2017-6-3 18:50</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846723">
+K2P是16MB的闪存不用像AC9那样需要硬改了，我这样的硬改手残党有福了~<br>
+abc大神你的K2P官改版固件什么时候能出来啊，眼巴巴的等着那啊，期待！<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/lol.gif" smilieid="12" border="0" alt=""></td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846723" class="cm">
+<h3 class="psth xs1"><span class="icon_ring vm"></span>点评</h3>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-204222.html" c="1" mid="card_55"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/22_avatar_small(1).jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-204222.html" class="xi2 xw1">8112803</a>
+</div>
+<div class="psti">
+所以还得改 哈哈&nbsp;
+<span class="xg1">
+发表于 2017-6-4 11:02</span>
+</div>
+</div>
+<div class="pstl xs1 cl">
+<div class="psta vm">
+<a href="http://www.right.com.cn/FORUM/space-uid-147129.html" c="1" mid="card_8696"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/29_avatar_small(1).jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_small.gif&#39;"></a>
+<a href="http://www.right.com.cn/FORUM/space-uid-147129.html" class="xi2 xw1">隐形的肩膀</a>
+</div>
+<div class="psti">
+内存应该有512或者最少应该256，128太少了，只能路由用用，改了usb的话这点内存有些吃紧&nbsp;
+<a href="http://www.right.com.cn/FORUM/forum.php?mod=redirect&amp;goto=findpost&amp;pid=1846885&amp;ptid=217088" class="xi2">详情</a>
+<a href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846885&amp;extra=page%3D1&amp;page=1" class="xi2" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<span class="xg1">
+发表于 2017-6-3 19:54</span>
+</div>
+</div>
+</div>
+
+<div id="post_rate_div_1846723"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846723"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846723&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846723&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846723&#39;).innerHTML ? $(&#39;review_support_1846723&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846723">1</span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846723&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846723&#39;).innerHTML ? $(&#39;review_against_1846723&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846723">0</span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846723&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846723&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846737"><table id="pid1846737" class="plhin" summary="pid1846737" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846737" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-371642.html" target="_blank" class="xw1">鲜锅兔儿</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846737" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846737_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-371642.html" target="_blank" class="xi2">鲜锅兔儿</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=371642&amp;do=profile" target="_blank" class="xi2">914</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=371642&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-371642.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/42_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846737" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846737">发表于 2017-6-3 18:57</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846737">
+期待官改<img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/lol.gif" smilieid="12" border="0" alt=""></td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846737" class="cm">
+</div>
+
+<div id="post_rate_div_1846737"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846737"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846737&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846737&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846737&#39;).innerHTML ? $(&#39;review_support_1846737&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846737"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846737&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846737&#39;).innerHTML ? $(&#39;review_against_1846737&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846737"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846737&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846737&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846745"><table id="pid1846745" class="plhin" summary="pid1846745" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846745" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-248280.html" target="_blank" class="xw1">5460</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846745" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846745_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-248280.html" target="_blank" class="xi2">5460</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=248280&amp;do=profile" target="_blank" class="xi2">276</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=248280&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-248280.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846745" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846745">发表于 2017-6-3 19:00</em>
+<span class="xg1">来自手机</span>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846745">
+期待楼主的官改固件^_^</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846745" class="cm">
+</div>
+
+<div id="post_rate_div_1846745"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846745"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846745&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846745&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846745&#39;).innerHTML ? $(&#39;review_support_1846745&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846745"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846745&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846745&#39;).innerHTML ? $(&#39;review_against_1846745&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846745"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846745&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846745&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846750"><table id="pid1846750" class="plhin" summary="pid1846750" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846750" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-265264.html" target="_blank" class="xw1">qfnuzlr</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846750" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846750_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-265264.html" target="_blank" class="xi2">qfnuzlr</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=265264&amp;do=profile" target="_blank" class="xi2">1426</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=265264&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-265264.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/64_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846750" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846750">发表于 2017-6-3 19:02</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846750">
+厉害&amp;#128077; 还在想怎么刷breed，这就有路了</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846750" class="cm">
+</div>
+
+<div id="post_rate_div_1846750"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846750"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846750&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846750&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846750&#39;).innerHTML ? $(&#39;review_support_1846750&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846750"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846750&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846750&#39;).innerHTML ? $(&#39;review_against_1846750&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846750"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846750&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846750&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846751"><table id="pid1846751" class="plhin" summary="pid1846751" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846751" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-73773.html" target="_blank" class="xw1">asrock2006</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846751" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846751_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-73773.html" target="_blank" class="xi2">asrock2006</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=73773&amp;do=profile" target="_blank" class="xi2">1288</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=73773&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-73773.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846751" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846751">发表于 2017-6-3 19:03</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846751">
+离大神很近，支持。</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846751" class="cm">
+</div>
+
+<div id="post_rate_div_1846751"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846751"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846751&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846751&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846751&#39;).innerHTML ? $(&#39;review_support_1846751&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846751"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846751&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846751&#39;).innerHTML ? $(&#39;review_against_1846751&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846751"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846751&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846751&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846754"><table id="pid1846754" class="plhin" summary="pid1846754" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846754" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-332104.html" target="_blank" class="xw1">小试灬</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846754" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846754_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-332104.html" target="_blank" class="xi2">小试灬</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=332104&amp;do=profile" target="_blank" class="xi2">100</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=332104&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-332104.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/04_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846754" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846754">发表于 2017-6-3 19:03</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846754">
+期待楼主的官改</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846754" class="cm">
+</div>
+
+<div id="post_rate_div_1846754"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846754"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846754&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846754&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846754&#39;).innerHTML ? $(&#39;review_support_1846754&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846754"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846754&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846754&#39;).innerHTML ? $(&#39;review_against_1846754&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846754"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846754&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846754&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846755"><table id="pid1846755" class="plhin" summary="pid1846755" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846755" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-319027.html" target="_blank" class="xw1">chanssl</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846755" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846755_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-319027.html" target="_blank" class="xi2">chanssl</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=319027&amp;do=profile" target="_blank" class="xi2">451</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=319027&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-319027.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/27_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846755" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846755">发表于 2017-6-3 19:03</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846755">
+可以，很强</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846755" class="cm">
+</div>
+
+<div id="post_rate_div_1846755"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846755"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846755&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846755&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846755&#39;).innerHTML ? $(&#39;review_support_1846755&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846755"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846755&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846755&#39;).innerHTML ? $(&#39;review_against_1846755&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846755"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846755&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846755&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846763"><table id="pid1846763" class="plhin" summary="pid1846763" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846763" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-173837.html" target="_blank" class="xw1">zhaocz</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846763" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846763_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-173837.html" target="_blank" class="xi2">zhaocz</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=173837&amp;do=profile" target="_blank" class="xi2">1729</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=173837&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-173837.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846763" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846763">发表于 2017-6-3 19:06</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846763">
+太强大，这么就能开启了！</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846763" class="cm">
+</div>
+
+<div id="post_rate_div_1846763"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846763"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846763&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846763&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846763&#39;).innerHTML ? $(&#39;review_support_1846763&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846763"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846763&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846763&#39;).innerHTML ? $(&#39;review_against_1846763&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846763"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846763&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846763&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846765"><table id="pid1846765" class="plhin" summary="pid1846765" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846765" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-254437.html" target="_blank" class="xw1">love3dspsp</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846765" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846765_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-254437.html" target="_blank" class="xi2">love3dspsp</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=254437&amp;do=profile" target="_blank" class="xi2">637</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=254437&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-254437.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846765" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846765">发表于 2017-6-3 19:06</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846765">
+请问下怎么单独备份无线驱动啊？</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846765" class="cm">
+</div>
+
+<div id="post_rate_div_1846765"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846765"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846765&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846765&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846765&#39;).innerHTML ? $(&#39;review_support_1846765&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846765"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846765&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846765&#39;).innerHTML ? $(&#39;review_against_1846765&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846765"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846765&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846765&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846767"><table id="pid1846767" class="plhin" summary="pid1846767" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846767" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-254437.html" target="_blank" class="xw1">love3dspsp</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846767" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846767_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-254437.html" target="_blank" class="xi2">love3dspsp</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=254437&amp;do=profile" target="_blank" class="xi2">637</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=254437&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-254437.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846767" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846767">发表于 2017-6-3 19:07</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846767">
+请问下怎么单独备份无线驱动啊？</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846767" class="cm">
+</div>
+
+<div id="post_rate_div_1846767"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846767"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846767&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846767&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846767&#39;).innerHTML ? $(&#39;review_support_1846767&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846767"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846767&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846767&#39;).innerHTML ? $(&#39;review_against_1846767&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846767"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846767&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846767&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846776"><table id="pid1846776" class="plhin" summary="pid1846776" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846776" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-174003.html" target="_blank" class="xw1">nazca001</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846776" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846776_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-174003.html" target="_blank" class="xi2">nazca001</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=174003&amp;do=profile" target="_blank" class="xi2">316</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=174003&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-174003.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/noavatar_middle.gif" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846776" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846776">发表于 2017-6-3 19:09</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846776">
+我想问，然后呢，后面刷固件的步骤呢。</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846776" class="cm">
+</div>
+
+<div id="post_rate_div_1846776"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846776"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846776&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846776&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846776&#39;).innerHTML ? $(&#39;review_support_1846776&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846776"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846776&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846776&#39;).innerHTML ? $(&#39;review_against_1846776&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846776"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846776&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846776&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846777"><table id="pid1846777" class="plhin" summary="pid1846777" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846777" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-164062.html" target="_blank" class="xw1">lovezhiqi123</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846777" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846777_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-164062.html" target="_blank" class="xi2">lovezhiqi123</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=164062&amp;do=profile" target="_blank" class="xi2">1570</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=164062&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-164062.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/62_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846777" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846777">发表于 2017-6-3 19:09</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846777">
+<i class="pstatus"> 本帖最后由 lovezhiqi123 于 2017-6-3 19:10 编辑 </i><br>
+<br>
+a大就是牛逼~！方法不错。支持了</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846777" class="cm">
+</div>
+
+<div id="post_rate_div_1846777"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846777"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846777&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846777&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846777&#39;).innerHTML ? $(&#39;review_support_1846777&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846777"></span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846777&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846777&#39;).innerHTML ? $(&#39;review_against_1846777&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846777"></span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846777&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846777&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_1846782"><table id="pid1846782" class="plhin" summary="pid1846782" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls" rowspan="2">
+<div id="favatar1846782" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="http://www.right.com.cn/FORUM/space-uid-296922.html" target="_blank" class="xw1">阿Dee</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_" id="userinfo1846782" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo1846782_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="http://www.right.com.cn/FORUM/space-uid-296922.html" target="_blank" class="xi2">阿Dee</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>积分</dt><dd><a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=296922&amp;do=profile" target="_blank" class="xi2">707</a></dd>
+</dl><div class="imicn">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=space&amp;uid=296922&amp;do=profile" target="_blank" title="查看详细资料"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar"><a href="http://www.right.com.cn/FORUM/space-uid-296922.html" class="avtm" target="_blank"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/22_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://www.right.com.cn/forum/uc_server/images/noavatar_middle.gif&#39;"></a></div>
+</div>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon1846782" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/online_member.gif">
+<em id="authorposton1846782">发表于 2017-6-3 19:12</em>
+<span class="pipe">|</span>
+<a href="http://www.right.com.cn/FORUM/thread-217088-1-1.html" rel="nofollow">显示全部楼层</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_1846782">
+期待官改！！</td></tr></tbody></table>
+
+
+</div>
+<div id="comment_1846782" class="cm">
+</div>
+
+<div id="post_rate_div_1846782"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign">我的恩山、我的无线  
+The best wifi forum is right here.</div>
+</td>
+</tr>
+<tr id="_postposition1846782"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;repquote=1846782&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)">回复</a>
+<a class="replyadd" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=217088&amp;pid=1846782&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_support_1846782&#39;).innerHTML ? $(&#39;review_support_1846782&#39;).innerHTML : 0) + &#39; 人 支持&#39;">支持 <span id="review_support_1846782">1</span></a>
+<a class="replysubtract" href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=217088&amp;pid=1846782&amp;hash=07247ef0" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = ($(&#39;review_against_1846782&#39;).innerHTML ? $(&#39;review_against_1846782&#39;).innerHTML : 0) + &#39; 人 反对&#39;">反对 <span id="review_against_1846782">0</span></a>
+</em>
+
+<p>
+<a href="javascript:;" onclick="showWindow(&#39;miscreport1846782&#39;, &#39;misc.php?mod=report&amp;rtype=post&amp;rid=1846782&amp;tid=217088&amp;fid=158&#39;, &#39;get&#39;, -1);return false;">举报</a>
+</p>
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</tbody></table>
+</div><div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
+</div>
+
+
+<form method="post" autocomplete="off" name="modactions" id="modactions">
+<input type="hidden" name="formhash" value="07247ef0">
+<input type="hidden" name="optgroup">
+<input type="hidden" name="operation">
+<input type="hidden" name="listextra" value="page%3D1">
+<input type="hidden" name="page" value="1">
+</form>
+
+
+<div class="pgbtn"><a href="http://www.right.com.cn/FORUM/thread-217088-2-1.html" hidefocus="true" class="bm_h">下一页 &#187;</a></div>
+
+<div class="pgs mtm mbm cl">
+<div class="pg"><strong>1</strong><a href="http://www.right.com.cn/FORUM/thread-217088-2-1.html">2</a><a href="http://www.right.com.cn/FORUM/thread-217088-3-1.html">3</a><a href="http://www.right.com.cn/FORUM/thread-217088-4-1.html">4</a><a href="http://www.right.com.cn/FORUM/thread-217088-5-1.html">5</a><a href="http://www.right.com.cn/FORUM/thread-217088-6-1.html">6</a><a href="http://www.right.com.cn/FORUM/thread-217088-7-1.html">7</a><a href="http://www.right.com.cn/FORUM/thread-217088-8-1.html">8</a><a href="http://www.right.com.cn/FORUM/thread-217088-9-1.html">9</a><a href="http://www.right.com.cn/FORUM/thread-217088-10-1.html">10</a><a href="http://www.right.com.cn/FORUM/thread-217088-60-1.html" class="last">... 60</a><label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="1" onkeydown="if(event.keyCode==13) {window.location=&#39;forum.php?mod=viewthread&amp;tid=217088&amp;extra=page%3D1&amp;page=&#39;+this.value;; doane(event);}"><span title="共 60 页"> / 60 页</span></label><a href="http://www.right.com.cn/FORUM/thread-217088-2-1.html" class="nxt">下一页</a></div><span class="pgb y"><a href="http://www.right.com.cn/FORUM/forum-158-1.html">返回列表</a></span>
+<a id="newspecialtmp" onmouseover="$(&#39;newspecial&#39;).id = &#39;newspecialtmp&#39;;this.id = &#39;newspecial&#39;;showMenu({&#39;ctrlid&#39;:this.id})" onclick="showWindow(&#39;newthread&#39;, &#39;forum.php?mod=post&amp;action=newthread&amp;fid=158&#39;)" href="javascript:;" title="发新帖"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/pn_post.png" alt="发新帖"></a>
+</div>
+
+<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+<script type="text/javascript">
+var postminchars = parseInt('10');
+var postmaxchars = parseInt('50000');
+var disablepostctrl = parseInt('0');
+</script>
+
+<div id="f_pst" class="pl bm bmw">
+<form method="post" autocomplete="off" id="fastpostform" action="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;extra=page%3D1&amp;replysubmit=yes&amp;infloat=yes&amp;handlekey=fastpost" onsubmit="return fastpostvalidate(this)">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="pls">
+</td>
+<td class="plc">
+
+<span id="fastpostreturn"></span>
+
+
+<div class="cl">
+<div id="fastsmiliesdiv" class="y"><div id="fastsmiliesdiv_data"><div id="fastsmilies"></div></div></div><div class="hasfsl" id="fastposteditor">
+<div class="tedt mtn">
+<div class="bar">
+<span class="y">
+<a href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088" onclick="return switchAdvanceMode(this.href)">高级模式</a>
+</span><script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/seditor.js.下载" type="text/javascript"></script>
+<div class="fpd">
+<a href="javascript:;" title="文字加粗" class="fbld">B</a>
+<a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
+<a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
+<a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
+<a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
+<a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
+<a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+</div></div>
+<div class="area">
+<div class="pt hm">
+您需要登录后才可以回帖 <a href="http://www.right.com.cn/FORUM/member.php?mod=logging&amp;action=login" onclick="showWindow(&#39;login&#39;, this.href)" class="xi2">登录</a> | <a href="http://www.right.com.cn/FORUM/member.php?mod=register" class="xi2">立即注册</a>
+
+
+<a href="http://www.right.com.cn/FORUM/connect.php?mod=login&amp;op=init&amp;referer=forum.php%3Fmod%3Dviewthread%26tid%3D217088%26extra%3Dpage%253D1%26page%3D1&amp;statfrom=login" target="_top" rel="nofollow"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/qq_login.gif" class="vm"></a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="seccheck_fastpost">
+</div>
+
+
+<input type="hidden" name="formhash" value="07247ef0">
+<input type="hidden" name="usesig" value="">
+<input type="hidden" name="subject" value="  ">
+<p class="ptm pnpost">
+<a href="http://www.right.com.cn/FORUM/home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=158" class="y" target="_blank">本版积分规则</a>
+<button type="button" onclick="showWindow(&#39;login&#39;, &#39;member.php?mod=logging&amp;action=login&amp;guestmessage=yes&#39;)" onmouseover="checkpostrule(&#39;seccheck_fastpost&#39;, &#39;ac=reply&#39;);this.onmouseover=null" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5"><strong>发表回复</strong></button>
+<label class="lb"><input type="checkbox" name="adddynamic" class="pc" value="1">回帖并转播</label>
+<label for="fastpostrefresh"><input id="fastpostrefresh" type="checkbox" class="pc">回帖后跳转到最后一页</label>
+<script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>
+</p>
+</td>
+</tr>
+</tbody></table>
+</form>
+</div>
+
+<script type="text/javascript">
+var connect_qzone_share_url = 'http://www.right.com.cn/FORUM/home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=1&thread_id=217088';
+var connect_weibo_share_url = 'http://www.right.com.cn/FORUM/home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=2&thread_id=217088';
+var connect_thread_info = {
+thread_url: 'http://www.right.com.cn/FORUM/thread-217088-1-1.html',
+thread_id: '217088',
+post_id: '1846707',
+forum_id: '158',
+author_id: '140971',
+author: 'abccba94'
+};
+
+connect_autoshare = '0';
+connect_isbind = '';
+if(connect_autoshare == 1 && connect_isbind) {
+_attachEvent(window, 'load', function(){
+connect_share(connect_weibo_share_url, connect_openid);
+});
+}
+</script>
+
+
+</div>
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<script type="text/javascript">
+function succeedhandle_followmod(url, msg, values) {
+var fObj = $('followmod_'+values['fuid']);
+if(values['type'] == 'add') {
+fObj.innerHTML = '不收听';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
+} else if(values['type'] == 'del') {
+fObj.innerHTML = '收听TA';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=07247ef0&fuid='+values['fuid'];
+}
+}
+fixed_avatar([1846707,1846720,1846723,1846737,1846745,1846750,1846751,1846754,1846755,1846763,1846765,1846767,1846776,1846777,1846782], 1);
+</script>	</div>
+<div class="wp a_f"><script type="text/javascript">
+    /*创建于 2017/6/18 全站底部通栏*/
+    var cpro_id = "u3009660";
+</script>
+<script type="text/javascript" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/c.js.下载"></script>
+</div>
+
+<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/qshare.js.下载" type="text/javascript"></script><script type="text/javascript">_share_tencent_weibo(null, $C("t_f", null, "td"), "", "ce7fb946290e4109bdc9175108b6db3a", "恩山无线论坛");</script>
+
+<div id="ft" class="wp cl">
+<div id="flk" class="y">
+<p>
+<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=68610888&amp;site=%B6%F7%C9%BD%CE%DE%CF%DF%C2%DB%CC%B3&amp;menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/site_qq.jpg" alt="QQ"></a><span class="pipe">|</span><a href="http://www.right.com.cn/FORUM/forum.php?mobile=yes">手机版</a><span class="pipe">|</span><a href="http://www.right.com.cn/FORUM/forum.php?mod=misc&amp;action=showdarkroom">小黑屋</a><span class="pipe">|</span><a href="http://www.right.com.cn/FORUM/archiver/">Archiver</a><span class="pipe">|</span><a href="http://286165.xiaoyun.com/" style="font-weight: bold;color: red">手机APP版</a><span class="pipe">|</span><strong><a href="http://www.right.com.cn/forum" target="_blank">恩山无线论坛</a></strong>
+( <a href="http://www.miitbeian.gov.cn/" target="_blank">苏ICP备05084872号-1</a> )&nbsp;<a href="http://discuz.qq.com/service/security" target="_blank" title="防水墙保卫网站远离侵害"><img src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/security.png"></a>&nbsp;&nbsp;<a href="http://stats.discuz.qq.com/?ADTAG=FROUM.FOOTER.CLICK.ICON" title="腾讯分析" target="_blank"><img title="腾讯分析" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/toss_11.gif" border="0"></a><script type="text/javascript" src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/ping.js.下载" charset="utf-8"></script><script type="text/javascript" reload="1">pgvMain({"discuzParams":{"r2":"8582699","ui":0,"rt":"forum","md":"viewthread","fi":"158","ti":"217088","pn":1,"qq":"000","logo":11},"extraParams":""});</script><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff4249d1382ef4202ca17e0982427194e' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/h.js.下载" type="text/javascript"></script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script></p>
+<p class="xs0">
+GMT+8, 2017-7-24 13:49<span id="debuginfo">
+</span>
+</p>
+</div>
+<div id="frt">
+<p>Powered by <strong><a href="http://www.discuz.net/" target="_blank">Discuz!</a></strong> <em>X3.3</em></p>
+<p class="xs0">&#169; 2001-2017 <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
+</div></div>
+<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/home.php" type="text/javascript"></script>
+<div id="scrolltop" style="left: auto; right: 0px; visibility: visible;">
+<span><a href="http://www.right.com.cn/FORUM/forum.php?mod=post&amp;action=reply&amp;fid=158&amp;tid=217088&amp;extra=page%3D1&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)" class="replyfast" title="快速回复"><b>快速回复</b></a></span>
+<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo(&#39;0&#39;,&#39;0&#39;)" class="scrolltopa"><b>返回顶部</b></a></span>
+<span>
+<a href="http://www.right.com.cn/FORUM/forum-158-1.html" hidefocus="true" class="returnlist" title="返回列表"><b>返回列表</b></a>
+</span>
+</div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+			<div id="discuz_tips" style="display:none;"></div>
+			<script type="text/javascript">
+				var tipsinfo = '8582699|X3.3|0.6||0||0|7|1500875341|dbb67e07bcb178d58d79147a2cc4f711|2';
+			</script>
+			<script src="./【原创】斐讯K2P开启telnet、ssh、固件备份、恢复及净化的方法【2017-06-09】_files/discuz_tips.js.下载" type="text/javascript" charset="UTF-8"></script></body></html>
