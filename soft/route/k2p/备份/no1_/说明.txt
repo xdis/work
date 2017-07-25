@@ -1,0 +1,23 @@
+
+下载配置文件 
+http://iytc.net/k2p.php 
+
+
+
+max 地址
+
+
+74:7D:24:BE:04:C7
+
+
+当前固件版本： 22.5.7.85
+
+
+
+CPU MediaTek MT7621A ver 1, eco 3 
+内存 128MB DDR3 
+Flash Macronix MX25L12835E @ 19MHz (16MB) 
+以太网 MediaTek MT7530 Gigabit switch 
+时钟频率 CPU: 880MHz, DDR: 1200MHz, Bus: 293MHz, Ref: 40MHz 
+编译日期 2017-07-24 [git-6c61e52] 
+版本 1.1 (r1023) 
