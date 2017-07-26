@@ -123,9 +123,12 @@
 				- [官网](http://www.itkeji.top "官网")
 			- [breed包下载](https://breed.hackpascal.net/)
 			- [固件下载](http://p4davan.80x86.io/download/ " 固件下载")
+			-  [Koolproxywiki指南上线拉](http://koolshare.b0.upaiyun.com/usage.html)
 		- 牌子
 			- [newifi_y1_R6850刷机](route/newifi_y1s_R6850/README.md)
 			- [k2_PSG1218刷机](route/k2_PSG1218/README.md)
+			- [k2p刷机](route/k2p/README.md)
+			- [b70刷机](route/B70/README.md)
 		- 华硕固件配置
 			- 过滤广告
 				- 看VIP视频过滤规则 vip_rules.txt
