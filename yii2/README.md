@@ -327,7 +327,7 @@
 			- auth_assign_v2 角色指派
 				- [auth_assign_列表页_v2](fn/rbac.md#auth_assign_列表页_v2)
 				- [auth_assign_创建页_v2](fn/rbac.md#auth_assign_创建页_v2)
-		- 权限管理_猴子
+		- RBAC打造通用web管理权限 @猴子
 			- 基础
 				- [权限模型列表](fn/rbac.md#权限模型列表)
 				- [ACL和RBAC对比](fn/rbac.md#ACL和RBAC对比)
@@ -337,8 +337,15 @@
 				- [RBAC控制流程](fn/rbac.md#RBAC控制流程)
 				- [RBAC数据库设计](fn/rbac.md#RBAC数据库设计)
 			- 实战
-				- 前端css和js加上时间版本_方便管理强制刷新
-				- 
+				- [实战源码地址](https://github.com/408824338/test-yii2/tree/master/rbac)
+					- [BaseController](https://github.com/408824338/test-yii2/blob/master/rbac/controllers/common/BaseController.php)
+				- [前端css和js加上时间版本_方便管理强制刷新](fn/rbac.md#前端css和js加上时间版本_方便管理强制刷新)
+				- [封装yii的js和css](fn/rbac.md#封装yii的js和css)
+				- [封装post和get](fn/rbac.md#封装post和get)
+				- [伪登录开发](fn/rbac.md#伪登录开发)
+					- http://rbac.ysk.dev/user/vlogin?uid=1  //修改指定的uid即可
+					- [每次访问的验证伪登陆](fn/rbac.md#每次访问的验证伪登陆)
+				- [rbac验证过程](fn/rbac.md#rbac验证过程)
 		- yii2 admin 分析
 			- 	
 	- 配置
