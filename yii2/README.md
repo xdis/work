@@ -336,6 +336,7 @@
 				- [RBAC模块功能](fn/rbac.md#RBAC模块功能)
 				- [RBAC控制流程](fn/rbac.md#RBAC控制流程)
 				- [RBAC数据库设计](fn/rbac.md#RBAC数据库设计)
+					- [数据插入](fn/rbac.md#数据插入)
 			- 实战
 				- [实战源码地址](https://github.com/408824338/test-yii2/tree/master/rbac)
 					- [BaseController](https://github.com/408824338/test-yii2/blob/master/rbac/controllers/common/BaseController.php)

@@ -1328,6 +1328,74 @@ INSERT INTO `user` (`id`, `name`, `email`, `is_admin`, `status`, `updated_time`,
 VALUES(1, '超级管理员', 'apanly@163.com', 1, 1, '2016-11-15 13:36:30', '2016-11-15 13:36:30');
 
 ```
+## 数据插入
+
+```
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+/*!40101 SET NAMES utf8 */;
+
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('1','测试页面一','[\"test\\/page1\"]','1','2017-08-01 13:44:15','2017-08-01 13:44:15');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('2','测试页面二','[\"test\\/page2\"]','1','2017-08-01 13:44:34','2017-08-01 13:44:34');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('3','测试页面三','[\"test\\/page3\"]','1','2017-08-01 13:45:01','2017-08-01 13:45:01');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('4','测试页面四','[\"test\\/page4\"]','1','2017-08-01 13:45:13','2017-08-01 13:45:13');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('5','测试页面五','[\"test\\/page5\"]','1','2017-08-01 13:45:26','2017-08-01 13:45:26');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('6','默认首页','[\"default\\/index\"]','1','2017-08-01 13:46:13','2017-08-01 13:46:13');
+
+
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+insert into `role` (`id`, `name`, `status`, `updated_time`, `created_time`) values('1','测试组','1','2017-08-01 09:17:12','2017-08-01 09:17:12');
+
+
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+insert into `role_access` (`id`, `role_id`, `access_id`, `created_time`) values('1','1','2','2017-08-01 13:47:58');
+
+insert into `role_access` (`id`, `role_id`, `access_id`, `created_time`) values('2','1','1','2017-08-01 13:47:58');
+
+
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+insert into `user` (`id`, `name`, `email`, `is_admin`, `status`, `updated_time`, `created_time`) values('1','超级管理员','apanly@163.com','1','1','2016-11-15 13:36:30','2016-11-15 13:36:30');
+
+insert into `user` (`id`, `name`, `email`, `is_admin`, `status`, `updated_time`, `created_time`) values('2','张三','zhangsan@163.com','0','1','2017-08-01 13:46:45','2017-08-01 09:15:47');
+
+
+
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+insert into `user_role` (`id`, `uid`, `role_id`, `created_time`) values('1','2','1','2017-08-01 13:46:45');
+
+
+```
 
 ## 前端css和js加上时间版本_方便管理强制刷新
 **rbac/assets/RbacAsset.php**
