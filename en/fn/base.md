@@ -227,7 +227,7 @@ amazing rate.
 
 **普通的写法及演示**  
 
-We are brothers. We are sharing happiness and sadness.
+We are brothers. We are sharing happiness and sadness.  
 We are brothers sharing happiness and sadness.
 
 ![](taiji/2/v_bds3-1.png)
@@ -237,6 +237,7 @@ We are brothers sharing happiness and sadness.
 
 
 ![](taiji/2/v_bds3-2.png)
+
 ![](taiji/2/v_bds3-3.png)
 
 ## 这是一只杀狗的猫
@@ -321,11 +322,11 @@ I have a ticket bought by my dad for me.
 ![](taiji/2/v_wy_03.png)
 
 ## 过程总结
-- 单数 公式: 名词+劢词S
+- 单数 公式: 名词+动词S
 	- The boy is/was …
 	- The boy does …
 	- The boy has …
-- 复数 公式 名词S+劢词
+- 复数 公式 名词S+动词
 	- The boys are/were …
 	- The boys do …
 	- The boys have …
@@ -347,7 +348,7 @@ I have a ticket bought by my dad for me.
 > 人们觉得建筑需要被保护  
 Some people think old buildings should **be** preserve**d**.
 
-> 被劢语态公式  英国人说英语  
+> 被动语态公式  英国人说英语  
 
  ![](taiji/2/v_wy_2_4.png)
 

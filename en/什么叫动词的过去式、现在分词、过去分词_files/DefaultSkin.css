@@ -1,0 +1,611 @@
+/* BY MuYiZi.CoM 网站链接总的css定义:可定义内容为链接字体颜色、样式等 */
+a{text-decoration: none;} /* 链接无下划线,有为underline */ 
+a:link {color: #000000;} /* 未访问的链接 */
+a:visited {color: #333333;} /* 已访问的链接 */
+a:hover{color: #ae0927;} /* 鼠标在链接上 */ 
+a:active {color: #0000ff;} /* 点击激活链接 */
+/* BY MuYiZi.CoM 顶部频道文字链接的css定义－－将顶部频道文字链接与网站链接总的css定义分开，以后可以制作深底浅字的格式，如果要保持原来的设计样式，将此定义内容删除或定义成与网站链接总的css相同即可。调用代码为<a class='channel' ***>***</a> */
+a.channel:link {color: #ffffff;}
+a.channel:visited {color: #ffffff;}
+a.channel:hover{color: #ffff00;}
+a.channel:active {color: #ffffff;}
+/* BY MuYiZi.CoM 顶部当前频道文字链接的css定义－－调用代码为<a class='channel2' ***>***</a> */
+a.channel2:link {color: #ffff00;}
+a.channel2:visited {color: #ffff00;}
+a.channel2:hover{color: #ff6600;}
+a.channel2:active {color: #ffff00;}
+/* BY MuYiZi.CoM 底部版权信息文字链接的css定义－－与顶部频道文字链接定义的想法相同。可设置与顶部频道文字链接定义不同的文字颜色，网页内定义以预留。调用代码为<a class='bottom' ***>***</a> */
+a.bottom:link {color: #ffffff;}
+a.bottom:visited {color: #ffffff;}
+a.bottom:hover{color: #ffff00;}
+a.bottom:active {color: #ffffff;}
+/* BY MuYiZi.CoM 文章栏目标题文字链接的css定义－－可设置与顶部频道文字链接定义不同的文字颜色，网页内定义以预留。要相同可不设置。调用代码为<a class='class' ***>***</a> */
+a.class:link {color: #ffffff;}
+a.class:visited {color: #ffffff;}
+a.class:hover{color: #ff0000;}
+a.class:active {color: #ffffff;}
+
+/* BY MuYiZi.CoM body的css定义:对应css中“body”，可定义内容为网页字体颜色、背景、浏览器边框等 */
+body
+{
+font-size: 9pt;
+background-image: url(MuYiZi/bg_all.jpg);
+background-repeat: repeat-x;
+background-position:top;
+text-decoration: none;
+scrollbar-face-color: #f6f6f6;
+scrollbar-highlight-color: #ffffff; scrollbar-shadow-color: #cccccc; scrollbar-3dlight-color: #cccccc; scrollbar-arrow-color: #330000; scrollbar-track-color: #f6f6f6; scrollbar-darkshadow-color: #ffffff;
+}
+/* BY MuYiZi.CoM 单元格的css定义:对应css中的“td”，这里为总的表格定义，为一般表格的的单元格风格设置，可定义内容为背景、字体颜色、样式等 */
+td
+{
+font-family:宋体;font-size: 9pt;line-height: 200%; 
+}
+/* BY MuYiZi.CoM 文本框的css定义:对应css中的“input”，这里为文本框的风格设置，可定义内容为背景、字体、颜色、边框等 */
+input
+{
+background-color: #ffffff; 
+border-bottom: #666666 1px solid;
+border-left: #666666 1px solid;
+border-right: #666666 1px solid;
+border-top: #666666 1px solid;
+color: #666666;
+height: 18px;
+border-color: #666666 #666666 #666666 #666666; font-size: 9pt
+}
+/* BY MuYiZi.CoM 按钮的css定义:对应css中的“button”，这里为按钮的风格设置，可定义内容为背景、字体、颜色、边框等 */
+button
+{
+font-size: 9pt;height: 20px;
+}
+/* BY MuYiZi.CoM 下拉列表框的css定义:对应css中的“select”，这里为下拉列表框的风格设置，可定义内容为背景、字体、颜色、边框等 */
+select
+{
+font-size: 9pt;height: 20px;
+}
+/* 顶部用户登录文字链接的css定义 */
+.top_userlogin
+{
+color: #037fa8;
+}
+
+/* ==频道通用表格css定义开始== */
+.channel_border /* 灰色表格边框背景颜色定义(760) */
+{
+border: 1px solid #cccccc;
+}
+.channel_title /* 标题背景颜色定义(760) */
+{
+background: #cccccc;color: #037fa8;height: 27;text-align: center;font-weight:bold;
+}
+.channel_tdbg /* 表格背景颜色定义(760) */
+{
+background:#fafafa;line-height: 200%;
+}
+.channel_pager /* 分页表格背景颜色定义(760) */
+{
+background:#fafafa;line-height: 200%;
+}
+
+　　/* --评论显示页的css定义开始-- */
+.comment_border /* 蓝色表格边框背景颜色定义(760) */
+{
+border: 1px solid #449ae8;
+}
+.comment_title /* 标题背景颜色定义(760) */
+{
+background:#449ae8;color: #ffffff;font-weight: normal;height: 25;
+}
+.comment_tdbg1 /* 表格背景颜色定义(760) */
+{
+background:#ffffff;line-height: 200%;
+}
+.comment_tdbg2 /* 留言显示1px表格背景颜色定义 */
+{
+background:#fafafa;
+}
+　　/* --评论显示页的css定义结束-- */
+/* ==频道通用表格css定义结束== */ 
+
+/* ==简短标题文字的css定义开始== */
+/* [图文]简短标题文字的css定义 */
+.s_headline1
+{
+color: blue;
+}
+/* [组图]简短标题文字的css定义 */
+.s_headline2
+{
+color: #ff6600;
+}
+/* [推荐]简短标题文字的css定义 */
+.s_headline3
+{
+color: green;
+}
+/* [注意]简短标题文字的css定义 */
+.s_headline4
+{
+color: red;
+}
+/* ==简短标题文字的css定义开始== */
+
+/* ==top.asp中的css定义开始== */
+.top_tdbgall /* BY MuYiZi.CoM 顶部表格总背景颜色定义 */
+{
+width: 960;
+}
+.top_top /* BY MuYiZi.CoM 顶部表格左边背景颜色定义 */
+{
+background:#0089f7;height: 5;
+}
+.top_top2 /* BY MuYiZi.CoM 顶部表格右边背景颜色定义 */
+{
+background:#0089f7;height: 5;
+}
+.top_channel /* 频道表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/dao_bg.gif);color:#ffffff!important;text-align: center;
+}
+.top_announce /* 公告表格背景、文字颜色定义 */
+{
+background:url(blue/top_nav_menu.gif);color: #0560a6;height: 30;
+}
+.top_nav_menu /* 导航栏表格背景、文字颜色定义 */
+{
+background:url(blue/top_nav_menu.gif);color: #0560a6;height: 30;
+}
+.top_path /* 您现在的位置表格背景、文字颜色定义 */
+{
+width: 960;background:url(MuYiZi/top_path.gif);height: 30;border-left: 5px solid #f4f4f4;border-right: 5px solid #f4f4f4;
+}
+.top_userlogin /* 顶部用户登录文字链接的css定义 */
+{
+color: #037fa8
+}
+.bot_left_1 /* BY MuYiZi.CoM 圆角表格左上背景的css定义 */
+{
+background:url(MuYiZi/bot/bot_left_1.gif);width:15;height: 15;
+}
+.bot_left_2 /* BY MuYiZi.CoM 圆角表格左中背景的css定义 */
+{
+background:url(MuYiZi/bot/bot_left_2.gif);width:15;
+}
+.bot_left_3 /* BY MuYiZi.CoM 圆角表格左下背景的css定义 */
+{
+background:url(MuYiZi/bot/bot_left_3.gif);width:15;height: 15;
+}
+.bot_right_1 /* BY MuYiZi.CoM 圆角表格右上背景的css定义 */
+{
+background:url(MuYiZi/bot/bot_right_1.gif);width:15;height: 15;
+}
+.bot_right_2 /* BY MuYiZi.CoM 圆角表格右中背景的css定义 */
+{
+background:url(MuYiZi/bot/bot_right_2.gif);width:15;
+}
+.bot_right_3 /* BY MuYiZi.CoM 圆角表格右下背景的css定义 */
+{
+background:url(MuYiZi/bot/bot_right_3.gif);width:15;height: 15;
+}
+.bot_top_bg /* BY MuYiZi.CoM 圆角表格上面中部背景的css定义 */
+{
+background:url(MuYiZi/bot/bot_top_bg.gif);height: 15;
+}
+.bot_bottom_bg /* BY MuYiZi.CoM 圆角表格下面中部背景的css定义 */
+{
+background:url(MuYiZi/bot/bot_bottom_bg.gif);height: 15;
+}
+/* ==top.asp中的css定义结束== */
+
+/* ==网页中部中的css定义开始== */
+.center_tdbgall /* 中部表格总背景颜色定义 */
+{
+width:960;background:#ffffff;
+}
+.tdbg_top_bottom /* 中部表格上下框线背景颜色定义 */
+{
+border-top: 5px solid #f4f4f4;border-bottom: 5px solid #f4f4f4;background:#ffffff;
+}
+.border-daohang{border-left: 5px solid #f4f4f4;border-right: 5px solid #f4f4f4;}
+.tdbg_left_right /* 中部表格左右框线背景颜色定义 */
+{
+border-left: 5px solid #f4f4f4;border-right: 5px solid #f4f4f4;background:#ffffff;
+}
+.tdbg_top_left_right /* 中部表格左右框线背景颜色定义 */
+{
+border-top: 5px solid #f4f4f4;border-left: 5px solid #f4f4f4;border-right: 5px solid #f4f4f4;background:#ffffff;
+}
+.tdbg_top_right /* 中部表格上下框线背景颜色定义 */
+{
+border-top: 5px solid #f4f4f4;border-right: 5px solid #f4f4f4;background:#ffffff;
+}
+.tdbg_right /* 中部表格上下框线背景颜色定义 */
+{
+border-right: 5px solid #f4f4f4;background:#ffffff;
+}
+
+　　/* --网页中部左栏的css定义开始-- */
+.left_tdbgall /* 左栏表格总背景颜色定义 */
+{
+width:200;background:#f4f4f4;
+}
+.left_tb_top /* 左栏内容表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/left_01.gif);height:5;
+}
+.left_title /* 左栏标题表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/left_02.gif);color: #ad806c;height: 31;width:200;padding-left:10;text-align: left;
+}
+.left_tdbg0 /* 左栏底部表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/left_02.gif);height: 5;
+}
+.left_tdbg1 /* 左栏内容表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/left_02.gif);line-height: 200%;padding-left:5;padding-right:5;
+}
+.left_tdbg2 /* 左栏底部表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/left_03.gif);height: 5;
+}
+.right_title /* 左栏标题表格背景、文字颜色定义 */
+{
+background:url(blue/right_title.gif);font-weight:bold;color: ffffff;height: 28;width:180;padding-left:40;text-align: left;
+}
+.menu_title1 /* 左栏表格标题背景、文字颜色定义 */
+{
+background:url(MuYiZi/11325_bg1.gif);background-position: 1% 100%;background-positionX: center; background-positionY: bottom; background-repeat:no-repeat;color:666666; 
+}
+.menu_title2 /* 左栏标题标题表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/11325_bg2.gif);background-position: 1% 100%; background-positionX: center;background-positionY: bottom; background-repeat:no-repeat;color:ffffff;
+}
+.menu_title3 /* 左栏标题标题表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/11325_bg3.gif);background-position: 1% 100%; background-positionX: center;background-positionY: bottom; background-repeat:no-repeat;color:ffffff;
+}
+.menu_tdbg /* 左栏内容表格背景、文字颜色定义 */
+{
+line-height: 200%;padding-left:5;padding-right:5;
+}
+.border /* 内容表格四周1像素5边距框线 */
+{
+border: 1px solid #d2d3d9;padding: 5;
+}
+.border0 /* 内容表格四周1像素0边距框线 */
+{
+border: 1px solid #d2d3d9;
+}
+　　/* --网页中部左栏的css定义结束-- */
+　　/* --网页中部中栏的css定义开始-- */
+.main_menu_title1 /* 左栏表格标题背景、文字颜色定义 */
+{
+background:url(MuYiZi/11325_bg1.gif);background-position: 1% 100%;background-positionX: center; background-positionY: bottom; background-repeat:no-repeat;color:666666; 
+}
+.main_menu_title2 /* 左栏标题标题表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/11325_bg2.gif);background-position: 1% 100%; background-positionX: center;background-positionY: bottom; background-repeat:no-repeat;color:ffffff;
+}
+
+.main_tdbgall /* 中栏表格总背景颜色定义 */
+{
+width: 572;background:#ffffff;
+}
+.main_shadow /* 中栏内容间隔表格背景颜色定义(575) */
+{
+height: 4;
+}
+.main_announce /* 中栏公告表格背景、文字颜色定义 */
+{
+color: 037fa8;height: 25;background:#f9f9f9;border: 1px solid #d2d3d9;
+}
+.main_search /* 中栏搜索表格背景、文字颜色定义 */
+{
+color: 037fa8;height: 25;border: 1px solid #d2d3d9;background:#f9f9f9;
+}
+.main_top /* 中栏最新推荐表格背景颜色定义 */
+{
+background:url(blue/main_top.gif);height: 187;
+}
+.main_title_760i /* 网站首页中栏标题表格背景、文字颜色定义(760) */
+{
+color: ffffff;background:url(blue/main_title_760i.gif);border-top: 1px solid #d2d3d9;border-right: 1px solid #d2d3d9;border-left: 1px solid #d2d3d9;text-align: left;padding-left:40;height: 29;
+}
+.main_tdbg_760i /* 网站首页中栏内容表格背景、文字颜色定义(760) */
+{
+border: 1px solid #d2d3d9;line-height: 200%;text-align: left;padding-left:5;padding-right:5;
+}
+.main_title_575 /* 中栏标题表格背景、文字颜色定义(575) */
+{
+color: ff6600;background:#f4f4f4;border-top: 1px solid #d2d3d9;border-right: 1px solid #d2d3d9;border-left: 1px solid #d2d3d9;text-align: left;padding-left:5;height: 29;
+}
+.main_tdbg_575 /* 中栏内容表格背景、文字颜色定义(575) */
+{
+line-height: 200%;text-align: left;padding-left:5;padding-right:5;border: 1px solid #d2d3d9;
+}
+.main_title_282i /* 栏目文章列表标题表格背景、文字颜色定义(282) */
+{
+background:url(blue/main_title_282i.gif);color: ffffff;height: 29;border-top: 1px solid #d2d3d9;border-left: 1px solid #d2d3d9;border-right: 1px solid #d2d3d9;padding-left:40;
+}
+.main_tdbg_282i /* 栏目文章列表内容表格背景、文字颜色定义(282) */
+{
+border: 1px solid #d2d3d9;line-height: 150%;text-align: left;padding-left:5;padding-right:5;
+}
+.main_title_282 /* 栏目文章列表标题表格背景、文字颜色定义(282) */
+{
+background:url(blue/main_title_282.gif);color: ffffff;height: 29;border-top: 1px solid #d2d3d9;border-left: 1px solid #d2d3d9;border-right: 1px solid #d2d3d9;padding-left:40;
+}
+.main_tdbg_282 /* 栏目文章列表内容表格背景、文字颜色定义(282) */
+{
+line-height: 200%;text-align: left;padding-left:5;padding-right:5;padding-top:5;padding-bottom:5;
+}
+.listbg /* --栏目文章列表内容间隔颜色的定义1-- */
+{
+background:#ffffff;
+}
+.listbg2 /* --栏目文章列表内容间隔颜色的定义2-- */
+{
+background:#f7f7f7;
+}
+　　/* --网页中部中栏的css定义结束-- */
+　　/* --文章显示页的css定义开始-- */
+
+.main_articletitle /* 主标题文字颜色定义 */
+{
+background:url(MuYiZi/articlebg1.gif);color: ff0000;font-weight:bold;font-size: 18;line-height: 200%;
+}
+.main_articlesubheading /* 副标题文字颜色定义 */
+{
+color: 037fa8;font-weight:bold;line-height: 200%;
+}
+.main_title_760 /* 标题导航表格背景、文字颜色定义(760) */
+{
+background:#f7f7f7;border: 1px solid #d2d3d9;height: 28;color: ff6600;
+}
+.main_tdbg_760 /* 内容表格背景、文字颜色定义(760) */
+{
+border: 1px solid #d2d3d9;line-height: 200%;
+padding-left:40px;padding-right:40px;
+}
+.main_tdbg_760 P A:link{
+color:#000000;
+text-decoration:none;
+
+}
+
+.main_tdbg_760 P A:visited{
+color:#000000;
+text-decoration:none;
+
+}
+.main_tdbg_760 P A:hover{
+color:#000000;
+text-decoration:none;
+
+}
+.main_tdbg_760 P A:active{
+color:#000000;
+text-decoration:none;
+
+}
+
+
+
+.main_tdbg_760 A:link{
+color:#000000;
+text-decoration:none;
+
+}
+.main_tdbg_760 A:visited{
+color:#000000;
+text-decoration:none;
+
+}
+.main_tdbg_760 A:hover{
+color:#000000;
+text-decoration:none;
+
+}
+.main_tdbg_760 A:active{
+color:#000000;
+text-decoration:none;
+
+}
+
+.article_tdbgall /* 责编等表格背景、文字颜色定义(760) */
+{
+background:#f5f5f5;
+}
+
+　　/* --文章显示页的css定义结束-- */
+　　/* --留言频道css定义开始-- */
+/* 留言栏目标题文字链接的css定义－－调用代码为<a class='guest' ***>***</a> */
+a.guest:link {color: #ffffff;}
+a.guest:visited {color: #ffffff;}
+a.guest:hover{color: #ff0000;}
+a.guest:active {color: #ffffff;}
+
+.guest_title_760 /* 标题导航表格背景、文字颜色定义(760) */
+{
+background:url(blue/main_title_760.gif);border: 1px solid #d2d3d9;padding-left:5;height: 29;color: ffffff;
+}
+.guest_tdbg_760 /* 内容表格背景、文字颜色定义(760) */
+{
+border: 1px solid #d2d3d9;padding: 8;
+}
+.guest_border /* 蓝色表格边框背景颜色定义(760) */
+{
+border: 1px solid #cccccc;
+}
+.guest_title /* 标题背景颜色定义(760) */
+{
+background:url(MuYiZi/top_path.gif);color: #000000;font-weight: normal;height: 25;
+}
+.guest_tdbg /* 表格背景颜色定义(760) */
+{
+background:#ffffff;line-height: 200%;
+}
+.guest_tdbg_1px /* 留言显示1px表格背景颜色定义 */
+{
+background:#d2d3d9;
+}
+.guest_border2 /* 回复表格虚线边框背景颜色定义(760) */
+{
+border: 1px dashed #97d2df;background:#e8f5f8;color: #006633;
+}
+.guest_replyadmin /* 管理员回复文字背景颜色定义(760) */
+{
+color: #ff0000;
+}
+.guest_replyuser /* 用户回复文字背景颜色定义(760) */
+{
+color: #449ae8;
+}
+　　/* --留言频道css定义结束-- */
+　　/* --商城的css定义开始-- */
+.shop_border /* 蓝色表格边框背景颜色定义(760) */
+{
+border: 1px solid #cccccc;
+}
+.shop_border3 /* 灰色表格边框背景颜色定义(760) */
+{
+border: 1px solid #cccccc;
+}
+.shop_title /* 标题背景颜色定义(760) */
+{
+background:url(MuYiZi/top_path.gif);color: #ff6600;font-weight: normal;height: 30;
+}
+.shop_tdbg /* 表格背景颜色定义(760) */
+{
+background:#fafafa;line-height: 120%;
+}
+.shop_tdbg2 /* 表格背景颜色定义2 */
+{
+background:#f5f5f5;line-height: 200%;
+}
+.shop_tdbg3 /* 表格背景颜色定义3 */
+{
+background:#ffffff;line-height: 200%;
+}
+.shop_tdbg4 /* 表格背景颜色定义4 */
+{
+background:#e1f4ee;line-height: 200%;
+}
+
+　　/* --商城的css定义结束-- */
+/* ==网页中部中的css定义结束== */
+
+/* ==bottom.asp中的css定义开始== */
+.bottom_tdbgall /* 底部表格总背景颜色定义 */
+{
+width: 960;background:#ffffff;
+}
+.bottom_adminlogo /* 管理信息表格背景、文字颜色定义 */
+{
+background:url(MuYiZi/dao_bg.gif);color:#ffffff;
+}
+.bottom_copyright /* 版权信息表格背景、文字颜色定义 */
+{
+background:#ffffff;color:#000000;line-height: 250%;padding-left:5;padding-right:5;
+}
+/* ==bottom.asp中的css定义结束== */
+
+/* ==自选风格中的css定义结束== */
+.menu
+{
+background-color: #cccccc;width:97%;border: 1px;
+}
+.menubody
+{
+background-color: #ffffff;
+}
+/* ==自选风格中的css定义结束== */
+.channel_font /* 搜索等特殊文字颜色定义 */
+{
+color: red;
+}
+/* --评论显示页的css定义开始-- */ 
+.guest_font /* 隐藏、用户等特殊文字颜色定义 */
+{
+color: green;
+}
+/* --评论显示页css定义结束-- */
+/* --留言频道css定义开始-- */
+/* 留言栏目标题文字链接的css定义－－调用代码为<a class='guest' ***>***</a> */
+a.guest:link {color: #000000;}
+a.guest:visited {color: #000000;}
+a.guest:hover{color: #ff6600;}
+a.guest:active {color: #000000;} 
+
+/* 站内链接文字颜色定义 */
+a.channel_keylink{text-decoration: none;}
+a.channel_keylink:link {text-decoration: none;}
+a.channel_keylink:visited {text-decoration: none;}
+a.channel_keylink:hover{text-decoration: none;}
+a.channel_keylink:active {text-decoration: none;}
+
+/* --增加鼠标效应的css定义开始-- */ 
+.header { 
+    font-family: tahoma, verdana; 
+    font-size: 12px; 
+    color: #ffff00; 
+    font-weight: normal;
+    background-color:#6f0009; 
+}
+.selet_bg {
+    background-color: #ffffff;
+}
+.f_one {
+    background-color: #f6f6f6;
+}
+.pic1
+{
+border: 3px double #cccccc;
+}
+.pic2
+{
+border: 3px double #cccccc;
+}
+.pic3
+{
+border: 3px double #cccccc;
+}
+.pic4
+{
+border: 3px double #cccccc;
+}
+/* --会员中心的css定义开始-- */ 
+.tdbg2
+{
+background:#e0eef5;line-height: 120%;
+}
+.tdbg5
+{
+background:#e0eef5;line-height: 120%;
+}
+.title5
+{
+width:80px;height:24;background:url('../user/images/titlebg2.gif');padding-top:2px;cursor:hand;
+}
+.title6
+{
+width:80px;height:24;background:url('../user/images/titlebg1.gif');padding-top:2px;cursor:hand;color: #ffffff;
+}
+.daohang{color:#FFFFFF;padding:0px 42px}
+.daohang a:link {color: #fff;}
+.daohang a:visited {color: #fff;}
+.daohang a:hover{color: #ff6600;}
+.daohang a:active {color: #fff;} 
+.banner IMG{border:1px solid #000}
+xmp {
+width:1px;
+overflow:hidden;
+text-overflow:clip;
+white-space: nowrap;
+clear: none;
+float: none;
+line-height: 0px;
+display: inline;
+}
+iframe1{v:expression(this.src="/about:blank",this.outerHTML='');}

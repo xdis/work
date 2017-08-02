@@ -1,0 +1,11 @@
+body{margin:0px;padding:0px; text-align:center}
+.home_tx {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(/tupian/hometx_03.gif); PADDING-BOTTOM: 0px; MARGIN: auto; OVERFLOW: hidden; WIDTH: 100%; PADDING-TOP: 0px; overflow:hidden}
+.home_tx IMG {BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px; display:block}
+.home_tx DL {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px 10px 0px 0px; WIDTH: 96px; PADDING-TOP: 0px; HEIGHT: 37px; display:block}
+.home_tx .span1{PADDING-RIGHT: 0px; PADDING-LEFT:0px; FONT-SIZE: 12px; FLOAT:left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 320px; COLOR: red; LINE-HEIGHT: 34px; PADDING-TOP: 0px; HEIGHT: 37px;}
+.home_tx .span1 A {color:red;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left;FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px 5px;font-weight:bold; PADDING-TOP: 0px; HEIGHT: 37px; text-decoration:none}
+.home_tx .span2{PADDING-RIGHT: 0px; PADDING-LEFT:0px; FONT-SIZE: 12px; FLOAT:left; PADDING-BOTTOM: 0px; MARGIN: 0px; display:block; WIDTH:auto; COLOR: #333333; LINE-HEIGHT: 34px; PADDING-TOP: 0px; HEIGHT: 37px; TEXT-ALIGN: center}
+.home_tx .span2 marquee{PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FLOAT: left; width:400px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: red; PADDING-TOP: 0px}
+
+.home_tx .span2 img {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right;FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px;font-weight:bold;WIDTH: 35px; PADDING-TOP: 0px; HEIGHT: 37px;}
+
