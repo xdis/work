@@ -1228,7 +1228,7 @@ public function actionCreate()
 }
 ```
 
-# 权限管理_猴子
+# RBAC打造通用web管理权限 
 
 ## 权限模型列表
 
@@ -1328,6 +1328,74 @@ INSERT INTO `user` (`id`, `name`, `email`, `is_admin`, `status`, `updated_time`,
 VALUES(1, '超级管理员', 'apanly@163.com', 1, 1, '2016-11-15 13:36:30', '2016-11-15 13:36:30');
 
 ```
+## 数据插入
+
+```
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+/*!40101 SET NAMES utf8 */;
+
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('1','测试页面一','[\"test\\/page1\"]','1','2017-08-01 13:44:15','2017-08-01 13:44:15');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('2','测试页面二','[\"test\\/page2\"]','1','2017-08-01 13:44:34','2017-08-01 13:44:34');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('3','测试页面三','[\"test\\/page3\"]','1','2017-08-01 13:45:01','2017-08-01 13:45:01');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('4','测试页面四','[\"test\\/page4\"]','1','2017-08-01 13:45:13','2017-08-01 13:45:13');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('5','测试页面五','[\"test\\/page5\"]','1','2017-08-01 13:45:26','2017-08-01 13:45:26');
+insert into `access` (`id`, `title`, `urls`, `status`, `updated_time`, `created_time`) values('6','默认首页','[\"default\\/index\"]','1','2017-08-01 13:46:13','2017-08-01 13:46:13');
+
+
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+insert into `role` (`id`, `name`, `status`, `updated_time`, `created_time`) values('1','测试组','1','2017-08-01 09:17:12','2017-08-01 09:17:12');
+
+
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+insert into `role_access` (`id`, `role_id`, `access_id`, `created_time`) values('1','1','2','2017-08-01 13:47:58');
+
+insert into `role_access` (`id`, `role_id`, `access_id`, `created_time`) values('2','1','1','2017-08-01 13:47:58');
+
+
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+insert into `user` (`id`, `name`, `email`, `is_admin`, `status`, `updated_time`, `created_time`) values('1','超级管理员','apanly@163.com','1','1','2016-11-15 13:36:30','2016-11-15 13:36:30');
+
+insert into `user` (`id`, `name`, `email`, `is_admin`, `status`, `updated_time`, `created_time`) values('2','张三','zhangsan@163.com','0','1','2017-08-01 13:46:45','2017-08-01 09:15:47');
+
+
+
+/*
+SQLyog Ultimate v8.32 
+MySQL - 5.6.11 
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+insert into `user_role` (`id`, `uid`, `role_id`, `created_time`) values('1','2','1','2017-08-01 13:46:45');
+
+
+```
 
 ## 前端css和js加上时间版本_方便管理强制刷新
 **rbac/assets/RbacAsset.php**
@@ -1355,4 +1423,263 @@ class RbacAsset extends AssetBundle
 ```php
 <link href="/css/style.css?v=20161213" rel="stylesheet">    <meta name="csrf-param" content="_csrf">
 <script src="/js/app.js?v=20161213"></script>
+```
+
+## 封装yii的js和css
+###view页调用js,原来的yii是这样调用
+
+举例
+**rbac/views/role/set.php**
+
+```php
+Yii::$app->getView()->registerJs("/js/role/set.js",\rbac\assets\AppAsset::className() );
+```
+
+**封装后使用**
+
+rbac/views/role/set.php
+```php
+<?php
+use \rbac\services\DataHelper;
+use \rbac\services\UrlService;
+use \rbac\services\StaticService;
+//Yii::$app->getView()->registerJs("/js/role/set.js",\rbac\assets\AppAsset::className() );
+StaticService::includeAppJsStatic( "/js/role/set.js",\rbac\assets\RbacAsset::className() );
+?>
+```
+
+**rbac/services/StaticService.php**
+
+```php
+<?php
+namespace rbac\services;
+
+use Yii;
+
+class StaticService{
+
+	/*使用yii 统一方法加载js或者css*/
+    public static function includeAppStatic($type, $path, $depend){
+    	//版本号就是为了解决浏览器缓存的
+        $release_version = defined("RELEASE_VERSION") ? RELEASE_VERSION : "20150731141600";
+        if (stripos($path, "?") !== false) {
+            $path = $path . "&version={$release_version}";
+        } else {
+            $path = $path . "?version={$release_version}";
+        }
+
+        if ($type == "css") {
+            Yii::$app->getView()->registerCssFile($path, ['depends' => $depend]);
+        } else {
+            Yii::$app->getView()->registerJsFile($path, ['depends' => $depend]);
+        }
+    }
+
+    /*引入js业务文件*/
+    public static function includeAppJsStatic($path, $depend){
+        self::includeAppStatic("js", $path, $depend);
+    }
+
+	/*引入css业务文件*/
+    public static function includeAppCssStatic($path, $depend){
+        self::includeAppStatic("css", $path, $depend);
+    }
+} 
+```
+
+## 封装post和get
+
+**rbac/controllers/common/BaseController.php**
+```php
+	//统一获取post参数的方法
+	public function post($key, $default = "") {
+		return Yii::$app->request->post($key, $default);
+	}
+
+	//统一获取get参数的方法
+	public function get($key, $default = "") {
+		return Yii::$app->request->get($key, $default);
+	}
+```
+
+
+## 伪登录开发
+> 访问的地址  http://rbac.ysk.dev/user/vlogin?uid=1   
+
+**rbac/controllers/UserController.php**
+```php
+use rbac\controllers\common\BaseController;
+class UserController extends  BaseController{
+    //伪登录业务方法,所以伪登录功能也是需要有auth_token
+    public function actionVlogin(){
+        $uid = $this->get("uid",0);
+        $reback_url = UrlService::buildUrl("/");
+        if( !$uid ){
+            return $this->redirect( $reback_url );
+        }
+        $user_info = User::find()->where([ 'id' => $uid ])->one();
+        if( !$user_info ){
+            return $this->redirect( $reback_url );
+        }
+        //cookie保存用户的登录态,所以cookie值需要加密，规则：user_auth_token + "#" + uid
+        $this->createLoginStatus( $user_info );
+        return $this->redirect( $reback_url );
+    }
+}
+
+```
+
+**rbac/controllers/common/BaseController.php**
+```php
+class BaseController extends  Controller{
+    //设置登录态cookie
+    public  function createLoginStatus($userinfo){
+        $auth_token = $this->createAuthToken($userinfo['id'],$userinfo['name'],$userinfo['email'],$_SERVER['HTTP_USER_AGENT']);
+        $cookies = Yii::$app->response->cookies;
+        $cookies->add(new \yii\web\Cookie([
+            'name' => $this->auth_cookie_name,
+            'value' => $auth_token."#".$userinfo['id'],
+        ]));
+    }
+
+	//用户相关信息生成加密校验码函数
+	public function createAuthToken($uid,$name,$email,$user_agent){
+		return md5($uid.$name.$email.$user_agent);
+	}
+
+}
+```
+
+## 每次访问的验证伪登陆
+
+**rbac/controllers/common/BaseController.php**
+```php
+class BaseController extends  Controller{
+	//本系统所有页面都是需要登录之后才能访问的，  在框架中加入统一验证方法
+	public function beforeAction($action) {
+		$login_status = $this->checkLoginStatus();
+		if ( !$login_status && !in_array( $action->uniqueId,$this->allowAllAction )  ) {
+			if(Yii::$app->request->isAjax){
+				$this->renderJSON([],"未登录,请返回用户中心",-302);
+			}else{
+				$this->redirect( UrlService::buildUrl("/user/login") );//返回到登录页面
+			}
+			return false;
+		}
+		//保存所有的访问到数据库当中
+		$get_params = $this->get( null );
+		$post_params = $this->post( null );
+		$model_log = new AppAccessLog();
+		$model_log->uid = $this->current_user?$this->current_user['id']:0;
+		$model_log->target_url = isset( $_SERVER['REQUEST_URI'] )?$_SERVER['REQUEST_URI']:'';
+		$model_log->query_params = json_encode( array_merge( $post_params,$get_params ) );
+		$model_log->ua = isset( $_SERVER['HTTP_USER_AGENT'] )?$_SERVER['HTTP_USER_AGENT']:'';
+		$model_log->ip = isset( $_SERVER['REMOTE_ADDR'] )?$_SERVER['REMOTE_ADDR']:'';
+		$model_log->created_time = date("Y-m-d H:i:s");
+		$model_log->save( 0 );
+		/**
+		 * 判断权限的逻辑是
+		 * 取出当前登录用户的所属角色，
+		 * 在通过角色 取出 所属 权限关系
+		 * 在权限表中取出所有的权限链接
+		 * 判断当前访问的链接 是否在 所拥有的权限列表中
+		 */
+		//判断当前访问的链接 是否在 所拥有的权限列表中
+		if( !$this->checkPrivilege( $action->getUniqueId() ) ){
+			$this->redirect( UrlService::buildUrl( "/error/forbidden" ) );
+			return false;
+		}
+		return true;
+	}
+	//验证登录是否有效，返回 true or  false
+	protected function checkLoginStatus(){
+		$request = Yii::$app->request;
+		$cookies = $request->cookies;
+		$auth_cookie = $cookies->get($this->auth_cookie_name);
+		if(!$auth_cookie){
+			return false;
+		}
+		list($auth_token,$uid) = explode("#",$auth_cookie);
+
+		if(!$auth_token || !$uid){
+			return false;
+		}
+
+		if( $uid && preg_match("/^\d+$/",$uid) ){
+			$userinfo = User::findOne([ 'id' => $uid ]);
+			if(!$userinfo){
+				return false;
+			}
+			//校验码
+			if($auth_token != $this->createAuthToken($userinfo['id'],$userinfo['name'],$userinfo['email'],$_SERVER['HTTP_USER_AGENT'])){
+				return false;
+			}
+			$this->current_user = $userinfo;
+			$view = Yii::$app->view;
+			$view->params['current_user'] = $userinfo;
+			return true;
+		}
+		return false;
+	}    
+}
+```
+
+## rbac验证过程
+**rbac/controllers/common/BaseController.php**
+```php
+class BaseController extends  Controller{
+	//本系统所有页面都是需要登录之后才能访问的，  在框架中加入统一验证方法
+	public function beforeAction($action) {
+		//判断当前访问的链接 是否在 所拥有的权限列表中
+		if( !$this->checkPrivilege( $action->getUniqueId() ) ){
+			$this->redirect( UrlService::buildUrl( "/error/forbidden" ) );
+			return false;
+		}
+		return true;
+	}
+	//检查是否有访问指定链接的权限
+	public function checkPrivilege( $url ){
+		//如果是超级管理员 也不需要权限判断
+		if( $this->current_user && $this->current_user['is_admin'] ){
+			return true;
+		}
+
+		//有一些页面是不需要进行权限判断的
+		if( in_array( $url,$this->ignore_url ) ){
+			return true;
+		}
+
+		return in_array( $url, $this->getRolePrivilege( ) );
+	}
+
+	/*
+	* 获取某用户的所有权限
+	* 取出指定用户的所属角色，
+	* 在通过角色 取出 所属 权限关系
+	* 在权限表中取出所有的权限链接
+	*/
+	public function getRolePrivilege($uid = 0){
+		if( !$uid && $this->current_user ){
+			$uid = $this->current_user->id;
+		}
+
+		if( !$this->privilege_urls ){
+			$role_ids = UserRole::find()->where([ 'uid' => $uid ])->select('role_id')->asArray()->column();
+			if( $role_ids ){
+				//在通过角色 取出 所属 权限关系
+				$access_ids = RoleAccess::find()->where([ 'role_id' =>  $role_ids ])->select('access_id')->asArray()->column();
+				//在权限表中取出所有的权限链接
+				$list = Access::find()->where([ 'id' => $access_ids ])->all();
+				if( $list ){
+					foreach( $list as $_item  ){
+						$tmp_urls = @json_decode(  $_item['urls'],true );
+						$this->privilege_urls = array_merge( $this->privilege_urls,$tmp_urls );
+					}
+				}
+			}
+		}
+		return $this->privilege_urls ;
+	}
+}
+
 ```
