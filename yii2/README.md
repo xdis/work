@@ -93,9 +93,10 @@
 					- [基本的保存与写入](fn/cache_file.md#基本的保存与写入)
 					- [清空缓存](fn/cache_file.md#清空缓存)
 				- 依赖操作
-					- [文件](fn/cache_file.md#文件)
-					- [表达式](fn/cache_file.md#表达式)
-					- [DB](fn/cache_file.md#DB)
+					- [文件](fn/cache_file.md#文件) FileDependency
+					- [表达式](fn/cache_file.md#表达式) ExpressionDependency
+					- [DB](fn/cache_file.md#DB)	DbDependency
+					- [tag](fn/cache_file.md#tag) TagDependency @yii2 admin2 获取栏目地址的缓存
 			- 页面缓存 [view层]
 				- beginCache 
 					- [缓存时间](fn/cache_file.md#缓存时间)
@@ -107,6 +108,7 @@
 				- [http缓存](fn/cache_file.md#http缓存)
 			- 调试
 				- [beginProfile](fn/debug.md#beginProfile)  代码区间性能检测
+				- [yii2_admin定义Profile](fn/debug.md#yii2_admin定义Profile)
 	- 单元测试
 		- demo
 			- [一行代码验证短信](fn/u_test/demo.md#一行代码验证短信) @zhou

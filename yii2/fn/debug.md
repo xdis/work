@@ -19,3 +19,34 @@
 **debug查看**
 
 ![](debug/profile.png)
+
+
+## yii2_admin定义Profile
+
+**vendor/mdmsoft/yii2-admin/models/Route.ph**
+```php
+protected function getRouteRecrusive($module, &$result) {
+    $token = "Get Route of '" . get_class($module) . "' with id '" . $module->uniqueId . "'";
+    Yii::beginProfile($token, __METHOD__);  //定义此
+    try {
+        dp($module->getModules());
+        foreach ($module->getModules() as $id => $child) {
+            if (($child = $module->getModule($id)) !== null) {
+                $this->getRouteRecrusive($child, $result);
+            }
+        }
+
+        foreach ($module->controllerMap as $id => $type) {
+            $this->getControllerActions($type, $id, $module, $result);
+        }
+
+        $namespace = trim($module->controllerNamespace, '\\') . '\\';
+        $this->getControllerFiles($module, $namespace, '', $result);
+        $all = '/' . ltrim($module->uniqueId . '/*', '/');
+        $result[$all] = $all;
+    } catch (\Exception $exc) {
+        Yii::error($exc->getMessage(), __METHOD__);
+    }
+    Yii::endProfile($token, __METHOD__);
+}
+```

@@ -165,6 +165,44 @@ class DemoCacheController extends Controller {
     }
 ```
 
+## tag
+**vendor/mdmsoft/yii2-admin/models/Route.php**
+
+```php
+const CACHE_TAG = 'mdm.admin.route';
+
+  public function getAppRoutes($module = null) {
+        if ($module === null) {
+            $module = Yii::$app;
+        } elseif (is_string($module)) {
+            $module = Yii::$app->getModule($module);
+        }
+        //dp(__METHOD__);  //mdm\admin\models\Route::getAppRoutes
+        // dp($module->getUniqueId()); // ''
+        $key = [__METHOD__, $module->getUniqueId()];
+        /**
+         * dp($key);
+         * array (size=2)
+         * 0 => string 'mdm\admin\models\Route::getAppRoutes' (length=36)
+         * 1 => string '' (length=0)
+         */
+        //
+        dp($module->getModules());
+        $cache = Configs::instance()->cache;
+        if ($cache === null || ($result = $cache->get($key)) === false) {
+            $result = [];
+            $this->getRouteRecrusive($module, $result);
+            if ($cache !== null) {
+                $cache->set($key, $result, Configs::instance()->cacheDuration, new TagDependency([
+                    'tags' => self::CACHE_TAG,
+                ]));
+            }
+        }
+
+        return $result;
+    }
+```
+
 #页面缓存 [view层]
 
 ## beginCache
