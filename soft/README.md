@@ -135,4 +135,6 @@
 			- SS的配置
 				- [添加节点的顺序](route/README.md)
 			- [开启webshell](route/README.md#开启webshell)
-			- [ssh开启ss](route/README.md#ssh开启ss)
+			- ss
+				- [ssh开启ss](route/README.md#ssh开启ss)
+				-  [chnroute](route/chnroute.txt) @忽略中国的IP,不经过shadowsocks代理
