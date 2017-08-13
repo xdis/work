@@ -413,3 +413,15 @@ Some people think old buildings should **be** preserve**d**.
 过去 | had been doing  |I had been learning English for ten years by last month. |到上个月为上,我已经一直在学习英语十年了
 将来 will | will have been doing | I will(将) have(已经) been(在) learning English for ten years by next month. |到下个月为上,我将已经在一直学习英语十年了
 过去将来 would | would have been doing  |Yesterday I thought I would have been learning English for ten years by next month. |昨天我认为我将已经在学习英语十年了到下个月为止
+
+
+# 虚拟语气
+
+## 现在将来过去比较
+
+虚拟时间 | 条件从句中的谓语  |主句谓语
+------- |------ |-----
+现在  |过去时 did/were | would do/be should/could/must
+将来  | 过去时 were to/should do |would do/be should/could/must
+过去| 过去完成时 had done/been |would have done/been should/could/must
+
