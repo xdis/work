@@ -149,7 +149,7 @@ backend/controllers/DemoEventController.php
 ## 访问与输出  
 http://ysk.dev/admin/demo-event/dog-object  
 
-# 30分钟自动退出_zhou
+# 30分钟自动退出
 >场景:用户登陆之后,30分钟之内无操作的话,则退出登陆
 
 ## 配置user
