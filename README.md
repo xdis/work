@@ -10,6 +10,7 @@
 	- [mysql](mysql/)
 	- [git](git/)
 	- [python](python/)
+	- [c](c/)
 - Other
 	- [en](en/)
 	- [沟通](linkup/)
