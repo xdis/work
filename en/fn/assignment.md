@@ -34,3 +34,18 @@ People in the whole world are facing fresh water shortage.
 	- 正在面临  are facing ,因为主语是单三,则谓语是复数
 
 
+# 6.15
+## 城市化污染了干净的农村土地
+> urbanization, rural land  
+
+**自译**
+Urbanization pollutes clean rural land. 
+
+## 过程总结
+为什么rural land 不加s呢..因为这里的土地是一个总称
+
+## 水土流失导致可耕种土地的减少
+> soil erosion, arable land   
+
+**自译**
+Soil ersion leads to the declare in arable land  .

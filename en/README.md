@@ -62,7 +62,7 @@
 |-ly luckily| -ward(s)homeward |-wise likewise
 
 - **总结**
-	- 及物劢词(vi)和不及物动词（vt）
+	- 及物动词(vi)和不及物动词（vt）
 		- [raise和rise区分](fn/base.md#raise和rise区分)
 	- 宾语 都是用名词 
 	- 动名词 相当于"名词"
@@ -76,7 +76,7 @@
 			- 使用is  表示常态的事
 			- 使用was ,表示从过去
 			- 英国人说英语
-				- 被劢语态公式  主语 + be done + （by sb）
+				- 被动语态公式  主语 + be done + （by sb）
 					- British speak English.
 					- English is spoken by British.
 	- [谓语动词与非谓语动词区别](fn/base.md#谓语动词与非谓语动词区别)
@@ -87,6 +87,9 @@
 	- 6.13
 		- [环境恶化导致全球变暖以及物种灭绝](fn/assignment.md#环境恶化导致全球变暖以及物种灭绝)
 		- [全世界的人们都面临淡水短缺问题](fn/assignment.md#全世界的人们都面临淡水短缺问题)
+	- 6.15
+		- 城市化污染了干净的农村土地
+		- 水土流失导致可耕种土地的减少
 - 基本句型
 	- 例句_最近,这个公共的活动获得支持,也就是政府的资金
 		- 修饰名称:定语
@@ -121,9 +124,9 @@
 				- 我想她知道  I want her to know.
 		- 主系表
 			- [例句_电视能够成为一种信息的来源](fn/base.md#例句_电视能够成为一种信息的来源)
-				- be劢词：理解为“是”
+				- be动词：理解为“是”
 			- [例句_我感到困惑和沮丧](fn/base.md#例句_我感到困惑和沮丧)
-				- 感官劢词：feel, look, smell, sound, taste
+				- 感官动词：feel, look, smell, sound, taste
 				- [趋势动词](fn/base.md#趋势动词)
 	- [并列句](fn/base.md#并列句)  主1 + 主2
 		- [错误表达](fn/base.md#错误表达)
@@ -147,16 +150,16 @@
 					- 战争中获得的经验对我们将会有重大价值
 		- 谓语动词
 			- 第三人称单数
-				- 单数 公式: 名词+劢词S
+				- 单数 公式: 名词+动词S
 					- The boy is/was …
 					- The boy does …
 					- The boy has …
-				- 复数 公式 名词S+劢词
+				- 复数 公式 名词S+动词
 					- The boys are/were …
 					- The boys do …
 					- The boys have …
 			- 情态动词
-				- 情态劢词后面一律用原型
+				- 情态动词后面一律用原型
 					- can/could, may/might, will/would, shall/should, must
 			- 时态
 				- [常用时态](fn/base.md#常用时态)
@@ -164,3 +167,5 @@
 				- [现在状态](fn/base.md#现在状态)
 				- [完成状态](fn/base.md#完成状态)
 				- [完成进行状态](fn/base.md#完成进行状态)
+	- 虚拟语气
+		- [现在将来过去比较](fn/base.md#现在将来过去比较)
