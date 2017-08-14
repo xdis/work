@@ -130,6 +130,7 @@
 			- [k2p刷机](route/k2p/README.md)
 			- [b70刷机](route/B70/README.md)
 		- 华硕固件配置
+			- [刷机之后双清](route/README.md#刷机之后双清)
 			- 过滤广告
 				- 看VIP视频过滤规则 vip_rules.txt
 			- SS的配置

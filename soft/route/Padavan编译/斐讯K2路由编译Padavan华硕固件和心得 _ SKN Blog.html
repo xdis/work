@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://myskn.github.io/2017/01/18/k2/ -->
+<html class="theme-next pisces"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/jquery.fancybox.css" rel="stylesheet" type="text/css">
+
+
+
+
+  <link href="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/css" rel="stylesheet" type="text/css">
+
+
+
+<link href="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/main.css" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="linux,K2,">
+
+
+
+
+
+  <link rel="alternate" href="https://myskn.github.io/atom.xml" title="SKN Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://myskn.github.io/favicon.ico?v=5.0.0">
+
+
+
+
+
+
+<meta name="description" content="2017-01-18更新：这个日志(2016-09-01)有些内容已经过时了，要自己注意一下。
+
+确保你的K2已经刷上breed并能刷上第三方固件!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="斐讯K2路由编译Padavan华硕固件和心得">
+<meta property="og:url" content="https://myskn.github.io/2017/01/18/k2/index.html">
+<meta property="og:site_name" content="SKN Blog">
+<meta property="og:description" content="2017-01-18更新：这个日志(2016-09-01)有些内容已经过时了，要自己注意一下。
+
+确保你的K2已经刷上breed并能刷上第三方固件!">
+<meta property="og:updated_time" content="2017-01-17T23:31:32.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="斐讯K2路由编译Padavan华硕固件和心得">
+<meta name="twitter:description" content="2017-01-18更新：这个日志(2016-09-01)有些内容已经过时了，要自己注意一下。
+
+确保你的K2已经刷上breed并能刷上第三方固件!">
+
+
+
+<script src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/hm.js.下载"></script><script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 6231683627193730000,
+      author: 'admin'
+    }
+  };
+</script>
+
+  <title> 斐讯K2路由编译Padavan华硕固件和心得 | SKN Blog </title>
+<script type="text/javascript" async="" id="duoshuo-script" src="https://static.duoshuo.com/embed.js" charset="UTF-8"></script><style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?64ef960ab93f892fbee435fcb618e82f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="https://myskn.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">SKN Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">学多点姿势</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="https://myskn.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="https://myskn.github.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="https://myskn.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="https://myskn.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                斐讯K2路由编译Padavan华硕固件和心得
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-18T07:03:21+08:00" content="2017-01-18">
+              2017-01-18
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="https://myskn.github.io/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="https://myskn.github.io/2017/01/18/k2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/18/k2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <font color="red" size="4" face="“黑体”">2017-01-18更新：这个日志(2016-09-01)有些内容已经过时了，要自己注意一下。</font>
+
+<p><font color="black" size="4" face="“黑体”">确保你的K2已经刷上breed并能刷上第三方固件!</font> <a id="more"></a> </p>
+<h1 id="准备"><a href="https://myskn.github.io/2017/01/18/k2/#准备" class="headerlink" title="准备"></a>准备</h1><p>准备工作：安装virtualbox虚拟机，安装lubuntu16.04 i386系统，确定虚拟系统能正常上网，顺便给虚拟机共享实体机的一个目录，方便文件传送。<br>进入虚拟系统，并打开终端(Tips:可以关闭lightdm，在tty终端下运行，节省内存)<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</div><div class="line">sudo apt-get install git autoconf automake bison build-essential flex gawk gettext gperf libtool pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev texinfo python-docutils mc autopoint -y</div></pre></td></tr></tbody></table></figure><p></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div><div class="line"><span class="comment">#输入root密码2次</span></div><div class="line">su</div><div class="line"><span class="comment">#输入root密码，切换到root用户</span></div><div class="line"><span class="built_in">cd</span> /opt</div><div class="line">git <span class="built_in">clone</span> https://bitbucket.org/padavan/rt-n56u.git</div><div class="line"><span class="comment">#等N分钟下载源码</span></div></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">===这里是编译mips工具===</div><div class="line"><span class="built_in">cd</span> /opt/rt-n56u/toolchain-mipsel</div><div class="line">./clean_sources</div><div class="line"><span class="comment">#这里很快就完成</span></div><div class="line">./build_toolchain</div><div class="line"><span class="comment">#这里要等几十分钟具体看机器，最后会显示ALL DONE相关信息</span></div></pre></td></tr></tbody></table></figure>
+<p>这样子，前期工作完成，开始修正padavan固件适配k2的问题。</p>
+<h1 id="一：修正K2的GPIO"><a href="https://myskn.github.io/2017/01/18/k2/#一：修正K2的GPIO" class="headerlink" title="一：修正K2的GPIO"></a>一：修正K2的GPIO</h1><p>这里的K2硬件版本为A2<br>Reset：GPIO 1</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">LED颜色</th>
+<th style="text-align:center">GPIO</th>
+<th style="text-align:center">lo</th>
+<th style="text-align:center">hi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">红</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">关</td>
+<td style="text-align:center">开</td>
+</tr>
+<tr>
+<td style="text-align:center">黄</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">开</td>
+<td style="text-align:center">关</td>
+</tr>
+<tr>
+<td style="text-align:center">蓝</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">开</td>
+<td style="text-align:center">关</td>
+</tr>
+</tbody>
+</table>
+<p>编辑 /opt/rt-n56u/trunk/configs/boards/RT-AC54U/board.h文件<br>并把内容改为如下，注意没有数字参数的请确定前面是“#undef”，否则编译时报错。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/* ASUS RT-AC54U */</div><div class="line"></div><div class="line"><span class="comment">#define BOARD_PID        "RT-AC54U"</span></div><div class="line"><span class="comment">#define BOARD_NAME        "RT-AC54U"</span></div><div class="line"><span class="comment">#define BOARD_DESC        "ASUS RT-AC54U Wireless Router"</span></div><div class="line"><span class="comment">#define BOARD_VENDOR_NAME    "ASUSTek Computer Inc."</span></div><div class="line"><span class="comment">#define BOARD_VENDOR_URL    "http://www.asus.com/"</span></div><div class="line"><span class="comment">#define BOARD_MODEL_URL        "http://www.asus.com/Networking/RTAC54U/"</span></div><div class="line"><span class="comment">#define BOARD_BOOT_TIME        25</span></div><div class="line"><span class="comment">#define BOARD_FLASH_TIME    60</span></div><div class="line"><span class="comment">#undef  BOARD_GPIO_BTN_RESET</span></div><div class="line"><span class="comment">#define BOARD_GPIO_BTN_WPS    1</span></div><div class="line"><span class="comment">#undef  BOARD_GPIO_LED_ALL</span></div><div class="line"><span class="comment">#define BOARD_GPIO_LED_WIFI    11</span></div><div class="line"><span class="comment">#define BOARD_GPIO_LED_POWER    8</span></div><div class="line"><span class="comment">#undef  BOARD_GPIO_LED_LAN</span></div><div class="line"><span class="comment">#define BOARD_GPIO_LED_WAN    10</span></div><div class="line"><span class="comment">#undef  BOARD_GPIO_LED_USB</span></div><div class="line"><span class="comment">#undef  BOARD_GPIO_LED_ROUTER</span></div><div class="line"><span class="comment">#undef  BOARD_GPIO_PWR_USB</span></div><div class="line"><span class="comment">#define BOARD_HAS_5G_11AC    1</span></div><div class="line"><span class="comment">#define BOARD_NUM_ANT_5G_TX    2</span></div><div class="line"><span class="comment">#define BOARD_NUM_ANT_5G_RX    2</span></div><div class="line"><span class="comment">#define BOARD_NUM_ANT_2G_TX    2</span></div><div class="line"><span class="comment">#define BOARD_NUM_ANT_2G_RX    2</span></div><div class="line"><span class="comment">#define BOARD_NUM_ETH_LEDS    0</span></div><div class="line"><span class="comment">#define BOARD_HAS_EPHY_L1000    0</span></div><div class="line"><span class="comment">#define BOARD_HAS_EPHY_W1000    0</span></div></pre></td></tr></tbody></table></figure><p></p>
+<p>然后保存文件</p>
+<h1 id="二：调用原厂无线参数"><a href="https://myskn.github.io/2017/01/18/k2/#二：调用原厂无线参数" class="headerlink" title="二：调用原厂无线参数"></a>二：调用原厂无线参数</h1><p>把/opt/rt-n56u/trunk/configs/boards/RT-AC54U目录下”SingleSKU”开头的文件全删除<br>并编辑/opt/rt-n56u/trunk/configs/boards/RT-AC54U/kernel-3.4.x.config文件<br>查找并修改为如下内容（主要修正是删除#号，或者将is not set改为=y或=n）<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">CONFIG_RT_SINGLE_SKU=n</div><div class="line">CONFIG_RT2860V2_AP_GREENAP=y</div><div class="line">CONFIG_INTERNAL_PA_INTERNAL_LNA=n</div><div class="line">CONFIG_INTERNAL_PA_EXTERNAL_LNA=n</div><div class="line">CONFIG_EXTERNAL_PA_EXTERNAL_LNA=y</div><div class="line">CONFIG_MT76X2_AP_GREENAP=y</div><div class="line">CONFIG_MT76X2_AP_INTERNAL_PA_INTERNAL_LNA=n</div><div class="line">CONFIG_MT76X2_AP_INTERNAL_PA_EXTERNAL_LNA=n</div><div class="line">CONFIG_MT76X2_AP_EXTERNAL_PA_EXTERNAL_LNA=y</div><div class="line">CONFIG_RALINK_UART_BRATE=57600</div></pre></td></tr></tbody></table></figure><p></p>
+<p>然后保存文件</p>
+<h1 id="三：修正WAN-LAN顺序"><a href="https://myskn.github.io/2017/01/18/k2/#三：修正WAN-LAN顺序" class="headerlink" title="三：修正WAN/LAN顺序"></a>三：修正WAN/LAN顺序</h1><p>默认情况下，WAN口会变成LAN4口，LAN4口会变成WAN口<br>编辑/opt/rt-n56u/trunk/configs/boards/RT-AC54U/kernel-3.4.x.config文件<br>查找WAN=0并修改为如下内容<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CONFIG_RAETH_ESW_PORT_WAN=4</div><div class="line">CONFIG_RAETH_ESW_PORT_LAN1=3</div><div class="line">CONFIG_RAETH_ESW_PORT_LAN2=2</div><div class="line">CONFIG_RAETH_ESW_PORT_LAN3=1</div><div class="line">CONFIG_RAETH_ESW_PORT_LAN4=0</div></pre></td></tr></tbody></table></figure><p></p>
+<p>然后保存文件</p>
+<h1 id="四：汉化"><a href="https://myskn.github.io/2017/01/18/k2/#四：汉化" class="headerlink" title="四：汉化"></a>四：汉化</h1><p>（有能力的自己汉化也行，我这借用hiboy的汉化）<br><a href="http://www.right.com.cn/Forum/thread-161324-1-1.html" target="_blank" rel="external">下载hiboy的固件</a>，并用7-zip打开trx固件文件，提取里面的/www/EN.dict，编辑EN.dict，修改第二，三行内容如下，<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LANG_RU=简体中文</div><div class="line">LANG_EN=English</div></pre></td></tr></tbody></table></figure><p></p>
+<p>并另存为RU.dict文件，替换/opt/rt-n56u/trunk/user/www/dict/RU.dict文件</p>
+<p>再编辑/opt/rt-n56u/trunk/user/www/Makefile文件，查找并将RU=后面的内容改为”简体中文”<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"LANG_RU=简体中文"</span> &gt;&gt; $(ROMFS_DIR)/www/EN.header</div></pre></td></tr></tbody></table></figure><p></p>
+<p>然后保存文件</p>
+<h1 id="五：默认配置-可选"><a href="https://myskn.github.io/2017/01/18/k2/#五：默认配置-可选" class="headerlink" title="五：默认配置(可选)"></a>五：默认配置(可选)</h1><p>给路由设置个人的默认配置<br>编辑/opt/rt-n56u/trunk/user/shared/defaults.c<br>使路由器不用ISP的dns，用第三方dns<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">{wan_dnsenable_x<span class="string">", "</span>0<span class="string">" },</span></div><div class="line">{ "wan_dns1_x<span class="string">", "</span>223.5.5.5<span class="string">" },</span></div><div class="line">{ "wan_dns2_x<span class="string">", "</span>119.29.29.29<span class="string">" },</span></div></pre></td></tr></tbody></table></figure><p></p>
+<p>承接上面，如果电脑将路由器当用dns服务器，则进入路由页面<br><a href="http://192.168.1.1/Advanced_DHCP_Content.asp" target="_blank" rel="external">http://192.168.1.1/Advanced_DHCP_Content.asp</a><br>“DHCP服务器”<br>自定义配置文件 “dnsmasq.conf”<br>(配置路由里的dnsmasq，如googlevideo用sni，则添加address=/.googlevideo.com/xxx.xx.x.x)</p>
+<p>自定义配置文件 “hosts”<br>(配置路由里的hosts)</p>
+<p>路由默认登陆ip<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">{ <span class="string">"lan_ipaddr"</span>, <span class="string">"192.168.1.1"</span> },</div><div class="line">{ <span class="string">"lan_netmask"</span>, <span class="string">"255.255.255.0"</span> },</div></pre></td></tr></tbody></table></figure><p></p>
+<p>dhcp客户机分配数量<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">{ <span class="string">"dhcp_start"</span>, <span class="string">"192.168.1.101"</span> },</div><div class="line">{ <span class="string">"dhcp_end"</span>, <span class="string">"192.168.1.250"</span> },</div></pre></td></tr></tbody></table></figure><p></p>
+<p>关闭telnet开启ssh<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">{ <span class="string">"telnetd"</span>, <span class="string">"0"</span> },</div><div class="line">{ <span class="string">"sshd_enable"</span>, <span class="string">"1"</span> },</div></pre></td></tr></tbody></table></figure><p></p>
+<p>然后保存文件</p>
+<p>编辑/opt/rt-n56u/trunk/user/shared/defaults.h</p>
+<p>下面内容主要是配置2G/5G无线区码，默认SSID名字(ABC_x)，默认密码(1234567890)，默认路由管理员密码(admin8888)，默认时区，默认NTP时间服务器</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define SYS_USER_ROOT        "admin"</span></div><div class="line"><span class="comment">#define SYS_GROUP_ROOT        "root"</span></div><div class="line"><span class="comment">#define SYS_USER_NOBODY        "nobody"</span></div><div class="line"><span class="comment">#define SYS_GROUP_NOGROUP    "nogroup"</span></div><div class="line"></div><div class="line"><span class="comment">#define DEF_WLAN_2G_CC        "CN"</span></div><div class="line"><span class="comment">#define DEF_WLAN_5G_CC        "CN"</span></div><div class="line"><span class="comment">#define DEF_WLAN_2G_SSID    "ABC_2016"</span></div><div class="line"><span class="comment">#define DEF_WLAN_5G_SSID    "ABC_2016_5G"</span></div><div class="line"><span class="comment">#define DEF_WLAN_2G_GSSID    "ABC_GUEST"</span></div><div class="line"><span class="comment">#define DEF_WLAN_5G_GSSID    "ABC_GUEST_5G"</span></div><div class="line"><span class="comment">#define DEF_WLAN_2G_PSK        "1234567890"</span></div><div class="line"><span class="comment">#define DEF_WLAN_5G_PSK        "1234567890"</span></div><div class="line"></div><div class="line"><span class="comment">#define DEF_ROOT_PASSWORD    "admin8888"</span></div><div class="line"><span class="comment">#define DEF_SMB_WORKGROUP    "WORKGROUP"</span></div><div class="line"><span class="comment">#define DEF_TIMEZONE        "CST-8"</span></div><div class="line"><span class="comment">#define DEF_NTP_SERVER0        "ntp1.aliyun.com"</span></div><div class="line"><span class="comment">#define DEF_NTP_SERVER1        "time.nist.gov"</span></div></pre></td></tr></tbody></table></figure>
+<p>编辑/opt/rt-n56u/trunk/user/scripts/profile文件内容如下<br>当进入ssh时，文字不再黑白了，有色彩</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># /etc/profile</span></div><div class="line"></div><div class="line"><span class="comment"># If running interactively, then</span></div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$PS1</span>"</span> ] ; <span class="keyword">then</span></div><div class="line"></div><div class="line">    <span class="built_in">export</span> PATH=<span class="string">'/opt/usr/sbin:/opt/usr/bin:/opt/sbin:/opt/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin'</span></div><div class="line">    <span class="built_in">export</span> HOSTNAME=`/bin/hostname`</div><div class="line">    <span class="built_in">export</span> TERMINFO=/usr/share/terminfo</div><div class="line">    <span class="built_in">export</span> TERM=xterm</div><div class="line">    <span class="built_in">export</span> LD_LIBRARY_PATH=/lib:/etc_ro/lib:/opt/lib</div><div class="line">    <span class="built_in">export</span> LANG=<span class="string">'en_US.UTF-8'</span></div><div class="line">    <span class="built_in">export</span> LC_ALL=<span class="string">'en_US.UTF-8'</span></div><div class="line">    <span class="built_in">export</span> PS1=<span class="string">'\[\033[35;1m\]\u\[\033[0m\]@\[\033[31;1m\]\h \[\033[32;1m\]$PWD\[\033[0m\] [\[\033[35m\]\$\[\033[0m\]] '</span></div><div class="line"></div><div class="line"><span class="keyword">fi</span>;</div><div class="line"></div><div class="line">    <span class="built_in">alias</span> ls=<span class="string">'ls --color=auto -F'</span></div><div class="line">    <span class="built_in">alias</span> dir=<span class="string">'ls --color=auto -lAhF'</span></div><div class="line">    <span class="built_in">alias</span> ll=<span class="string">'ls --color=auto -lAhFe'</span></div><div class="line"></div><div class="line">[ -r /opt/etc/profile ] &amp;&amp; . /opt/etc/profile</div></pre></td></tr></tbody></table></figure>
+<p>开始编译固件!(上面的全部操作都是在切换到root用户操作的，下面也是一样。)<br>编辑/opt/rt-n56u/trunk/.config文件内容如下(这个文件是隐藏的)，我这个配置是禁用usb相关东西的。</p>
+<p>如果你的文件路径没有按照本教程，则要注意下面的“CONFIG_TOOLCHAIN_DIR=/opt/rt-n56u/toolchain-mipsel”改为你自己的路径</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div></pre></td><td class="code"><pre><div class="line"><span class="comment">### Target Vendor/Product (support only Ralink RT3883/MT7620/MT7621/MT7628)</span></div><div class="line">CONFIG_VENDOR=Ralink</div><div class="line">CONFIG_PRODUCT=MT7620</div><div class="line"></div><div class="line"><span class="comment">### Target ProductID (board select, max 12 symbols)</span></div><div class="line">CONFIG_FIRMWARE_PRODUCT_ID=<span class="string">"RT-AC54U"</span></div><div class="line"></div><div class="line"><span class="comment">### Linux kernel and toolchain</span></div><div class="line">CONFIG_LINUXDIR=linux-3.4.x</div><div class="line">CONFIG_TOOLCHAIN_DIR=/opt/rt-n56u/toolchain-mipsel</div><div class="line"></div><div class="line"><span class="comment">############################################################</span></div><div class="line"><span class="comment">### Linux kernel configuration</span></div><div class="line"><span class="comment">############################################################</span></div><div class="line"></div><div class="line"><span class="comment">### Build ROOTFS_IN_RAM firmware mode (kernel+initramfs).</span></div><div class="line"><span class="comment">### Decreased firmware size, but more RAM used, slow boot.</span></div><div class="line"><span class="comment">### Also allow build image for load w/o flash from UART console</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_TYPE_ROOTFS_IN_RAM=y</span></div><div class="line"></div><div class="line"><span class="comment">### Force MT7620 CPU clock to 600MHz (override Uboot settings)</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_CPU_600MHZ=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable MT7620 CPU sleep mode (downclock to 200MHz on idle)</span></div><div class="line">CONFIG_FIRMWARE_CPU_SLEEP=y</div><div class="line"></div><div class="line"><span class="comment">### Kernel driver select for WiFi AP 2.4GHz</span></div><div class="line"><span class="comment">### 2.7 = MT7620 v2.7.2.0</span></div><div class="line"><span class="comment">### 3.0 = MT7620 v3.0.4.0</span></div><div class="line">CONFIG_FIRMWARE_WIFI2_DRIVER=2.7</div><div class="line"></div><div class="line"><span class="comment">### Kernel driver select for WiFi AP 5GHz</span></div><div class="line"><span class="comment">### 3.0 = MT7612E v3.0.4.0</span></div><div class="line">CONFIG_FIRMWARE_WIFI5_DRIVER=3.0</div><div class="line"></div><div class="line"><span class="comment">### Enable IPv6 support</span></div><div class="line">CONFIG_FIRMWARE_ENABLE_IPV6=y</div><div class="line"></div><div class="line"><span class="comment">### Enable USB support</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_USB=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable NTFS filesystem support via Paragon "ufsd" driver. ~0.4MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_UFSD=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable FAT/FAT32 filesystem support. ~0.1MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_FAT=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable exFAT (FAT/FAT32 too) filesystem support. ~0.12MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_EXFAT=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable EXT2 filesystem support. ~0.1MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_EXT2=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable EXT3 filesystem support. ~0.2MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_EXT3=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable EXT4 (EXT3/2 too) filesystem support. ~0.4MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_EXT4=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable XFS filesystem support. ~0.6MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_XFS=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable FUSE (filesystems in userspace) support. ~0.1MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_FUSE=y</span></div><div class="line"></div><div class="line"><span class="comment">### Enable swap files/partitions support. ~0.05MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_ENABLE_SWAP=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include UVC camera modules. ~0.2MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_UVC=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include USB-HID modules. ~0.2MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_HID=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include USB-Serial modules (e.g. pl2303). ~0.03MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_SERIAL=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include USB-Audio modules ~0.46MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_AUDIO=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include network QoS scheduling modules. ~0.2MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_QOS=y</div><div class="line"></div><div class="line"><span class="comment">### Include IMQ module for shapers (a bit of performance degradation). ~0.02MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_IMQ=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include IFB module for shapers. ~0.03MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_IFB=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include IPSet utility and kernel modules. ~0.4MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_IPSET=y</div><div class="line"></div><div class="line"><span class="comment">### Include NFSv3 server. ~0.6MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_NFSD=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include NFSv3 client. ~0.5MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_NFSC=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include CIFS (SMB) client. ~0.2MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_CIFS=y</span></div><div class="line"></div><div class="line"><span class="comment">############################################################</span></div><div class="line"><span class="comment">### Userspace configuration</span></div><div class="line"><span class="comment">############################################################</span></div><div class="line"></div><div class="line"><span class="comment">### Include WebUI international resources. Increased firmware size</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_BR=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_CZ=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_DA=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_DE=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_ES=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_FI=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_FR=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_NO=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_PL=y</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_LANG_RU=y</div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_SV=y</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LANG_UK=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include NTFS-3G FUSE driver (instead of Paragon "ufsd"). ~0.4MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_NTFS_3G=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include LPR printer daemon. ~0.12MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_LPRD=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include USB-over-Ethernet printer daemon. ~0.05MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_U2EC=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include "tcpdump" utility. ~0.6MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_TCPDUMP=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include "hdparm" utility (allow set HDD spindown timeout and APM). ~0.1MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_HDPARM=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include "parted" utility (allow make GPT partitions). ~0.3MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_PARTED=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include SMB (and WINS) server. ~1.5MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_SMBD=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include WINS server only. ~0.4MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_WINS=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include syslog for SMB and WINS server. ~0.3MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_SMBD_SYSLOG=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include FTP server. ~0.2MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_FTPD=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include alternative L2TP control client RP-L2TP. ~0.1MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_RPL2TP=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include EAP-TTLS and EAP-PEAP authentication support. openssl ~1.2MB, wpa_supplicant +0.04MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=y</div><div class="line"></div><div class="line"><span class="comment">### Include HTTPS support for DDNS client. openssl ~1.2MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=y</div><div class="line"></div><div class="line"><span class="comment">### Include HTTPS support. openssl ~1.2MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_HTTPS=y</div><div class="line"></div><div class="line"><span class="comment">### Include sftp-server. openssl ~1.2MB, sftp-server ~0.06MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_SFTP=y</div><div class="line"></div><div class="line"><span class="comment">### Include dropbear SSH. ~0.3MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_DROPBEAR=y</div><div class="line"></div><div class="line"><span class="comment">### Make the dropbear symmetrical ciphers and hashes faster. ~0.06MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_DROPBEAR_FAST_CODE=y</div><div class="line"></div><div class="line"><span class="comment">### Include OpenSSH instead of dropbear. openssl ~1.2MB, openssh ~1.0MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_OPENSSH=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include OpenVPN. IPv6 required. openssl ~1.2MB, openvpn ~0.4MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_OPENVPN=y</div><div class="line"></div><div class="line"><span class="comment">### Include Elliptic Curves (EC) to openssl library. ~0.1MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=y</div><div class="line"></div><div class="line"><span class="comment">### Include "openssl" executable for generate certificates. ~0.4MB</span></div><div class="line">CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y</div><div class="line"></div><div class="line"><span class="comment">### Include xUPNPd IPTV mediaserver. ~0.3MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_XUPNPD=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include Minidlna UPnP mediaserver. ~1.6MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_MINIDLNA=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include Firefly iTunes mediaserver. ~1.0MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_FIREFLY=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include ffmpeg 0.11.x instead of 0.6.x for Minidlna and Firefly. ~0.1MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include Transmission torrent. openssl ~1.2MB, transmission ~1.5MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_TRANSMISSION=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include Transmission-Web-Control (advanced WebUI). ~0.8MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include Aria2 download manager. openssl ~1.2MB, aria2 ~3.5MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_ARIA=y</span></div><div class="line"></div><div class="line"><span class="comment">### Include Aria2 WEB control. ~0.7MB</span></div><div class="line"><span class="comment">#CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y</span></div></pre></td></tr></tbody></table></figure>
+<p>所有配置都好了，现在开始编译<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt/rt-n56u/trunk</div><div class="line">./clear_tree</div><div class="line"><span class="comment">#每次编译都要先运行这句</span></div><div class="line">./build_firmware</div><div class="line"><span class="comment">#开始编译了</span></div></pre></td></tr></tbody></table></figure><p></p>
+<p>去看个电影动画什么的，等待结果，如果不出错，最后会显示信息包括固件大小，名字，位置等<br>最后固件生成在/opt/rt-n56u/trunk/images下.trx扩展名的。</p>
+<h1 id="后续升级源码"><a href="https://myskn.github.io/2017/01/18/k2/#后续升级源码" class="headerlink" title="后续升级源码"></a>后续升级源码</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">git pull</div><div class="line"><span class="comment">#如果toolchain-mipsel有改过，则要重新编译</span></div><div class="line"><span class="built_in">cd</span> /opt/rt-n56u/toolchain-mipsel</div><div class="line">/clean_sources</div><div class="line">/clean_toolchain</div><div class="line">/build_toolchain</div><div class="line"></div><div class="line"><span class="comment">#再编译更新过的固件</span></div><div class="line"><span class="built_in">cd</span> /opt/rt-n56u/trunk</div><div class="line">./clear_tree</div><div class="line">./build_firmware</div></pre></td></tr></tbody></table></figure>
+<h1 id="心得"><a href="https://myskn.github.io/2017/01/18/k2/#心得" class="headerlink" title="心得"></a>心得</h1><p>1 有时候自己的sh脚本运行不了，要用dos2unix转一下文件才行</p>
+<p>2 nvram参数的作用过程（用adbyby作例子）<br>先命名nvram参数，写好运行/停止adbyby的脚本，在services.c里定义通过nvram参数值来如何运行脚本。<br>最后就是在asp页面里改变nvram参数值<br>可以参考aria相关脚本和参数</p>
+<p>3 去广告时要开启cron功能，因为adbyby的透明代理有时候会掉</p>
+<p>4 hosts方式去广告<br><a href="http://www.right.com.cn/forum/thread-184121-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-184121-1-1.html</a></p>
+<p>5 脚本运行adbyby<br>在/etc/storage/下新建adbyby.sh内容如下</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line">LOGTIME=$(date <span class="string">"+%Y-%m-%d %H:%M:%S"</span>)</div><div class="line">TAG=<span class="string">"adbyby"</span>          <span class="comment"># iptables tag</span></div><div class="line">dir_crond=<span class="string">"/etc/storage/cron/crontabs"</span></div><div class="line">username=$(whoami)</div><div class="line">urla=<span class="string">"https://raw.githubusercontent.com/adbyby/xwhyc-rules/master/video.txt"</span></div><div class="line">dladb=<span class="string">"https://raw.githubusercontent.com/adbyby/Files/master/7620n.tar.gz"</span></div><div class="line"></div><div class="line"><span class="function"><span class="title">func_create_config</span></span>()</div><div class="line">{</div><div class="line">	<span class="built_in">cd</span> /tmp</div><div class="line">	wget --continue --no-check-certificate <span class="_">-s</span> -q -T 3 <span class="variable">$urla</span></div><div class="line">	<span class="keyword">if</span> [ <span class="string">"$?"</span> == <span class="string">"0"</span> ] ; <span class="keyword">then</span></div><div class="line">		<span class="built_in">echo</span> <span class="string">"[<span class="variable">$LOGTIME</span>] update.adbyby.com have no problem."</span></div><div class="line">		wget -q --no-check-certificate <span class="variable">$dladb</span> -P /tmp/</div><div class="line">		tar -xzf /tmp/7620n.tar.gz -C /tmp/</div><div class="line">		rm -rf /tmp/7620n.tar.gz</div><div class="line">		chmod 777 /tmp/bin/adbyby</div><div class="line">		logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 下载成功."</span></div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="built_in">echo</span> <span class="string">"[<span class="variable">$LOGTIME</span>] update.adbyby.com have problem."</span></div><div class="line">		logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 下载失败,检查网络."</span></div><div class="line">	<span class="keyword">fi</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="function"><span class="title">func_start</span></span>()</div><div class="line">{</div><div class="line">	<span class="keyword">if</span> [ ! <span class="_">-d</span> <span class="string">"/tmp/bin"</span> ] ; <span class="keyword">then</span></div><div class="line">		func_create_config</div><div class="line">	<span class="keyword">fi</span></div><div class="line">	<span class="keyword">if</span> [ ! -z <span class="string">"`pidof "</span><span class="variable">$TAG</span><span class="string">"`"</span> ] ; <span class="keyword">then</span></div><div class="line">		<span class="built_in">echo</span> <span class="string">"<span class="variable">$TAG</span>"</span> still running</div><div class="line">		<span class="built_in">exit</span> 1;</div><div class="line">	<span class="keyword">else</span></div><div class="line">		/tmp/bin/adbyby &gt;/dev/null 2&gt;&amp;1 &amp;</div><div class="line">		<span class="keyword">if</span> iptables -t nat -nL --line-numbers | grep -q <span class="string">"<span class="variable">$TAG</span>"</span>; <span class="keyword">then</span></div><div class="line">			<span class="built_in">echo</span> <span class="string">"<span class="variable">$TAG</span>"</span> still running!;	<span class="keyword">else</span></div><div class="line">			iptables -t nat -N <span class="string">"<span class="variable">$TAG</span>"</span></div><div class="line">			iptables -t nat -A <span class="string">"<span class="variable">$TAG</span>"</span> -p tcp --dport 80 -j REDIRECT --to-ports 8118</div><div class="line">			iptables -t nat -I PREROUTING -j <span class="string">"<span class="variable">$TAG</span>"</span>; </div><div class="line">			<span class="built_in">echo</span> start <span class="string">"<span class="variable">$TAG</span>"</span></div><div class="line">			logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 启动成功."</span></div><div class="line">		<span class="keyword">fi</span></div><div class="line">		<span class="keyword">if</span> cat <span class="string">"<span class="variable">$dir_crond</span>"</span>/<span class="string">"<span class="variable">$username</span>"</span> | grep -q <span class="string">"<span class="variable">$TAG</span>"</span>; <span class="keyword">then</span></div><div class="line">			<span class="built_in">echo</span> already had 8118 cron; </div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="built_in">echo</span> <span class="string">'30 * * * * /bin/sh /etc/storage/adbyby.sh re8118'</span> &gt;&gt; <span class="string">"<span class="variable">$dir_crond</span>"</span>/<span class="string">"<span class="variable">$username</span>"</span></div><div class="line">			<span class="built_in">echo</span> add 8118 cron</div><div class="line">			logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 添加守护8118端口cron."</span></div><div class="line">			sleep 1</div><div class="line">		<span class="keyword">fi</span></div><div class="line">	<span class="keyword">fi</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="function"><span class="title">func_re8118</span></span>()</div><div class="line">{</div><div class="line">	<span class="keyword">if</span> [ ! -z <span class="string">"`pidof "</span><span class="variable">$TAG</span><span class="string">"`"</span> ] ; <span class="keyword">then</span></div><div class="line">		<span class="keyword">if</span> iptables -t nat -nL --line-numbers | grep -q <span class="string">"<span class="variable">$TAG</span>"</span>; <span class="keyword">then</span></div><div class="line">			<span class="built_in">echo</span> <span class="string">"<span class="variable">$TAG</span>"</span> still running!</div><div class="line">			logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 转发8118端口还在."</span>;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			iptables -t nat -N <span class="string">"<span class="variable">$TAG</span>"</span></div><div class="line">			iptables -t nat -A <span class="string">"<span class="variable">$TAG</span>"</span> -p tcp --dport 80 -j REDIRECT --to-ports 8118</div><div class="line">			iptables -t nat -I PREROUTING -j <span class="string">"<span class="variable">$TAG</span>"</span>; </div><div class="line">			logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 重新转发8118端口."</span></div><div class="line">		<span class="keyword">fi</span></div><div class="line">	<span class="keyword">else</span></div><div class="line">		logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 没运行不用转发8118端口."</span></div><div class="line">		<span class="built_in">echo</span> not need re8118</div><div class="line">		<span class="built_in">exit</span> 1;</div><div class="line">	<span class="keyword">fi</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="function"><span class="title">func_stop</span></span>()</div><div class="line">{</div><div class="line">	<span class="keyword">if</span> [ ! -z <span class="string">"`pidof "</span><span class="variable">$TAG</span><span class="string">"`"</span> ] ; <span class="keyword">then</span></div><div class="line">		iptables-save -c | grep -v <span class="string">"<span class="variable">$TAG</span>"</span> | iptables-restore -c</div><div class="line">		logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 移除8118端口转发."</span></div><div class="line">		killall -9 adbyby &gt;/dev/null 2&gt;&amp;1</div><div class="line">		<span class="built_in">echo</span> close <span class="string">"<span class="variable">$TAG</span>"</span></div><div class="line">		logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 关闭<span class="variable">$TAG</span>."</span></div><div class="line">		<span class="keyword">if</span> cat <span class="string">"<span class="variable">$dir_crond</span>"</span>/<span class="string">"<span class="variable">$username</span>"</span> | grep -q <span class="string">"<span class="variable">$TAG</span>"</span>; <span class="keyword">then</span></div><div class="line">			sed -i <span class="string">'/adbyby/d'</span> <span class="string">"<span class="variable">$dir_crond</span>"</span>/<span class="string">"<span class="variable">$username</span>"</span></div><div class="line">			<span class="built_in">echo</span> remove 8118 cron</div><div class="line">			logger -t <span class="string">"【<span class="variable">$TAG</span>】"</span> <span class="string">"['<span class="variable">$LOGTIME</span>'] 移除守护8118端口cron."</span></div><div class="line">			sleep 2;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="built_in">exit</span> 1;</div><div class="line">		<span class="keyword">fi</span></div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="built_in">echo</span> <span class="string">"<span class="variable">$TAG</span>"</span> not running!</div><div class="line">		<span class="built_in">exit</span> 1;</div><div class="line">	<span class="keyword">fi</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></div><div class="line">start)</div><div class="line">	func_start <span class="variable">$2</span></div><div class="line">	;;</div><div class="line">re8118)</div><div class="line">	func_re8118</div><div class="line">	;;</div><div class="line">stop)</div><div class="line">	func_stop</div><div class="line">	;;</div><div class="line">*)</div><div class="line">	<span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$0</span> {start|re8118|stop}"</span></div><div class="line">	<span class="built_in">exit</span> 1</div><div class="line">	;;</div><div class="line"><span class="keyword">esac</span></div><div class="line"></div><div class="line"><span class="built_in">exit</span> 0</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#运行mtd_storage.sh save来保存文件</span></div><div class="line"><span class="comment">#可以在“在 WAN 上行/下行启动后执行:”添加</span></div><div class="line">sh /etc/storage/adbyby.sh start</div></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>几个值得参考的帖子<br><a href="http://www.right.com.cn/Forum/thread-191833-1-1.html" target="_blank" rel="external">http://www.right.com.cn/Forum/thread-191833-1-1.html</a><br><a href="http://www.right.com.cn/Forum/thread-161324-1-1.html" target="_blank" rel="external">http://www.right.com.cn/Forum/thread-161324-1-1.html</a><br><a href="http://www.right.com.cn/Forum/thread-188188-1-1.html" target="_blank" rel="external">http://www.right.com.cn/Forum/thread-188188-1-1.html</a><br><a href="http://www.right.com.cn/Forum/thread-190224-1-1.html" target="_blank" rel="external">http://www.right.com.cn/Forum/thread-190224-1-1.html</a><br><a href="http://www.612459.com/luyouqi/2372.html" target="_blank" rel="external">http://www.612459.com/luyouqi/2372.html</a><br><a href="http://www.right.com.cn/forum/thread-193826-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-193826-1-1.html</a><br><a href="https://github.com/cappiewu/rt-n56u/commits/master" target="_blank" rel="external">https://github.com/cappiewu/rt-n56u/commits/master</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="https://myskn.github.io/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="https://myskn.github.io/tags/K2/" rel="tag">#K2</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="https://myskn.github.io/2017/01/18/mega/" rel="next" title="在vps上用megatools">
+                <i class="fa fa-chevron-left"></i> 在vps上用megatools
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/18/k2/" data-title="斐讯K2路由编译Padavan华硕固件和心得" data-url="https://myskn.github.io/2017/01/18/k2/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar" style="margin-top: 296px; display: block;">
+    <div class="sidebar-inner affix-top">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/avatar.jpg" alt="SKN">
+          <p class="site-author-name" itemprop="name">SKN</p>
+          <p class="site-description motion-element" itemprop="description">记录日志</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="https://myskn.github.io/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="https://myskn.github.io/categories">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="https://myskn.github.io/tags">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="https://myskn.github.io/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="https://myskn.github.io/2017/01/18/k2/#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="https://myskn.github.io/2017/01/18/k2/#一：修正K2的GPIO"><span class="nav-number">2.</span> <span class="nav-text">一：修正K2的GPIO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="https://myskn.github.io/2017/01/18/k2/#二：调用原厂无线参数"><span class="nav-number">3.</span> <span class="nav-text">二：调用原厂无线参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="https://myskn.github.io/2017/01/18/k2/#三：修正WAN-LAN顺序"><span class="nav-number">4.</span> <span class="nav-text">三：修正WAN/LAN顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="https://myskn.github.io/2017/01/18/k2/#四：汉化"><span class="nav-number">5.</span> <span class="nav-text">四：汉化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="https://myskn.github.io/2017/01/18/k2/#五：默认配置-可选"><span class="nav-number">6.</span> <span class="nav-text">五：默认配置(可选)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="https://myskn.github.io/2017/01/18/k2/#后续升级源码"><span class="nav-number">7.</span> <span class="nav-text">后续升级源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="https://myskn.github.io/2017/01/18/k2/#心得"><span class="nav-number">8.</span> <span class="nav-text">心得</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  ©  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SKN</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io/">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/index.js.下载"></script>
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/fastclick.min.js.下载"></script>
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/jquery.lazyload.js.下载"></script>
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/velocity.min.js.下载"></script>
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/velocity.ui.min.js.下载"></script>
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/jquery.fancybox.pack.js.下载"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/utils.js.下载"></script>
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/motion.js.下载"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/affix.js.下载"></script>
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/pisces.js.下载"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/scrollspy.js.下载"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/bootstrap.js.下载"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myskn"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/ua-parser.min.js.下载"></script>
+      <script src="./斐讯K2路由编译Padavan华硕固件和心得 _ SKN Blog_files/hook-duoshuo.js.下载"></script>
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+
+
+</body></html>
