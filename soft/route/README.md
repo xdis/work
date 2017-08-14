@@ -1,6 +1,8 @@
 
 # 华硕固件配置
 
+## 刷机之后双清
+![](images/update_after_reset_route.png)
 # SS的配置
 ## 添加节点的顺序
 ```
