@@ -22,7 +22,13 @@
 - above below区分 [处于半旋屏状态垂直的上方/下方  或者是静态]
 	- The boy is  sit **below** the tree.	#一个男孩坐在树下
 	- The helicopter is **above** me. #直升飞机在我的上方[直升飞机是垂直于上方的]
-
+- of+n = adj
+	- 例a
+		- It is important(adj) to do .....
+		- It is of importance(n) to od ....
+	- 例b
+		- The experience gained in the war will be **of great** value to us.
+		- The experience gained in the ware will be **valuable(adj)** to us.
 ## fn
 
 词性的简写|&nbsp;|&nbsp;|&nbsp;|&nbsp;
@@ -167,5 +173,39 @@
 				- [现在状态](fn/base.md#现在状态)
 				- [完成状态](fn/base.md#完成状态)
 				- [完成进行状态](fn/base.md#完成进行状态)
-	- 虚拟语气
-		- [现在将来过去比较](fn/base.md#现在将来过去比较)
+	- 虚拟语气 固定把语法写错,引起注意
+		- 虚拟语气小结
+			- 先判断该事件是真还是虚的
+			- 再判断是发生在现在/过去/将来
+		- 现在虚拟语气
+			- 现在过去将来虚拟语气区别
+			- 如果我住在办公室附近，我就会步行上班
+				- 假 表愿望,在现实中不成立
+					- 我自己的房子离上班的地方很进，所以天天坐地铁上班。如果我住在办公室附近，我就会步行上班。
+					- I **lived** near my office, I **would** walk to work.
+				- 真 条件真实存在 
+					- 我自己的房子离上班的地方很进，所以我在办公室附近又租了一间房子。如果我住在办公室附近，我就会步行上班。
+					- If i **live**(从现) near my office,I **will**(主将) walk to work.  [从现主将](fn/base.md#从现主将)
+			- 如果我把头发染成蓝色，谁都会笑话我的
+				- 假 自己铁定不会染
+					- If i **dyed** my hair blue,everyone **would** laugh at me.(现在时的虚拟语气 使用be的话,一律使用were,无论 I you he she Tom tey,其它的动词+ed)
+			- 如果我在你的位置，我就会让他知道我对他的看法
+				- 假 我绝对不能取代他
+					- If I **were** in your shoes,I **would** let him know what I thought of him.(现在时的虚拟语气 使用be的话,一律使用were,无论 I you he she Tom tey,其它的动词+ed)
+				- 强调虚拟 使用倒装
+					- **Were I** in your shoes, I would let him know what I thought of him.
+					- Were I = If I were
+					- was he = If he were
+		- 将来虚拟语气 **表事情将要发生**
+			- 如果他来做这工作，他会是另一种做法。
+				- If he **were to** do the job, he **would do** it in a different way.
+				- 使用倒装
+					- Were he to do ...
+			- 如果这些玩具运到时有损坏，你可以立刻通知我们
+				- If the toys **should arrive** in a damaged condition, you **could inform** us at once.
+				- 使用倒装
+					- Should the toys arrive ...
+		-  过去虚拟语气 
+			-  如果我早点动身，我本来能赶上巳士的 (因为是发生在过去的)
+				-  If I **had left** sooner, I **could have caught** the bus.
+				-  
