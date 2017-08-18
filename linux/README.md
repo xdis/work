@@ -61,6 +61,24 @@
 			- [安装PIP](fn/python/2.6_t_2.7.md#安装PIP)
 			- [安装pycurl报错](fn/python/2.6_t_2.7.md#安装pycurl报错)
 			- [ERROR:root:code for hash md5 was not](fn/python/2.6_t_2.7.md#ERROR:root:code for hash md5 was not)
+	- vim
+		- nerdtree 显示目录树及文件
+			- [官网](https://github.com/scrooloose/nerdtree) 
+			- [安装pathogen](fn/vim/pathogen.md#安装pathogen)
+			- 安装apt-vim
+				- [官网](https://github.com/egalpin/apt-vim) 
+				- 自动安装
+					- curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
+			- 安装nerdtree
+				- cd ~/.vim/bundle
+				- apt-vim install -y https://github.com/scrooloose/nerdtree.git
+			- 配置nerdtree
+				- [配置文件](fn/vim/nerdtree.md)
+				- [.vimrc文件](fn/vim/.vimrc)
+				- [官网配置详解](https://github.com/scrooloose/nerdtree#faq) 
+					- |map <C-n> :NERDTreeToggle<CR> 	//ctrl+n 切换是否显示nerdtree
+					- |autocmd VimEnter * wincmd p 		//vim打开自己定位到代码
+					- autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  //退出VIM.自动关闭nerdtree
 	- scp
 		-  yum install openssh-clients	//安装
 		-  scp @xx:/var/lib/mysql/baidajob/boss_callout_plan.* ./	//远程获取
