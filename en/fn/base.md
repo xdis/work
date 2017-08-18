@@ -417,11 +417,22 @@ Some people think old buildings should **be** preserve**d**.
 
 # 虚拟语气
 
-## 现在将来过去比较
+## 虚拟语气小结
+ ![](taiji/3/xu7.png)
+## 现在过去将来虚拟语气区别
 
 虚拟时间 | 条件从句中的谓语  |主句谓语
 ------- |------ |-----
 现在  |过去时 did/were | would do/be should/could/must
 将来  | 过去时 were to/should do |would do/be should/could/must
 过去| 过去完成时 had done/been |would have done/been should/could/must
+
+
+## 从现主将
+ ![](taiji/3/xu5.png)
+
+## 现在时的虚拟语气 使用be的话,使用were,其它的动词+ed
+ ![](taiji/3/xu7.png)
+
+ ![](taiji/3/xu10.png)
 

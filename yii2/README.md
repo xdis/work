@@ -172,6 +172,11 @@
 			- 对象的混合  在控制器里 绑架attachBehavior 解绑detachBehaviors 
 				- [定义行为类](behavior.md#定义行为类)
 				- [控制器绑定或解绑行为](behavior.md#控制器绑定或解绑行为) 
+		- [30分钟自动退出](behavior.md#30分钟自动退出) @zhou 
+			- [配置user](behavior.md#配置user)
+			- [调用behavior](behavior.md#调用behavior)
+			- [调用user的函数_保存当前的时间和登陆的时间保存进session](behavior.md#调用user的函数_保存当前的时间和登陆的时间保存进session)
+			- [每次请求都请求一下,是否已经超时](behavior.md#每次请求都请求一下,是否已经超时)
 	- 依赖注入
 		- @withy    
 			- [容器](DiController.md) 定义并解决依赖关系  new Container()   set  get 
