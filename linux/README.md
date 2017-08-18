@@ -79,6 +79,11 @@
 					- |map <C-n> :NERDTreeToggle<CR> 	//ctrl+n 切换是否显示nerdtree
 					- |autocmd VimEnter * wincmd p 		//vim打开自己定位到代码
 					- autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  //退出VIM.自动关闭nerdtree
+			- 快捷键
+				- ctrl + w + h    光标 focus 左侧树形目录
+				- ctrl + w + l    光标 focus 右侧文件显示窗口
+				- ctrl + w + w    光标自动在左右侧窗口切换 #！！！
+				- ctrl + w + r    移动当前窗口的布局位置
 	- scp
 		-  yum install openssh-clients	//安装
 		-  scp @xx:/var/lib/mysql/baidajob/boss_callout_plan.* ./	//远程获取
