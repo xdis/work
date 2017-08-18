@@ -51,9 +51,25 @@
 			nameserver 114.114.114.114
 			nameserver 8.8.8.8
 		```
+	- python
+		- python2.6升级到2.7
+			- [更新系统和开发工具集](fn/python/2.6_t_2.7.md#更新系统和开发工具集)
+			- [源码安装Python 2.7.x](fn/python/2.6_t_2.7.md#源码安装Python 2.7.x)
+			- [建立软连接，使系统默认的 python指向 python2.7](fn/python/2.6_t_2.7.md#建立软连接，使系统默认的 python指向 python2.7)
+			- [修复yum](fn/python/2.6_t_2.7.md#修复yum)
+			- [安装setuptools](fn/python/2.6_t_2.7.md#安装setuptools)
+			- [安装PIP](fn/python/2.6_t_2.7.md#安装PIP)
+			- [安装pycurl报错](fn/python/2.6_t_2.7.md#安装pycurl报错)
+			- [ERROR:root:code for hash md5 was not](fn/python/2.6_t_2.7.md#ERROR:root:code for hash md5 was not)
 	- scp
 		-  yum install openssh-clients	//安装
 		-  scp @xx:/var/lib/mysql/baidajob/boss_callout_plan.* ./	//远程获取
+		-  从linux系统复制文件到windows系统
+			-  scp /oracle/a.txt  administrator@192.168.3.181:/d:/
+		-  将windows下的文件复制到linux系统中
+			-  scp administrator@192.168.3.181:/d:/test/config.ips  /oracle
+		-  使用指定端口
+			-  scp -P 5803 root@192.168.1.3:/home/Python-2.7.8.tar /home
 	- 查看 
 		- uname -a  //查看系统多少位 32位/64
 		- ps
@@ -176,6 +192,11 @@
 			-  解压方法
 				- xz -d ***.tar.xz
 				- tar -xvf  ***.tar
+		- pip 
+			- centos 7
+				-  yum -y install epel-release
+				-  yum install python-pip
+				-  pip install --upgrade pip
 	- dig安装
 		- linux
 			- 方法1 [依赖工具安装]
