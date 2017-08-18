@@ -145,6 +145,9 @@
 			- choco uninstall xx
 			- choco upgrade xx 
 	- yum
+		- 更新系统和开发工具集
+			- yum -y update
+			- yum groupinstall "Development tools"
 		- yum install bind-utils	//安装
 		- 查看某个命令是属于哪个软件包
 			- yum provides "*bin/nslookup"
