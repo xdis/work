@@ -1,5 +1,11 @@
 
 - 基本的操作
+	- vi相关命令操作
+		- : / test       //搜索内容
+		- u //撤消
+		- d //删除
+		- yy 或 数字+y 如6yy //复制 及当前行开始复制6行 
+		- p //粘贴
 	- 删除文件
 		- rm -fr *.*
 		- find ./ -iname 'test-file-*' | xargs rm -rf //注：xargs是因为rm -rm 删除会显示列表页过长导致出现，才使用
@@ -45,9 +51,48 @@
 			nameserver 114.114.114.114
 			nameserver 8.8.8.8
 		```
+	- python
+		- python2.6升级到2.7
+			- [更新系统和开发工具集](fn/python/2.6_t_2.7.md#更新系统和开发工具集)
+			- [源码安装Python 2.7.x](fn/python/2.6_t_2.7.md#源码安装Python 2.7.x)
+			- [建立软连接，使系统默认的 python指向 python2.7](fn/python/2.6_t_2.7.md#建立软连接，使系统默认的 python指向 python2.7)
+			- [修复yum](fn/python/2.6_t_2.7.md#修复yum)
+			- [安装setuptools](fn/python/2.6_t_2.7.md#安装setuptools)
+			- [安装PIP](fn/python/2.6_t_2.7.md#安装PIP)
+			- [安装pycurl报错](fn/python/2.6_t_2.7.md#安装pycurl报错)
+			- [ERROR:root:code for hash md5 was not](fn/python/2.6_t_2.7.md#ERROR:root:code for hash md5 was not)
+	- vim
+		- nerdtree 显示目录树及文件
+			- [官网](https://github.com/scrooloose/nerdtree) 
+			- [安装pathogen](fn/vim/pathogen.md#安装pathogen)
+			- 安装apt-vim
+				- [官网](https://github.com/egalpin/apt-vim) 
+				- 自动安装
+					- curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
+			- 安装nerdtree
+				- cd ~/.vim/bundle
+				- apt-vim install -y https://github.com/scrooloose/nerdtree.git
+			- 配置nerdtree
+				- [配置文件](fn/vim/nerdtree.md)
+				- [.vimrc文件](fn/vim/.vimrc)
+				- [官网配置详解](https://github.com/scrooloose/nerdtree#faq) 
+					- |map <C-n> :NERDTreeToggle<CR> 	//ctrl+n 切换是否显示nerdtree
+					- |autocmd VimEnter * wincmd p 		//vim打开自己定位到代码
+					- autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  //退出VIM.自动关闭nerdtree
+			- 快捷键
+				- ctrl + w + h    光标 focus 左侧树形目录
+				- ctrl + w + l    光标 focus 右侧文件显示窗口
+				- ctrl + w + w    光标自动在左右侧窗口切换 #！！！
+				- ctrl + w + r    移动当前窗口的布局位置
 	- scp
 		-  yum install openssh-clients	//安装
 		-  scp @xx:/var/lib/mysql/baidajob/boss_callout_plan.* ./	//远程获取
+		-  从linux系统复制文件到windows系统
+			-  scp /oracle/a.txt  administrator@192.168.3.181:/d:/
+		-  将windows下的文件复制到linux系统中
+			-  scp administrator@192.168.3.181:/d:/test/config.ips  /oracle
+		-  使用指定端口
+			-  scp -P 5803 root@192.168.1.3:/home/Python-2.7.8.tar /home
 	- 查看 
 		- uname -a  //查看系统多少位 32位/64
 		- ps
@@ -139,6 +184,9 @@
 			- choco uninstall xx
 			- choco upgrade xx 
 	- yum
+		- 更新系统和开发工具集
+			- yum -y update
+			- yum groupinstall "Development tools"
 		- yum install bind-utils	//安装
 		- 查看某个命令是属于哪个软件包
 			- yum provides "*bin/nslookup"
@@ -162,6 +210,16 @@
 					- $releasever 替换为 6.8
 					- rpm -qi centos-release   //查看$releasever的值 
 					-  yum clean all & yum makecache		
+		-  xz 
+			-  yum -y install xz xz-devel   //手动安装
+			-  解压方法
+				- xz -d ***.tar.xz
+				- tar -xvf  ***.tar
+		- pip 
+			- centos 7
+				-  yum -y install epel-release
+				-  yum install python-pip
+				-  pip install --upgrade pip
 	- dig安装
 		- linux
 			- 方法1 [依赖工具安装]
