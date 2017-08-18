@@ -171,6 +171,11 @@
 					- $releasever 替换为 6.8
 					- rpm -qi centos-release   //查看$releasever的值 
 					-  yum clean all & yum makecache		
+		-  xz 
+			-  yum -y install xz xz-devel   //手动安装
+			-  解压方法
+				- xz -d ***.tar.xz
+				- tar -xvf  ***.tar
 	- dig安装
 		- linux
 			- 方法1 [依赖工具安装]
