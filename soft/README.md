@@ -1,4 +1,8 @@
 # 软件
+- wget
+	- http://gnuwin32.sourceforge.net/packages/wget.htm
+	- 下载选择这个 Complete package, except sources
+	- 安装之后,将"C:\Program Files (x86)\GnuWin32\bin"复制到环境变量 path
 - 替代windows神器
 	- [Seer](https://sourceforge.net/projects/ccseer/) 给 Windows 增加类似 Mac OS X 系统的空格键快速预览文件功能的工具
 	- [windowtabs](http://windowtabs.com/) 多标签  百度云:soft/代替window神器
