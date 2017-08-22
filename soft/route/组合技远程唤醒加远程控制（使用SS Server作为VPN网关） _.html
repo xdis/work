@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://rt.cn2k.net/?p=359 -->
+<html lang="zh-CN" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes"><title>组合技远程唤醒加远程控制（使用SS Server作为VPN网关） | </title>
+<meta name="description" content="组合技远程唤醒加远程控制（使用SS Server作为VPN网关）"><link rel="pingback" href="http://rt.cn2k.net/xmlrpc.php"><link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="rt-n56u-cn » Feed" href="http://rt.cn2k.net/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="rt-n56u-cn » 评论Feed" href="http://rt.cn2k.net/?feed=comments-rss2">
+<link rel="alternate" type="application/rss+xml" title="rt-n56u-cn » 组合技远程唤醒加远程控制（使用SS Server作为VPN网关）评论Feed" href="http://rt.cn2k.net/?feed=rss2&amp;p=359">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/rt.cn2k.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.1"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/wp-emoji-release.min.js.下载" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="bootstrap-style-css" href="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="theme_style-css" href="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="navigation-side-style-css" href="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/navigation-side.css" type="text/css" media="all">
+<link rel="stylesheet" id="wiki-style-css" href="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/wiki.css" type="text/css" media="all">
+<script type="text/javascript" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/jquery.js.下载"></script>
+<script type="text/javascript" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/jquery-migrate.min.js.下载"></script>
+<script type="text/javascript" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/functions.js.下载"></script>
+<link rel="https://api.w.org/" href="http://rt.cn2k.net/index.php?rest_route=/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://rt.cn2k.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://rt.cn2k.net/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="SS 使用说明" href="http://rt.cn2k.net/?p=354">
+<link rel="next" title="固件如何临时替换闪讯拨号插件" href="http://rt.cn2k.net/?p=373">
+<meta name="generator" content="WordPress 4.8.1">
+<link rel="canonical" href="http://rt.cn2k.net/?p=359">
+<link rel="shortlink" href="http://rt.cn2k.net/?p=359">
+<link rel="alternate" type="application/json+oembed" href="http://rt.cn2k.net/index.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Frt.cn2k.net%2F%3Fp%3D359">
+<link rel="alternate" type="text/xml+oembed" href="http://rt.cn2k.net/index.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Frt.cn2k.net%2F%3Fp%3D359&amp;format=xml">
+<meta property="og:title" content="组合技远程唤醒加远程控制（使用SS Server作为VPN网关）">
+<meta property="og:type" content="article">
+<meta property="og:image" content="">
+<meta property="og:url" content="http://rt.cn2k.net/?p=359">
+<meta property="og:description" content="有的时候，回到了家，突然发现今天更新的代码临走的时候没有推送到git，跑回公司去开机push这种低端的事情绝对做不出。那么怎么处理？
+
+这个工作我们需要组合几个功能....">
+<meta property="og:site_name" content="rt-n56u-cn">
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<link rel="stylesheet" type="text/css" href="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/prettify.css"></head><body class="post-template-default single single-post postid-359 single-format-standard wp-custom-logo body"><header class="headerMain"><div class="header-content"><div id="logo"><a href="http://rt.cn2k.net/" id="site-logo" title="rt-n56u-cn" rel="home"><img class="logo-img" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/asus_logo_resize.png" alt="rt-n56u-cn"></a><span class="blog-description">rt-n56u 中文站点 自助交流QQ群：532575220</span></div></div></header><div class="container-fluid"><div class="meta clearfix"><div class="meta-search-form"><form role="search" method="get" class="search-form" action="http://rt.cn2k.net/"><label><input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search"></label><input type="submit" class="search-submit" value="Search"></form></div></div><div class="navMenuButton">
+    <header class="navMenuButtonTitle">Menu</header>
+    <div class="navMenuButtonContent">
+        <hr>
+        <hr>
+        <hr>
+    </div>
+</div>
+
+<div class="primary-menu primary-menu-side">
+    <div class="primary-menu-container">
+        <nav class="nav-container">
+            <ul class="default-nav"><li class="pagenav"><span class="menu-title">Pages</span><ul><li class="page_item page-item-259"><a href="http://rt.cn2k.net/?page_id=259">ChangeLog 更新日志</a></li>
+<li class="page_item page-item-2"><a href="http://rt.cn2k.net/?page_id=2">关于 rt-n56u-cn</a></li>
+</ul></li><li class="categories"><hr><span class="menu-title">Categories</span><ul>	<li class="cat-item cat-item-6"><a href="http://rt.cn2k.net/?cat=6">Q&amp;A</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://rt.cn2k.net/?cat=4">使用教程</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://rt.cn2k.net/?cat=5">准备工作</a>
+<ul class="children">
+	<li class="cat-item cat-item-7"><a href="http://rt.cn2k.net/?cat=7">刷机方法</a>
+	<ul class="children">
+	<li class="cat-item cat-item-8"><a href="http://rt.cn2k.net/?cat=8">极路由系列</a>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+</ul></li></ul>
+        </nav>
+
+        <div class="dynamic-sidebar dynamic-sidebar-navigation">
+            <div class="row sidebarContent">
+                <div class="col-md-12">
+                                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="postContainer">
+	<article class="entry entryTypePost">
+    <header class="entryHeader">
+        <h1 class="entryTitle">
+            组合技远程唤醒加远程控制（使用SS Server作为VPN网关）        </h1>
+    </header>
+
+    <div class="entryContent">
+        <p>有的时候，回到了家，突然发现今天更新的代码临走的时候没有推送到git，跑回公司去开机push这种低端的事情绝对做不出。那么怎么处理？</p>
+<p>这个工作我们需要组合几个功能：</p>
+<ol>
+<li>SS Server ，用作VPN Server接入公司内网</li>
+<li>Teamview，远程桌面神器</li>
+<li>老毛子固件的WOL网络唤醒功能</li>
+<li>老毛子固件的DDNS功能</li>
+</ol>
+<p>我们看看具体的操作步骤吧：</p>
+<ol>
+<li>首先，固件上需要启动SS -Server<br>
+ <img class="alignnone size-medium wp-image-360" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/SS-Server开启-600x401.png" alt="" width="600" height="401" srcset="http://rt.cn2k.net/wp-content/uploads/2017/05/SS-Server开启-600x401.png 600w, http://rt.cn2k.net/wp-content/uploads/2017/05/SS-Server开启-800x535.png 800w, http://rt.cn2k.net/wp-content/uploads/2017/05/SS-Server开启-300x201.png 300w" sizes="(max-width: 600px) 100vw, 600px"></li>
+<li>然后，注册一个DDNS服务器，我用的是dynu.com 的服务器，一个账号可以注册4台设备，也就是4个宽带，刚好覆盖家、父母家、公司、岳父家....<br>
+ <img class="alignnone size-medium wp-image-361" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/DDNS-setting-600x583.png" alt="" width="600" height="583" srcset="http://rt.cn2k.net/wp-content/uploads/2017/05/DDNS-setting-600x583.png 600w, http://rt.cn2k.net/wp-content/uploads/2017/05/DDNS-setting-800x778.png 800w, http://rt.cn2k.net/wp-content/uploads/2017/05/DDNS-setting-300x292.png 300w" sizes="(max-width: 600px) 100vw, 600px"></li>
+<li>电脑打开远程唤醒功能：<br>
+ <img class="alignnone size-medium wp-image-363" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/power-setting-600x244.png" alt="" width="600" height="244" srcset="http://rt.cn2k.net/wp-content/uploads/2017/05/power-setting-600x244.png 600w, http://rt.cn2k.net/wp-content/uploads/2017/05/power-setting-800x326.png 800w, http://rt.cn2k.net/wp-content/uploads/2017/05/power-setting-300x122.png 300w, http://rt.cn2k.net/wp-content/uploads/2017/05/power-setting.png 1204w" sizes="(max-width: 600px) 100vw, 600px"><br>
+ windows 电脑要看主板，部分bios带有支持WOL开机的，打开那个选项便可。休眠状态需要升级网卡驱动，在驱动的高级设置里面打开具体教程自行google “win10 wol ”之类的关键字吧。</li>
+<li>电脑装上ss客户端，加入公司的ss服务器配置<br>
+ <img class="alignnone size-medium wp-image-364" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/ss-client-setting-562x900.png" width="281" height="450" srcset="http://rt.cn2k.net/wp-content/uploads/2017/05/ss-client-setting-562x900.png 562w, http://rt.cn2k.net/wp-content/uploads/2017/05/ss-client-setting-639x1024.png 639w, http://rt.cn2k.net/wp-content/uploads/2017/05/ss-client-setting-300x481.png 300w, http://rt.cn2k.net/wp-content/uploads/2017/05/ss-client-setting.png 668w" sizes="(max-width: 281px) 100vw, 281px"></li>
+<li>公司电脑安装好Teamviewer，设置好无人值守</li>
+<li>开启电脑上的ss客户端，接入公司ss服务器，打开teamveiwer，准备看到公司的电脑上线<br>
+ <img class="alignnone size-full wp-image-365" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/start-ss-client.png" width="200" height="156" srcset="http://rt.cn2k.net/wp-content/uploads/2017/05/start-ss-client.png 400w, http://rt.cn2k.net/wp-content/uploads/2017/05/start-ss-client-300x234.png 300w" sizes="(max-width: 200px) 100vw, 200px"><p></p>
+<p> <img class="alignnone size-full wp-image-367" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/tv-org.png" width="200" height="242" srcset="http://rt.cn2k.net/wp-content/uploads/2017/05/tv-org.png 474w, http://rt.cn2k.net/wp-content/uploads/2017/05/tv-org-300x363.png 300w" sizes="(max-width: 200px) 100vw, 200px"></p>
+</li>
+<li>电脑打开浏览器， 输入要 my.router，便可打开公司路由器的管理界面，然后唤醒你的电脑<br>
+ <img class="alignnone size-medium wp-image-366" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/WOL-600x330.png" alt="" width="600" height="330" srcset="http://rt.cn2k.net/wp-content/uploads/2017/05/WOL-600x330.png 600w, http://rt.cn2k.net/wp-content/uploads/2017/05/WOL-800x440.png 800w, http://rt.cn2k.net/wp-content/uploads/2017/05/WOL-300x165.png 300w" sizes="(max-width: 600px) 100vw, 600px"><p></p>
+<p> 点击唤醒以后，大约10~20秒（视你机器开机或者唤醒速度而定），可以看到公司的电脑在teamviewer上线了。<br>
+ <img class="alignnone size-full wp-image-368" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/tv-start.png" width="245" height="200" srcset="http://rt.cn2k.net/wp-content/uploads/2017/05/tv-start.png 490w, http://rt.cn2k.net/wp-content/uploads/2017/05/tv-start-300x245.png 300w" sizes="(max-width: 245px) 100vw, 245px"></p></li>
+<li>点击链接 teamviewer，收工。</li>
+</ol>
+<p>&nbsp;</p>
+<p>这个教程其实讲的并不是远程开机，而是灵活使用ss server 作为企业内网的VPN网关，只要你家里的网段和公司的网段不同，可以非常简单的访问公司内网，可以直接升级路由固件什么的。当然，前提是你的宽带有公网IP。</p>
+    </div>
+
+    <footer class="entryMeta">
+        <div class="postinfo postinfo-author"><span>Author:&nbsp;<a href="http://rt.cn2k.net/?author=1" title="由bigandy发布" rel="author">bigandy</a>&nbsp;on&nbsp;2017年5月10日</span>
+			  </div><div class="postinfo postinfo-categories"><span>Categories:&nbsp;<a href="http://rt.cn2k.net/?cat=4" rel="category">使用教程</a></span></div><div class="postinfo postinfo-tags"><span>Tags:&nbsp;No tags for this post</span></div><div class="postinfo post-nav clearfix"><h4 class="clearfix">Other posts</h4><span class="previous-post-link"><a href="http://rt.cn2k.net/?p=354" rel="prev">SS 使用说明</a> «</span><span class="next-post-link">» <a href="http://rt.cn2k.net/?p=373" rel="next">固件如何临时替换闪讯拨号插件</a></span></div>    </footer>
+</article><div class="comments"><h2>Comments</h2><h3>This post currently has&nbsp;4 responses</h3><ul class="commentlist">		<li id="comment-145" class="comment byuser comment-author-lazy_zero even thread-even depth-1">
+			<article id="div-comment-145" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">lazy_zero</b><span class="says">说道：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://rt.cn2k.net/?p=359#comment-145">
+							<time datetime="2017-05-27T21:06:02+00:00">
+								2017年5月27日 下午9:06							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>许多公司的主路由并不可能刷固件，自己带去的路由多半只能桥接使用，这种情况下请问ddns如何使用啊？</p>
+<p>其实设置ss-server的意义不大，只需要对路由器开放远程端口便可以直接通过ddns地址访问路由器进行唤醒设备。</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-login" href="http://rt.cn2k.net/wp-login.php?redirect_to=http%3A%2F%2Frt.cn2k.net%2F%3Fp%3D359">登录以回复</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-147" class="comment byuser comment-author-holy odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-147" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">holy</b><span class="says">说道：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://rt.cn2k.net/?p=359#comment-147">
+							<time datetime="2017-05-28T14:14:35+00:00">
+								2017年5月28日 下午2:14							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>H大，方便给一份 SS 客户端 模块的源码吗？（其他不用，谢谢！）<br>
+自行编译，只需要SS功能，前端部分我自己写。谢谢！！</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-login" href="http://rt.cn2k.net/wp-login.php?redirect_to=http%3A%2F%2Frt.cn2k.net%2F%3Fp%3D359">登录以回复</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-149" class="comment byuser comment-author-deathscythemeng even thread-even depth-1 parent">
+			<article id="div-comment-149" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">deathscythemeng</b><span class="says">说道：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://rt.cn2k.net/?p=359#comment-149">
+							<time datetime="2017-05-30T17:54:22+00:00">
+								2017年5月30日 下午5:54							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>如果公司电脑/自己装的路由器都有公网IP的话，弄个端口转发直接用Teamviewer唤醒多好，没必要再搞个代理。主要问题是公司电脑/自己装的路由器有公网IP这种事情几乎不可能。</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-login" href="http://rt.cn2k.net/wp-login.php?redirect_to=http%3A%2F%2Frt.cn2k.net%2F%3Fp%3D359">登录以回复</a></div>			</article><!-- .comment-body -->
+<ul class="children">
+		<li id="comment-150" class="comment byuser comment-author-bigandy bypostauthor odd alt depth-2">
+			<article id="div-comment-150" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+												<b class="fn">bigandy</b><span class="says">说道：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://rt.cn2k.net/?p=359#comment-150">
+							<time datetime="2017-06-02T19:19:33+00:00">
+								2017年6月2日 下午7:19							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Teamveiwer 唤醒这个方法不错，感谢提供。<br>
+电信的宽带，至少我所在的地区全部都可以要到公网IP。</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-login" href="http://rt.cn2k.net/wp-login.php?redirect_to=http%3A%2F%2Frt.cn2k.net%2F%3Fp%3D359">登录以回复</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><div class="comment-nav"><div class="alignleft"></div><div class="alignright"></div></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://rt.cn2k.net/?p=359#respond" style="display:none;">取消回复</a></small></h3><p class="must-log-in">要发表评论，您必须先<a href="http://rt.cn2k.net/wp-login.php?redirect_to=http%3A%2F%2Frt.cn2k.net%2F%3Fp%3D359">登录</a>。</p>	</div><!-- #respond -->
+	</div>
+	<div class="last-posts-list postinfo clearfix">
+		<hr>
+		<h4 class="lastPostsListTitle">
+			Last posts		</h4>
+
+		<ul>
+				<li><a href="http://rt.cn2k.net/?p=373">固件如何临时替换闪讯拨号插件</a></li>
+	<li><a href="http://rt.cn2k.net/?p=359">组合技远程唤醒加远程控制（使用SS Server作为VPN网关）</a></li>
+	<li><a href="http://rt.cn2k.net/?p=354">SS 使用说明</a></li>
+	<li><a href="http://rt.cn2k.net/?p=352">如何开启路由的swap 功能</a></li>
+	<li><a href="http://rt.cn2k.net/?p=349">如何手动下载 opt.tgz</a></li>
+	<li><a href="http://rt.cn2k.net/?p=328">SSR服务端配置说明</a></li>
+	<li><a href="http://rt.cn2k.net/?p=316">kcptun使用教程</a></li>
+	<li><a href="http://rt.cn2k.net/?p=308">老毛子Padavan一键安装LNMP后部署自建网站教程（例子： mayswind的AriaNg新Web前端）</a></li>
+	<li><a href="http://rt.cn2k.net/?p=297">搭建 LNMP 的 Wifidog 网页认证服务 教程</a></li>
+	<li><a href="http://rt.cn2k.net/?p=284">如何查看路由的网络连接数？</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="asideMenuButton">
+    <header class="asideMenuButtonTitle">Sidebar</header>
+    <div class="asideMenuButtonContent">
+        <hr>
+        <hr>
+        <hr>
+    </div>
+</div>
+
+<aside>
+    <div class="aside-container container-full">
+        <div class="customSidebar">
+            
+            <div class="row sidebarContent">
+                <div class="col-md-12">
+                    
+                    <div class="widget">
+                        <h3 class="widgetTitle">组合技远程唤醒加远程控制（使用SS Server作为VPN网关）</h3>
+                    </div>
+
+                    <div class="widget">
+                        Last update on&nbsp;2017年5月10日                    </div>
+
+                    <div class="widget">
+                        <div class="">
+                            Published&nbsp;2017年5月10日                        </div>
+
+                        <div class="">
+                            Author:&nbsp;<a href="http://rt.cn2k.net/?author=1" title="由bigandy发布" rel="author">bigandy</a>                        </div>
+
+                        <div class="">
+                            Categories:&nbsp;<a href="http://rt.cn2k.net/?cat=4" rel="category">使用教程</a>                        </div>
+
+                        Tags:&nbsp;There are no tags for this post                    </div>
+
+                                <div class="widget relatedPosts">
+
+            <h4 class="widgetTitle">
+                Related Posts            </h4>
+
+            <ul class="relatedPostList">
+                                                <li>
+                                    <a href="http://rt.cn2k.net/?p=373" rel="bookmark" title="固件如何临时替换闪讯拨号插件">
+                                        <div class="thumb">
+                                                                                    </div>
+
+                                        <span>固件如何临时替换闪讯拨号插件</span>
+                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="http://rt.cn2k.net/?p=354" rel="bookmark" title="SS 使用说明">
+                                        <div class="thumb">
+                                                                                    </div>
+
+                                        <span>SS 使用说明</span>
+                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="http://rt.cn2k.net/?p=352" rel="bookmark" title="如何开启路由的swap 功能">
+                                        <div class="thumb">
+                                                                                    </div>
+
+                                        <span>如何开启路由的swap 功能</span>
+                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="http://rt.cn2k.net/?p=349" rel="bookmark" title="如何手动下载 opt.tgz">
+                                        <div class="thumb">
+                                                                                    </div>
+
+                                        <span>如何手动下载 opt.tgz</span>
+                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="http://rt.cn2k.net/?p=328" rel="bookmark" title="SSR服务端配置说明">
+                                        <div class="thumb">
+                                                                                    </div>
+
+                                        <span>SSR服务端配置说明</span>
+                                    </a>
+                                </li>
+                                            </ul>
+        </div>
+                        </div>
+            </div>
+
+                    </div>
+
+        <div class="dynamicSidebar">
+            <div class="row sidebarContent">
+                <div class="col-md-12">
+                    <div class="widget"><form role="search" method="get" class="search-form" action="http://rt.cn2k.net/"><label><input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search"></label><input type="submit" class="search-submit" value="Search"></form></div>		<div class="widget">		<h4 class="widgetTitle">近期文章</h4>		<ul>
+					<li>
+				<a href="http://rt.cn2k.net/?p=373">固件如何临时替换闪讯拨号插件</a>
+						</li>
+					<li>
+				<a href="http://rt.cn2k.net/?p=359">组合技远程唤醒加远程控制（使用SS Server作为VPN网关）</a>
+						</li>
+					<li>
+				<a href="http://rt.cn2k.net/?p=354">SS 使用说明</a>
+						</li>
+					<li>
+				<a href="http://rt.cn2k.net/?p=352">如何开启路由的swap 功能</a>
+						</li>
+					<li>
+				<a href="http://rt.cn2k.net/?p=349">如何手动下载 opt.tgz</a>
+						</li>
+				</ul>
+		</div>		<div class="widget"><h4 class="widgetTitle">近期评论</h4><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">hiboy</span>发表在《<a href="http://rt.cn2k.net/?p=316#comment-162">kcptun使用教程</a>》</li><li class="recentcomments"><span class="comment-author-link">hiboy</span>发表在《<a href="http://rt.cn2k.net/?p=221#comment-161">SS详解（三）：SS模式：gfwlist</a>》</li><li class="recentcomments"><span class="comment-author-link">luomo</span>发表在《<a href="http://rt.cn2k.net/?p=221#comment-160">SS详解（三）：SS模式：gfwlist</a>》</li><li class="recentcomments"><span class="comment-author-link">tesla777</span>发表在《<a href="http://rt.cn2k.net/?p=316#comment-159">kcptun使用教程</a>》</li><li class="recentcomments"><span class="comment-author-link">bigandy</span>发表在《<a href="http://rt.cn2k.net/?p=359#comment-150">组合技远程唤醒加远程控制（使用SS Server作为VPN网关）</a>》</li></ul></div><div class="widget"><h4 class="widgetTitle">文章归档</h4>		<ul>
+			<li><a href="http://rt.cn2k.net/?m=201705">2017年五月</a></li>
+	<li><a href="http://rt.cn2k.net/?m=201608">2016年八月</a></li>
+	<li><a href="http://rt.cn2k.net/?m=201607">2016年七月</a></li>
+	<li><a href="http://rt.cn2k.net/?m=201606">2016年六月</a></li>
+	<li><a href="http://rt.cn2k.net/?m=201605">2016年五月</a></li>
+		</ul>
+		</div><div class="widget"><h4 class="widgetTitle">分类目录</h4>		<ul>
+	<li class="cat-item cat-item-6"><a href="http://rt.cn2k.net/?cat=6">Q&amp;A</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://rt.cn2k.net/?cat=4">使用教程</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://rt.cn2k.net/?cat=5">准备工作</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://rt.cn2k.net/?cat=7">刷机方法</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://rt.cn2k.net/?cat=8">极路由系列</a>
+</li>
+		</ul>
+</div><div class="widget"><h4 class="widgetTitle">功能</h4>			<ul>
+			<li><a href="http://rt.cn2k.net/wp-login.php?action=register">注册</a></li>			<li><a href="http://rt.cn2k.net/wp-login.php">登录</a></li>
+			<li><a href="http://rt.cn2k.net/?feed=rss2">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://rt.cn2k.net/?feed=comments-rss2">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</div>                </div>
+            </div>
+        </div>
+    </div>
+</aside></div><footer class="container-fluid"><div class="content clearfix"><div class="col-md-12 copyright"><p><strong>©&nbsp;&nbsp;<a href="http://rt.cn2k.net/">rt-n56u-cn</a></strong>&nbsp;&nbsp;|&nbsp;&nbsp;powered by the&nbsp;<a href="http://wikiwp.com/" title="Wikipedia look-a-like theme for WordPress">WikiWP theme</a> and&nbsp;<a href="http://wordpress.org/" target="_blank">WordPress</a>. &nbsp; | &nbsp; <a class="footer-rss-link" href="http://rt.cn2k.net/?feed=rss2" title="RSS Feed">RSS</a></p></div></div></footer><script type="text/javascript">
+/* <![CDATA[ */
+var code_prettify_settings = {"base_url":"http:\/\/rt.cn2k.net\/wp-content\/plugins\/code-prettify\/prettify"};
+/* ]]> */
+</script>
+
+<script type="text/javascript" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/comment-reply.min.js.下载"></script>
+<script type="text/javascript" src="./组合技远程唤醒加远程控制（使用SS Server作为VPN网关） __files/wp-embed.min.js.下载"></script>
+</body></html>
