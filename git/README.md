@@ -6,7 +6,7 @@
 			- [安装之后配置](config.md#安装之后配置)
 			- [全局ignore配置](config.md#全局ignore配置)
 		- 文件对拷,快速配置_win10
-			- 1.复制 C:/users/当前用户名/.ssh 到 目标window
+			- 1.复制 C:/users/当前用户名/.ssh 到 目标window   //打开cmd即可获取路径
 			- 2.复制 /gitwork/git/config/.gitconfig 到 C:/users/当前用户名
 		- 比较工具
 			- git diff 使用与安装    [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
