@@ -207,6 +207,7 @@
 		- ReflectionClass 报告一个类的有关信息
 		- ReflectionMethod 报告一个方法的有关信息
 		- ReflectionClass::export    输出类结构报告
+		- [yii2_admin_反射获取action](..\yii2\fn\yii2_admin.md#yii2_admin_反射获取action)
 	- 抽象类 	abstract
 		 - [基本的定义与使用](object_class.md#基本的定义与使用)  
 	- Traits	//代码复用的一个方法,为了减少单继承语言的限制，使开发人员能够自由地在不同层次结构内独立的类中复用方法集
