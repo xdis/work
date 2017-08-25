@@ -355,7 +355,7 @@
 					- [每次访问的验证伪登陆](fn/rbac.md#每次访问的验证伪登陆)
 				- [rbac验证过程](fn/rbac.md#rbac验证过程)
 		- yii2 admin 分析
-			- 	
+			- [yii2_admin_反射获取action](fn/yii2_admin.md#yii2_admin_反射获取action)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
