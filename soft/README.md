@@ -1,4 +1,6 @@
 # 软件
+- 同步神器
+	- [resilio](https://www.resilio.com)  //亲用 特别局域网同步不用连网
 - wget
 	- http://gnuwin32.sourceforge.net/packages/wget.htm
 	- 下载选择这个 Complete package, except sources
