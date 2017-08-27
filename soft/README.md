@@ -119,6 +119,21 @@
 		- Tab：自动路径补全(爽,赞！)
 		- Ctrl+T：建立新页签；
  - 路由器
+	- padavan无线wifi放大器 参考route目录下:刷华硕固件后的桥接中继教程.html
+		- 桥接 Lan bridge
+			- 内部网络(lan)
+				- 高级设置->内网设置 IP 192.168.2.100
+				- 高级设置->DPCP服务器  关闭
+		- ISP
+			- 内部网络(lan)
+				- 高级设置->内网设置 IP 192.168.3.1
+		- 进入2.4或5G配置 无线桥接
+			- 无线 AP 工作模式: AP-Client+AP
+			- 无线 AP-Client 角色:LAN bridge 或ISP
+			- STA SSID 选择连接 WIFI信号源
+			- 授权方式:WPA2-Personal
+			- WPA 加密:AES
+			- WPA-PSK 密钥:输入上面选择对应的WIFI密码
 	- ss上不了网的解决方案
 		- 修改DNS Provider第二或第三选项 与 端口由原来的 443修改为53
 	- 有时候2.4信号或5信号找不到
