@@ -33,3 +33,31 @@
         Yii::endProfile($token, __METHOD__);
     }
 ``` 
+
+
+## 配置_yii2_admin
+
+```php
+'as access' => [
+    'class' => 'mdm\admin\components\AccessControl',
+    'allowActions' => [
+        //这里是允许访问的action
+        //controller/action
+//         '*',
+        '/admin/sign-in/login',
+    ],
+],
+```
+
+## 
+
+```php
+
+```
+
+
+## 
+
+```php
+
+```

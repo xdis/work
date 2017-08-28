@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://www.manks.top/document/yii2-admin-components.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>yii2项目实战-yii2-admin组件配置及使用 - 白狼栈 </title>
+    <meta name="description" content="【白狼栈】是一个分享技术的平台,整理了各种前后端技术知识点的实际案例,yii2实战教程,辅导phper进阶,swoole基础入门">
+    <meta name="keywords" content="yii2实战教程,从基础入门到提高,组件扩展开发,rbac权限控制案例,restful api完整案例,swoole基础入门,php异步任务,多进程,websocket实战">
+    <meta name="author" content="白狼">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="baidu-site-verification" content="nwU8lhyTCq">
+    <link rel="shortcut icon" href="http://www.manks.top/favicon.ico">
+    <meta property="qc:admins" content="46676303176516336470">
+    <meta property="wb:webmaster" content="025ac84aaeb8d5e9">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="eHdnQ3VGN0IBNgIyLQFPGhsFNBcaP1wjSSAfICd.UXM/HA8ZLw1xMw==">
+    <link href="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/comment.css" rel="stylesheet">
+<link href="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/bootstrap.min.css" rel="stylesheet">
+<link href="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/font-awesome.min.css" rel="stylesheet">
+<link href="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/magnific-popup.min.css" rel="stylesheet">
+<link href="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/site.css" rel="stylesheet">
+<link href="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/monokai-sublime.min.css" rel="stylesheet">
+<script type="text/javascript">        var ws = new WebSocket('ws://120.27.108.137:9512');</script><link rel="stylesheet" href="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/layer.css" id="layuicss-skinlayercss"><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+<body class="home-template">
+        
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.manks.top/">白狼栈</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav so-header">
+                    <li role="presentation"><a href="http://www.manks.top/" class="">首页</a></li><li role="presentation"><a href="http://www.manks.top/document" class="active">yii2 实战式教程</a></li><li role="presentation"><a href="http://www.manks.top/swoole.html" class="">swoole教程</a><em></em></li><li role="presentation"><a href="http://www.manks.top/question" class="">问答</a><em></em></li>                    <li class="icon-search">
+                        <!-- <a href="javascript:void(0);" class="search-show">
+                            <i class="fa fa-search" style="width: 18px;"></i>
+                        </a> -->
+                        <form id="search" action="http://zhannei.baidu.com/cse/search" method="get" class="searchbar" autocomplete="off">
+                            <i class="fa fa-search" role="icon" style="width: 18px;height: 18px;line-height: 18px;"></i>
+                            <input type="hidden" name="s" value="8229360318115300437">
+                            <input type="hidden" name="entry" value="1">
+                            <input name="q" type="text" placeholder="搜索" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                            <button type="submit" class="btn js-search-submit s-btn">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </li>
+
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                                            <li role="presentation">
+                            <a class="" href="http://www.manks.top/user/notice">
+                                消息
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <!--<a href="/user" class="">个人中心</a>-->
+                            <div class="r-p" style="position:relative;">
+                                <div class="face">
+                                    <img class="face-img" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/361.jpg">
+                                </div>
+                                <div class="nav-userinfo" style="display:none;">
+                                    <ul class="menu">
+                                        <li class="open-li"><a href="http://www.manks.top/user">我的主页</a></li>
+                                        <li class="open-li"><a href="http://www.manks.top/user/favorate">我的收藏</a></li>
+                                        <li class="open-li"><a href="http://www.manks.top/user/change-password">修改密码</a></li>
+                                        <li class="open-li" style="border-top: 1px solid #e9e9e9;"><a href="http://www.manks.top/user/logout" data-method="post">退出</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </li>
+                                    </ul>
+            </div>
+            <!--/.nav-collapse -->
+            <!-- search form -->
+            <div class="site-search active">
+                <div class="container">
+                    <form method="get" class="site-search-form" action="http://zhannei.baidu.com/cse/search">
+                        <input type="hidden" name="s" value="8229360318115300437">
+                        <input type="hidden" name="entry" value="1">
+                        <input class="search-input" name="q" type="text" placeholder="输入关键字搜索"><button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <section id="main" style="margin-top: 87px;">
+        
+<style>
+.inactive { color: #959595; }
+.active { color: #e67e22; }
+.favorate { cursor: pointer; }
+</style>
+
+<!-- <header class="bs-header">
+</header> -->
+<div class="container">
+    <div class="row">
+        <aside id="sidebar" class="col-lg-3">
+            <nav class="bs-sidebar">
+                <ul class="nav bs-sidenav">
+                                                    <li>
+                                    <a data-toggle="collapse" href="http://www.manks.top/document/yii2-admin-components.html#quick-start">快速开始 <i class="fa fa-angle-down"></i></a>
+                                                                            <ul id="quick-start" class="nav nav-child collapse">
+                                                                                        <li class="" id="data-install"><a href="http://www.manks.top/document/install.html">安装</a></li>
+                                                                                        <li class="" id="data-yii-first-application"><a href="http://www.manks.top/document/yii-first-application.html">第一个Yii程序</a></li>
+                                                                                        <li class="" id="data-easy-blog-manage-system"><a href="http://www.manks.top/document/easy-blog-manage-system.html">新手入门指南-简单博客管理系统</a></li>
+                                                                                    </ul>
+                                                                    </li>
+                                                    <li>
+                                    <a data-toggle="collapse" href="http://www.manks.top/document/yii2-admin-components.html#project">项目实战 <i class="fa fa-angle-down"></i></a>
+                                                                            <ul id="project" class="nav nav-child in" style="height: auto;">
+                                                                                        <li class="" id="data-yii2-blog-description"><a href="http://www.manks.top/document/yii2-blog-description.html">概述</a></li>
+                                                                                        <li class="" id="data-yii2-blog-config"><a href="http://www.manks.top/document/yii2-blog-config.html">配置</a></li>
+                                                                                        <li class="" id="data-yii2-blog-manage"><a href="http://www.manks.top/document/yii2-blog-manage.html">博客管理平台的搭建</a></li>
+                                                                                        <li class="" id="data-yii2-user-config"><a href="http://www.manks.top/document/yii2-user-config.html">用户管理之user组件的配置</a></li>
+                                                                                        <li class="" id="data-yii2-user"><a href="http://www.manks.top/document/yii2-user.html">用户管理之登录与注册功能实现</a></li>
+                                                                                        <li class="" id="data-yii2-filter-control"><a href="http://www.manks.top/document/yii2-filter-control.html">访问控制过滤器ACF讲解</a></li>
+                                                                                        <li class="" id="data-yii2-rbac-understand"><a href="http://www.manks.top/document/yii2-rbac-understand.html">了解一下基于角色的访问控制</a></li>
+                                                                                        <li class="" id="data-yii2-rbac-table"><a href="http://www.manks.top/document/yii2-rbac-table.html">yii自带rbac数据表分析</a></li>
+                                                                                        <li class="" id="data-yii2-rbac-assignment-example"><a href="http://www.manks.top/document/yii2-rbac-assignment-example.html">基于角色的访问控制（rbac）分配案例</a></li>
+                                                                                        <li class="" id="data-yii2-behavior"><a href="http://www.manks.top/document/yii2-behavior.html">行为的理解</a></li>
+                                                                                        <li class="" id="data-yii2-behavior-rbac-assignment"><a href="http://www.manks.top/document/yii2-behavior-rbac-assignment.html">通过行为，解决rbac的分配问题</a></li>
+                                                                                        <li class="active" id="data-yii2-admin-components"><a href="http://www.manks.top/document/yii2-admin-components.html">yii2-admin组件配置及使用</a></li>
+                                                                                        <li class="" id="data-yii2-menu-rbac"><a href="http://www.manks.top/document/yii2-menu-rbac.html">权限菜单管理</a></li>
+                                                                                        <li class="" id="data-yii2-modal"><a href="http://www.manks.top/document/yii2-modal.html">modal初识</a></li>
+                                                                                        <li class="" id="data-how-to-custom-theme-template"><a href="http://www.manks.top/document/how-to-custom-theme-template.html">如何自定义后台的模版主题</a></li>
+                                                                                        <li class="" id="data-yii2-theme"><a href="http://www.manks.top/document/yii2-theme.html">主题Theme的应用</a></li>
+                                                                                        <li class="" id="data-yii2-filtermodel"><a href="http://www.manks.top/document/yii2-filtermodel.html">filterModel搜索机制的实现分析</a></li>
+                                                                                        <li class="" id="data-yii2-multitable-relation"><a href="http://www.manks.top/document/yii2-multitable-relation.html">多表关联操作</a></li>
+                                                                                        <li class="" id="data-yii2-event"><a href="http://www.manks.top/document/yii2-event.html">事件初识</a></li>
+                                                                                        <li class="" id="data-yii2-event-email-example"><a href="http://www.manks.top/document/yii2-event-email-example.html">用事件优雅的发送邮件</a></li>
+                                                                                        <li class="" id="data-yii2-event-predefine"><a href="http://www.manks.top/document/yii2-event-predefine.html">预定义事件的使用</a></li>
+                                                                                        <li class="" id="data-yii2-urlManager-prettyUrl"><a href="http://www.manks.top/document/yii2-urlManager-prettyUrl.html">路由美化以及如何正确的生成链接</a></li>
+                                                                                        <li class="" id="data-yii2-console"><a href="http://www.manks.top/document/yii2-console.html">console应用的了解</a></li>
+                                                                                        <li class="" id="data-yii2-asset-bundle"><a href="http://www.manks.top/document/yii2-asset-bundle.html">资源包管理</a></li>
+                                                                                        <li class="" id="data-yii2-restful-authenticate"><a href="http://www.manks.top/document/yii2-restful-authenticate.html">restful api之授权验证</a></li>
+                                                                                        <li class="" id="data-yii2-authclient"><a href="http://www.manks.top/document/yii2-authclient.html">第三方登录的实现</a></li>
+                                                                                        <li class="" id="data-yii2-db-query"><a href="http://www.manks.top/document/yii2-db-query.html">那些年错过的数据库查询</a></li>
+                                                                                        <li class="" id="data-yii2-data-cache"><a href="http://www.manks.top/document/yii2-data-cache.html">性能优化之数据缓存</a></li>
+                                                                                        <li class="" id="data-yii2-third-code"><a href="http://www.manks.top/document/yii2-third-code.html">集成第三方代码</a></li>
+                                                                                        <li class="" id="data-yii2-webuploader"><a href="http://www.manks.top/document/yii2-webuploader.html">图片上传之webuploader的使用</a></li>
+                                                                                    </ul>
+                                                                    </li>
+                                    </ul>
+            </nav>
+        </aside>
+
+        <section id="content" class="col-lg-9">
+
+                            <h2 style="margin-top: 0;">yii2项目实战-yii2-admin组件配置及使用<br>
+                    <div style="color: #999;font-size: 10px;margin-top: 10px;">
+                        更新于 2017年07月21日 by 白狼 被浏览了 4590 次
+                    </div>
+                    <span href="javascript:void(0);" title="" data-title="取消收藏" data-type="0" class="favorate " data-toggle="tooltip" data-placement="top" style="margin: 0 7px; font: 12px/1.8 Microsoft YaHei;cursor:pointer;" data-original-title="我要收藏">
+                        <i class="fa fa-star-o"></i> <span style="margin: 0;">0</span>
+                    </span>
+                    <span href="javascript:void(0);" title="" data-title="取消赞" data-type="1" data-toggle="tooltip" data-placement="top" class="favorate " style="font: 12px/1.8 Microsoft YaHei;cursor:pointer;" data-original-title="点赞">
+                        <i class="fa fa-thumbs-o-up"></i> <span style="margin: 0;">0</span>   
+                    </span>
+                </h2>
+                
+                <p>前面我们花了5个课时，讲解了从rbac数据表的分析到权限管理功能的实现！在以后的管理平台开发中，不管是不是用yii框架，我觉得权限管理模块的开发工作对你来说已经不是什么难事了！有些人要较劲了，yii实战项目开发，权限管理的功能要我们手动去实现，可笑至极呀！你错了！如果仅仅会使用框架，这又跟生搬硬套有什么区别！对于刚开始上路的新人，如果我们上来就套组件，一课时就完成了权限管理的配置，开发速度是提升了不少。但是，提升我们自身de技术能力，毫无卵用......好好的真金白银我岂不是没让你花在刀刃上？</p><p>早在几个月前，我们曾经就以迅雷不及掩耳之势整合了yii2-admin组件，但是到头来，却发现很多同学云里雾里，完全不懂得其界面化如何操作，随之我又专门提供了一篇基本的操作流程的讲解！但是还是有同学转不过圈来，究其原因，就是我们前面5个课时的精髓所在！</p><p>今天，我们就来看看这个第三方组件是如何使用的。</p><h3>安装<br></h3><pre class="hljs coffeescript">composer <span class="hljs-built_in">require</span> mdmsoft/yii2-admin <span class="hljs-string">"~2.0"</span></pre><h3>配置</h3><p>安装好了之后，我们打开 backend\config\main.php，配置如下</p><pre class="hljs php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">//......</span>
+    <span class="hljs-string">'modules'</span> =&gt; [
+        <span class="hljs-string">'admin'</span> =&gt; [        
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'mdm\admin\Module'</span>,   
+        ],
+        <span class="hljs-comment">//......</span>
+    ],
+    <span class="hljs-string">'aliases'</span> =&gt; [    
+        <span class="hljs-string">'@mdm/admin'</span> =&gt; <span class="hljs-string">'@vendor/mdmsoft/yii2-admin'</span>,
+    ],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">//......</span>
+        <span class="hljs-string">'authManager'</span> =&gt; [        
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\DbManager'</span>,
+            <span class="hljs-string">'defaultRoles'</span> =&gt; [<span class="hljs-string">'guest'</span>],    
+        ],
+        <span class="hljs-comment">//......</span>
+    ],
+    <span class="hljs-string">'as access'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'mdm\admin\components\AccessControl'</span>,
+        <span class="hljs-string">'allowActions'</span> =&gt; [
+            <span class="hljs-comment">//这里是允许访问的action，不受权限控制</span>
+            <span class="hljs-comment">//controller/action</span>
+        ]
+    ],
+    <span class="hljs-comment">//......</span>
+];
+</pre><p>细心的同学发现了，这里的配置其实跟我们在<a href="http://www.manks.top/document/yii2-behavior-rbac-assignment.html">通过行为，解决rbac的分配问题</a>一文中讲解的差不多嘛！</p><p>配置好了之后，刷新下首页我们发现直接抛出了Forbidden (#403)了，这很显然是告诉我们没权限访问了！即yii2-admin组件我们已经配置ok了。<br></p><p>奇怪，为什么就直接抛出了403，提示我们没权限访问了呢？</p><p>我们回过头来看下配置，就很容易看出来，他其实是通过行为类 mdm\admin\components\AccessControl 进行的控制，这跟我们先前讲到的backend\components\AccessControl 何其相像！</p><p>如果你看了 mdm\admin\components\AccessControl 的源码你会发现，咦？这源码好像在哪里似曾相识！没错，其实我们在<a href="http://www.manks.top/document/yii2-behavior-rbac-assignment.html">通过行为，解决rbac的分配问题</a>一文中已经带大家实现过了一部分源码，现在想想，so easy。</p><p>好了，我们继续本节内容。</p><p>现在我们“遭受”权限控制，步步403，步步Forbidden，没法进行了！</p><p>回到100个控制器的问题，假如说我们通过配置行为，一股脑的控制了所有的控制器，万一有那么个别的控制器我不想受到rbac的控制，怎么办？</p><p>我们是不是得想办法，通过配置组件的属性，然后再beforeAction内部判断呢？没错，就是这么处理。</p><p>我们打开配置文件，发现 as access 配置项中有一个 allowActions 属性，这个字段就是用来对配置的操作忽略权限控制用的！</p><p>既然如此，为了能继续进行操作，我们先把所有的操作都忽略吧。配置allowActions的值等于 “*” 即可。后面我们给用户分配权限后再回来把下面的“*”去掉。</p><pre class="hljs php"><span class="hljs-string">'as access'</span> =&gt; [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'mdm\admin\components\AccessControl'</span>,
+    <span class="hljs-string">'allowActions'</span> =&gt; [
+        <span class="hljs-comment">//这里是允许访问的action</span>
+        <span class="hljs-comment">//controller/action</span>
+        <span class="hljs-string">'*'</span>,
+    ]
+],
+</pre><p>我们在开篇就讲到，yii2-admin 是一套封装好的界面化权限管理组件，按理说我们上面配置好了，就可以看到界面呀，界面呢？</p><p>界面在这里，下面大家可以通过浏览器访问如下地址：</p><pre class="hljs perl">/<span class="hljs-keyword">index</span>.php?r=admin
+/<span class="hljs-keyword">index</span>.php?r=admin/route
+/<span class="hljs-keyword">index</span>.php?r=admin/permission
+/<span class="hljs-keyword">index</span>.php?r=admin/role
+/<span class="hljs-keyword">index</span>.php?r=admin/assignment
+</pre><p>我们发现几乎每一个操作都是有数据的，这不难理解，因为这些数据是我们上面几个小节分配过的！下面我们就来看看这个界面化是怎么玩的！</p><p>注意听哦，这一套权限管理要比我们上一节手动分配的更复杂、更难理解一些，好在我们有基础在，不怕！</p><p>1、按照我们上一节的讲解，首先我们需要把路由添加到数据表中，这些路由就是我们以后要分配操作的。</p><p>访问 /index.php?r=admin/route ，把 admin/* 移动到右侧。这里面有几个注意点我们讲一下：</p><p>1)：左侧是未分配的路由，那这些路由是怎么获取到呢？这就利用到php反射的基础知识了，不知道的可以回去补补课啦~</p><p>2)：右侧是已经分配过的路由，是添加到数据表 auth_item 中的路由</p><p>3)：页面上的 Add 按钮，这个有什么作用？不是说左侧会自动获取类以及对应的方法吗？注意啦，左侧反射显示出的路由呢，是有缓存的，也就是当你刷新某些路由仍然显示不出来的时候，可以自己手动点击 Add 按钮进行添加。路由的格式需要跟左侧解析出来的一致。</p><p>2、按照我们上一章节所述，下面这一步理应直接添加角色，然后把路由权限分配给角色。但是，更强大的组件意味着更麻烦、更复杂一点。我想了一上午不知道怎么描述的更通俗易懂，我们画两张图对比理解下：</p><p><a href="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/d5ee44d17d-rbacrolepermissionroute.jpg" class="mfp-zoom" style="display:block;"><img src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/d5ee44d17d-rbacrolepermissionroute.jpg" alt="d5ee44d17d-rbacrolepermissionroute.jpg"></a></p><p>按照右图的理解，我们应该在把路由权限分配给角色之前，先打开 /index.php?r=admin/permission 创建一个权限集合，然后给其分配路由权限，换言之，这个权限集合就是一个小角色，小角色又是个什么东东? 这里我们只是把 route 分配给 permission 的代称！那按照你的意思还有大角色咯？没错，大角色我们姑且定义为可以容纳路由、权限集合、小角色的简称！注意哦，“小角色”“大角色”只是为了方便大家理解，我们自己这么定义的！</p><p>正如我们在<a href="http://www.manks.top/document/yii2-rbac-understand.html">了解一下基于角色的访问控制</a>所说，rbac是以角色为基础的访问控制，所以上面所述并不难理解。<br></p><p>我们在第一步中，添加了路由 /admin/*,现在我们试着访问 /index.php?r=admin/permission 添加一个权限集合“权限管理”，并把路由 /admin/* 分配给“权限管理”。</p><p><span style="background-color:rgb(255,230,148);">友情提醒，添加完权限集合跳转到权限列表页，点击查看详情，选中左侧路由“/admin/*”,移动到右侧即可。</span></p><p>接着我们就应该访问 /index.php?r=admin/role 添加真正意义上的“大角色”了。我们创建一个“管理员”的角色，并为其分配小角色“权限管理”和大角色“博客管理”。</p><p><span style="background-color:rgb(255,230,148);">友情提醒：添加完“管理员”回到角色列表后，点击查看详情，选中左侧的角色“博客管理”和权限集合“权限管理”，移动到右侧即可。注意哦，“博客管理”这个角色是我们上节文章中手动创建的。</span></p><p>3、这最后一步自然就是把我们创建好的角色分配给用户啦，注意哦，我们在第二步中引入了“大小角色”，即角色和权限集合，再加上我们对rbac概念的理解，以角色为基础。下面我们来试试界面化操作，把“大小角色”分配给用户吧。</p><p><span style="background-color:rgb(255,230,148);">友情提醒，访问/index.php?r=admin/assignment，显示的是用户列表，选择某个用户，点击查看详情，选中左侧的角色“博客管理”“管理员”，移动到右侧即完成了对该用户分配角色的动作。</span></p><p>4、关于授权认证。上一章节中，我们通过行为，手动实现了授权认证。该章节的开始，我们对yii2-admin进行了配置，未对as access的allowActions添加“*”之前也是403，这说明，as access的类 mdm\admin\components\AccessControl 内部已经帮我们实现过了权限认证！我们现在通过配置，把allowActions 的“*”去掉，新增"site/*"的基础权限访问。</p><p>最后，我们通过刚刚分配了角色的用户和未分配权限的用户分别登陆管理平台，测测通过界面化操作后，访问控制是不是生效了？</p><p>测试发现，结果正如我们所料！</p><p>到此，管理平台的界面化操作我们不仅实现了，还懂得了如何去分配,更重要的是，我们完全明白了这一整套业务逻辑的实现！</p><p>我的天~，这一节讲了那么多废话，休息休息，下节再继续。</p>                        
+             
+            <div class="comments">
+                 <div class="ds-thread" id="ds-thread">
+                    <div id="ds-reset">
+                        <div class="ds-comments-info">
+                            <ul class="ds-comments-tabs">
+                                <div class="ds-sort">
+                                    <a class="">
+                                        共<span id="totalComment">69</span>条评论
+                                    </a>
+                                </div>
+                                <li class="ds-tab">
+                                    <a class="">评论区</a>
+                                </li>  
+                            </ul>
+                        </div>
+                        <input type="hidden" name="pid" value="0">
+                        <div class="ds-replybox">
+                                                            <a class="ds-avatar" href="javascript:void(0);" target="_blank" title="">
+                                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/361.jpg" data-src="loaded" alt="头像">
+                                </a>
+                                <form method="post">
+                                    <div class="ds-textarea-wrapper ds-rounded-top">
+                                        <textarea name="content" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea>
+                                    </div>
+                                    <div class="ds-post-toolbar">
+                                        <div class="ds-post-options ds-gradient-bg"></div>
+                                        <button class="ds-post-button publish" data-pid="0" type="button" style="background: #1E9FFF; color: #fff; border: 1px solid #1E9FFF; text-shadow: inherit; box-shadow: inherit;">发布</button>
+                                    </div>
+                                </form>
+                                                    </div>
+
+                        <div class="comment-list"><div class="ds-replybox ds-inline-replybox" style="display:none;">
+    <a class="ds-avatar" href="javascript:void(0);" target="_blank" title="">
+        <img class="lazyload" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/361.jpg" alt="头像">
+    </a>
+    <form method="post">
+        <div class="ds-textarea-wrapper ds-rounded-top">
+            <textarea name="content" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea>
+        </div>
+        <div class="ds-post-toolbar">
+            <div class="ds-post-options ds-gradient-bg"></div>
+            <button class="ds-post-button publish" type="button" style="background: #1E9FFF; color: #fff; border: 1px solid #1E9FFF; text-shadow: inherit; box-shadow: inherit;">发布</button>
+        </div>
+    </form>
+</div>
+
+
+ 
+<ul class="ds-comments">
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/20.jpg" data-src="loaded" alt="huoyinliji**@qq.com">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">huoyinliji**@qq.com</a>
+                </div>
+                <p>我把auth_item表里的所有权限都删除了，什么页面都进不去了，现在是不是只有通过代码来设置管理员了？</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-21 18:20</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2642">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>按照文中的操作，手动配置as access的allowActions即可</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-22 08:36</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2642">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/251.jpg" data-src="loaded" alt="宇宙边缘">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">宇宙边缘</a>
+                </div>
+                <p>老师可以在回复这块加一个删除吗？有时候发错了，想删除。。。蛮尴尬的。。。</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-14 18:01</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2591">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/251.jpg" data-src="loaded" alt="宇宙边缘">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">宇宙边缘</a>
+                </div>
+                <p>狼哥，你好！为什么我每次进/index.php?r=site/login都直接跳到index,进不了登录页？需要清空SESSION？还有site/logout总是405，Method Not Allowed. This url can only handle the following request methods: .</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-14 17:10</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2586">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>应该是actionLogin判断的，已登录状态跳转到首页。退出来再重新登录就好了。403是没权限访问，405是请求方法不允许，需要对症下药。目前来看，你这边应该是behaviors限制logout只允许post方式退出，那你就post退出吧，get会抛405</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-14 17:15</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2586">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="宇宙边缘">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/251.jpg" data-src="loaded" alt="宇宙边缘">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">宇宙边缘</a>
+                        </div>
+                        <p>谢谢！是的，解决了！behaviors的'logout' =&gt; [],不填是默认post吗？</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-14 17:59</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2586">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>指定post才是post哦，可以把ACF这章的内容再看看 http://www.manks.top/document/yii2-filter-control.html</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-14 21:04</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2586">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/251.jpg" data-src="loaded" alt="宇宙边缘">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">宇宙边缘</a>
+                </div>
+                <p>狼哥，你好！为什么我每次进/index.php?r=site/login都直接跳到index,进步了登录页？还有site/logout总是403</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-14 17:01</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2585">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/218.jpg" data-src="loaded" alt="会飞的鱼">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">会飞的鱼</a>
+                </div>
+                <p>再执行“添加权限”时，报错如下：<br>
+ PHP Warning – yii\base\ErrorException<br>
+Missing argument 1 for mdm\admin\models\AuthItem::find(), called in D:\…\src\vendor\yiisoft\yii2\validators\UniqueValidator.php on line 210 and defined<br>
+<br>
+    1. in D:\…\src\vendor\mdmsoft\yii2-admin\models\AuthItem.php at line 140<br>
+</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-10 15:04</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2560">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>有自己单独配置什么吗？或者改写过什么？</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-10 17:18</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2560">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="会飞的鱼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/218.jpg" data-src="loaded" alt="会飞的鱼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">会飞的鱼</a>
+                        </div>
+                        <p>安装完yii2-admin之后，按文章中的做的配置，<br>
+把vendor\mdmsoft\yii2-admin\models\AuthItem.php 下 rules()  中的（第64行）注释掉，就能添加成功，<br>
+[['name'], 'unique', 'when' =&gt; function () {<br>
+      return $this-&gt;isNewRecord || ($this-&gt;_item-&gt;name != $this-&gt;name);<br>
+ }],</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-10 17:58</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2560">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>经过调试，发现是yii2版本的问题，2.0.13目前仍处于开发阶段，提醒大家尽量用stable版本</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-11 13:21</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2560">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="会飞的鱼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/218.jpg" data-src="loaded" alt="会飞的鱼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">会飞的鱼</a>
+                        </div>
+                        <p>stable版和dev版，经过测试，是因为下面\vendor\yiisoft\yii2\validators\Validator.php  中的一个判断条件导致的错误：<br>
+第211行（在createValidator() 方法中）<br>
+dev版本中是：if ($type instanceof \Closure || ($model-&gt;hasMethod($type) &amp;&amp; !isset(static::$builtInValidators[$type])))<br>
+<br>
+因!isset(static::$builtInValidators[$type])  导致的错误</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-11 15:08</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2560">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/218.jpg" data-src="loaded" alt="会飞的鱼">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">会飞的鱼</a>
+                </div>
+                <p>把路由 /admin/* 分配给“权限管理”  是只将“/admin/*”这一项分配给权限， 其他如“/admin/assignment/*”,/admin/permission/*  这些不需要分配到“权限管理”里是吗？</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-10 15:02</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2559">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>*是所有的意思，就是为了方便管理。如果把 /admin/* 分配给某权限，就不用再分配具体的权限了。</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-10 17:14</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2559">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/89.jpg" data-src="loaded" alt="封缄">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">封缄</a>
+                </div>
+                <p>'as access' =&gt; [<br>
+    'class' =&gt; 'mdm\admin\components\AccessControl',<br>
+    'allowActions' =&gt; [<br>
+        //这里是允许访问的action<br>
+        //controller/action<br>
+       "site/*",<br>
+    ]<br>
+],在SiteController里自定义一个actionTest,访问/r=site/test为啥还是403？<br>
+</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-07-28 22:25</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2451">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="背弓箭的韦鲁斯">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="背弓箭的韦鲁斯">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">背弓箭的韦鲁斯</a>
+                        </div>
+                        <p>检查 配置的位置是否正确；<br>
+检查是不是还有ACF的限制。</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-07-28 22:40</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2451">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="封缄">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/89.jpg" data-src="loaded" alt="封缄">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">封缄</a>
+                        </div>
+                        <p>'access' =&gt; [<br>
+                'class' =&gt; AccessControl::className(),<br>
+                'rules' =&gt; [<br>
+<br>
+                    [<br>
+                        'actions' =&gt; ['login', 'error','test'],<br>
+                        'allow' =&gt; true,<br>
+                    ],<br>
+                    [<br>
+                        'actions' =&gt; ['logout', 'index','test'],<br>
+                        'allow' =&gt; true,<br>
+                        'roles' =&gt; ['@'],<br>
+                    ],<br>
+                ],<br>
+            ],SiteController里是这么写的，但还是403</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-07-29 10:14</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2451">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="封缄">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/89.jpg" data-src="loaded" alt="封缄">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">封缄</a>
+                        </div>
+                        <p>....重新打开浏览器然后清了一下缓存然后解决了</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-07-29 10:20</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2451">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/10.jpg" data-src="loaded" alt="hhum**@qq.com">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">hhum**@qq.com</a>
+                </div>
+                <p>我找不到 yii2-admin组件 是通过哪个方法获得所有controller/action的。然后获取之后是把它放进缓存里面了吗？</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-07-25 17:21</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2409">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>1、yii2-admin组件，用composer下载后，其源文件位于 vendor/mdmsoft/目录<br>
+2、获得所有controller/action，这一点，你查查php的反射知识哦</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-07-25 18:04</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2409">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/152.jpg" data-src="loaded" alt="试岗期—TMR">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">试岗期—TMR</a>
+                </div>
+                <p>我通过r=admin报404 为什么呢？<br>
+<br>
+</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-07-20 11:25</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2361">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>en... 404的问题可能有很多种，你先看下日志具体报的什么错吧</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-07-20 11:40</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2361">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/356.jpg" data-src="loaded" alt="smeb">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">smeb</a>
+                </div>
+                <p>狼哥，请问rbac这个组件的页面什么的在哪里找？我想改下它的页面布局，还有给用户分配角色这个页面中的，如果用户很多的话分页要怎么弄？它的控制器在哪？一般不都是在控制器中查询出总数然后分页吗？这个分页要怎么做呢？</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-07-15 13:59</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2270">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>1、rbac的模版页面位于 vendor\mdmsoft\yii2-admin\views<br>
+2、第三方组件的源码，不推荐直接修改，必须要改的话，可以把第三方代码剥离出来，然后再修改，避免后面composer更新造成覆盖的后果，第三方组件的集成可以参考 http://www.manks.top/document/yii2-third-code.html<br>
+3、给用户分配角色这个页面，目测是有分页效果的，没明白你要问的点在哪里</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-07-15 22:08</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2270">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="smeb">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/356.jpg" data-src="loaded" alt="smeb">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">smeb</a>
+                        </div>
+                        <p>我添加了十来条数据都没分页，请问它的分页在哪了？分页是一页多少条？</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-07-17 16:39</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2270">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>你说的是 /admin/role/index 页面吗，默认20条分页</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-07-17 16:50</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2270">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+    </ul>
+
+<div class="ds-paginator"><div class="ds-border"></div>
+<a class="ds-current" data-page="0">1</a>
+<a class="" href="http://www.manks.top/comment/more?id=16&amp;type=2&amp;page=2" data-page="1">2</a>
+<a class="" href="http://www.manks.top/comment/more?id=16&amp;type=2&amp;page=3" data-page="2">3</a>
+<a class="nextPage" href="http://www.manks.top/comment/more?id=16&amp;type=2&amp;page=2" data-page="1">下一页</a></div>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/jquery.min.js.下载"></script>
+<script type="text/javascript">    $('.post-reply').on('click', function () {
+        if (0) {
+            layer.alert('请先登录');
+            return false;
+        }
+        var _this = $(this), _p = _this.parent('.ds-comment-actions'), pid = _this.data('pid');
+        _c = $('.ds-inline-replybox');
+        _c.show();
+        _p.after(_c);
+        _c.find('.publish').data('pid', pid);
+        return false;
+    });</script></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+    
+    </section>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">友情链接</h4>
+                        <div class="content tag-cloud friend-links">
+                            <a href="http://www.bootcss.com/" title="Bootstrap中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;bootcsscom&#39;])" target="_blank">Bootstrap中文网</a>
+                            <a href="http://www.bootcdn.cn/" title="开放CDN服务" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;bootcdncn&#39;])" target="_blank">开放CDN服务</a>
+                            <a href="http://www.yiiframework.com/" title="Yii2.0官方文档" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;yiiframeworkcom&#39;])" target="_blank">Yii2.0官方文档</a>
+                            <a href="http://www.jquery123.com/" title="jQuery中文文档" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;jquery123com&#39;])" target="_blank">jQuery中文文档</a>
+                            <a href="http://www.aliyun.com/" title="阿里云" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;aliyun&#39;])" target="_blank">阿里云</a>
+                            <a href="http://git.oschina.net/" title="码云" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;oschinanet&#39;])" target="_blank">码云</a>
+                            <a href="https://almsaeedstudio.com/" title="almsaeedstudio" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;almsaeedstudiocom&#39;])" target="_blank">almsaeedstudio</a>
+                            <a href="http://www.yiichina.com/" title="Yii中文社区" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;yiichinacom&#39;])" target="_blank">Yii中文社区</a>
+                            <a href="http://www.manks.top/sitemap.xml" target="_blank">站点地图</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">联系我</h4>
+                        <div class="content tag-cloud friend-links">
+                            <span>email：bailangzhan@qq.com</span><br>
+                            <span>QQ群：147533993</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">服务商</h4>
+                        <div class="content tag-cloud friend-links">
+                            <a href="https://www.upyun.com/" target="_blank"><img src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/upyun_logo6.png" alt="又拍云" height="50px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>
+                        <a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备16006462号-1</a>
+                    </span>
+                    <span><img src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/beian.png" alt="浙公网安备" style="width: 15px; height: 15px; line-height: 15px; margin-top: -4px;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010202000482" target="_blank">浙公网安备 33010202000482号</a></span>
+                    <span>Copyright © <a href="http://www.manks.top/">白狼栈</a> 2016-2017</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="http://www.manks.top/document/yii2-admin-components.html#" id="back-to-top" style="display: none;"><i class="fa fa-angle-up"></i></a>
+
+    
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/jquery.min.js.下载"></script>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/bootstrap.min.js.下载"></script>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/jquery.fitvids.min.js.下载"></script>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/highlight.min.js.下载"></script>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/jquery.magnific-popup.min.js.下载"></script>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/main.js.下载"></script>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/lazyload.js.下载"></script>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/layer.js.下载"></script>
+<script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/yii.js.下载"></script>
+<script type="text/javascript">jQuery(document).ready(function () {
+
+    $(".favorate").on("click", function () {
+        var $this = $(this),
+            uid = 157,
+            status = $this.hasClass("active"),
+            numObj = $this.find("span"),
+            num = parseInt(numObj.html()),
+            data = {type: $this.data("type"), id: "yii2-admin-components", _csrf: "eHdnQ3VGN0IBNgIyLQFPGhsFNBcaP1wjSSAfICd.UXM/HA8ZLw1xMw==", content_type: 2};
+        if (!uid) {
+            window.location="/login.html";
+        }
+        $.ajax({
+            type: "post",
+            url: "/favorate/article-favorate",
+            data: data,
+            beforeSend: function () {
+                if (uid) {
+                    if (status) {
+                        $this.removeClass("active");
+                        numObj.html(num-1);
+                    } else {
+                        $this.addClass("active");
+                        numObj.html(num+1);
+                    }
+                    // var title_o = $this.attr("title");
+                    // $this.attr("title", $this.data("title"));
+                    // $this.data("title", title_o);
+                }
+            },
+            success: function (data) {},
+            error: function (resp) {
+                console.log(resp);
+            },
+        });
+    });
+
+
+    $("[data-toggle=\"tooltip\"]").tooltip();
+
+
+    var id = "yii2-admin-components",
+        _li = $("#data-"+id);
+        show_id = _li.parent().attr("id");
+
+    $("#"+show_id).collapse("show");
+
+    // 评论分页
+    $(document).on('click','.comment-list a',function(e){
+        e.preventDefault();
+        var url=$(this).attr('href');
+        $.get(url,function(msg){
+            $('.comment-list').html(msg);
+        });
+    });
+
+    // 异步请求评论列表
+    $.get('/comment/more', {'id': '16', 'type': 2}, function(msg){
+        $('.comment-list').html(msg);
+    });
+
+    // 评论
+    $(document).on('click', '.publish', function () {
+        var _this = $(this), pid = _this.data('pid');
+        if (_this.hasClass('disabled')) {
+            return false;
+        }
+        var _comment = _this.parents('form').find('textarea[name="content"]');
+        var content = _comment.val();
+        if (content == '') {
+            layer.alert('请输入评论内容');
+            return false;
+        }
+
+        if (content.length > 2000) {
+            layer.alert('评论内容不能超过2000个字');
+            return false;
+        }
+        
+        $.ajax({
+            type : "POST",
+            dataType : "json",
+            data : {id: 16, content: content, '_csrf': 'eHdnQ3VGN0IBNgIyLQFPGhsFNBcaP1wjSSAfICd.UXM/HA8ZLw1xMw==', 'type': 2, 'pid': pid},
+            url : "/comment/post",
+            beforeSend: function () {
+                $(this).addClass('disabled');
+            },
+            success : function(data) {
+                if( data.code == 0 ) {
+                    // 子评论才发起通知
+                    if (!0 && pid) {
+                        ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "pid": '+ pid +', "cmd": "reply"}');
+                    }
+                    _comment.val('');
+                    $('#totalComment').text(parseInt($('#totalComment').text()) + 1);
+                    layer.alert('发布成功');
+                    
+                    // 异步请求评论列表
+                    $.get('/comment/more', {'id': '16', 'type': 2}, function(msg){
+                        $('.comment-list').html(msg);
+                    });
+
+                } else {
+                    layer.alert(data.reason);
+                }
+                $(this).removeClass('disabled');
+                return false;
+            }
+        });
+    });
+
+    $('.go-pay').on('click', function () {
+        var _this = $(this), has = _this.hasClass('loading');
+        if (!has) {
+            $.ajax({
+                type: 'post',
+                url: '/recharge/get-qr',
+                data: {'type': 1, '_csrf': 'eHdnQ3VGN0IBNgIyLQFPGhsFNBcaP1wjSSAfICd.UXM/HA8ZLw1xMw=='},
+                beforeSend: function () {
+                    _this.addClass('loading');
+                    $('#qrcode').show();
+                    $('#qrcode').text('加载中...');
+                },
+                success: function (data) {
+                    if (data.code == 200) {
+                        $('#qrcode').show();
+                        $('#qrcode').html(data.data);
+                        _this.text('扫一扫付款');
+                        ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "cmd": "refreshOne"}');
+                    } else {
+                        $('#qrcode').show();
+                        $('#qrcode').text(data.msg);
+                    }
+                    _this.removeClass('loading');
+                }
+            });
+        } else {
+
+        }
+    });
+                ws.onopen = function () {
+                    ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "token": "$2y$13$a.vrqGDlJJlJ/amY/bZ4LO/v/yvqTWdTKeBLaFVwGNuQ8QfATAXgC", "cmd": "login"}');
+                };
+
+                ws.onmessage = function (e) {
+                    var data = eval("(" + e.data + ")");
+                    cmd = data.cmd;
+                    if (data.cmd == 'login') {
+                        console.log(data.data);
+                    } else if (data.cmd == 'reply') {
+                        layer.open({
+                          type: 1
+                          ,offset: 'rb'
+                          ,content: '<div style="padding: 20px;">'+data.data+'</div>'
+                          ,btn: false
+                          ,shade: 0 //不显示遮罩
+                          ,yes: function(){
+                          },cancel: function(){
+                            layer.close();
+                            // 已通知到用户，关闭其他tab页
+                            ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "token": "$2y$13$a.vrqGDlJJlJ/amY/bZ4LO/v/yvqTWdTKeBLaFVwGNuQ8QfATAXgC", "cmd": "cancel"}');
+                            return false;
+                          }
+                        });
+                    } else if (data.cmd == 'checkSuccess') {
+                        layer.alert(data.data, function () {
+                            // 已通知到用户，关闭其他tab页
+                            ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "token": "$2y$13$a.vrqGDlJJlJ/amY/bZ4LO/v/yvqTWdTKeBLaFVwGNuQ8QfATAXgC", "cmd": "cancel"}');
+                            return false;
+                        });
+                    } else if (data.cmd == 'cancel') {
+                        layer.closeAll();
+                    } else if (data.cmd == 'refreshOne') {
+                        window.location.reload();
+                    } else if (data.cmd == 'alertTip') {
+                        alert('您有新的产品授权啦，快去看看吧~');
+                    } else if (data.cmd == 'error') {
+                        console.log(data.data);
+                    }
+                    return false;
+                };
+
+                // execption
+                ws.onerror = function () {
+                    console.log('error');
+                };
+
+                // server close
+                ws.onclose = function () {
+                    console.log('close');
+                };
+            $(".post-content p img, #content p img").each(function(item){
+                //放大
+                var src = $(this).attr("src");
+                $(this).wrap('<a href="' + src + '" class="mfp-zoom" style="display:block;"></a>');
+            });
+
+            $(".mfp-zoom").magnificPopup({
+              type: "image"
+            });
+            $(".searchinput").keyup(function(){
+                $(this).next(".searchclear").toggle(Boolean($(this).val()));
+            });
+            // $(".searchclear").toggle(Boolean($(".searchinput").val()));
+            $(".searchclear").click(function(){
+                $(".searchinput").val("");
+
+                $(this).prev(".searchinput").focus();
+                $(this).hide();
+            });
+
+            $(".search-show").on("click", function () {
+                var _this = $(this), _i = _this.find("i"), is = _i.hasClass("fa-remove");
+                if (!is) {
+                    _i.addClass("fa-remove");
+                    $(".site-search").slideDown();
+                    $("input[name=q]").focus();
+                } else {
+                    _i.removeClass("fa-remove");
+                    $(".site-search").slideUp();
+                }
+            });
+
+            var e = $(".so-header"),
+                t = $(".js-search-field"),
+                n = $(".js-search-submit"),
+                i = !1;
+            t.on('focus', function () {
+                e.addClass("_search-open");
+            }).on('blur', function () {
+                i?(t.focus(),i=!1):e.removeClass("_search-open");
+            });
+            n.mousedown(function(){
+                i=!0
+            });
+
+            $('.face, .nav-userinfo').mousemove(function () {
+                $('.nav-userinfo').show();
+            }).mouseout(function () {
+                $('.nav-userinfo').hide();
+            });
+});</script><div style="display:none;">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258541485'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258541485%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1258541485"></span><script src="./yii2项目实战-yii2-admin组件配置及使用 - 白狼栈_files/z_stat.php" type="text/javascript"></script> 
+</div>
+
+
+</body></html>

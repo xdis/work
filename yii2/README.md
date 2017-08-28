@@ -109,6 +109,10 @@
 			- 调试
 				- [beginProfile](fn/debug.md#beginProfile)  代码区间性能检测
 				- [yii2_admin定义Profile](fn/debug.md#yii2_admin定义Profile)
+		- 二维码 @zhou
+			- [二维码配置](fn/qrcode/README.md#二维码配置) 
+			- [生成二维码](fn/qrcode/README.md#生成二维码) 
+			- [访问生成二维码](fn/qrcode/README.md#访问生成二维码) 
 	- 单元测试
 		- demo
 			- [一行代码验证短信](fn/u_test/demo.md#一行代码验证短信) @zhou
@@ -355,7 +359,8 @@
 					- [每次访问的验证伪登陆](fn/rbac.md#每次访问的验证伪登陆)
 				- [rbac验证过程](fn/rbac.md#rbac验证过程)
 		- yii2 admin 分析
-			- [yii2_admin_反射获取action](fn/yii2_admin.md#yii2_admin_反射获取action)
+			- [yii2_admin_反射获取action](fn/yii2_admin/README.md#yii2_admin_反射获取action)
+			- 配置_yii2_admin
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
