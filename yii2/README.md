@@ -227,7 +227,8 @@
 		    - [接收post再验证_例a](post.md#接收post再验证_例a) ($model->save())
 		    - [接收post再验证_例b](post.md#接收post再验证_例b)  ($model->save(false))
 		    - [没有记录插入_否则就更新](post.md#没有记录插入_否则就更新)  -  isGet isPost  insert update  [jason]
-		    -  [没有记录插入_否则就更新_例2](post.md#没有记录插入_否则就更新_例2)
+		    - [没有记录插入_否则就更新_例2](post.md#没有记录插入_否则就更新_例2)
+		    - [没有记录插入_否则就更新_例3](post.md#没有记录插入_否则就更新_例3) 更简洁
 		- yii2自带函数连接
 			- [leftJoin](post.md#leftjoin)
 			- [leftjoin_详细页](post.md#leftjoin_详细页)
