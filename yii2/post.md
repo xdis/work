@@ -312,8 +312,6 @@ $res = $model->save(false);
 
 ## leftjoin
 ```php
-
-```
 public function actionView($id) {
 
         //操作记录
@@ -344,7 +342,7 @@ public function actionView($id) {
             'op_logs' => $_op_logs,
         ]);
     }
-
+```
 ## leftjoin_详细页
 ```php
     public function actionView($id)
