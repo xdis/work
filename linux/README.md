@@ -93,6 +93,12 @@
 			-  scp administrator@192.168.3.181:/d:/test/config.ips  /oracle
 		-  使用指定端口
 			-  scp -P 5803 root@192.168.1.3:/home/Python-2.7.8.tar /home
+	-  rsync使用
+		-  来自 gitSetup git/发布代码/Jenkins_配置
+			-  rsync -avz --exclude=storage/web/source   /var/lib/jenkins/workspace/online_vding/  web1:/mnt/vdb1/2.vding.wang/ 
+	-  ansible 
+		- 来自 gitSetup git/发布代码/Jenkins_配置
+			- ansible web -m shell -a 'cd /mnt/vdb1/2.vding.wang/vfet/;npm run build'
 	- 查看 
 		- uname -a  //查看系统多少位 32位/64
 		- ps
