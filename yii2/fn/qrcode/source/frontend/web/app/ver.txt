@@ -1,0 +1,11 @@
+﻿[android]
+; 安卓最新版本
+latest="http://imtt.dd.qq.com/16891/DFA3575CC4A738A61EDA617B014A7526.apk?fsname=com.vding.wang_V1.0.1_2.apk&csr=4d5s"
+; 安卓最新的稳定版（正式发布版)
+stable=vdingrelease1.0.8_9.apk
+
+[ios]
+; ios 最新版下载链接
+latest=https://itunes.apple.com/app/id1193521071
+; ios 最新稳定版（正式发布版）下载链接
+stable=https://itunes.apple.com/app/id1193521071

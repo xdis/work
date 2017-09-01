@@ -295,12 +295,23 @@ if (Yii::$app->request->isPost) {
 }
 ```
 
+## 没有记录插入_否则就更新_例3
+
+```php
+$model = MpPriceBq::find()->where('product_id=:_product_id',[':_product_id'=>$product_id])->one();
+//插入,否则就更新
+if(!$model){
+    $model = new MpPriceBq();
+    $model->product_id=$product_id;
+}
+$model->group_schedule = $group_schedule;
+$res = $model->save(false);
+```
+
 #yii2自带函数连接  
 
 ## leftjoin
 ```php
-
-```
 public function actionView($id) {
 
         //操作记录
@@ -331,7 +342,7 @@ public function actionView($id) {
             'op_logs' => $_op_logs,
         ]);
     }
-
+```
 ## leftjoin_详细页
 ```php
     public function actionView($id)

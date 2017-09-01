@@ -1,0 +1,54 @@
+(function($){
+    $.extend({
+        lazyload:function(cls){
+            cls = cls || '.lazyload';
+            var imgs =  $(cls);
+            var tid = 0;
+            if(!imgs.length) return;
+            start(imgs);
+            document.onscroll = function(e){
+                clearTimeout(tid);
+                tid = setTimeout(function(){
+                    imgs =  $(cls);
+                    if(!imgs.length){
+                        document.onscroll = null;
+                        return;
+                    }
+                    start(imgs);
+                },100);
+            };
+        }
+    })
+    function start(imgs){
+        $.each(imgs, function(i,v){
+            if(inscreen(v)){
+                load(v,callback);
+            }
+        })
+        function callback(v,src){
+            v.src = src;
+            v.dataset.src = 'loaded';
+            v.className = 'img_loaded';
+        }
+    }
+    function inscreen(img){
+        var rect = img.getBoundingClientRect();
+        return ((rect.top > 0 && rect.top < window.innerHeight && 0x02)
+				| (rect.right > 0 && rect.right < window.innerWidth && 0x01)
+				| (rect.bottom > 0 && rect.bottom < window.innerHeight && 0x02)
+				| (rect.left > 0 && rect.left < window.innerWidth && 0x01)
+			   ) == 0x03;
+    }
+    function load(img,cb,er){
+        var im = new Image();
+        im.src = img.dataset.src;
+        im.onload = function(){
+            cb(img,im.src);
+        }
+        im.onerror = function(){
+        }
+    }
+    window.onload = function(){
+        $.lazyload();
+    };
+})(jQuery)
