@@ -99,6 +99,7 @@
 	-  ansible 
 		- 来自 gitSetup git/发布代码/Jenkins_配置
 			- ansible web -m shell -a 'cd /mnt/vdb1/2.vding.wang/vfet/;npm run build'
+	- nfs 目录镜像挂载到别人服务器  来自 gitSetup nfs
 	- 查看 
 		- uname -a  //查看系统多少位 32位/64
 		- ps
