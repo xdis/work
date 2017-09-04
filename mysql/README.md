@@ -37,6 +37,10 @@
 			```
 	- 1=1妙用
 		- AND IF(_which_day !='0000-00-00', dj_checklist.which_date = _which_day, '1=1') 
+	- if巧用
+		- if(mp_pricelist.original_product_id IS NULL,(if(mp_order.transaction_status!=13,mp_order_detail.quantity,0)),mp_order_detail.quantity)
+	- ifnull巧用
+		- (SELECT ifnull(SUM(mp_order_detail.quantity),0)  FROM mp_order_detail LEFT JOIN mp_order _mp_order ON _mp_order.id = mp_order_detail.order_id WHERE mp_order_detail.original_product_id = {$product_id} AND mp_order_detail.product_model_id !=3 AND mp_order_detail.product_id != mp_order_detail.original_product_id   AND _mp_order.used_day =  mp_order.used_day)
 	- 动态执行sql
 
 		```

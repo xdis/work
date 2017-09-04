@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://www.manks.top/document/yii2-behavior-rbac-assignment.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈 </title>
+    <meta name="description" content="【白狼栈】是一个分享技术的平台,整理了各种前后端技术知识点的实际案例,yii2实战教程,辅导phper进阶,swoole基础入门">
+    <meta name="keywords" content="yii2实战教程,从基础入门到提高,组件扩展开发,rbac权限控制案例,restful api完整案例,swoole基础入门,php异步任务,多进程,websocket实战">
+    <meta name="author" content="白狼">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="baidu-site-verification" content="nwU8lhyTCq">
+    <link rel="shortcut icon" href="http://www.manks.top/favicon.ico">
+    <meta property="qc:admins" content="46676303176516336470">
+    <meta property="wb:webmaster" content="025ac84aaeb8d5e9">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="Wk9qRjFFVWsjDg83aQItMzk9ORJePD4KaxgSJWN9M1odJAIcaw4TGg==">
+    <link href="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/comment.css" rel="stylesheet">
+<link href="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/bootstrap.min.css" rel="stylesheet">
+<link href="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/font-awesome.min.css" rel="stylesheet">
+<link href="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/magnific-popup.min.css" rel="stylesheet">
+<link href="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/site.css" rel="stylesheet">
+<link href="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/monokai-sublime.min.css" rel="stylesheet">
+<script type="text/javascript">        var ws = new WebSocket('ws://120.27.108.137:9512');</script><link rel="stylesheet" href="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/layer.css" id="layuicss-skinlayercss"><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+<body class="home-template">
+        
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.manks.top/">白狼栈</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav so-header">
+                    <li role="presentation"><a href="http://www.manks.top/" class="">首页</a></li><li role="presentation"><a href="http://www.manks.top/document" class="active">yii2 实战式教程</a></li><li role="presentation"><a href="http://www.manks.top/swoole.html" class="">swoole教程</a><em></em></li><li role="presentation"><a href="http://www.manks.top/yii2-analysis.html" class="">yii2源码分析</a><em></em></li><li role="presentation"><a href="http://www.manks.top/question" class="">问答</a><em></em></li>                    <li class="icon-search">
+                        <!-- <a href="javascript:void(0);" class="search-show">
+                            <i class="fa fa-search" style="width: 18px;"></i>
+                        </a> -->
+                        <form id="search" action="http://zhannei.baidu.com/cse/search" method="get" class="searchbar" autocomplete="off">
+                            <i class="fa fa-search" role="icon" style="width: 18px;height: 18px;line-height: 18px;"></i>
+                            <input type="hidden" name="s" value="8229360318115300437">
+                            <input type="hidden" name="entry" value="1">
+                            <input name="q" type="text" placeholder="搜索" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                            <button type="submit" class="btn js-search-submit s-btn">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </li>
+
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                                            <li role="presentation">
+                            <a class="" href="http://www.manks.top/user/notice">
+                                消息
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <!--<a href="/user" class="">个人中心</a>-->
+                            <div class="r-p" style="position:relative;">
+                                <div class="face">
+                                    <img class="face-img" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/361.jpg">
+                                </div>
+                                <div class="nav-userinfo" style="display:none;">
+                                    <ul class="menu">
+                                        <li class="open-li"><a href="http://www.manks.top/user">我的主页</a></li>
+                                        <li class="open-li"><a href="http://www.manks.top/user/favorate">我的收藏</a></li>
+                                        <li class="open-li"><a href="http://www.manks.top/user/change-password">修改密码</a></li>
+                                        <li class="open-li" style="border-top: 1px solid #e9e9e9;"><a href="http://www.manks.top/user/logout" data-method="post">退出</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </li>
+                                    </ul>
+            </div>
+            <!--/.nav-collapse -->
+            <!-- search form -->
+            <div class="site-search active">
+                <div class="container">
+                    <form method="get" class="site-search-form" action="http://zhannei.baidu.com/cse/search">
+                        <input type="hidden" name="s" value="8229360318115300437">
+                        <input type="hidden" name="entry" value="1">
+                        <input class="search-input" name="q" type="text" placeholder="输入关键字搜索"><button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <section id="main" style="margin-top: 87px;">
+        
+<style>
+.inactive { color: #959595; }
+.active { color: #e67e22; }
+.favorate { cursor: pointer; }
+</style>
+
+<!-- <header class="bs-header">
+</header> -->
+<div class="container">
+    <div class="row">
+        <aside id="sidebar" class="col-lg-3">
+            <nav class="bs-sidebar">
+                <ul class="nav bs-sidenav">
+                                                    <li>
+                                    <a data-toggle="collapse" href="http://www.manks.top/document/yii2-behavior-rbac-assignment.html#quick-start">快速开始 <i class="fa fa-angle-down"></i></a>
+                                                                            <ul id="quick-start" class="nav nav-child collapse">
+                                                                                        <li class="" id="data-install"><a href="http://www.manks.top/document/install.html">安装</a></li>
+                                                                                        <li class="" id="data-yii-first-application"><a href="http://www.manks.top/document/yii-first-application.html">第一个Yii程序</a></li>
+                                                                                        <li class="" id="data-easy-blog-manage-system"><a href="http://www.manks.top/document/easy-blog-manage-system.html">新手入门指南-简单博客管理系统</a></li>
+                                                                                    </ul>
+                                                                    </li>
+                                                    <li>
+                                    <a data-toggle="collapse" href="http://www.manks.top/document/yii2-behavior-rbac-assignment.html#project">项目实战 <i class="fa fa-angle-down"></i></a>
+                                                                            <ul id="project" class="nav nav-child in" style="height: auto;">
+                                                                                        <li class="" id="data-yii2-blog-description"><a href="http://www.manks.top/document/yii2-blog-description.html">概述</a></li>
+                                                                                        <li class="" id="data-yii2-blog-config"><a href="http://www.manks.top/document/yii2-blog-config.html">配置</a></li>
+                                                                                        <li class="" id="data-yii2-blog-manage"><a href="http://www.manks.top/document/yii2-blog-manage.html">博客管理平台的搭建</a></li>
+                                                                                        <li class="" id="data-yii2-user-config"><a href="http://www.manks.top/document/yii2-user-config.html">用户管理之user组件的配置</a></li>
+                                                                                        <li class="" id="data-yii2-user"><a href="http://www.manks.top/document/yii2-user.html">用户管理之登录与注册功能实现</a></li>
+                                                                                        <li class="" id="data-yii2-filter-control"><a href="http://www.manks.top/document/yii2-filter-control.html">访问控制过滤器ACF讲解</a></li>
+                                                                                        <li class="" id="data-yii2-rbac-understand"><a href="http://www.manks.top/document/yii2-rbac-understand.html">了解一下基于角色的访问控制</a></li>
+                                                                                        <li class="" id="data-yii2-rbac-table"><a href="http://www.manks.top/document/yii2-rbac-table.html">yii自带rbac数据表分析</a></li>
+                                                                                        <li class="" id="data-yii2-rbac-assignment-example"><a href="http://www.manks.top/document/yii2-rbac-assignment-example.html">基于角色的访问控制（rbac）分配案例</a></li>
+                                                                                        <li class="" id="data-yii2-behavior"><a href="http://www.manks.top/document/yii2-behavior.html">行为的理解</a></li>
+                                                                                        <li class="active" id="data-yii2-behavior-rbac-assignment"><a href="http://www.manks.top/document/yii2-behavior-rbac-assignment.html">通过行为，解决rbac的分配问题</a></li>
+                                                                                        <li class="" id="data-yii2-admin-components"><a href="http://www.manks.top/document/yii2-admin-components.html">yii2-admin组件配置及使用</a></li>
+                                                                                        <li class="" id="data-yii2-menu-rbac"><a href="http://www.manks.top/document/yii2-menu-rbac.html">权限菜单管理</a></li>
+                                                                                        <li class="" id="data-yii2-modal"><a href="http://www.manks.top/document/yii2-modal.html">modal初识</a></li>
+                                                                                        <li class="" id="data-how-to-custom-theme-template"><a href="http://www.manks.top/document/how-to-custom-theme-template.html">如何自定义后台的模版主题</a></li>
+                                                                                        <li class="" id="data-yii2-theme"><a href="http://www.manks.top/document/yii2-theme.html">主题Theme的应用</a></li>
+                                                                                        <li class="" id="data-yii2-filtermodel"><a href="http://www.manks.top/document/yii2-filtermodel.html">filterModel搜索机制的实现分析</a></li>
+                                                                                        <li class="" id="data-yii2-multitable-relation"><a href="http://www.manks.top/document/yii2-multitable-relation.html">多表关联操作</a></li>
+                                                                                        <li class="" id="data-yii2-event"><a href="http://www.manks.top/document/yii2-event.html">事件初识</a></li>
+                                                                                        <li class="" id="data-yii2-event-email-example"><a href="http://www.manks.top/document/yii2-event-email-example.html">用事件优雅的发送邮件</a></li>
+                                                                                        <li class="" id="data-yii2-event-predefine"><a href="http://www.manks.top/document/yii2-event-predefine.html">预定义事件的使用</a></li>
+                                                                                        <li class="" id="data-yii2-urlManager-prettyUrl"><a href="http://www.manks.top/document/yii2-urlManager-prettyUrl.html">路由美化以及如何正确的生成链接</a></li>
+                                                                                        <li class="" id="data-yii2-console"><a href="http://www.manks.top/document/yii2-console.html">console应用的了解</a></li>
+                                                                                        <li class="" id="data-yii2-asset-bundle"><a href="http://www.manks.top/document/yii2-asset-bundle.html">资源包管理</a></li>
+                                                                                        <li class="" id="data-yii2-restful-authenticate"><a href="http://www.manks.top/document/yii2-restful-authenticate.html">restful api之授权验证</a></li>
+                                                                                        <li class="" id="data-yii2-authclient"><a href="http://www.manks.top/document/yii2-authclient.html">第三方登录的实现</a></li>
+                                                                                        <li class="" id="data-yii2-db-query"><a href="http://www.manks.top/document/yii2-db-query.html">那些年错过的数据库查询</a></li>
+                                                                                        <li class="" id="data-yii2-data-cache"><a href="http://www.manks.top/document/yii2-data-cache.html">性能优化之数据缓存</a></li>
+                                                                                        <li class="" id="data-yii2-third-code"><a href="http://www.manks.top/document/yii2-third-code.html">集成第三方代码</a></li>
+                                                                                        <li class="" id="data-yii2-webuploader"><a href="http://www.manks.top/document/yii2-webuploader.html">图片上传之webuploader的使用</a></li>
+                                                                                    </ul>
+                                                                    </li>
+                                    </ul>
+            </nav>
+        </aside>
+
+        <section id="content" class="col-lg-9">
+
+                            <h2 style="margin-top: 0;">yii2项目实战-通过行为，解决rbac的分配问题<br>
+                    <div style="color: #999;font-size: 10px;margin-top: 10px;">
+                        更新于 2017年08月30日 by 白狼 被浏览了 3394 次
+                    </div>
+                    <span href="javascript:void(0);" title="" data-title="取消收藏" data-type="0" class="favorate " data-toggle="tooltip" data-placement="top" style="margin: 0 7px; font: 12px/1.8 Microsoft YaHei;cursor:pointer;" data-original-title="我要收藏">
+                        <i class="fa fa-star-o"></i> <span style="margin: 0;">0</span>
+                    </span>
+                    <span href="javascript:void(0);" title="" data-title="取消赞" data-type="1" data-toggle="tooltip" data-placement="top" class="favorate " style="font: 12px/1.8 Microsoft YaHei;cursor:pointer;" data-original-title="点赞">
+                        <i class="fa fa-thumbs-o-up"></i> <span style="margin: 0;">0</span>   
+                    </span>
+                </h2>
+                
+                <p>首先我们感谢付费订阅的用户，那么有耐心的看我不厌其烦的讲解，本系列教程也一定不负您的众望！</p><p>今天我们就准备结束漫长的RBAC啦，当然，看完我们今天讲的内容，你应该能够独立的实现一套RBAC管理体系了！为什么这么说呢，因为即使我们后面引入一套第三方的rbac组件，还是有很多人不喜欢他的风格，想要定制呢！</p><p>好啦，我们言归正传，看看如何通过行为解决困扰我们几节课的矛盾吧。</p><p>等等，等等，有同学上来要问了，我们在<a href="http://www.manks.top/document/yii2-rbac-assignment-example.html">基于角色的访问控制（rbac）分配案例</a><a href="http://www.manks.top/document/yii2-rbac-assignment-example.html"></a>文末抛出的100个控制器的问题，当时说要通过行为解决的，可是上节课讲的行为听是听懂了，但是还是没解决这个100个控制器的问题呀，不还是需要手动一个一个的去附加行为吗？</p><p>容我想想，还真是这么回事。不过，我上节课说行为还有其他的附加形式，不知道你私下有没有翻翻手册呢？</p><p>还不知道怎么处理的，我提个醒，通过配置去附加行为。在你的配置文件main.php中，components同级添加如下代码，注意位置千万不要写错了。</p><pre class="hljs php"><span class="hljs-string">'as myBehavior2'</span> =&gt; MyBehavior::className(),
+</pre><p>然后自己去尝试下效果吧，我们继续讲本篇的重点。</p><p>目前我们的 BlogController 有5个操作，分别是index、view、create、update 和 delete，我们来看看如何判断用户是否有操作这几个action的权限！</p><p>打开 RbacController，我们先把这几个路由权限添加并分配给“博客管理”这个角色。（上上篇文章中我们已经把该角色分配给uid=1的用户了哦~）</p><pre class="hljs xml"><span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">backend</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RbacController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-comment">// 添加权限</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionInit2</span> <span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+
+        <span class="hljs-comment">// 添加权限, 注意斜杠不要反了</span>
+        <span class="hljs-variable">$blogView</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'/blog/view'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$blogView</span>);
+        <span class="hljs-variable">$blogCreate</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'/blog/create'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$blogCreate</span>);
+        <span class="hljs-variable">$blogUpdate</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'/blog/update'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$blogUpdate</span>);
+        <span class="hljs-variable">$blogDelete</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'/blog/delete'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$blogDelete</span>);
+
+        <span class="hljs-comment">// 分配给我们已经添加过的"博客管理"权限</span>
+        <span class="hljs-variable">$blogManage</span> = <span class="hljs-variable">$auth</span>-&gt;getRole(<span class="hljs-string">'博客管理'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$blogManage</span>, <span class="hljs-variable">$blogView</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$blogManage</span>, <span class="hljs-variable">$blogCreate</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$blogManage</span>, <span class="hljs-variable">$blogUpdate</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$blogManage</span>, <span class="hljs-variable">$blogDelete</span>);
+    }
+}
+</span></pre><p>接着访问 /index.php?r=rbac/init2 来执行我们刚刚写好的程序。空白...空白就对了，执行结束就意外着这几个权限我们已经添加成功了！</p><p>下面，就是我们重点要实现的验证授权啦！</p><p>在 backend\components 中创建行为类 AccessControl，</p><p>修改 BlogController 的 behaviors 方法，配置一下我们的行为类</p><pre class="hljs php"><span class="hljs-comment">/**
+ *<span class="hljs-phpdoc"> @inheritdoc</span>
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">//附加行为</span>
+        <span class="hljs-comment">// 'myBehavior' =&gt; \backend\components\MyBehavior::className(),</span>
+        <span class="hljs-string">'as access'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'backend\components\AccessControl'</span>,
+        ],
+        <span class="hljs-string">'verbs'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; VerbFilter::className(),
+            <span class="hljs-string">'actions'</span> =&gt; [
+                <span class="hljs-string">'delete'</span> =&gt; [<span class="hljs-string">'POST'</span>],
+            ],
+        ],
+    ];
+}</pre><p>注：这里写的 ‘as access’ 只是一个名字而已，没什么其他的含义。</p><p>就像我们开篇所说的100个控制器的问题，你就不用再每一个控制器都附加行为啦，通过配置，一键解决所有问题。</p><p>好了，下面我们就简单的看一下这个授权行为类的实现吧。</p><pre class="hljs xml"><span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">backend</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">ForbiddenHttpException</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AccessControl</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">ActionFilter</span>
+</span>{
+    <span class="hljs-comment">/**
+     *  对用户请求的路由进行验证
+     * <span class="hljs-phpdoc"> @return</span> true 表示有权访问
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">beforeAction</span> <span class="hljs-params">(<span class="hljs-variable">$action</span>)</span>
+    </span>{
+        <span class="hljs-comment">// 当前路由</span>
+        <span class="hljs-variable">$actionId</span> = <span class="hljs-variable">$action</span>-&gt;getUniqueId();
+        <span class="hljs-variable">$actionId</span> = <span class="hljs-string">'/'</span> . <span class="hljs-variable">$actionId</span>;
+
+        <span class="hljs-comment">// 当前登录用户的id</span>
+        <span class="hljs-variable">$user</span> = Yii::<span class="hljs-variable">$app</span>-&gt;getUser();
+        <span class="hljs-variable">$userId</span> = <span class="hljs-variable">$user</span>-&gt;id;
+
+        <span class="hljs-comment">// 获取当前用户已经分配过的路由权限</span>
+        <span class="hljs-comment">// 写的比较简单，有过基础的可自行完善，比如解决"*"的问题，看不懂的该行注释自行忽略</span>
+        <span class="hljs-variable">$routes</span> = [];
+        <span class="hljs-variable">$manager</span> = Yii::<span class="hljs-variable">$app</span>-&gt;getAuthManager();
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$manager</span>-&gt;getPermissionsByUser(<span class="hljs-variable">$userId</span>) <span class="hljs-keyword">as</span> <span class="hljs-variable">$name</span> =&gt; <span class="hljs-variable">$value</span>) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$name</span>[<span class="hljs-number">0</span>] === <span class="hljs-string">'/'</span>) {
+                <span class="hljs-variable">$routes</span>[] = <span class="hljs-variable">$name</span>;
+            }
+        }
+
+        <span class="hljs-comment">// 判断当前用户是否有权限访问正在请求的路由</span>
+        <span class="hljs-keyword">if</span> (in_array(<span class="hljs-variable">$actionId</span>, <span class="hljs-variable">$routes</span>)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+
+        <span class="hljs-variable">$this</span>-&gt;denyAccess(<span class="hljs-variable">$user</span>);
+    }
+
+    <span class="hljs-comment">/**
+     *  拒绝用户访问
+     *  访客，跳转去登录；已登录，抛出403
+     * <span class="hljs-phpdoc"> @param</span> $user 当前用户
+     * <span class="hljs-phpdoc"> @throws</span> ForbiddenHttpException 如果用户已经登录，抛出403.
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">denyAccess</span><span class="hljs-params">(<span class="hljs-variable">$user</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$user</span>-&gt;getIsGuest()) {
+            <span class="hljs-variable">$user</span>-&gt;loginRequired();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ForbiddenHttpException(<span class="hljs-string">'不允许访问.'</span>);
+        }
+    }
+}</span></pre><p>rbac系列的文章我们到这里就讲解了5篇从基础到高级的文章，从数据表到实现方式基本上是里里外外讲个了通透！我们的目的非常简单，重难点让你更轻易的理解！</p><p>但是，操作中不知道你有没有发现，每次我们添加权限都是要通过 rbacController 进行操作，这明显又是一个麻烦的事情！从另一个层面去说，完全没关系，我们只要实现界面化是不是就ok了呢？是的，完全就是这么回事！如果你有定制开发rbac的需求，剩下的界面化工作就交给你啦。</p><p>对绝大多数人来说，理解原理才是最重要的。万一真有哪一天要自己实现一套权限控制体系，那也都不是事。</p><p>后面，我们就不带大家手动开发界面上的操作部分啦，我们准备集成组件 yii2-admin，来快速完善我们的管理平台！</p><p>当然，到后面你会发现，yii2-admin这套组件，完全就是按照我们这几篇文章讲的一样，不过是比我们完善了界面上的操作。</p><p><span style="background-color:rgb(255,230,148);"></span></p>                        
+             
+            <div class="comments">
+                 <div class="ds-thread" id="ds-thread">
+                    <div id="ds-reset">
+                        <div class="ds-comments-info">
+                            <ul class="ds-comments-tabs">
+                                <div class="ds-sort">
+                                    <a class="">
+                                        共<span id="totalComment">44</span>条评论
+                                    </a>
+                                </div>
+                                <li class="ds-tab">
+                                    <a class="">评论区</a>
+                                </li>  
+                            </ul>
+                        </div>
+                        <input type="hidden" name="pid" value="0">
+                        <div class="ds-replybox">
+                                                            <a class="ds-avatar" href="javascript:void(0);" target="_blank" title="">
+                                    <img class="img_loaded" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/361.jpg" data-src="loaded" alt="头像">
+                                </a>
+                                <form method="post">
+                                    <div class="ds-textarea-wrapper ds-rounded-top">
+                                        <textarea name="content" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea>
+                                    </div>
+                                    <div class="ds-post-toolbar">
+                                        <div class="ds-post-options ds-gradient-bg"></div>
+                                        <button class="ds-post-button publish" data-pid="0" type="button" style="background: #1E9FFF; color: #fff; border: 1px solid #1E9FFF; text-shadow: inherit; box-shadow: inherit;">发布</button>
+                                    </div>
+                                </form>
+                                                    </div>
+
+                        <div class="comment-list"><div class="ds-replybox ds-inline-replybox" style="display:none;">
+    <a class="ds-avatar" href="javascript:void(0);" target="_blank" title="">
+        <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/361.jpg" alt="头像">
+    </a>
+    <form method="post">
+        <div class="ds-textarea-wrapper ds-rounded-top">
+            <textarea name="content" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea>
+        </div>
+        <div class="ds-post-toolbar">
+            <div class="ds-post-options ds-gradient-bg"></div>
+            <button class="ds-post-button publish" type="button" style="background: #1E9FFF; color: #fff; border: 1px solid #1E9FFF; text-shadow: inherit; box-shadow: inherit;">发布</button>
+        </div>
+    </form>
+</div>
+
+
+ 
+<ul class="ds-comments">
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="img_loaded" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/122.jpg" data-src="loaded" alt="anjiacm">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">anjiacm</a>
+                </div>
+                <p> protected function denyAccess($user)<br>
+    {<br>
+        if ($user-&gt;getIsGuest()) {<br>
+            $user-&gt;loginRequired();<br>
+        } else {<br>
+            throw new ForbiddenHttpException('不允许访问.');<br>
+        }<br>
+    }<br>
+文中说的这个方法下  getIsGuest 和loginRequired 这两个方法是不存在的吗？为什么还能执行</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-30 14:48</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2776">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="img_loaded" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/1.jpg" data-src="loaded" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>存在，见 yii\web\User</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-30 15:05</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2776">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/122.jpg" alt="anjiacm">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">anjiacm</a>
+                </div>
+                <p>文中说：通过配置去附加行为。在你的配置文件main.php中，向下面这样跟components同级下如下代码，千万要注意位置不要写错了：'as myBehavior2' =&gt; MyBehavior::className(),   在main.php里添加后就报错了  为什么额</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-30 14:43</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2775">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>你起码应该把错误贴出来吧</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-30 15:04</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2775">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="anjiacm">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/122.jpg" alt="anjiacm">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">anjiacm</a>
+                        </div>
+                        <p>就是如果写成'as myBehavior2' =&gt; MyBehavior::className(),就会提示Class 'MyBehavior' not found in D:\xampp\htdocs\yongrun\advancedyii\backend\config\main.php on line 15<br>
+然后改成了  \backend\components\MyBehavior::className(),就正常了</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-30 15:09</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2775">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>这肯定要写全了，文中只是打个比方，并没有实际意义</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-30 15:14</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2775">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="anjiacm">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/122.jpg" alt="anjiacm">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">anjiacm</a>
+                        </div>
+                        <p>好吧 谢谢了  </p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-30 15:17</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2775">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/80.jpg" alt="linceln">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">linceln</a>
+                </div>
+                <p>“这明显又是一个麻烦且合理的事情！” 这是不是有笔误？</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-29 14:03</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2750">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>已更新，感谢反馈</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-29 14:07</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2750">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/79.jpg" alt="你二不二二就在呢">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">你二不二二就在呢</a>
+                </div>
+                <p>666，这样分析原理，，最后是composer，，省去了自己瞎折腾的时间。。</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-27 16:22</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2711">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/82.jpg" alt="10795513**@qq.com">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">10795513**@qq.com</a>
+                </div>
+                <p>狼哥，中间有一段代码不是太理解，这个条件 $name[0] === '/'，为什么这样写啊？<br>
+ foreach ($manager-&gt;getPermissionsByUser($userId) as $name =&gt; $value) {<br>
+            if ($name[0] === '/') {<br>
+                $routes[] = $name;<br>
+            }<br>
+        }</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-08-04 08:09</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="2507">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>我们这里的目的是为了获取当前用户已经分配过的路由权限，但是auth_item表存储的是不仅仅只有路由，还包括角色，权限，这一点在rbac数据表http://www.manks.top/document/yii2-rbac-table.html有过分析。<br>
+路由的标识是以/斜杠打头，所以这里是为了过滤掉角色和权限。</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-04 08:55</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2507">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="10795513**@qq.com">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/82.jpg" alt="10795513**@qq.com">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">10795513**@qq.com</a>
+                        </div>
+                        <p>谢谢狼哥，懂了</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-07 11:06</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2507">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="你二不二二就在呢">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/79.jpg" alt="你二不二二就在呢">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">你二不二二就在呢</a>
+                        </div>
+                        <p>auth_item里面是路由和角色，我一般都是把路由理解成权限，不知道对不对？</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-08-27 16:20</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="2507">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/97.jpg" alt="洛豳枭薰">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">洛豳枭薰</a>
+                </div>
+                <p>我添加后，test1只能访问blog/index,其余的页面都不能访问，这是为啥？</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-06-12 09:37</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="1996">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>注意两个问题<br>
+1、路由的分配问题，确保路由格式为 /controller/action<br>
+2、确保给用户分配了权限</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-06-12 10:06</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="1996">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="洛豳枭薰">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/97.jpg" alt="洛豳枭薰">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">洛豳枭薰</a>
+                        </div>
+                        <p>反斜杠打错了，已解决</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-06-12 10:11</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="1996">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/354.jpg" alt="justforwo**@163.com">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">justforwo**@163.com</a>
+                </div>
+                <p>另外还有个问题，楼主这几篇rbac讲的是把操作写在控制器里，想要生效还要先访问一下 init 或者 init2，实际生产环境中是这样写吗？</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-03-22 16:54</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="1400">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>这里主要做一些练习，继续把下面两篇也看完吧，生产上可以利用第三方组件yii2-admin来操作，或者参考</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-03-22 17:01</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="1400">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/354.jpg" alt="justforwo**@163.com">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">justforwo**@163.com</a>
+                </div>
+                <p>感觉 foreach 循环那里看不太懂，博主可以详细讲一下吗？</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-03-21 18:57</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="1397">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title=" 眸雨如尘">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/236.jpg" alt=" 眸雨如尘">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank"> 眸雨如尘</a>
+                        </div>
+                        <p>如果你了解RBAC的话，就知道一般的RBAC表设计，和YII2自带的不一样。。YII2的表，角色和权限节点，都在 item表里。。这就需要判断哪些是角色，哪些是节点。。<br>
+foreach里就是循环，通过判断名称 是不是 以 “斜杠”开通的来判断</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-05-31 19:57</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="1397">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/340.jpg" alt="fdhello">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">fdhello</a>
+                </div>
+                <p>&lt;?php<br>
+<br>
+$a = "blog/index";<br>
+var_dump($a);<br>
+var_dump($a[4]);<br>
+为什么字符串可以数组下标取值？<br>
+//string(10) "blog/index" string(1) "/"<br>
+?&gt;</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-02-24 01:47</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="1083">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>php中，是可以这样操作的，不过有一些限制，比如下标只能是整数或可转换为整数的字符串，具体细节可以翻阅手册查看。</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-02-24 09:07</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="1083">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+        <li class="ds-post">
+        <div class="ds-post-self">
+            <div class="ds-avatar">
+                <a target="_blank" href="javascript:void(0)">
+                    <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/89.jpg" alt="zgp00**@qq.com">
+                </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="ds-comment-header">
+                    <a class="ds-user-name ds-highlight" href="javascript:void(0)" target="_blank">zgp00**@qq.com</a>
+                </div>
+                <p>访问init   和init2  都报这个 Integrity constraint violation: 1062   还要自己增加主键吗</p>
+                <div class="ds-comment-footer ds-comment-actions">
+                    <span class="ds-time">2017-02-14 16:16</span>
+                    <a class="ds-post-reply post-reply ?&gt;" href="javascript:void(0);" data-pid="974">
+                        <span class="ds-icon ds-icon-reply"></span>回复
+                    </a>
+                    <!--<a class="ds-post-delete" href="javascript:void(0);">
+                        <span class="ds-icon ds-icon-delete"></span>删除
+                    </a>-->
+                </div>
+                <!-- reply -->
+            </div>
+        </div>
+         
+        <ul class="ds-children">
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>你的数据表是不是创建的不对？数据表的创建参考 http://www.manks.top/document/yii2-rbac-table.html</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-02-14 17:09</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="974">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="zgp00**@qq.com">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/89.jpg" alt="zgp00**@qq.com">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">zgp00**@qq.com</a>
+                        </div>
+                        <p>我又重新建了一遍   添加数据的时候还是报这个错   SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '/blog/view' for key 'PRIMARY'<br>
+The SQL being executed was: INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES ('/blog/view', 2, NULL, NULL, NULL, 1487124899, 1487124899)<br>
+Error Info: Array<br>
+(<br>
+    [0] =&gt; 23000<br>
+    [1] =&gt; 1062<br>
+    [2] =&gt; Duplicate entry '/blog/view' for key 'PRIMARY'<br>
+)</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-02-15 10:22</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="974">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>哦哦，这个错误说明主键重复了，所有添加失败，你可以吧auth_item表清一下再做练习</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-02-15 10:31</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="974">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="zgp00**@qq.com">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/default/89.jpg" alt="zgp00**@qq.com">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">zgp00**@qq.com</a>
+                        </div>
+                        <p>auth_item表  我在数据库中添加数据不重复不报错  重复就报错了     再清空状态下  访问init  init2 还是报这个错   我的yii2的版本是2.0.11.1 和版本有关系吗</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-02-15 10:54</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="974">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+             
+            <li class="ds-post">
+                <div class="ds-post-self">
+                    <div class="ds-avatar">
+                        <a target="_blank" href="javascript:void(0);" title="白狼">
+                            <img class="lazyload" src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/head.jpg" data-src="http://www.manks.top/static/head/user/1.jpg" alt="白狼">
+                        </a>
+                    </div>
+                    <div class="ds-comment-body">
+                        <div class="ds-comment-header">
+                            <a class="ds-user-name ds-highlight" href="javascript:void(0);" target="_blank">白狼</a>
+                        </div>
+                        <p>跟版本没关系，name字段是主键，不能重复，如果数据库里面有个，再添加就是会报错</p>
+                        <div class="ds-comment-footer ds-comment-actions">
+                            <span class="ds-time">2017-02-15 10:57</span>
+                            <a class="ds-post-reply post-reply" href="javascript:void(0);" data-pid="974">
+                                <span class="ds-icon ds-icon-reply"></span>回复
+                            </a>
+                            <!--<a class="ds-post-delete" href="javascript:void(0);">
+                                <span class="ds-icon ds-icon-delete"></span>删除
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+                    </ul>
+            </li>
+    </ul>
+
+<div class="ds-paginator"><div class="ds-border"></div>
+<a class="ds-current" data-page="0">1</a>
+<a class="" href="http://www.manks.top/comment/more?id=15&amp;type=2&amp;page=2" data-page="1">2</a>
+<a class="nextPage" href="http://www.manks.top/comment/more?id=15&amp;type=2&amp;page=2" data-page="1">下一页</a></div>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/jquery.min.js.下载"></script>
+<script type="text/javascript">    $('.post-reply').on('click', function () {
+        if (0) {
+            layer.alert('请先登录');
+            return false;
+        }
+        var _this = $(this), _p = _this.parent('.ds-comment-actions'), pid = _this.data('pid');
+        _c = $('.ds-inline-replybox');
+        _c.show();
+        _p.after(_c);
+        _c.find('.publish').data('pid', pid);
+        return false;
+    });</script></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+    
+    </section>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">友情链接</h4>
+                        <div class="content tag-cloud friend-links">
+                            <a href="http://www.bootcss.com/" title="Bootstrap中文网" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;bootcsscom&#39;])" target="_blank">Bootstrap中文网</a>
+                            <a href="http://www.bootcdn.cn/" title="开放CDN服务" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;bootcdncn&#39;])" target="_blank">开放CDN服务</a>
+                            <a href="http://www.yiiframework.com/" title="Yii2.0官方文档" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;yiiframeworkcom&#39;])" target="_blank">Yii2.0官方文档</a>
+                            <a href="http://www.jquery123.com/" title="jQuery中文文档" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;jquery123com&#39;])" target="_blank">jQuery中文文档</a>
+                            <a href="http://www.aliyun.com/" title="阿里云" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;aliyun&#39;])" target="_blank">阿里云</a>
+                            <a href="http://git.oschina.net/" title="码云" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;oschinanet&#39;])" target="_blank">码云</a>
+                            <a href="https://almsaeedstudio.com/" title="almsaeedstudio" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;almsaeedstudiocom&#39;])" target="_blank">almsaeedstudio</a>
+                            <a href="http://www.yiichina.com/" title="Yii中文社区" onclick="_hmt.push([&#39;_trackEvent&#39;, &#39;link&#39;, &#39;click&#39;, &#39;yiichinacom&#39;])" target="_blank">Yii中文社区</a>
+                            <a href="http://www.manks.top/sitemap.xml" target="_blank">站点地图</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">联系我</h4>
+                        <div class="content tag-cloud friend-links">
+                            <span>email：bailangzhan@qq.com</span><br>
+                            <span>QQ群：147533993</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">服务商</h4>
+                        <div class="content tag-cloud friend-links">
+                            <a href="https://www.upyun.com/" target="_blank"><img src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/upyun_logo6.png" alt="又拍云" height="50px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>
+                        <a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备16006462号-1</a>
+                    </span>
+                    <span><img src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/beian.png" alt="浙公网安备" style="width: 15px; height: 15px; line-height: 15px; margin-top: -4px;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010202000482" target="_blank">浙公网安备 33010202000482号</a></span>
+                    <span>Copyright © <a href="http://www.manks.top/">白狼栈</a> 2016-2017</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="http://www.manks.top/document/yii2-behavior-rbac-assignment.html#" id="back-to-top" style="display: none;"><i class="fa fa-angle-up"></i></a>
+
+    
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/jquery.min.js.下载"></script>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/bootstrap.min.js.下载"></script>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/jquery.fitvids.min.js.下载"></script>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/highlight.min.js.下载"></script>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/jquery.magnific-popup.min.js.下载"></script>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/main.js.下载"></script>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/lazyload.js.下载"></script>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/layer.js.下载"></script>
+<script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/yii.js.下载"></script>
+<script type="text/javascript">jQuery(document).ready(function () {
+
+    $(".favorate").on("click", function () {
+        var $this = $(this),
+            uid = 157,
+            status = $this.hasClass("active"),
+            numObj = $this.find("span"),
+            num = parseInt(numObj.html()),
+            data = {type: $this.data("type"), id: "yii2-behavior-rbac-assignment", _csrf: "Wk9qRjFFVWsjDg83aQItMzk9ORJePD4KaxgSJWN9M1odJAIcaw4TGg==", content_type: 2};
+        if (!uid) {
+            window.location="/login.html";
+        }
+        $.ajax({
+            type: "post",
+            url: "/favorate/article-favorate",
+            data: data,
+            beforeSend: function () {
+                if (uid) {
+                    if (status) {
+                        $this.removeClass("active");
+                        numObj.html(num-1);
+                    } else {
+                        $this.addClass("active");
+                        numObj.html(num+1);
+                    }
+                    // var title_o = $this.attr("title");
+                    // $this.attr("title", $this.data("title"));
+                    // $this.data("title", title_o);
+                }
+            },
+            success: function (data) {},
+            error: function (resp) {
+                console.log(resp);
+            },
+        });
+    });
+
+
+    $("[data-toggle=\"tooltip\"]").tooltip();
+
+
+    var id = "yii2-behavior-rbac-assignment",
+        _li = $("#data-"+id);
+        show_id = _li.parent().attr("id");
+
+    $("#"+show_id).collapse("show");
+
+    // 评论分页
+    $(document).on('click','.comment-list a',function(e){
+        e.preventDefault();
+        var url=$(this).attr('href');
+        $.get(url,function(msg){
+            $('.comment-list').html(msg);
+        });
+    });
+
+    // 异步请求评论列表
+    $.get('/comment/more', {'id': '15', 'type': 2}, function(msg){
+        $('.comment-list').html(msg);
+    });
+
+    // 评论
+    $(document).on('click', '.publish', function () {
+        var _this = $(this), pid = _this.data('pid');
+        if (_this.hasClass('disabled')) {
+            return false;
+        }
+        var _comment = _this.parents('form').find('textarea[name="content"]');
+        var content = _comment.val();
+        if (content == '') {
+            layer.alert('请输入评论内容');
+            return false;
+        }
+
+        if (content.length > 2000) {
+            layer.alert('评论内容不能超过2000个字');
+            return false;
+        }
+        
+        $.ajax({
+            type : "POST",
+            dataType : "json",
+            data : {id: 15, content: content, '_csrf': 'Wk9qRjFFVWsjDg83aQItMzk9ORJePD4KaxgSJWN9M1odJAIcaw4TGg==', 'type': 2, 'pid': pid},
+            url : "/comment/post",
+            beforeSend: function () {
+                $(this).addClass('disabled');
+            },
+            success : function(data) {
+                if( data.code == 0 ) {
+                    // 子评论才发起通知
+                    if (!0 && pid) {
+                        ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "pid": '+ pid +', "cmd": "reply"}');
+                    }
+                    _comment.val('');
+                    $('#totalComment').text(parseInt($('#totalComment').text()) + 1);
+                    layer.alert('发布成功');
+                    
+                    // 异步请求评论列表
+                    $.get('/comment/more', {'id': '15', 'type': 2}, function(msg){
+                        $('.comment-list').html(msg);
+                    });
+
+                } else {
+                    layer.alert(data.reason);
+                }
+                $(this).removeClass('disabled');
+                return false;
+            }
+        });
+    });
+
+    $('.go-pay').on('click', function () {
+        var _this = $(this), has = _this.hasClass('loading');
+        if (!has) {
+            $.ajax({
+                type: 'post',
+                url: '/recharge/get-qr',
+                data: {'type': 1, '_csrf': 'Wk9qRjFFVWsjDg83aQItMzk9ORJePD4KaxgSJWN9M1odJAIcaw4TGg=='},
+                beforeSend: function () {
+                    _this.addClass('loading');
+                    $('#qrcode').show();
+                    $('#qrcode').text('加载中...');
+                },
+                success: function (data) {
+                    if (data.code == 200) {
+                        $('#qrcode').show();
+                        $('#qrcode').html(data.data);
+                        _this.text('扫一扫付款');
+                        ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "cmd": "refreshOne"}');
+                    } else {
+                        $('#qrcode').show();
+                        $('#qrcode').text(data.msg);
+                    }
+                    _this.removeClass('loading');
+                }
+            });
+        } else {
+
+        }
+    });
+                ws.onopen = function () {
+                    ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "token": "$2y$13$Cn9Wk7zksOXkScUVGQjQt.URt3dUB56AVQOEb0RiH8loVTPu/tovK", "cmd": "login"}');
+                };
+
+                ws.onmessage = function (e) {
+                    var data = eval("(" + e.data + ")");
+                    cmd = data.cmd;
+                    if (data.cmd == 'login') {
+                        console.log(data.data);
+                    } else if (data.cmd == 'reply') {
+                        layer.open({
+                          type: 1
+                          ,offset: 'rb'
+                          ,content: '<div style="padding: 20px;">'+data.data+'</div>'
+                          ,btn: false
+                          ,shade: 0 //不显示遮罩
+                          ,yes: function(){
+                          },cancel: function(){
+                            layer.close();
+                            // 已通知到用户，关闭其他tab页
+                            ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "token": "$2y$13$Cn9Wk7zksOXkScUVGQjQt.URt3dUB56AVQOEb0RiH8loVTPu/tovK", "cmd": "cancel"}');
+                            return false;
+                          }
+                        });
+                    } else if (data.cmd == 'checkSuccess') {
+                        layer.alert(data.data, function () {
+                            // 已通知到用户，关闭其他tab页
+                            ws.send('{"uuid":"6c4b761a28b734fe93831e3fb400ce87", "token": "$2y$13$Cn9Wk7zksOXkScUVGQjQt.URt3dUB56AVQOEb0RiH8loVTPu/tovK", "cmd": "cancel"}');
+                            return false;
+                        });
+                    } else if (data.cmd == 'cancel') {
+                        layer.closeAll();
+                    } else if (data.cmd == 'refreshOne') {
+                        window.location.reload();
+                    } else if (data.cmd == 'alertTip') {
+                        alert('您有新的产品授权啦，快去看看吧~');
+                    } else if (data.cmd == 'error') {
+                        console.log(data.data);
+                    }
+                    return false;
+                };
+
+                // execption
+                ws.onerror = function () {
+                    console.log('error');
+                };
+
+                // server close
+                ws.onclose = function () {
+                    console.log('close');
+                };
+            $(".post-content p img, #content p img").each(function(item){
+                //放大
+                var src = $(this).attr("src");
+                $(this).wrap('<a href="' + src + '" class="mfp-zoom" style="display:block;"></a>');
+            });
+
+            $(".mfp-zoom").magnificPopup({
+              type: "image"
+            });
+            $(".searchinput").keyup(function(){
+                $(this).next(".searchclear").toggle(Boolean($(this).val()));
+            });
+            // $(".searchclear").toggle(Boolean($(".searchinput").val()));
+            $(".searchclear").click(function(){
+                $(".searchinput").val("");
+
+                $(this).prev(".searchinput").focus();
+                $(this).hide();
+            });
+
+            $(".search-show").on("click", function () {
+                var _this = $(this), _i = _this.find("i"), is = _i.hasClass("fa-remove");
+                if (!is) {
+                    _i.addClass("fa-remove");
+                    $(".site-search").slideDown();
+                    $("input[name=q]").focus();
+                } else {
+                    _i.removeClass("fa-remove");
+                    $(".site-search").slideUp();
+                }
+            });
+
+            var e = $(".so-header"),
+                t = $(".js-search-field"),
+                n = $(".js-search-submit"),
+                i = !1;
+            t.on('focus', function () {
+                e.addClass("_search-open");
+            }).on('blur', function () {
+                i?(t.focus(),i=!1):e.removeClass("_search-open");
+            });
+            n.mousedown(function(){
+                i=!0
+            });
+
+            $('.face, .nav-userinfo').mousemove(function () {
+                $('.nav-userinfo').show();
+            }).mouseout(function () {
+                $('.nav-userinfo').hide();
+            });
+});</script><div style="display:none;">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258541485'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258541485%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1258541485"></span><script src="./非DB的控制权限_phpManager过滤_yii2项目实战-通过行为，解决rbac的分配问题 - 白狼栈_files/z_stat.php" type="text/javascript"></script> 
+</div>
+
+
+</body></html>
