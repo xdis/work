@@ -362,6 +362,12 @@
 		- yii2 admin 分析
 			- [yii2_admin_反射获取action](fn/yii2_admin/README.md#yii2_admin_反射获取action)
 			- 配置_yii2_admin
+			- db存放授权数据
+				- [db配置](fn/yii2_admin/README.md#db配置)
+			- 非DB_数组方式
+				- [非DB_配置](fn/yii2_admin/README.md#非DB_配置)
+				- [使用数组写入规则](fn/yii2_admin/README.md#使用数组写入规则)
+				- [源码分析](fn/yii2_admin/README.md#源码分析)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
