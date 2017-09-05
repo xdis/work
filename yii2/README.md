@@ -113,6 +113,7 @@
 			- [二维码配置](fn/qrcode/README.md#二维码配置) 
 			- [生成二维码](fn/qrcode/README.md#生成二维码) 
 			- [访问生成二维码](fn/qrcode/README.md#访问生成二维码) 
+		- [文本层次关系生成数组](fn/testToArray.md)   @华彪
 	- 单元测试
 		- demo
 			- [一行代码验证短信](fn/u_test/demo.md#一行代码验证短信) @zhou
