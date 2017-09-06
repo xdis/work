@@ -91,7 +91,10 @@
 	-  内网
 		-  http://192.168.97.1:8888/
 		-  http://192.168.2.1:8888/
-
+- 代码规范与质量检查工具
+	- phpStorm
+		- CodeSniffer
+		- PHP-CS-Fixer 代码快速格式化
 - editplus
 	- 用户名：Free User   注册码：6AC8D-784D8-DDZ95-B8W3A-45TFA 
 - Total Commander常用 
