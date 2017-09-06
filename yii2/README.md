@@ -109,6 +109,9 @@
 			- 调试
 				- [beginProfile](fn/debug.md#beginProfile)  代码区间性能检测
 				- [yii2_admin定义Profile](fn/debug.md#yii2_admin定义Profile)
+		- redis
+			- [session保存到redis](fn/redis/README.md#session保存到redis)
+			- [缓存保存到redis](fn/redis/README.md#缓存保存到redis)
 		- 二维码 @zhou
 			- [二维码配置](fn/qrcode/README.md#二维码配置) 
 			- [生成二维码](fn/qrcode/README.md#生成二维码) 
