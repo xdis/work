@@ -109,13 +109,25 @@
 			- 调试
 				- [beginProfile](fn/debug.md#beginProfile)  代码区间性能检测
 				- [yii2_admin定义Profile](fn/debug.md#yii2_admin定义Profile)
+		- redis
+			- [session保存到redis](fn/redis/README.md#session保存到redis)
+			- [缓存保存到redis](fn/redis/README.md#缓存保存到redis)
 		- 二维码 @zhou
 			- [二维码配置](fn/qrcode/README.md#二维码配置) 
 			- [生成二维码](fn/qrcode/README.md#生成二维码) 
 			- [访问生成二维码](fn/qrcode/README.md#访问生成二维码) 
-	- 单元测试
-		- demo
-			- [一行代码验证短信](fn/u_test/demo.md#一行代码验证短信) @zhou
+		- [文本层次关系生成数组](fn/testToArray.md)   @华彪
+	- 测试
+		- 概念
+			- 单元测试：验证一个独立的代码单元是否按照期望的方式运行。test
+			- 功能测试：在浏览器模拟器中以用户视角来验证期望的场景是否发生。cest
+			- 验收测试：与功能测试相同，但实际上通过真实的Web浏览器运行测试。cept
+		- [yii测试目录结构](fn/u_test/demo.md#yii测试目录结构) 
+		- [yii测试执行](fn/u_test/demo.md#yii测试执行) 
+		- 单元测试
+			- demo
+				- [一行代码验证短信](fn/u_test/demo.md#一行代码验证短信) @zhou
+				- [短信单元测试_zhou](fn/u_test/demo.md#短信单元测试_zhou)
 	- session
 		- 保存与获取
 			- 方法1
@@ -362,6 +374,12 @@
 		- yii2 admin 分析
 			- [yii2_admin_反射获取action](fn/yii2_admin/README.md#yii2_admin_反射获取action)
 			- 配置_yii2_admin
+			- db存放授权数据
+				- [db配置](fn/yii2_admin/README.md#db配置)
+			- 非DB_数组方式
+				- [非DB_配置](fn/yii2_admin/README.md#非DB_配置)
+				- [使用数组写入规则](fn/yii2_admin/README.md#使用数组写入规则)
+				- [源码分析](fn/yii2_admin/README.md#源码分析)
 	- 配置
 		- [路由设置-伪静态](content.md#路由设置-伪静态) 
 	- 扩展
