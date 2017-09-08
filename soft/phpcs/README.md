@@ -24,7 +24,7 @@ C:\Users\cmk\AppData\Roaming\Composer\vendor\bin\phpcs.bat
 
 
 **2.phpStorm配置**
-
+> [参考地址](https://blog.skyx.in/archives/207/)
 ![](images/phpStorm_conf1.png)
 ![](images/phpStorm_conf2.png)
 
