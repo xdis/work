@@ -31,6 +31,12 @@
 			- printf('%.2f',8.576);  //8.58
 			- number_format(8.576,2);	//8.58
 			- bcdiv(8.576,1,2);	//8.57
+		- 可变参数列表
+			- [实现方式1](fn/op.md#实现方式1)  5.5及更早
+				- func_get_args
+				- func_get_arg
+				- func_num_args 等同于 count
+			- [实现方式2](fn/op.md#实现方式2)
     - 功能模块
 	    - [二维数组自定义键str转numberic](fn/op.md#二维数组自定义键str转numberic) 	
 	    - [把数组(可多维)中值null转为空](fn/op.md#把数组(可多维)中值null转为空) 	

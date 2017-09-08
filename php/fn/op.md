@@ -291,3 +291,46 @@ call_user_func(['User','say_hello']);
 //方法3 直接使用 ::
 call_user_func("User::say_hello");
 ```
+
+# 可变参数列表
+
+## 实现方式1
+
+```php
+function get_sum()
+{
+    $args_num = func_get_args();
+    $sum = 0;
+    if ($args_num == 0 || !$args_num) {
+        return $sum;
+    } else {
+        //for ($i = 0; $i < count($args_num); $i++) {
+        for ($i = 0; $i < func_num_args($args_num); $i++) {
+            $sum += func_get_arg($i);
+        }
+        return $sum;
+    }
+}
+
+echo get_sum() . "<br />";   //0
+echo get_sum(1, 2, 3) . "<br />";//6
+```
+
+## 实现方式2
+```php
+function get_sum(...$nums)
+{
+    $sum = 0;
+    if (!$nums) {
+        return $sum;
+    } else {
+        foreach ($nums as $num) {
+            $sum += $num;
+        }
+        return $sum;
+    }
+}
+
+echo get_sum() . "<br />";   //0
+echo get_sum(1, 2, 3) . "<br />";//6
+```
