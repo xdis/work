@@ -78,3 +78,20 @@
 		- [mysqld] bind-address=127.0.0.1
 	- 修改数据库,不使用密码
 		- [mysqld] skip_grant_tables
+
+- sqlmap
+	- [python与sqlmap安装](fn/sqlmap/README.md#python与sqlmap安装)
+	- [python与sqlmap配置](fn/sqlmap/README.md#python与sqlmap配置)
+	- DVWA 构建注入环境
+		- [DVWA环境搭建](fn/sqlmap/README.md#DVWA环境搭建)
+		- [DVWA配置](fn/sqlmap/README.md#DVWA配置)
+		- 操作
+			- [sql注入加cookie检测](fn/sqlmap/README.md#sql注入加cookie检测)
+			- [以文件方式注入检测](fn/sqlmap/README.md#以文件方式注入检测)  -r
+			- [获取数据库](fn/sqlmap/README.md#获取数据库) --dbs
+			- [获取当前所有表数据](fn/sqlmap/README.md#获取当前所有表数据)  --dump
+			- [选择指定的数据库并导出](fn/sqlmap/README.md#选择指定的数据库并导出) -D
+			- [选择指定的表](fn/sqlmap/README.md#选择指定的表) -T 
+			- [post注入](fn/sqlmap/README.md#post注入)
+			- [忽略老提示](fn/sqlmap/README.md#忽略老提示) --batch --smart
+			- 批量处理以文件形式注入
