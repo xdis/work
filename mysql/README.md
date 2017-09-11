@@ -79,7 +79,7 @@
 	- 修改数据库,不使用密码
 		- [mysqld] skip_grant_tables
 
-- sqlmap
+- sqlmap @idaxia
 	- [python与sqlmap安装](fn/sqlmap/README.md#python与sqlmap安装)
 	- [python与sqlmap配置](fn/sqlmap/README.md#python与sqlmap配置)
 	- DVWA 构建注入环境
@@ -94,4 +94,10 @@
 			- [选择指定的表](fn/sqlmap/README.md#选择指定的表) -T 
 			- [post注入](fn/sqlmap/README.md#post注入)
 			- [忽略老提示](fn/sqlmap/README.md#忽略老提示) --batch --smart
-			- 批量处理以文件形式注入
+			- [批量处理以文件形式注入](fn/sqlmap/README.md#批量处理以文件形式注入)
+			- [寻找注入点](fn/sqlmap/README.md#寻找注入点)	sqlmap.py -g "inurl:\".php?id=1\"" 
+		- 如何防范sql注入
+			- WEB防火墙
+				- [ngx_lua_waf](https://github.com/loveshell/ngx_lua_waf)
+				- [ngx_lua_waf效果显示](fn/sqlmap/README.md#ngx_lua_waf效果显示)
+			- 开发者需要注意过滤 
