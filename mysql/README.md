@@ -102,3 +102,13 @@
 				- [ngx_lua_waf](https://github.com/loveshell/ngx_lua_waf)
 				- [ngx_lua_waf效果显示](fn/sqlmap/README.md#ngx_lua_waf效果显示)
 			- 开发者需要注意过滤 
+- 搜索text类型内容
+```php
+	if (!$hasPushed) {
+		$searchQuery = '%' . str_replace(' ', '%', $keywords) . '%';
+		/** 搜索无法进入隐私项保护归档 */
+		$select->where('table.contents.password IS NULL')
+		->where('table.contents.title LIKE ? OR table.contents.text LIKE ?', $searchQuery, $searchQuery)
+		->where('table.contents.type = ?', 'post');
+	}
+```
