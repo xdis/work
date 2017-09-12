@@ -100,6 +100,15 @@
 		- 来自 gitSetup git/发布代码/Jenkins_配置
 			- ansible web -m shell -a 'cd /mnt/vdb1/2.vding.wang/vfet/;npm run build'
 	- nfs 目录镜像挂载到别人服务器  来自 gitSetup nfs
+	- npm和node安装
+		- yum install -y gcc-c++ make
+		- curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+		- yum install nodejs
+		- 查看版本
+			- node -v 
+			- npm -v 
+		- npm run build时出现Cannot find module 'glob'则运行
+			- npm install glob
 	- 查看 
 		- uname -a  //查看系统多少位 32位/64
 		- ps
