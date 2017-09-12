@@ -73,6 +73,11 @@
 				- [闭包函数_参数类型为Closure](fn/Closure.md#闭包函数_参数类型为Closure)
 	- 递归
 		- [简单的递归例子](fn/recursion/README.md#简单的递归例子)
+		- 案例
+			- [递归前](fn/recursion/hpdisplayarea-13671.php)
+			- [递归后](fn/recursion/HpDisplayArea-13724.php)
+			- [我的递归例子](fn/recursion/t7.php)
+			- [钱100的递归例子](fn/recursion/钱100.php)
 	- 跨域
 		- 头部设置
 			- 头允许跨域
