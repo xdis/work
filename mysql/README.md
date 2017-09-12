@@ -80,6 +80,7 @@
 		- [mysqld] skip_grant_tables
 
 - sqlmap @idaxia
+	- [sqlmap中文注释](fn/sqlmap/sqlmap中文注释.txt)
 	- [python与sqlmap安装](fn/sqlmap/README.md#python与sqlmap安装)
 	- [python与sqlmap配置](fn/sqlmap/README.md#python与sqlmap配置)
 	- DVWA 构建注入环境
