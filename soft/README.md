@@ -1,7 +1,7 @@
 # 软件
 -粘贴神器
 	- ditto
-	- copyQ
+	- [copyQ](https://hluk.github.io/CopyQ/)
 - 同步神器
 	- [resilio](https://www.resilio.com)  //亲用 特别局域网同步不用连网
 - wget
