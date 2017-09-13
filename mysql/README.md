@@ -56,6 +56,29 @@
 		```
 		left join (SELECT Amount,CreateTime,LoanId FROM invest WHERE IsValid = 1 AND invest.TransferFlag != 3) AS invest 
 		```
+	- between 
+		- 字符串判断是否在范围内
+		```
+        //例a
+		SELECT 'b' BETWEEN 'a' AND 'c'
+		
+		//例b
+		SELECT * FROM user WHERE username BETWEEN 'a' AND 'k'
+		```
+		- 数字判断是否在范围内
+		```
+		//1.例a
+		SELECT 3 BETWEEN 2 AND 5
+
+		//2.例b
+		IF !(SELECT UNIX_TIMESTAMP(NOW()) BETWEEN _play_start_at AND _play_end_at) THEN 
+			SELECT '-5' AS 'id','不在有效期内' AS 'note';  
+			LEAVE label_break; -- 返回并终止进行  
+		END IF;
+		
+		//3.其它
+		SELECT * FROM user WHERE uid BETWEEN 2 AND 5
+			```
 	- function函数
 		- [循环DECLARE cur_1 CURSOR再运行操作](fn/function/function_循环DECLARE_cur_1_CURSOR再运行操作.sql)
 	- 找回密码
